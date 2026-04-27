@@ -1,2 +1,2 @@
 # data-store-tutorials-authors
-This repository contains tutorials to teach how to use the openBIS-Data Store research data management system. The goal of this repository is to version the review of tutorials. Target group are tutoriasl authors, mainly Data Store team
+This is a private repository to review tutorials before publication. Reviewers are the Data Store team.  Contents are tutorials to train how to use the openBIS-Data Store research data management system.
