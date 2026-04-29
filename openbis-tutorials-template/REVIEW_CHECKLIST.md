@@ -1,20 +1,34 @@
 # Tutorial Review Checklist
 
+## 🧾 Summary
+<!-- Briefly describe what this tutorial covers -->
+- Topic:
+- Target audience (e.g., beginner, advanced):
+- Related openBIS features (e.g., Inventory, ELN, Queries):
+- 
 ## Content
 
-- [ ] Tutorial has a clear title and purpose
-- [ ] Target audience is defined
-- [ ] Learning objectives are listed
-- [ ] Steps are complete and ordered logically
-- [ ] Terminology is consistent with openBIS usage
+- [ ] Tutorial has a clear title and learning outcome
+- [ ] Steps are logically ordered and easy to follow
+- [ ] Instructions are precise and unambiguous
+- [ ] Terminology is consistent with openBIS conventions
+- [ ] No missing steps or unexplained jumps
 
 ## Technical Accuracy
-
-- [ ] Instructions were tested in the intended openBIS instance
-- [ ] Screenshots match the described workflow
+- [ ] All steps have been tested in openBIS
+- [ ] Screenshots reflect the current UI
+- [ ] Example data and queries work as described
+- [ ] No outdated or deprecated features included
 - [ ] Links and file paths work
 - [ ] Example data are safe to publish
 - [ ] No confidential information is visible in screenshots
+
+## Media & Formatting
+- [ ] Images/screenshots are clear and readable
+- [ ] Images are correctly referenced (no broken links)
+- [ ] Image filenames follow naming conventions (e.g., `step1.png`)
+- [ ] HTML renders correctly (no layout issues)
+- [ ] Consistent formatting across sections
 
 ## Accessibility & Usability
 
@@ -27,4 +41,18 @@
 
 - [ ] Approved by content reviewer
 - [ ] Approved by technical reviewer
-- [ ] Ready to publish to public repository
+- [ ] No sensitive or internal-only information included
+- [ ] Approved for publication in public repository
+- [ ] XXX internal approval tag, if used)
+
+
+## Reviewer Comments
+<!-- Add detailed feedback, suggestions, or required changes -->
+
+## Author Notes (optional)
+<!-- Any specific areas where feedback is requested -->
+
+## Decision
+- [ ] Approved ✅
+- [ ] Changes requested 🔄
+- [ ] Needs discussion 💬
