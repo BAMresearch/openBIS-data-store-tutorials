@@ -1,6 +1,6 @@
 # openBIS Tutorials Development Repository
 
-Private working repository for developing, reviewing, and versioning openBIS tutorials before publication to a public researcher-facing repository.
+Private working repository for developing, reviewing, and versioning openBIS tutorials before publication to a public repository.
 
 ## Purpose
 
@@ -77,10 +77,12 @@ Each tutorial should follow this structure:
 ```text
 /tutorial-name/
   index.html
-  images/
-    step1.png
-    step2.png
   assets/
+  datasets/
+  images/
+    step1-name-1.png
+    step1-name-2.png
+    step2-name-1.png
   README.md
 ```
 
