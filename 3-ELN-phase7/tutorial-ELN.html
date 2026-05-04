@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload data in openBIS-Data Store Lab Notebook</title>
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #1370bc;
+      --text: #222;
+      --muted: #5a6470;
+      --border: #d9e1e8;
+      --bg-soft: #f7f9fc;
+      --note-bg: #f5f8fc;
+      --warning-bg: #fff5f5;
+      --warning-border: #cc0000;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      color: var(--text);
+      background: #fff;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.3em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      color: var(--secondary);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    a {
+      color: var(--secondary);
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: #2d3a45;
+    }
+
+    .toc {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .toc ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .toc li {
+      margin: 0.35rem 0;
+    }
+
+    .step {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .step h2,
+    .step h3 {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+
+    figure {
+      margin: 1rem 0 1.5rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #cfd7df;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .screenshot {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 0.45rem;
+    }
+
+    .note,
+    .warning,
+    .placeholder {
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+    }
+
+    .note {
+      border-left: 4px solid var(--primary);
+      background: var(--note-bg);
+    }
+
+    .warning {
+      border-left: 4px solid var(--warning-border);
+      background: var(--warning-bg);
+    }
+
+    .placeholder {
+      border-left: 4px solid #a06a00;
+      background: #fff9ed;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.35rem;
+      margin: 0.5rem 0 1rem;
+    }
+
+    li {
+      margin: 0.3rem 0;
+    }
+
+    .meta-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .section-intro {
+      margin-bottom: 1rem;
+    }
+
+    code {
+      background: #f3f5f7;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1rem;
+      }
+
+      .step {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+
+  <header>
+    <h1>Upload data in openBIS-Data Store Lab Notebook</h1>
+    <p class="lead">
+      This tutorial uses a generic example to show how to upload data and document the experimental steps that describe the corresponding datasets. Consistent documentation in the ELN supports traceability, discoverability, reusability, and reproducibility of research data.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#learning-outcomes">What you will learn</a></li>
+      <li><a href="#before-you-begin">Before you begin</a></li>
+      <li><a href="#key-concepts">Key concepts</a></li>
+      <li><a href="#Lab Notebook">Lab Notebook</a></li>
+      <li><a href="#Welcome to the Lab Notebook - Exercises section">Welcome to the Lab Notebook - Exercises section</a></li>
+      <li><a href="#Step 1: Register a Project">Step 1: Register a Project</a></li>
+      <li><a href="#step-1">Step 1: Register a Project</a></li>
+      <li><a href="#step-2">Step 2: Register a Collection of Experiments</a></li>
+      <li><a href="#step-4">Step 4: [Step title]</a></li>
+      <li><a href="#step-5">Step 5: [Step title]</a></li>
+      <li><a href="#step-6">Step 6: [Step title]</a></li>
+      <li><a href="#step-7">Step 7: [Step title]</a></li>
+      <li><a href="#step-8">Step 8: [Step title]</a></li>
+      <li><a href="#step-9">Step 9: [Step title]</a></li>
+      <li><a href="#step-10">Step 10: [Step title]</a></li>
+      <li><a href="#step-11-data-upload">Step 11: Data upload</a></li>
+      <li><a href="#step-11-templates">Step 11: Templates</a></li>
+      <li><a href="#step-12">Step 12: [Step title]</a></li>
+      <li><a href="#step-13">Step 13: [Step title]</a></li>
+      <li><a href="#step-14">Step 14: [Step title]</a></li>
+      <li><a href="#step-15">Step 15: [Step title]</a></li>
+      <li><a href="#step-16">Step 16: [Step title]</a></li>
+      <li><a href="#step-17">Step 17: [Step title]</a></li>
+      <li><a href="#step-18">Step 18: [Step title]</a></li>
+      <li><a href="#step-19">Step 19: [Step title]</a></li>
+      <li><a href="#result">Result</a></li>
+    </ul>
+  </nav>
+
+  <section id="learning-outcomes">
+    <h2>What you will learn</h2>
+    <ul>
+      <li>How to upload research data to the openBIS-Data Store using the graphical user interface (GUI).</li>
+      <li>How to describe datasets registering experimental steps in the Lab Notebook.</li>
+    </ul>
+  </section>
+
+  <section id="before-you-begin">
+    <h2>Before you begin</h2>
+    <p>This tutorial requires no prior experience with openBIS.</p>
+    <ul class="meta-list">
+      <li>You need to be registered in the openBIS instance of the Data Store.</li>
+      <li>Confirm that you can log in to the playground instance.</li>
+      <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
+      <li>Download datasets for this tutorial example. You find them in the MsTeams Channel/Rollout phase 7/Webinar1/datasets-tutorial-eln</li>
+    </ul>
+  </section>
+
+  <section id="key-concepts">
+    <h2>Key concepts</h2>
+    <h3>Logical research workflow</h3>
+    <p>
+      Before uploading data, document in the Lab Notebook (ELN) the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical structure of the research project.
+    </p>
+    <p>
+      In this workflow, the experimental steps are represented as the “things you do” (yellow boxes), while the research data is represented as datasets attached to those experimental steps (red boxes).
+    </p>
+    <div class="note">
+      <strong>Note:</strong> 
+    </div>
+    <figure>
+      <img src="images/workflow.png" alt="Research workflow to be mapped in the Data Store">
+      <figcaption>Figure 1: Research workflow to be mapped in the Data Store.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h3>openBIS and Data Store core Data Model</h3>
+    <p>
+      This tutorial uses the classic openBIS data model, which consists of five hierarchically structured levels: <strong>Project / Collection / Object / Dataset</strong>. This helps explain the core logic of openBIS data model and demonstrates
+       how objects, which are uniquely identified as entities, are connected to one anoter through parent-child relationships. The core openBIS data model is applied to three compartments of the Data Store (BAM Inventory, FB Inventory and ELN).
+       In this tutorial, you will work with the Electronic Laboratory Notebook (ELN).
+    </p>
+    <p>
+      Starting with openBIS 20.10.12, the standard data model was expanded to support more flexible representations of complex research projects. You can explore the newer data model at <strong>[ADD LINK]</strong>.
+    </p>
+    <p>
+      In this example, all experimental steps are represented as <strong>Objects</strong>. The project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
+       which contains the experimental steps done to generate the research data / <strong>Datasets</strong>.
+    </p>
+    <figure>
+      <img src="images\data-model.png" alt="Diagram showing experimental steps and datasets organized in the ELN">
+      <figcaption>
+        Figure 2: All experimental steps are represented as objects.  These are organized in the collection named 'Experimental Steps', within a project named 'Material Synthesis' in the ELN 'FB X-1_USERname_SPACE'.
+      </figcaption>
+    </figure>
+  </section>
+
+
+  <section id="lab-notebook">
+    <h2>Lab Notebook</h2>
+    <p>
+      In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step.
+      All steps should be connected. To do this, the steps are first registered in openBIS, and then parent-child relationships between them are defined. 
+      Experimental steps should also be linked to all elements used to carry them out, such as chemicals, instruments, and software. Datasets are attached to the corresponding experimental steps.
+    </p>
+    </section>
+
+
+  <section id="exercise-overview">
+    <h2>Welcome to the Lab Notebook - Exercises section</h2>
+    <p>
+      The goal of the research project example is to synthesize a material and characterize it before and after a non-destructive chemical treatment. For simplicity, the example used is kept general so that you can focus entirely on learning how to use the openBIS-Data Store system.
+    </p>
+    <strong>This tutorial will guide you through following Steps:</strong>
+    <ul>
+      <li>Step 1: Register a Project.</li>
+      <li>Step 2: Register Collections of experimental steps.</li>
+      <li>Step 3: Register Experimental steps.</li>
+      <li>Step 4: Register Experimental steps using Templates.</li>
+        <li>Step 4.1: Edit Collections of Experimental steps.</li>
+        <li>Step 4.2: Register addititonal Experimental steps using Templates.</li>
+      <li>Step 5: Upload Data.</li>
+      <li>Step 6: filter and search.</li>
+    </ul>
+    <p>
+
+    <figure>
+      <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
+      <figcaption>
+        Figure 3: The tutorial example is a research project named “Material Synthesis”. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser).
+         The project comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analyis). Collections contain experimental
+          steps and datasets (not visible in the left-hand menu).
+      </figcaption>
+    </figure>
+  </section>
+
+  
+  <section class="step" id="step-1">
+    <h2>Step 1: Register a Project</h2>
+    <p>
+      Create a project in the ELN to represent the research project <strong>Material Synthesis</strong>.
+    </p>
+
+    <div class="placeholder">
+    Instructions for registering a Project:
+    <ol>
+      <li>Click the upper <strong>LAB NOTEBOOK</strong> tab.</li>
+      <li>Navigate to the Lab Notebook in the left-hand menu and open the drop-down menu to select <strong>Home Space</strong>.</li>
+      <li>Click <strong>+ Project</strong> to open the project form.</li>
+      <li>Fill out <strong>Code</strong> and <strong>Description</strong>.</li>
+      <li>Review the entries and click <strong>Save</strong>.</li>
+    </ol>
+    </div>
+
+    <figure>
+      <img src="images/eln-project.png" alt="Lab Notebook interface showing how to start a new project">
+      <figcaption>
+        Figure 4: The upper tab <strong>LAB NOTEBOOK</strong> displays the Lab Notebook drop-down menu in the left-hand menu. Selecting Home Space opens the middle menu tabs.
+      </figcaption>
+    </figure>
+
+    <h3>General information</h3>
+    <p>This section provides guidance for completing the project form.</p>
+
+    <strong>Code requirements</strong>
+    <ul>
+      <li>Mandatory fields in openBIS are marked with an asterisk (*).</li>
+      <li>Allowed characters: uppercase letters A-Z, digits 0-9, underscore (<code>_</code>), hyphen (<code>-</code>), and dot (<code>.</code>).</li>
+      <li>Separate words with underscores.</li>
+      <li>Codes should be meaningful, in English, and between 3 and 30 characters.</li>
+      <li>A code cannot be modified or reused.</li>
+    </ul>
+
+    <strong>Description requirements</strong>
+    <ul>
+      <li>Mandatory for BAM Data Store.</li>
+      <li>Should contain enough detail to be understandable to people outside the group.</li>
+      <li>Should follow the format: English//German.</li>
+      <li>Should contain 2 to 50 words.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Warning:</strong> If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
+    </div>
+
+    <figure>
+      <img src="images/eln-project-ident-info.png" alt="More menu showing the Show Identification Info option">
+      <figcaption>
+        Figure 5: The <strong>More</strong> drop-down menu displayed applies to the selected project in the left-hand menu. More drop-down menu displays "Show Identification Info" which includes
+         the <strong> Code(*)</strong></figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/eln-project-code-save.png" alt="Project form with save option">
+      <figcaption>Figure 6: Review entries and <strong>Save</strong> the Project.</figcaption>
+    </figure>
+
+    <div class="warning">
+      <strong>Warning:</strong> Once saved, the project code cannot be changed or reused within the same Space. To remove the project, select
+       the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>.
+    </div>
+
+     <p>
+      <strong>CONGRATULATIONS!!</strong>, you have created your first openBIS project.
+    </p>
+    <figure>
+      <img src="images/eln-project-ident-info2.png" alt="Saved project shown in the Home Space menu">
+      <figcaption>Figure 7: The saved project is displayed in the left-hand menu under Home Space.</figcaption>
+    </figure>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section class="step" id="step-2">
+    <h2>Step 2: Register Collections of Experimental steps</h2>
+    <p>
+      A project can contain several collections to organize experimental steps, measurements, and other activities that generate research data. 
+      Collections are one way to logically structure experimental work.
+    </p>
+    <div class="placeholder">
+      Instructions for creating a collection:
+      <ol>
+      <li>Navigate to the project you created in the left-hand menu.</li>
+      <li>Click <strong>+ Other</strong>.</li>
+      <li>Select 'Collection' from the drop-down menu.</li>
+      <li>Leave autogenerated <strong>Code(*)</strong>
+      <li>enter a meaningful <strong>Name</strong>. In this tutorial example [Name='Synthesis'].
+      <li>leave empty <strong>Default object type</strong>
+      <li>select 'List view' in <strong>Default collection view</strong>.</li>
+      <li>Review the entries and click <strong>Save</strong>.</li>
+      </ol>
+    
+    </div>
+    <figure>
+      <img src="images/eln-project-collection.png" alt="Project view showing collection creation">
+      <figcaption>Figure 8: Navigate to the project in the left-hand menu and click on the <strong>+ Other</strong> tab  to create a new Collection</figcaption>
+    </figure>
+    <figure>
+      <img src="images/eln-project-collection2.png" alt="Screenshot for Step 2">
+      <figcaption>Figure 9: In the <strong>Select Collection type</strong> window, select <strong>'Collection'</strong></figcaption>
+    </figure>
+    <figure>
+      <img src="images/eln-collection-info.png" alt="Screenshot for Step 2">
+      <figcaption>Figure 10: Leave the auto generated <sttrong>Code(*)</sttrong> unmodified and enter meaningful <strong>Name</strong>,
+         leave empty <strong>Default object type</strong> and for <strong>Default collection view</strong> select 'List view'</figcaption>
+    </figure>
+
+    <p>
+      <strong>CONGRATULATIONS!!</strong>,you have created your first collection.
+    </p>
+
+    <p>
+      <strong>Now you can create additional collections that you'll need later to complete the exercises of this tutorial</strong>
+    </p>
+
+     <div class="placeholder">
+      Instructions for creating additional collections:
+      <ol>
+      <li>Follow the directions above (1 to 8 ) and create the following collections separately. You can copy-paste the collection names shown below.</li>
+      </ol>
+    Values for Tutorial Example: you can copy paste following values
+    <p>Collection name = 'Treatment non-destructive'</p>
+    <p>Collection name = 'Structure_TEM'</p>
+    <p>Collection name = 'Parameter 1'</p>
+    <p>Collection name = 'Parameter 2'</p>
+  </div>
+
+    <figure>
+      <img src="images\eln-collection-overview.png" alt="Screenshot for Step 2">
+      <figcaption>Figure 11: Once sucessfully saved, registered collections are displayed in the left-hand menu.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-collection-sorting.png" alt="Screenshot for Step 2">
+      <figcaption>Figure 12: To change sorting of collections in the left-hand menu, localize the mouse on the project 'Material Synthesis' and select <strong>'Change sorting'</strong>.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-collection-sorting-name.png" alt="Screenshot for Step 2">
+      <figcaption>Figure 13: Select sorting by e.g., 'Registration Date Ascending'.</figcaption>
+    </figure>
+       <p>
+        <strong>CONGRATULATIONS!!</strong>, you have created a total of five collections to organize logically experimental steps.
+      </p>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+    </section>
+
+
+  <section class="step" id="step-3">
+    <h2>Step 3: Register Experimental steps</h2>
+    <p>
+      Any activity (Experiments, measurements, simulations, etc.) that generate research data can be represented in openBIS as Experimental Steps. 
+      This generic object type includes properties ('start date, Experimental goals, Description' etc.)
+      to uniquely defined an Experimental Step. Custom properties can be set by users when defining Object types and controlled vocabularies ('openBIS Masterdata'). 
+      In this tutorial, we will use the pre-defined metadata for the generic object type 'Experimental Step' to understand the representation of experimental steps in the ELN.
+    </p>
+    <div class="placeholder">
+      Instructions for registering experimental steps:
+      <ol>
+      <li>In the left-hand menu, navigate to the collection you want to use [collection name='Synthesis'].</li>
+      <li>Open the drop-down menu <strong>More</strong></li> and select <strong>New Object</strong>.</li>
+      <li>Click on <strong>'Select an object type'</strong>.</li>
+      <li>start typing the name of the object type. e.g., 'exp' or scroll down to select 'Experimental Step'.</li>
+      <li>Fill out in the <strong>'New Experimental Step'</strong> form, the properties displayed in the section <strong>'Identification Info'</strong>.</li>
+      <li>Fill out the <strong>[Name='Material Demo 001']</strong></li>
+      <li>Fill out all other relevant Properties</li>   
+      <li>Review the entries and click <strong>Save</strong>.</li>
+    </ol>
+  </div>
+
+    <h3>General information</h3>
+    <p>
+      This section provides guidance for completing the 'New Experimental Step' form.
+    </p>
+    <ul>
+      <li>The <strong>Code</strong> is mandatory (*) and is automatically generated by the system. It is not necessary to change it; however, if you do decide to do so, you must ensure consistency within your division and the Data Store.</li>
+      <li>The <strong>Name</strong> should be meaningful to you and your colleagues, as you will see it in the collections and search objects by Name.</li>
+      <li>The relevant information should be entered into the remaining fields/properties. Only properties marked with an asterisk (*) are mandatory and must be filled in so that the object can be saved.</li>
+      <li>Experimental steps can be edited after saving and will retain the same Code.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Warning:</strong>
+      <ul>
+        <li>If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.</li>
+      </ul>
+    </div>
+
+    <figure>
+      <img src="images\eln-object1.png" alt="Screenshot for Step 3">
+      <figcaption>Figure 14: Select the project (“Material Synthesis”) to open the 'More' menu and select 'New Object'.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-object2.png" alt="Screenshot for Step 3">
+      <figcaption>Figure 15: 'Select the object type' called 'Experimental Step'</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-object3.png" alt="Screenshot for Step 3">
+      <figcaption>Figure 16: Leave Code(*) unmodified, fill out [Name='Material Demo 001'] and if any, other mandatory (*) properties and Save
+         the New Experimental Step</figcaption>
+    </figure>
+
+        <p>
+          <strong>CONGRATULATIONS!!</strong>, you have created your first Experimental step named 'Material Demo 001'.
+        </p>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+
+<section class="step" id="step-4">
+    <h2>Step 4: Register Experimental steps using Templates</h2>
+    <p>
+      Experimental steps may require extensive information to describe the generated datasets. To standardize the information for experimental steps and faciliate
+      the subsequent registration of similar experimental steps, templates can be created and saved for reused within the division. This is useful when Experimental 
+      steps are repetitive, some condiditions remain or require minor changes. 
+      
+    </p>
+  <div class="placeholder">
+      Instructions for registering Experimental Steps using Templates:
+      <ol>
+      <li>In the left-hand menu, navigate to the collection you want to use [collection name = 'Synthesis'].</li>
+      <li>Open the drop-down menu <strong>More</strong></li> and select <strong>New Object</strong>.</li>
+      <li>Click on <strong>'Select an object type'</strong>.</li>
+      <li>Select 'Experimental Step'.</li>
+      <li>Click on the <strong>Templates</strong> tab.</li>
+      <li>Select the template [Template name = 'Material Synthesis']</li>
+      <li>Leave the 'Merge current parents/children' option disabled</li>
+      <li>Click <strong>Accept</strong>.</li>
+      <li>Leave Code unchaged, enter the <strong>Name</strong> [Name= 'Material Demo1'].</li>
+      <li>Enter the <strong>Start date</strong> and the <strong>End date</strong> using the calendar. Entering a time is not required, but possible.</li>
+      <li>Scroll down to <strong>'Comments'</strong> and enter a comment</li>
+      <li>Review the entries and click <strong>Save</strong>.</li>
+      </ol>
+  </div>
+
+    <h3>General information</h3>
+    <p>
+      This section provides guidance for the use of Templates.
+    </p>
+    <ul>
+      <li>Templates must first be created for an object type, only then, you can select from the list of available templates for your division.
+         Since templates are part of the ELN settings that all members of the group/division can see. Templates need to be
+          created by a colleague in your division with 'Group Admin rights'; this role is typically assigned to Data Store Stewards (DSSt).
+            If you are unsure who to contact, ask your division lead or contact the Data Store team.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Warning:</strong>
+    <ul>
+      <li>Once you register an Experimental step or any other object, it is not possible go back and select a template to edit it.</li>
+      <li>If the template you are using contains predefined (included none) parent-child relationships and you have already defined some parent-child relationships in your object that you wish to retain, you should enable
+          the “Merge current parent-child relationships” option. This is needed, for example, when you register an object based on another object, which automatically creates
+          a parent-child relationship. See Data Store Wiki article 'Register sequential Experimental Steps'</li>
+    </ul>
+    </div>
+
+   <figure>
+      <img src="images\eln-object1.png" alt="Screenshot for Step 4">
+      <figcaption>Figure 17: Select the project (“Material Synthesis”) to open the 'More' menu and select 'New Object'.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-object2.png" alt="Screenshot for Step 4">
+      <figcaption>Figure 18: 'Select the object type' called 'Experimental Step'</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-object-template2.png"alt="Screenshot for Step 4">
+      <figcaption>Figure 19: Click on the Template tab and select a template from the list available to your group.</figcaption>
+    </figure>
+      <figure>
+      <img src="images\eln-object-template3.png"alt="Screenshot for Step 4">
+      <figcaption>Figure 20: Enter Name and any other mandatory (*) values, enter a comment.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-object-template4.png" alt="Screenshot for Step 4">
+      <figcaption>Figure 21: Review entries and Save, nothing is automatically saved in openBIS.</figcaption>
+    </figure>
+    </figure>
+    <img src="images\eln-object-template5.png" alt="Screenshot for Step 4">
+      <figcaption>Figure 22: Registered Experimental steps are shown within the collection. Scroll to the right to explore the information and what is displayed in the icons for the 'Material '.</figcaption>
+    <figure>
+
+    <div class="warning">
+      <strong>Warning:</strong>
+    <ul>
+      <li>Once you register an Experimental step or any other object, it is not possible to select a template to edit it.</li>
+      <li>If the template you are using contains predefined parent-child relationships and you have already defined some parent-child relationships in your object that you wish to retain, you should enable
+          the “Merge current parent-child relationships” option. This can happen, for example, in Lab Notebook when you register an object based on another object, which automatically creates
+          a parent-child relationship. See Data Store Wiki article 'Register sequential Experimental Steps'</li>
+    </ul>
+    </div>
+
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You have created the experimental step “Material Demo1,” based on a template.  This object is now enriched with more metadata in form of text, tables and contain a personalized 
+    Comment.  All the contents are searchable in the database, as we will see later in this tutorial.
+  </p>
+  
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  
+
+
+  <section class="step" id="step-5">
+    <h2>Step 5: Edit Collections and Objects</h2>
+    <p>
+      When working with the Data Store, consistent naming for all enttities (Projects, Collections, Objects, Datasets) registered are essential to help you and others maintain overview. 
+      In the following excercise, you will learn how to edit Collections and their Objects to resolve the following inconsistencies:
+       <ul>
+      <li>The names of collections. Change [collection name = 'Structure TEM'] to [collection name='Parameter 2 Analysis']</li>
+      <li>Delete Object with [Object name='Material Demo 001']</li>
+      </ul>
+    </p>
+
+    <h3>Exercise: Edit collection</h3>
+    <p>
+      This section provides guidance for editing a collection.
+    </p>
+  <div class="placeholder">
+      Instructions for editing collections names:
+      <ol>
+      <li>In the left-hand menu, navigate to the collection you want to use [collection name = 'Structure TEM'].</li>
+      <li>Open the drop-down menu <strong>More</strong> and select <strong>Edit Collection</strong>.</li>
+      <li>Click on the <strong>edit</strong> tab.</li>
+      <li>Change <strong>Name</strong>= 'Parameter 2 Analysis'.</li>
+      <li>Review the entries and click <strong>Save</strong>.</li>
+      <li>If the updated name of the collection does not show, refresh the page</li>
+      </ol>
+  </div>
+
+    <figure>
+      <img src="images\eln-edit-collection-objects1.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 23: To edit a collection, select collection, 'More' and 'Edit Collection'.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-edit-collection-objects2.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 24: You need to click a second time to edit a collection, click the 'Edit' tab.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-edit-collection-objects3.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 25: Enter changes in he form. For this example enter [Name='Parameter 2 Analysis']; review entries and Save</figcaption>
+    </figure>
+ 
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You have edited a Collection.
+  </p>
+  
+    <h3>Exercise: Delete object</h3>
+    <p>
+      This section provides guidance for editing an object.
+    </p>
+
+  <div class="placeholder">
+      Instructions for editing Objects:
+      <ol>
+      <li>In the left-hand menu, navigate to the collection where the object you want to edit is located [collection name='Synthesis'].</li>
+      <li>Indicate the object that you want to edit. [Object name='Material Demo 001'].</li>
+      <li>Click on the <strong>DELETE</strong> tab.</li>
+      <li>Enter <strong>Reason(*)</strong>. Note that this is mandatory (*) to continue.</li>
+      <li>Click the <strong>Accept</strong> tab.</li>
+      <li>Click once more the <strong>Accept</strong> tab.</li>
+      <li>Confirm that the Object is deleted. Go back to the [collection name='Synthesis'] in the left-hand menu.</li>
+      </ol>
+  </div>
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You have deleted sucessfully an object (Experimental Step).
+  </p>
+  </div>
+
+    <figure>
+      <img src="images\eln-edit-object1.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 26: To edit an object, select relevant collection, from the object list, select object to delete and click on 'DELETE'.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-edit-object3.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 27: Enter a 'Reason', this is mandatory(*). leave unselected the option 'Delete also all descendants' and click on 'Accept'.</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-edit-object4.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 28: Confirm once more if you want to 'Accept' deletion.</figcaption>
+    </figure>
+
+    <div class="warning">
+      <strong>Warning:</strong>
+    <ul>
+      When deleting an object, you can delete other connected objects and attached datasets. If you do not want to do this and only want to remove the object, 
+      leave the option 'Delete also all descendant object(s) including their datasets' unckecked. Descendants are objects that you have linked to the object you want to delete.
+      These can be parents objects (originated before) or children objects (originated after). A subsequent tutorial will explain more aboutopenBIS-parent-child relationships.
+    </div>
+
+    <h3>General information: Revert deletions. (This is not an excercise)</h3>
+    <p>
+      Deleted Objects are moved to the 'Trashcan' and can be reverted or deleted Permanently. To explore this function:
+    </p>
+    <ul>
+      <li>Click on the <strong>TOOLS</strong> tab.</li>
+      <li>Select <strong>Trashcan</strong></li>
+      <li>scroll right and open the <strong>Operations</strong> drop-down menu.</li>
+      <li>Select one option acording to your needs</li>
+    </ul>
+    
+    <figure>
+      <img src="images\eln-trashcan1.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 29: The 'TOOLS' menu show 'Trashcan'. Select object and scroll right to see the 'operations' drop-down menu.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-trashcan2.png" alt="Screenshot for Step 5">
+      <figcaption>Figure 30: Objects deleted from the Trashcan are permanenty deleted form the database.</figcaption>
+    </figure
+
+    <div class="warning">
+      <strong>Warning:</strong>
+    <ul>
+      <li>Once you permanently delete an object, it cannot be recovered. If an object has parent or child elements and you do not
+        want to delete them as well, do not select the 'Dependencies' option and choose 'Permanently delete'.</li>
+        <li>if you delete a collection that contains objects, the system first deletes the objects; you must then delete the collection. 
+         These steps can be reverted separately, as explained in 'Revert deletions'.</li>
+    </ul>
+    </div>
+
+
+    <section class="step" id="step-6">
+    <h2>Step 6: Register additional Experimental steps using Templates</h2>
+    <p>
+      As done in Step 4. Now you can create additional Experimental Steps that you'll need later to complete the exercises in this tutorial
+      
+    </p>
+  <div class="placeholder">
+      Instructions for registering three Experimental Steps:  Follow the istructions listed and replace [Property values] using the 'List of values' shown below.
+      <ol>
+      <li>In the left-hand menu, navigate to the collection you want to use [collection name].</li>
+      <li>Open the drop-down menu <strong>More</strong></li> and select <strong>New Object</strong>.</li>
+      <li>Click on <strong>'Select an object type'</strong>.</li>
+      <li>Select 'Experimental Step'.</li>
+      <li>Click on the <strong>Templates</strong> tab.</li>
+      <li>Select the template [Template name]</li>
+      <li>Leave the 'Merge current parents/children' option disabled</li>
+      <li>Click <strong>Accept</strong>.</li>
+      <li>Leave Code unchaged, enter the <strong>Name</strong> [Experimental Step Name].</li>
+      <li>Enter the <strong>Start date</strong> and the <strong>End date</strong> using the calendar. Entering a time is not required, but possible.</li>
+      <li>Scroll down to <strong>'Comments'</strong> and enter your BAM <strong>YOUR</strong> user name in lowercase letters and division number [for this tutorial example'ebamuser X.1']</li>
+      <li>Review the entries and click <strong>Save</strong>.</li>
+      </ol>
+  </div>
+
+    <h3>List of 'values' to reproduce the tutorial example</h3>
+
+    <p>
+      You will need to enter 'Collection name'; 'Template name' and 'Experimental Step Name' when registering individually each Experimental step for experimental steps 1 to 3.</strong>:
+    </p>
+
+      <ul>
+      <li>1. [collection name]='Treatment non-destructive'; [Template name]='Chemical Treatment'; [Experimental Step Name]='Chemical Treatment'</li>
+      <li>2. [collection name]='Parameter 1'; [Template name]='Macrostructure Characterization'; [Experimental Step Name]='Macrostructure Characterization'</li>
+      <li>3. [collection name]='Parameter 2'; [Template name]='Microstructure Characterization'; [Experimental Step Name]='Microstructure Characterization'</li>
+      </ul>
+
+
+  <h3>Exercise: Get an overview of the registered experimental steps.</h3>
+    <p>
+      To get an overview of the registered experimental steps, there are two options: You can open the respective collection from the left-hand menu.  Alternatively, 
+      you can  get an overview of the Project and diplay all Objects. Here is how to explore this feature:
+    </p>
+    <div class="placeholder">
+      Instructions for getting overview of attached datasets.
+      <ol>
+      <li>In the left-hand menu, navigate to the Project 'Material Synthesis' where you registered the objects.</li>
+      <li>Open the <strong>More</strong> drop-down menu and select <strong>Show Overview</strong> (if overview is not already displayed).</li>
+      <li>All experimental steps that you creaated are listed in the <strong>'Objects'</strong> section.</li>
+      <li>Scroll to the rights to the column (which indicates a property) named 'Experiment/Collection'. The path specifies the <strong>/Space/Project/Collection</strong> to which the experiment is assigned or mapped.</li>
+      <li> In the <strong>Registrator</strong> column, you will see your BAM user name.  Note that the system stores additional properties such as the <strong>Registration Date</strong> and the <strong>Modification Date</strong>. 
+        All property values will be useful for defining queries that help you to find the objects
+         or filter  the databse by a property and its value. You will learn about the search function later in this tutorial.</li>
+    </ol>
+    </div>
+
+    <figure>
+      <img src="images\eln-project-overview1.png" alt="Screenshot for Step 6">
+      <figcaption>Figure 31:Navigate to Project, open the 'More' menu and select 'Show Overview' .</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-project-overview2.png" alt="Screenshot for Step 6">
+      <figcaption>Figure 32: In the project overview, scroll to the right to explore all Properties (columns) of the objects.</figcaption>
+    </figure>
+      </div>
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You know now how to get an overview of a project and its objects.
+  </p>
+  </div>
+
+
+  </div>
+  <a class="back-to-top" href="#top">Back to top</a>
+ </section>
+
+
+ 
+   <section class="step" id="step-7">
+    <h2>Step 7: Upload Data</h2>
+
+    <p>
+      For the Data Store, it is recommended to attach data to experimental steps that describe how it was generated. In openBIS, data is uploaded as openBIS Datasets.
+openBIS is agnostic, this means, data can be of any type and format. Small files (up to several Gigabyte) can be uploaded via the web user interface. If you are uploading large
+ data files (on the Terabyte range), please contact the Data Store team first to ensure that the data upload is performed incrementally using a script and the Data Store performance remains stable.
+    </p>
+
+    <div class="placeholder">
+      Instructions for uploading data from a zip file.
+      <ol>
+      <li>In the left-hand menu, navigate to the Experimental Step for which you want to upload data [Experimental Step name='Parameter 1']  </li>
+      <li>Select Experimental Step [Name='Macrostructure Characterization']</li>
+      <li>Click on <strong>+Dataset</strong> tab</li>
+      <li>Select <strong>Data set Type </strong>='Raw Data' </li>
+      <li>Enter [<strong>Dataset name</strong>='Parameter 1 raw']</li>
+      <li>Enter <strong>Comments</strong>= 'Synthetic example images for demo purpose'</li>
+      <li><strong>Select files to upload</strong></li>
+      <li>Select zip file ('Parameter1_Marcoscopic.zip') and wait that green bar is displayed, indicating upload completion</li>
+      <li>Select <strong>Uncompress before import</strong> when uploading a Zip file</li>
+      <li>Review entries and <strong>Save</strong></li>
+    </ol>
+    </div>
+
+    <div class="warning">
+      <strong>Warning:</strong> The Data Store is a central storage for data, metadata, and their connections. As with any other software, 
+      openBIS can not open data in all formats. To work with the data uploaded to the Data Store, 
+      download it from the Data Store and upload the next version.  If you are working with a version control system such as GitHub, upload
+       the raw data to the Data Store and create experimental steps to document additional steps where the datasets change.
+       For example, data processing or data analysis. You can insert the link(s) to the relevant GitHub repository in the “Comment Log”
+        field or any other field in the respective experimental step, just make sure to use a consistent approach within your division. This makes it easier to find information.
+
+    </div>
+  
+    <figure>
+      <img src="images\eln-data-upload1.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 33: Select Collection, and Object to attach dataset.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-data-upload2.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 34: Click on '+Dataset' tab.</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-data-upload3.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 35: Enter Dataset values for ('Type, Name and Comments') upload the dataset file and wait that is uploaded.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-data-upload4.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 36: Review entries and 'Save'.</figcaption>
+    </figure>
+
+    <p><strong>Confirm data upload</strong>: In the left-hand menu, navigate to the collection ('Parameter1') and open the experimental step
+       ('Macrostructure Characterization') to which the data was uploaded
+    </p>
+    <figure>
+      <img src="images\eln-data-upload5.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 37: uploaded datasets are displayed in the Experimental step form. To see it, navigate to the relevant collection and open the Experimental step where the dataset was uploaded.</figcaption>
+    </figure>
+
+
+
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You have uploaded data from a zip file to your experimental step 'Macrostructure Characterization' located in the collection 'Parameter 1'.
+  </p>
+  </div>
+
+  <h3>Exercise: Uploading data to the ELN preview.</h3>
+    <p>
+      This section provides guidance for attaching a dataset and displaying it in the preview of an experimental step.
+    </p>
+    <div class="placeholder">
+      Instructions for attaching an image to the preview of the experimental step.
+      <ol>
+     <li>In the left-hand menu, navigate to the Experimental Step for which you want to upload data [Experimental Step name] = 'Parameter 1'</li>
+      <li>Select Experimental Step [name=Macrostructure Characterization]</li>
+      <li>Click on <strong>+Dataset</strong> tab</li>
+      <li>Select <strong>Data set Type </strong> = 'ELN Preview' </li>
+      <li>Enter <strong>Dataset name</strong> = 'Synthetic image1'</li>
+      <li>Enter <strong>Comments</strong>= 'This is an artificial example created for demonstration testing'</li>
+      <li>Click on <strong>Select files to upload</strong></li>
+      <li>Select image file ('Synthetic-image1.png') and wait that green bar is displayed, indicating upload completion</li>
+      <li>Review entries and <strong>Save</strong></li>
+    </ol>
+    </div>
+
+    <figure>
+      <img src="images\eln-data-upload1.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 38: Navigate to Collection and open Experimental step.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-data-upload2.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 39: Click '+Dataset'.</figcaption>
+    </figure>
+    <figure>
+      <img src="images\eln-data-elnpreview1.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 40: Enter Dataset values, upload image and 'Save'.</figcaption>
+    </figure>
+
+    <p><strong>Confirm data upload</strong>: In the left-hand menu, navigate to the collection ('Parameter1') and open the experimental step
+       ('Macrostructure Characterization') to which the data was uploaded.
+    </p>
+
+    <figure>
+      <img src="images\eln-data-elnpreview2.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 41: Uploaded datasets are also displayed in the Experimental step form. To see it, navigate to the relevant collection and open the Experimental step
+        where the image was uploaded.
+      </figcaption>
+    </figure>
+
+    <p>
+    <strong>CONGRATULATIONS!!</strong>, You have uploaded an image and display it in the preview of the experimental step.
+  </p>
+  </div>
+
+  <h3>Exercise: Uploading an attachment to e.g., describe the image previously uploaded.</h3>
+    <p>
+      This section provides guidance for uploading data of type attachment.
+    </p>
+    <div class="placeholder">
+      Instructions for attaching a README file to the experimental step.
+      <ol>
+     <li>In the left-hand menu, navigate to the Experimental Step for which you want to upload data Experimental Step [name]= 'Parameter 1'</li>
+      <li>Select Experimental Step [name]= 'Macrostructure Characterization'</li>
+      <li>Click on <strong>+Dataset</strong> tab</li>
+      <li>Select <strong>Data set Type </strong> = 'Attachment' </li>
+      <li>Enter <strong>Dataset name</strong> = 'README Synthetic image1'</li>
+      <li>Enter <strong>Comments</strong>= 'This is a README file to explain synthetic image1'</li>
+      <li>Click on <strong>Select files to upload</strong></li>
+      <li>Select README file ('README-Synthetic-image1.txt') and wait that green bar is displayed, indicating upload completion</li>
+      <li>Review entries and <strong>Save</strong></li>
+    </ol>
+    </div>
+
+    <figure>
+      <img src="images\eln-data-upload-eln-preview-README.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 42: All datasets are uploaded in the same way, the difference lies in the 'Data Set Type'. in this example, it is Attachment.</figcaption>
+    </figure>
+  
+    <p><strong>Confirm data upload</strong>: In the left-hand menu, navigate to the collection ('Parameter1') and open the experimental step
+       ('Macrostructure Characterization') to which the data was uploaded. As done for other examples.
+    </p>
+
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You have uploaded data of the type 'Attachment' to upload a README file that explains the 
+     previously uploaded image1.   
+  </p>
+
+  <div class="warning">
+      <strong>Warning:</strong> 
+      <ul>
+        <li>for the Data Store, you should aim to use data set types 'Raw data', 'attachment' or 'ELN Preview', other dataset types displayed currently from the drop-down menu
+          , may become deprecated from the Data Store.</li>
+        <li>uploaded datasets are not displayed in the project overview (Navigate to project/click 'More'/Select show project overview' as shown before). 
+          The dataset overview is only visible when you open the Experimental to which thease are uploaded.</li>
+  </div>
+
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="step" id="step-7">
+
+    <h3>General information: How to get an overview of datasets attached to an experimental step within the same collection.
+      This is not an exercise</h3>
+    <p>
+      To get the overview of datasets attached to an experimental step within the same collection, the datasets must be registered as objects
+       (To do this, an object type must also be defined for the corresponding dataset. Please contact the
+      Data Store team).
+      Follow the instructions below to display datasets from the collection list or from the hierarchy graph of the experimental step
+      with which they were created.
+    </p>
+    <ul>
+      <li>Once the experimental step has been registered in of a collection, open the collection ('Parameter 1') from the left-hand menu</li>
+      <li>Select <strong>+ Folder</strong></li>
+      <li>Enter folder <strong>Name</strong>= 'Datasets Parameter 1'</li>
+      <li>Click on <strong>Save</strong></li>
+      <li>Navigate to the Folder and open the <strong>More</strong> drop-down menu and select <strong>Hierarchy Graph</strong></li>
+      <li>In the next steps, every dataset will need to be registered as an object with a defined object type.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Warning:</strong> Before attemping this step, contact the Data Store Team. Datasets registed as objects, is only recomended if datasets require a large set of Metadata (object type)</strong> TEXT
+    </div>
+
+    <figure>
+      <img src="images\eln-datasets-overview1.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 43: [Explanation]</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-data-overview2.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 44: [Explanation]</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-data-overview3.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 45: [Explanation]</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-data-overview4.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 46: [Explanation]</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-data-overview5.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 47: [Explanation]</figcaption>
+    </figure>
+        <figure>
+      <img src="images\eln-data-overview6.png" alt="Screenshot for Step 7">
+      <figcaption>Figure 48: [Explanation]</figcaption>
+    </figure>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+
+  <section class="step" id="step-8">
+    <h2>Step 8: Filter and search</h2>
+    <p>
+      [Next instruction: register samples in inventory, register all experimental steps with templates, upload large datasets as ZIP files, add a note explaining how to upload large volumes of data, review inventory items registered ahead by DSSt, connect all related items, and warn users that editing one experimental step with templates may overwrite parent-child relationships.]
+    </p>
+    
+    <div class="placeholder">
+      Instructions for uploading data
+      <ol>
+      <li></li>
+      </ol>
+    Values for Tutorial Example: you can copy paste following values
+    <p>Dataset file name = ''</p>
+    </div>
+
+
+    <h3>General information</h3>
+    <p>
+      This section provides guidance for uploading data.
+    </p>
+    <ul>
+      <li>The </li>
+      <li>The </li>
+      <li></li>
+    </ul>
+
+    <div class="warning">
+      <strong>Warning:</strong> The Data Store is an archive for datasets together with Metadata and connections. It is not possible to actively work with data uploaded in the Data Store. To do this download your files and work in the software or environment required 
+      to work with the data.
+    </div>
+
+    <figure>
+      <img src="images/[ADD-IMAGE].png" alt="Screenshot for Step 15">
+      <figcaption>Figure XX: [Explanation]</figcaption>
+    </figure>
+
+    <p>
+      <strong>CONGRATULATIONS!!</strong>, you have.
+    </p>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+ 
+
+  <section id="result">
+    <h2>Result</h2>
+    <p>
+      After completing these steps, you should be able to structure a research project in the Lab Notebook, document experimental steps, and upload datasets in a way that supports traceability and reuse.
+    </p>
+  </section>
+</body>
+</html>
