@@ -279,13 +279,13 @@
       Starting with openBIS 20.10.12, the core data model was expanded to support more flexible representations of complex research projects.
     </p>
     <p>
-      In this example, all experimental steps are represented as <strong>Objects</strong>. The project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
+      In openBIS everything is represented as <strong>Objects</strong>. In this tutorial example, the project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
        which contains the experimental steps done to generate the research data / <strong>Datasets</strong>.
     </p>
     <figure>
       <img src="images\data-model.png" alt="Diagram showing experimental steps and datasets organized in the ELN">
       <figcaption>
-        Figure 2: All experimental steps are represented as objects.  These are organized in the collection named 'Experimental Steps', within a project named 'Material Synthesis' in the ELN 'FB X-1_USERname_SPACE'.
+        Figure 2: All experimental steps are represented as objects.  These are organized in several collections within the openBIS-project named 'Material Synthesis' in the ELN.
       </figcaption>
     </figure>
   </section>
@@ -294,8 +294,8 @@
   <section id="lab-notebook">
     <h2>Lab Notebook</h2>
     <p>
-      In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step.
-      All steps should be connected. To do this, the steps are first registered in openBIS, and then parent-child relationships between them are defined. 
+      In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step
+      and all steps should be connected. To do this, the steps are first registered in openBIS, and then parent-child relationships between them are defined. 
       Experimental steps should also be linked to all elements used to carry them out, such as chemicals, instruments, and software. Datasets are attached to the corresponding experimental steps.
     </p>
     </section>
@@ -322,9 +322,9 @@
     <figure>
       <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
       <figcaption>
-        Figure 3: The tutorial example is a research project named “Material Synthesis”. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser).
-         The project comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
-          steps and datasets (not visible in the left-hand menu).
+        Figure 3: The tutorial example is a research project named “Material Synthesis”. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
+         comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
+          steps to which datasets (not visible in the left-hand menu) are attached.
       </figcaption>
     </figure>
   </section>
@@ -332,7 +332,7 @@
   <section class="step" id="step-1">
     <h2>Step 1: Register a Project</h2>
     <p>
-      Create a project in the Lab Notebook to represent the research project <strong>Material Synthesis</strong>.
+      Create an openBIS-project in the Lab Notebook to represent the research project <strong>'Material Synthesis'</strong>.
     </p>
 
     <div class="placeholder">
@@ -380,13 +380,12 @@
     <figure>
       <img src="images/step1-project-ident-info.png" alt="More menu showing the Show Identification Info option">
       <figcaption>
-        Figure 5: The <strong>More</strong> drop-down menu displayed applies to the selected project in the left-hand menu. More drop-down menu displays "Show Identification Info" which includes
-         the <strong> Code(*)</strong></figcaption>
+        Figure 5: The <strong>More</strong> drop-down menu displays "Show Identification Info", including the <strong> Code(*)</strong> field.</figcaption>
     </figure>
 
     <figure>
       <img src="images/step1-project-save.png" alt="Project form with save option">
-      <figcaption>Figure 6: Review entries and <strong>Save</strong> the Project.</figcaption>
+      <figcaption>Figure 6: Enter description (Mandatory for Data Store), review entries and <strong>Save</strong>.</figcaption>
     </figure>
 
     <div class="warning">
@@ -394,13 +393,14 @@
        the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. <!--  Project can be deleted if empty, which means all Collection need to be deleted first.   -->
     </div>
 
-     <p>
-      <strong>CONGRATULATIONS!!</strong>, you have created your first openBIS project.
-    </p>
     <figure>
       <img src="images/step1-project-ident-info2.png" alt="Saved project shown in the Home Space menu">
       <figcaption>Figure 7: The saved project is displayed in the left-hand menu under Home Space.</figcaption>
     </figure>
+
+    <p>
+      <strong>CONGRATULATIONS!!</strong>, you have created your first openBIS project.
+    </p>
 
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
