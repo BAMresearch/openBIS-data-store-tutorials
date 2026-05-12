@@ -449,22 +449,28 @@
     </figure>
     <figure>
       <img src="images/step2.collection3.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 10: Leave the auto generated <sttrong>Code(*)</sttrong> unmodified and enter meaningful <strong>Name</strong>,
+      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> unmodified and enter a for your division, meaningful <strong>Name</strong>,
          leave empty <strong>Default object type</strong> and for <strong>Default collection view</strong> select 'List view'</figcaption>
     </figure>
-
+    
+    <div class="warning">
+      <strong>Warning:</strong> Collections are simply a group of Objects of one or more types. However, it may be more intuitive to organize Objects of the same type within 
+      a collection. You will find that objects can also be registered outside of collections (in openBIS folders). However, it is recommended that you organize objects into collections and, 
+       explore the 'FILTERS' tab displayed when selecting a collection. 
+    </div>
     <p>
       <strong>CONGRATULATIONS!!</strong>,you have created your first collection.
     </p>
 
     <p>
-      <strong>Now you can create additional collections that you'll need later to complete the exercises of this tutorial</strong>
+      <strong>Now you can create additional collections that you will need later to complete the exercises of this tutorial</strong>
     </p>
 
      <div class="placeholder">
       Instructions for creating additional collections:
       <ol>
-      <li>Follow the directions above (1 to 8 ) and create the following collections separately. You can copy-paste the collection names shown below.</li>
+      <li>Follow the instructions under 'Step 2' (1 to 8 ) and register each the following four collections individually. When doing so, use the collection names
+         listed below.</li>
       </ol>
     Values for Tutorial Example: you can copy paste following values
     <p>Collection name = 'Treatment non-destructive'</p>
@@ -475,15 +481,15 @@
 
     <figure>
       <img src="images\step2-collection-overview.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 11: Once successfully saved, registered collections are displayed in the left-hand menu.</figcaption>
+      <figcaption>Figure 11: Once successfully saved, registered collections are displayed under the correspondent Project 'Material Synthesis'.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 12: To change sorting of collections in the left-hand menu, localize the mouse on the project 'Material Synthesis' and select <strong>'Change sorting'</strong>.</figcaption>
+      <figcaption>Figure 12: To change the order of displayed collections, localize the mouse over the 'Material Synthesis' project and select <strong>'Change sorting'</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 13: Select sorting by e.g., 'Registration Date Ascending'.</figcaption>
+      <figcaption>Figure 13: Select the sort order, such as 'Registration Date Ascending'.</figcaption>
     </figure>
        <p>
         <strong>CONGRATULATIONS!!</strong>, you have created a total of five collections to organize logically experimental steps.
@@ -496,22 +502,23 @@
   <section class="step" id="step-3">
     <h2>Step 3: Register Experimental steps</h2>
     <p>
-      Any activity (Experiments, measurements, simulations, etc.) that generate research data can be represented in openBIS as Experimental Steps. 
-      This generic object type includes properties ('start date, Experimental goals, Description' etc.)
-      to uniquely defined an Experimental Step. Custom properties can be set by users when defining Object types and controlled vocabularies ('openBIS Masterdata'). 
-      In this tutorial, we will use the pre-defined metadata for the generic object type 'Experimental Step' to understand the representation of experimental steps in the ELN.
+      Any research activity that generates data- such as experiments, measurements, simulations or analyses- can be represented in openBIS as an Experimental Step. 
+      This generic object type includes standard metadata field (properties, for example:'start date, Experimental goals and Description') that uniquely defined each Experimental Step. 
+      Users can create custom properties and controlled vocabularies through the openBIS Masterdata (Meta(meta)data) definitions. 
+      In this tutorial, we will use the predefined metadata of the generic object type 'Experimental Step' to demonstrate how experimental activities are 
+      represented and documented in the ELN.
     </p>
     <div class="placeholder">
       Instructions for registering experimental steps:
       <ol>
       <li>In the left-hand menu, navigate to the collection you want to use [collection name='Synthesis'].</li>
-      <li>Open the drop-down menu <strong>More</strong></li> and select <strong>New Object</strong>.</li>
+      <li>Open the <strong>More</strong>drop-down menu and select <strong>New Object</strong>.</li>
       <li>Click on <strong>'Select an object type'</strong>.</li>
-      <li>Start typing the name of the object type. e.g., 'exp' or scroll down to select 'Experimental Step'.</li>
-      <li>Fill out in the <strong>'New Experimental Step'</strong> form, the properties displayed in the section <strong>'Identification Info'</strong>.</li>
-      <li>Fill out the <strong>[Name='Material Demo 001']</strong></li>
-      <li>Fill out all other relevant Properties</li>   
-      <li>Review the entries and click <strong>Save</strong>.</li>
+      <li>Start typing the object type name. (for example, 'exp' or scroll to the list and select 'Experimental Step'.</li>
+      <li>In the <strong>'New Experimental Step'</strong> form, fill in the fields displayed in the <strong>'Identification Info'</strong> section.</li>
+      <li>Enter the <strong>[Name='Material Demo 001']</strong></li>
+      <li>Fill in any mandatory and relevant Properties</li>   
+      <li>Review all entries and click <strong>Save</strong>.</li>
     </ol>
   </div>
 
@@ -520,8 +527,8 @@
       This section provides guidance for completing the 'New Experimental Step' form.
     </p>
     <ul>
-      <li>The <strong>Code</strong> is mandatory (*) and is automatically generated by the system. It is not necessary to change it; however, if you do decide to do so, you must ensure consistency within your division and the Data Store.</li>
-      <li>The <strong>Name</strong> should be meaningful to you and your colleagues, as you will see it in the collections and search objects by Name.</li>
+      <li>The <strong>Code</strong> is mandatory (*) and is automatically generated by the system. It is not necessary to change it.  However, if you do decide to do so, you must ensure consistency within your division and the Data Store.</li>
+      <li>The <strong>Name</strong> of experimental steps should be meaningful to you and your colleagues, as you will see it in the collections and search objects by Name.</li>
       <li>The relevant information should be entered into the remaining fields/properties. Only properties marked with an asterisk (*) are mandatory and must be filled in so that the object can be saved.</li>
       <li>Experimental steps can be edited after saving and will retain the same Code.</li>
     </ul>
@@ -535,7 +542,7 @@
 
     <figure>
       <img src="images\step3-object1.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 14: Select the project (“Material Synthesis”) to open the 'More' menu and select 'New Object'.</figcaption>
+      <figcaption>Figure 14: Select the collection "Synthesis” to open the 'More' menu and select 'New Object'.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object2.png" alt="Screenshot for Step 3">
@@ -543,7 +550,7 @@
     </figure>
     <figure>
       <img src="images\step3-object3.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 16: Leave Code(*) unmodified, fill out [Name='Material Demo 001'] and if any, other mandatory (*) properties and Save
+      <figcaption>Figure 16: Leave Code(*) unmodified, enter [Name='Material Demo 001'] and if any, other mandatory (*) properties and Save
          the New Experimental Step</figcaption>
     </figure>
 
