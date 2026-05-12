@@ -402,7 +402,7 @@
       <strong>CONGRATULATIONS!!</strong>, you have created your first openBIS project.
     </p>
 
-    <h3>General information (This is nt an exercise)</h3>
+    <h3>General information (This is not an exercise)</h3>
     <p>Access management in openBIS is only possible at the level of "Space" and "Project" levels. "Spaces" are created by the Data Store team upon request, only when necessary. It is recommended to organize
        data on which you are collaborating with other colleagues or BAM divisions (e.g., service data) in openBIS project folders and manage access at this level. The permissions assigned to the project apply to underlying contents. Access can be modified for 
       an user or a group by assigning roles such as Observer, User or Admin to the project folder.  Detailed information on the correspondent rights can be found in the Data Store wiki. How to manage access is displayed below.</p>
@@ -514,7 +514,7 @@
       <li>In the left-hand menu, navigate to the collection you want to use [collection name='Synthesis'].</li>
       <li>Open the <strong>More</strong>drop-down menu and select <strong>New Object</strong>.</li>
       <li>Click on <strong>'Select an object type'</strong>.</li>
-      <li>Start typing the object type name. (for example, 'exp' or scroll to the list and select 'Experimental Step'.</li>
+      <li>Start typing the object type name. (for example, 'exp' or scroll to the list and select 'Experimental Step').</li>
       <li>In the <strong>'New Experimental Step'</strong> form, fill in the fields displayed in the <strong>'Identification Info'</strong> section.</li>
       <li>Enter the <strong>[Name='Material Demo 001']</strong></li>
       <li>Fill in any mandatory and relevant Properties</li>   
@@ -565,26 +565,27 @@
 <section class="step" id="step-4">
     <h2>Step 4: Register Experimental steps using Templates</h2>
     <p>
-      Experimental steps may require extensive information to describe the generated datasets. To standardize the information for experimental steps and faciliate
-      the subsequent registration of similar experimental steps, templates can be created and saved for reused within the division. This is useful when Experimental 
-      steps are repetitive, some conditions remain or require minor changes. 
+      Experimental steps may require extensive metadata to fully describe the generated datasets. To standardize this information and simplify
+      the registration of similar experimental steps, reusable templates can be created and shared within a division. 
+      Templates are particurly useful for repetitive workflows in which experimental conditions remain the same or require minor modifications.
+      They help ensure consistency, reduce manual data entry, and improve the efficiency of experimental documentation. 
       
     </p>
   <div class="placeholder">
       Instructions for registering Experimental Steps using Templates:
       <ol>
       <li>In the left-hand menu, navigate to the collection you want to use [collection name = 'Synthesis'].</li>
-      <li>Open the drop-down menu <strong>More</strong></li> and select <strong>New Object</strong>.</li>
-      <li>Click on <strong>'Select an object type'</strong>.</li>
+      <li>Open the <strong>More</strong>drop-down menu and select <strong>New Object</strong>.</li>
+      <li>Click <strong>'Select an object type'</strong>.</li>
       <li>Select 'Experimental Step'.</li>
       <li>Click on the <strong>Templates</strong> tab.</li>
-      <li>Select the template [Template name = 'Material Synthesis']</li>
-      <li>Leave the 'Merge current parents/children' option disabled</li>
+      <li>Select the template ['Material Synthesis']</li>
+      <li>Leave the option 'Merge current parents/children' disabled</li>
       <li>Click <strong>Accept</strong>.</li>
-      <li>Leave Code unchaged, enter the <strong>Name</strong> [Name= 'Material Demo1'].</li>
-      <li>Enter the <strong>Start date</strong> and the <strong>End date</strong> using the calendar. Entering a time is not required, but possible.</li>
-      <li>Scroll down to <strong>'Comments'</strong> and enter a comment</li>
-      <li>Review the entries and click <strong>Save</strong>.</li>
+      <li>Leave Code unchaged and enter a <strong>name</strong>=['Material Demo1'] for the experimental step.</li>
+      <li>Enter the <strong>Start date</strong> and <strong>End date</strong> using the calendar selector. Entering a time is optional.</li>
+      <li>Scroll down to <strong>'Comments'</strong> setion and enter a comment</li>
+      <li>Review all entries and click <strong>Save</strong>.</li>
       </ol>
   </div>
 
@@ -593,19 +594,20 @@
       This section provides guidance for the use of Templates.
     </p>
     <ul>
-      <li>Templates must first be created for an object type, only then, you can select from the list of available templates for your division.
-         Since templates are part of the ELN settings that all members of the group/division can see. Templates need to be
-          created by a colleague in your division with 'Group Admin rights'; this role is typically assigned to Data Store Stewards (DSSt).
-            If you are unsure who to contact, ask your division lead or contact the Data Store team.</li>
+      <li>Templates must first be created for a specific object type before they become available for selection within your division.
+         Because templates are part of the ELN settings and are visible to all members of a group/division or division, they can only be
+         created by users with 'Group Admin' rights. This role is typically assigned to Data Store Stewards (DSSt).
+            If you are unsure who is the Data Store steward in your division, contact your division lead or rach out to the Data Store team.</li>
     </ul>
 
     <div class="warning">
       <strong>Warning:</strong>
     <ul>
-      <li>Once you register an Experimental step or any other object, it is not possible go back and select a template to edit it.</li>
-      <li>If the template you are using contains predefined (included none) parent-child relationships and you have already defined some parent-child relationships in your object that you wish to retain, you should enable
-          the “Merge current parent-child relationships” option. This is needed, for example, when you register an object based on another object, which automatically creates
-          a parent-child relationship. See Data Store Wiki article 'Register sequential Experimental Steps'</li>
+      <li>Once an Experimental step (or any other object) has been registered, a template cannot be applied retrospectively to modify it. Templates can only
+        be selected during the object creation process.</li>
+      <li>If the template you are using contains predefined (included none) parent-child relationships and your object already includes parent-child relationships that you want to preserve, 
+        you should enable the <strong>Merge current parent-child relationships</strong> option.  This is particularly important when registering an object based on another existing object, 
+        as this process may automatically create parent-child relationships.  For more information, see the Data Store Wiki article: 'Register Sequential Experimental Steps'.</li>
     </ul>
     </div>
 
@@ -619,11 +621,11 @@
     </figure>
     <figure>
       <img src="images\step4-object-template2.png"alt="Screenshot for Step 4">
-      <figcaption>Figure 19: Click on the Template tab and select a template from the list available to your group.</figcaption>
+      <figcaption>Figure 19: Click on the Template tab and select the template 'Material Synthesis'.</figcaption>
     </figure>
       <figure>
       <img src="images\step4-object-template3.png"alt="Screenshot for Step 4">
-      <figcaption>Figure 20: Enter Name and any other mandatory (*) values, enter a comment.</figcaption>
+      <figcaption>Figure 20: Enter Name of the experimental step and any other mandatory (*) values, enter a comment.</figcaption>
     </figure>
     <figure>
       <img src="images\step4-object-template4.png" alt="Screenshot for Step 4">
@@ -631,7 +633,7 @@
     </figure>
     </figure>
     <img src="images\step4-object-template5.png" alt="Screenshot for Step 4">
-      <figcaption>Figure 22: Registered Experimental steps are shown within the collection. Scroll to the right to explore the information and what is displayed in the icons for the 'Material '.</figcaption>
+      <figcaption>Figure 22: Registered Experimental steps are displayed within the selected collection. Scroll horizontally to explore the metadata fields and view the icons for 'Material Demo1'.</figcaption>
     <figure>
 
     <div class="warning">
