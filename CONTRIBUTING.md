@@ -53,8 +53,8 @@ openbis-tutorials/
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/BAMresearch/openBIS-data-store-tutorials-authors.git
-cd openBIS-data-store-tutorials-authors
+git clone https://github.com/BAMresearch/openBIS-data-store-tutorials.git
+cd openBIS-data-store-tutorials
 ```
 
 ---
