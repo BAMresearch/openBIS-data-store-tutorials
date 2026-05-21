@@ -580,7 +580,7 @@
       <li>Select 'Experimental Step'.</li>
       <li>Click on the <strong>Templates</strong> tab.</li>
       <li>Select the template ['Material Synthesis']</li>
-      <li>Leave the option 'Merge current parents/children' disabled</li>
+      <li>Disabled the option 'Merge current parents/children'</li>
       <li>Click <strong>Accept</strong>.</li>
       <li>Leave Code unchaged and enter a <strong>name</strong>=['Material Synthesis'] for the experimental step.</li>
       <li>Enter the <strong>Start date</strong> and <strong>End date</strong> using the calendar selector. Entering a time is optional.</li>
@@ -740,7 +740,7 @@
     <ul>
       When deleting an object, you also have the option to delete connected objects and attached datasets. If you only want to remove the selected object, 
       leave the option 'Delete also all descendant object(s) including their datasets' unckecked. Descendant objects are objects linked to the object you want to delete.
-      These relatioships may include parent objects (originated earlier in the workflow) or child objects (originated later in the workflow). A later tutorial will provide a more detailed
+      These relationships may include parent objects (originated earlier in the workflow) or child objects (originated later in the workflow). A later tutorial will provide a more detailed
       explanation of parent-child relationships in openBIS.
     </div>
 
@@ -788,7 +788,7 @@
       <li>Select <strong>'Experimental Step'</strong>.</li>
       <li>Open the <strong>Templates</strong> tab.</li>
       <li>Select the template specified under [<strong>Template name</strong>]</li>
-      <li>Ensure that 'Merge current parents/children' option remains disabled</li>
+      <li>Disable the 'Merge current parents/children' option</li>
       <li>Click <strong>Accept</strong>.</li>
       <li>Leave the <strong>Code</strong> field unchanged and enter the value specified under [Experimental Step Name] in the <strong>Name</strong> field.</li>
       <li>Enter the <strong>Start date</strong> and the <strong>End date</strong> using the calendar tool. Entering a time is optional.</li>
@@ -844,8 +844,8 @@
       <li>In the left-hand menu, navigate to the project <strong>Material Synthesis</strong>, where you previously registered the objects.</li>
       <li>Open the <strong>More</strong> drop-down menu and select <strong>Show Overview</strong> (if overview is not already displayed).</li>
       <li>In the <strong>'Objects'</strong> section, you will see a list of all  Experimental Steps you created.</li>
-      <li>Scroll horizontally to the column  named <strong>Experiment/Collection</strong>. This column displays the full path <strong>/Space/Project/Collection</strong> 
-        indicating where each experiment is assigned or mapped.</li>
+      <li>Scroll horizontally (for example using the laptop trackpad) to the column  named <strong>Experiment/Collection</strong>. This column displays the full path <strong>/Space/Project/Collection</strong> 
+        indicating where each experiment is assigned and mapped in openBIS.</li>
       <li> In the <strong>Registrator</strong> column, you will see your BAM username.  Note that additional properties such as the <strong>Registration Date</strong> and the <strong>Modification Date</strong>
         can be used to define queries, search for objects, or filter the database based on property values. You will learn more about the search and filering fuction later in this tutorial.</li>
     </ol>
@@ -876,7 +876,7 @@
 
     <p>
       For the Data Store, it is recommended to attach datasets directly to experimental steps that describe how data was
-        generated. In openBIS, uploaded files are stored as Datasets.
+        generated. In openBIS, uploaded files are stored as datasets.
        openBIS is format-agnostic, meaning that datasets can contain files of any type or format. Small files (up to several gigabytes) can be uploaded directly through the web interface.
         For very large datasets (terabyte scale), please contact the Data Store team before uploading. Large data uploads should be performed incrementally using scripts to ensure stable Data Store performance.
     </p>
@@ -1085,22 +1085,17 @@
       <li>Click <strong>Advanced Search</strong></li>
       <li>Select [<strong>Search For</strong> = Dataset] </li>
       <li>Select the <strong>Using</strong> [operator = AND]></li>
-
-      <li>Click the 'search' icon (looks like a magnifying glass) to start the search</li>
-
       <li>Set the search  criterion: Select [<strong>Field Type</strong> = All]</li>
       <li>Enter the [<strong>Field Vaue</strong> = synthetic] </li>
       <li>Click on 'search' icon to see results</li>
-      <li>To add query criteria, click on <strong>'+'</strong> icon</li>
       <li>Select [<strong>Field Type</strong> = Property] </li>
       <li>Select [<strong>Field Name</strong> = Modification Date]</li>
       <li>Select [<strong>Field Value</strong> = 2026-04-17]</li>
-      <li>Click on 'search' icon to see results</li>
       <li>To add query criteria, click on <strong>'+'</strong> icon</li>
       <li>Select [<strong>Field Type</strong> = Property] </li>
       <li>Select [<strong>Field Name</strong> = Registrator]</li>
       <li>Select [<strong>Comparator Operator</strong> = thatEqualsUserId]
-      <li>Select [<strong>Field Value</strong> = Elena BAMuser]</li>
+      <li>Select [<strong>Field Value</strong> = your "first last name" for example Elena Mueller]</li>
       <li>Click on 'search' icon to run the query</li> to display results.
       <li>To save the query, click on <strong>save</strong></li>
       <li>write [query name = Datasets-synthetic] and click <strong>Save</strong></li>
