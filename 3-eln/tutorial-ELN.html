@@ -256,7 +256,7 @@
     <h2>Key concepts</h2>
     <h3>Research workflow</h3>
     <p>
-      Before uploading data, document in the Lab Notebook (ELN) the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical structure of the research project.
+      Before uploading data, document in the Lab Notebook the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical structure of the research project.
     </p>
     <p>
       In this workflow, the experimental steps are represented as the “things you do” (yellow boxes), while the research data is represented as datasets (red boxes) attached to experimental steps.
@@ -272,20 +272,20 @@
     <h3>openBIS and Data Store core Data Model</h3>
     <p>
       This tutorial uses the classic openBIS data model, which consists of five hierarchically structured levels: <strong>Space / Project / Collection / Object / Dataset</strong>. This helps explain the core logic of openBIS data model and demonstrates
-       how objects, which are uniquely identified as entities, are connected to one another through parent-child relationships. The core openBIS data model is applied to three compartments of the Data Store (BAM Inventory, FB Inventory and ELN).
+       how objects, which are uniquely identified as entities, are connected to one another through parent-child relationships. The core openBIS data model is applied to three compartments of the Data Store (BAM Inventory, FB Inventory and Lab Notebook).
        In this tutorial, you will work with the Electronic Laboratory Notebook (ELN).
     </p>
     <p>
       Starting with openBIS 20.10.12, the core data model was expanded to support more flexible representations of complex research projects.
     </p>
     <p>
-      In openBIS everything is represented as <strong>Objects</strong>. In this tutorial example, the project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
+      In this tutorial example, the project named 'Material Synthesis' comprises five <strong>collections</strong> (Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis),
        which contains the experimental steps done to generate the research data / <strong>Datasets</strong>.
     </p>
     <figure>
       <img src="images\data-model.png" alt="Diagram showing experimental steps and datasets organized in the ELN">
       <figcaption>
-        Figure 2: All experimental steps are represented as objects.  These are organized in several collections within the openBIS-project named 'Material Synthesis' in the ELN.
+        Figure 2: All experimental steps are represented as objects (blue boxes). These are organized in several collections (yellow boxes) within the openBIS-project (green boxes) named Material Synthesis in the Lab Notebook.
       </figcaption>
     </figure>
   </section>
@@ -294,12 +294,10 @@
   <section id="lab-notebook">
     <h2>Lab Notebook</h2>
     <p>
-      In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step
-      and all steps should be connected. To do this, the steps are first registered in openBIS, and then parent-child relationships between them are defined. 
-      Experimental steps should also be linked to all elements used to carry them out, such as chemicals, instruments, and software. Datasets are attached to the corresponding experimental steps.
+      In the Lab Notebook section, each user has a personal <strong>Space</strong> for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities and important aspects can be represented as an experimental step, which is seen in this tutorial. Consequential activities should be linked one to another. For this, the experimental steps must be first registered, and then linking is achieved by defining parent-child relationships between them. 
+      Experimental steps should also be linked to all items used to carry them out, such as chemicals, instruments, and software.  Research data as product of each experimental steps should be saved as Dataset. 
     </p>
-    </section>
-
+  </section>
 
   <section id="exercise-overview">
     <h2>Welcome to the Lab Notebook - Exercises section</h2>
@@ -309,20 +307,20 @@
     <strong>This tutorial will guide you through following Steps:</strong>
     <ul>
       <li>Step 1: Register a Project.</li>
-      <li>Step 2: Register a Collection of experimental steps.</li>
-      <li>Step 3: Register Experimental steps.</li>
-      <li>Step 4: Register Experimental steps using Templates.</li>
+      <li>Step 2: Register a Collection.</li>
+      <li>Step 3: Register experimental steps.</li>
+      <li>Step 4: Register experimental steps using Templates.</li>
       <li>Step 5: Edit Collections of Objects.</li>
-      <li>Step 6: Register additional Experimental steps using Templates.</li>
-      <li>Step 7: Upload Data.</li>
-      <li>Step 8: Filter and Search.</li>
+      <li>Step 6: Register additional experimental steps using Templates.</li>
+      <li>Step 7: Upload data.</li>
+      <li>Step 8: Filter and Search functions.</li>
     </ul>
     <p>
 
     <figure>
       <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
       <figcaption>
-        Figure 3: The tutorial example is a research project named “Material Synthesis”. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
+        Figure 3: The tutorial example is a research project named Material Synthesis. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser) and
          comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
           steps to which datasets (not visible in the left-hand menu) are attached.
       </figcaption>
@@ -332,16 +330,19 @@
   <section class="step" id="step-1">
     <h2>Step 1: Register a Project</h2>
     <p>
-      Create an openBIS-project in the Lab Notebook to represent the research project <strong>'Material Synthesis'</strong>.
+      Create an openBIS project in the Lab Notebook to represent the research project <strong>Material Synthesis</strong>.
     </p>
 
     <div class="placeholder">
-    Instructions for registering a Project:
+    Registering a project:
     <ol>
       <li>Click the upper <strong>LAB NOTEBOOK</strong> tab.</li>
       <li>Navigate to the Lab Notebook in the left-hand menu and open the drop-down menu to select <strong>Home Space</strong>.</li>
       <li>Click <strong>+ Project</strong> to open the project form.</li>
       <li>Fill out <strong>Code</strong> and <strong>Description</strong>.</li>
+      <p><strong>Code</strong>: MATERIAL_SYNTHESIS</p>
+      <p><strong>Description</strong>: In this example, the Material Synthesis research project is represented as an openBIS project to manage access for staff actively involved in the project.
+      The Material Synthesis project focuses on the synthesis and characterization of a material following non-destructive treatment.</p>
       <li>Review the entries and click <strong>Save</strong>.</li>
     </ol>
     </div>
@@ -349,7 +350,7 @@
     <figure>
       <img src="images/step1-project.png" alt="Lab Notebook interface showing how to start a new project">
       <figcaption>
-        Figure 4: The upper tab <strong>LAB NOTEBOOK</strong> displays the Lab Notebook drop-down menu in the left-hand menu. Selecting Home Space opens the middle menu tabs.
+        Figure 4: The upper <strong>LAB NOTEBOOK</strong> tab displays the Lab Notebook drop-down menu in the left-hand menu.
       </figcaption>
     </figure>
 
@@ -362,7 +363,6 @@
       <li>Allowed characters: uppercase letters A-Z, digits 0-9, underscore (<code>_</code>), hyphen (<code>-</code>), and dot (<code>.</code>).</li>
       <li>Separate words with underscores.</li>
       <li>Codes should be meaningful, in English, and between 3 and 30 characters.</li>
-      <li>A code cannot be modified or reused.</li>
     </ul>
 
     <strong>Description requirements</strong>
@@ -374,23 +374,22 @@
     </ul>
 
     <div class="warning">
-      <strong>Warning:</strong> If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
+      <strong>Warning:</strong> If the code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
     </div>
 
     <figure>
       <img src="images/step1-project-ident-info.png" alt="More menu showing the Show Identification Info option">
       <figcaption>
-        Figure 5: The <strong>More</strong> drop-down menu displays "Show Identification Info", including the <strong> Code(*)</strong> field.</figcaption>
+        Figure 5: The <strong>More</strong> drop-down menu displays "Show Identification Info", where the <strong> Code(*)</strong> field could be found.</figcaption>
     </figure>
 
     <figure>
       <img src="images/step1-project-save.png" alt="Project form with save option">
-      <figcaption>Figure 6: Enter description (Mandatory for Data Store), review entries and <strong>Save</strong>.</figcaption>
+      <figcaption>Figure 6: Enter description (mandatory for Data Store), review entries and <strong>Save</strong>.</figcaption>
     </figure>
 
     <div class="warning">
-      <strong>Warning:</strong> Once saved, the project code cannot be changed or reused within the same Space.<!--  in the instance  --> To remove the project, select
-       the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. <!--  Project can be deleted if empty, which means all Collection need to be deleted first.   -->
+      <strong>Warning:</strong> Once saved, the project code cannot be changed or reused within the same space. <!--  Project can be deleted if empty, which means all Collection need to be deleted first.   -->
     </div>
 
     <figure>
@@ -399,20 +398,22 @@
     </figure>
 
     <p>
-      <strong>CONGRATULATIONS!!</strong>, you have created your first openBIS project.
-    </p>
+      <strong> CONGRATULATIONS!</strong> You have created your first openBIS project.</p>
+      <p>To remove the project, select the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>.</p>
 
     <h3>General information (This is not an exercise)</h3>
-    <p>Access management in openBIS is only possible at the level of "Space" and "Project" levels. "Spaces" are created by the Data Store team upon request, only when necessary. It is recommended to organize
-       data on which you are collaborating with other colleagues or BAM divisions (e.g., service data) in openBIS project folders and manage access at this level. The permissions assigned to the project apply to underlying contents. Access can be modified for 
-      an user or a group by assigning roles such as Observer, User or Admin to the project folder.  Detailed information on the correspondent rights can be found in the Data Store wiki. How to manage access is displayed below.</p>
+    <p>Access management in openBIS is possible at the level of space and project levels. Spaces are created by the Data Store team upon request, when necessary. It is recommended to organize
+      data on which you are collaborating with other colleagues or BAM divisions (e.g., research data) in openBIS projects and manage access at this level. The permissions assigned at the project level apply to underlying contents (collections, objects, and datasets). Different access rights can be given to 
+      an user or a group by assigning roles such as Observer, User or Admin. Detailed information about rights and roles can be found in the Data Store wiki. How to manage access is displayed below.</p>
 
     <strong>Access management at the level of Project</strong>
     <ul>
       <li>Select project in the left-hand menu.</li>
       <li>Open the <strong>More</strong> drop-down menu.</li>
-      <li>Select <strong>manage access</strong>.</li>
-      <li>Assign <strong>Role</strong> and define to <strong>grant to</strong> a Group (Division number) or User (BAM user name, all with non-capitalized letters).</li>
+      <li>Select <strong>Manage access</strong>.</li>
+      <li>Assign <strong>Role</strong> (Admin, User, or Observer in descending order of rights).
+      <li>define <strong>grant to</strong> a group (division number) or user (BAM user name, non-capitalized).</li>
+      <li>Click <strong>Grant access</strong>.</li>
     </ul>
 
 
@@ -420,79 +421,66 @@
   </section>
 
   <section class="step" id="step-2">
-    <h2>Step 2: Register Collections of Experimental steps</h2>
+    <h2>Step 2: Register Collections</h2>
     <p>
-      A project can contain several collections to organize experimental steps, measurements, and other activities that generate research data. 
-      Collections are one way to logically structure experimental work.
+      A project can contain several collections to organize objects such as experimental steps, measurements, and other activities that generate research data. 
+      Collections are one way to structure experimental workflow.
     </p>
     <div class="placeholder">
-      Instructions for creating a collection:
+      Registering a collection:
       <ol>
-      <li>Navigate to the project you created in the left-hand menu.</li>
+      <li>Click on the project you created in the left-hand menu.</li>
       <li>Click <strong>+ Other</strong>.</li>
-      <li>Select 'Collection' from the drop-down menu.</li>
+      <li>Select Collection from the drop-down menu by beginning typing in the field.</li>
       <li>Leave autogenerated <strong>Code(*)</strong> unmodified.</li>
-      <li>Enter a meaningful <strong>Name</strong>. In this tutorial example [Name='Synthesis'].</li>
-      <li>Leave empty <strong>Default object type</strong>.</li>
-      <li>Select 'List view' in <strong>Default collection view</strong>.</li>
+      <li>Enter <strong>Name</strong>.</li>
+      <strong>Name</strong>: Synthesis
+      <li>Leave <strong>Default object type</strong>empty.</li>
+      <li>Select List view in <strong>Default collection view</strong>.</li>
       <li>Review the entries and click <strong>Save</strong>.</li>
       </ol>
     
     </div>
     <figure>
       <img src="images/step2-collection1.png" alt="Project view showing collection creation">
-      <figcaption>Figure 8: Navigate to the project in the left-hand menu and click on the <strong>+ Other</strong> tab  to create a new Collection</figcaption>
+      <figcaption>Figure 8: Navigate to the project in the left-hand menu and click on the <strong>+ Other</strong> tab to create a new collection.</figcaption>
     </figure>
     <figure>
       <img src="images/step2-collection2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 9: In the <strong>Select Collection type</strong> window, select <strong>'Collection'</strong></figcaption>
+      <figcaption>Figure 9: Begin typing collection and select it in the drop-down menu.</figcaption>
     </figure>
     <figure>
       <img src="images/step2.collection3.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> unmodified and enter a for your division, meaningful <strong>Name</strong>,
-         leave empty <strong>Default object type</strong> and for <strong>Default collection view</strong> select 'List view'</figcaption>
+      <figcaption>Figure 10: Leave the autogenerated <strong>Code(*)</strong> unmodified, enter <strong>Name</strong> Synthesis,
+         leave <strong>Default object type</strong> empty, and in <strong>Default collection view</strong> select List view.</figcaption>
     </figure>
     
     <div class="warning">
-      <strong>Warning:</strong> Collections are simply a group of Objects of one or more types. However, it may be more intuitive to organize Objects of the same type within 
-      a collection. You will find that objects can also be registered outside of collections (in openBIS folders). However, it is recommended that you organize objects into collections and, 
-       explore the 'FILTERS' tab displayed when selecting a collection. 
+      <strong>Warning:</strong> Collections used to group objects of one or more object types. You will find that objects can also be registered outside of collections (at project and space level) in new openBIS version, however, it is recommended to organize object into collections.
+      <p>Inside of a collection, objects can be filtered by one of the property values, such as Code, Name, Description, etc. To do so, click on the <strong>FILTERS</strong> tab and select filter per column. </p>
     </div>
     <p>
-      <strong>CONGRATULATIONS!!</strong>,you have created your first collection.
+      <strong>CONGRATULATIONS!</strong> You have created your first collection.
     </p>
 
     <p>
-      <strong>Now you can create additional collections that you will need later to complete the exercises of this tutorial</strong>
+      Now you can create other collections to complete this tutorial. Repeat the steps above for each collection. <strong>Names of collections: Treatment non-destructive, Parameter 1, Parameter 2, Parameter 2 Analysis.</strong>
     </p>
-
-     <div class="placeholder">
-      Instructions for creating additional collections:
-      <ol>
-      <li>Follow the instructions under 'Step 2' (1 to 8 ) and register each the following four collections individually. When doing so, use the collection names
-         listed below.</li>
-      </ol>
-    Values for Tutorial Example: you can copy paste following values
-    <p>Collection name = 'Treatment non-destructive'</p>
-    <p>Collection name = 'Structure_TEM'</p>
-    <p>Collection name = 'Parameter 1'</p>
-    <p>Collection name = 'Parameter 2'</p>
-  </div>
 
     <figure>
       <img src="images\step2-collection-overview.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 11: Once successfully saved, registered collections are displayed under the correspondent Project 'Material Synthesis'.</figcaption>
+      <figcaption>Figure 11: Once successfully saved, registered collections are displayed under the correspondent project Material Synthesis.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 12: To change the order of displayed collections, localize the mouse over the 'Material Synthesis' project and select <strong>'Change sorting'</strong>.</figcaption>
+      <figcaption>Figure 12: To change the order of displayed collections, localize the mouse over bars icon next to the Material Synthesis project and click <strong>Change sorting</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 13: Select the sort order, such as 'Registration Date Ascending'.</figcaption>
+      <figcaption>Figure 13: Select the sort order, such as Registration Date Ascending.</figcaption>
     </figure>
        <p>
-        <strong>CONGRATULATIONS!!</strong>, you have created a total of five collections to organize logically experimental steps.
+        <strong>CONGRATULATIONS!</strong> You have created a total of five collections.
       </p>
 
     <a class="back-to-top" href="#top">Back to top</a>
@@ -502,65 +490,62 @@
   <section class="step" id="step-3">
     <h2>Step 3: Register Experimental steps</h2>
     <p>
-      Any research activity that generates data- such as experiments, measurements, simulations or analyses- can be represented in openBIS as an Experimental Step. 
-      This generic object type includes standard metadata field (properties, for example:'start date, Experimental goals and Description') that uniquely identify each Experimental Step. 
-      Users can create custom properties and controlled vocabularies through the openBIS Masterdata (Meta(meta)data) definitions. 
-      In this tutorial, we will use the predefined metadata of the generic object type 'Experimental Step' to demonstrate how experimental activities are 
-      represented and documented in the ELN.
+      Any research activity that generates research data such as experiments, measurements, simulations or analyses can be represented as an <strong>Experimental Step</strong>. 
+      This generic object type includes standard  properties (metadata fields, for example: start date, end date, registrator, experimental goals, description, results, etc.).</p>
+
+      <p> DSSt(s) of the division can create custom properties and controlled vocabularies as well as object types via Masterdata definitions process.</p>
+
+      In this tutorial, we will use <strong>Experimental Step</strong> with default properties to demonstrate how experimental activities are represented and documented in the ELN.
     </p>
     <div class="placeholder">
-      Instructions for registering experimental steps:
+      Registering experimental steps:
       <ol>
-      <li>In the left-hand menu, navigate to the collection you want to use [collection name='Synthesis'].</li>
+      <li>In the left-hand menu, select the collection with name Synthesis.</li>
       <li>Open the <strong>More</strong>drop-down menu and select <strong>New Object</strong>.</li>
-      <li>Click on <strong>'Select an object type'</strong>.</li>
-      <li>Start typing the object type name. (for example, 'exp' or scroll to the list and select 'Experimental Step').</li>
-      <li>In the <strong>'New Experimental Step'</strong> form, fill in the fields displayed in the <strong>'Identification Info'</strong> section.</li>
-      <li>Enter the <strong>[Name='Material Demo 001']</strong></li>
-      <li>Fill in any mandatory and relevant Properties</li>   
-      <li>Review all entries and click <strong>Save</strong>.</li>
+      <li>Begin typing the object type Experimental Step and select it in the drop-down menu.</li>
+      <li>In the <strong>New Experimental Step</strong> form, fill in the properties (metadata fields).</li>
+      <li>Enter the <strong>Name</strong>: Material Synthesis</li>  
+      <li>Click <strong>Save</strong>.</li>
     </ol>
   </div>
 
     <h3>General information</h3>
     <p>
-      This section provides guidance for completing the 'New Experimental Step' form.
+      This section provides guidance for completing the New Experimental Step form.
     </p>
     <ul>
       <li>The <strong>Code</strong> is mandatory (*) and is automatically generated by the system. It is not necessary to change it.  However, if you do decide to do so, you must ensure consistency within your division and the Data Store.</li>
-      <li>The <strong>Name</strong> of experimental steps should be meaningful to you and your colleagues, as you will see it in the collections and search objects by Name.</li>
-      <li>The relevant information should be entered into the remaining fields/properties. Only properties marked with an asterisk (*) are mandatory and must be filled in so that the object can be saved.</li>
-      <li>Experimental steps can be edited after saving.</li>
+      <li>The <strong>Name</strong> of experimental steps should be meaningful to you and your colleagues, as search function uses code and name primarily to find objects.</li>
+      <li>Experimental steps, more specifically properties of those objects, can be edited after saving.</li>
     </ul>
 
     <div class="warning">
       <strong>Warning:</strong>
       <ul>
-        <li>If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.</li>
+        <li>If the Code field is not displayed, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.</li>
       </ul>
     </div>
 
     <figure>
       <img src="images\step3-object1.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 14: Select the collection "Synthesis” to open the 'More' menu and select 'New Object'.</figcaption>
+      <figcaption>Figure 14: Select the collection Synthesis to open the <strong>More</strong> menu and select <strong>New Object</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object2.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 15: 'Select an object type' called 'Experimental Step'</figcaption>
+      <figcaption>Figure 15: Select an object type <strong>Experimental Step</strong> in the drop-down menu.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object3.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 16: Leave Code(*) unmodified, enter [Name='Material Demo 001'] and if any, other mandatory (*) properties and Save
-         the New Experimental Step</figcaption>
+      <figcaption>Figure 16: Enter <strong>name</strong> Material Synthesis, and other properties, press <strong>Save</strong>.
+      </figcaption>
     </figure>
 
         <p>
-          <strong>CONGRATULATIONS!!</strong>, you have created your first Experimental step named 'Material Demo 001'.
+          <strong>CONGRATULATIONS!</strong> You have created your first Experimental step named Material Synthesis.
         </p>
 
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
-
 
 <section class="step" id="step-4">
     <h2>Step 4: Register Experimental steps using Templates</h2>
