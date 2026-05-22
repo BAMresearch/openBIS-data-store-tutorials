@@ -243,7 +243,7 @@
 
   <section id="before-you-begin">
     <h2>Before you begin</h2>
-    <p>This tutorial requires no prior experience with openBIS.</p>
+    <p>This tutorial requires no prior experience with openBIS and is designed for openBIS version 20.10.12.</p>
     <ul class="meta-list">
       <li>You need to be registered in the openBIS instance of the Data Store.</li>
       <li>Confirm that you can log in to the playground instance.</li>
@@ -256,7 +256,7 @@
     <h2>Key concepts</h2>
     <h3>Research workflow</h3>
     <p>
-      Before uploading data, document in the Lab Notebook (ELN) the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical structure of the research project.
+      Before uploading data, document in the Lab Notebook (ELN) the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical workflow used to generate data.
     </p>
     <p>
       In this workflow, the experimental steps are represented as the “things you do” (yellow boxes), while the research data is represented as datasets (red boxes) attached to experimental steps.
@@ -271,13 +271,27 @@
   <section>
     <h3>openBIS and Data Store core Data Model</h3>
     <p>
-      This tutorial uses the classic openBIS data model, which consists of five hierarchically structured levels: <strong>Space / Project / Collection / Object / Dataset</strong>. This helps explain the core logic of openBIS data model and demonstrates
-       how objects, which are uniquely identified as entities, are connected to one another through parent-child relationships. The core openBIS data model is applied to three compartments of the Data Store (BAM Inventory, FB Inventory and ELN).
+      This tutorial uses the core openBIS data model, which consists of five hierarchically structured levels: <strong>Space / Project / Collection / Object / Dataset</strong> applied to three compartments of the Data Store (BAM Inventory, FB Inventory and ELN).
        In this tutorial, you will work with the Electronic Laboratory Notebook (ELN).
     </p>
-    <p>
-      Starting with openBIS 20.10.12, the core data model was expanded to support more flexible representations of complex research projects.
-    </p>
+
+      <div class="warning">
+      <strong>Important Note:</strong> 
+      <ul>
+        <li>Starting with openBIS version 20.10.12, the core data model was extended to include folders and subfolders. Although this feature may provide additional flexibility and resemble the folder structures
+           commonly used in Windows file systems, the Data Store team recommends primarily using the core openBIS data model (Projects → Collections → Objects → Datasets) instead of organizing data through folders.
+
+            This recommendation is based on the following advantages:
+
+            - Maintaining a lean and clear organization of objects within collections
+            - Keeping the left-hand Lab Notebook menu concise and easier to navigate
+            - Improving the consistency and discoverability of research data
+            - Supporting standardized and scalable data organization across projects and divisions
+            - Encouraging the use of metadata and object relationships instead of file-system-like structures
+            For most research workflows, representing data in Collections and connecting related objects (for example experimental steps) using parent–child relationships provides a more robust and sustainable approach than using nested folder structures.
+        </li>
+  </div>
+
     <p>
       In openBIS everything is represented as <strong>Objects</strong>. In this tutorial example, the project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
        which contains the experimental steps done to generate the research data / <strong>Datasets</strong>.
