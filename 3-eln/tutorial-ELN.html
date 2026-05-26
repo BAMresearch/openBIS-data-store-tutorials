@@ -256,7 +256,7 @@
     <h2>Key concepts</h2>
     <h3>Research workflow</h3>
     <p>
-      Before uploading data, document in the Lab Notebook (ELN) the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical workflow used to generate data.
+      Before uploading data, document in the Electronic Lab Notebook (ELN) the experimental steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical workflow used to generate data.
     </p>
     <p>
       In this workflow, the experimental steps are represented as the “things you do” (yellow boxes), while the research data is represented as datasets (red boxes) attached to experimental steps.
@@ -299,7 +299,7 @@
     <figure>
       <img src="images\data-model.png" alt="Diagram showing experimental steps and datasets organized in the ELN">
       <figcaption>
-        Figure 2: All experimental steps are represented as objects.  These are organized in several collections within the openBIS-project named 'Material Synthesis' in the ELN.
+        Figure 2: All experimental steps are represented as objects. These are organized in several collections within the openBIS-project named 'Material Synthesis' in the ELN.
       </figcaption>
     </figure>
   </section>
@@ -325,10 +325,10 @@
     <ul>
       <li>Step 1: Register a Project.</li>
       <li>Step 2: Register a Collection of experimental steps.</li>
-      <li>Step 3: Register Experimental steps.</li>
-      <li>Step 4: Register Experimental steps using Templates.</li>
+      <li>Step 3: Register experimental steps.</li>
+      <li>Step 4: Register experimental steps using Templates.</li>
       <li>Step 5: Edit Collections of Objects.</li>
-      <li>Step 6: Register additional Experimental steps using Templates.</li>
+      <li>Step 6: Register additional experimental steps using Templates.</li>
       <li>Step 7: Upload Data.</li>
       <li>Step 8: Filter and Search.</li>
     </ul>
@@ -337,7 +337,7 @@
     <figure>
       <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
       <figcaption>
-        Figure 3: The tutorial example is a research project named “Material Synthesis”. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
+        Figure 3: The tutorial example is a research project named 'Material Synthesis'. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
          comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
           steps to which datasets (not visible in the left-hand menu) are attached.
       </figcaption>
@@ -401,12 +401,13 @@
 
     <figure>
       <img src="images/step1-project-save.png" alt="Project form with save option">
-      <figcaption>Figure 6: Enter Code (*mandatory in openBIS) and description (Mandatory for Data Store), review entries and <strong>Save</strong>.</figcaption>
+      <figcaption>Figure 6: Enter Code (*), mandatory in openBIS and description (Mandatory for Data Store), review entries and <strong>Save</strong>.</figcaption>
     </figure>
 
     <div class="warning">
-      <strong>Warning:</strong> Once saved, the project code cannot be changed or reused within the same Space.<!--  in the instance  --> To remove the project, select
-       the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. <!--  Project can be deleted if empty, which means all Collection need to be deleted first.   -->
+      <strong>Warning:</strong> Once saved, the project code cannot be changed or reused within the same openBIS instance. To remove the project, select
+       the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. A project can only be deleted if it is empty, therefore, all collections within the project
+       must be deleted first.
     </div>
 
     <figure>
@@ -465,7 +466,7 @@
     </figure>
     <figure>
       <img src="images/step2.collection3.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> unmodified and enter a for your division, [<strong>Name</strong>=Synthesis],
+      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> and enter a meaningful [<strong>Name</strong>=Synthesis],
          leave empty <strong>Default object type</strong> and for <strong>Default collection view</strong> select 'List view'</figcaption>
     </figure>
     
@@ -475,11 +476,11 @@
        explore the 'FILTERS' tab displayed when selecting a collection. 
     </div>
     <p>
-      <strong>CONGRATULATIONS!!</strong>,you have created your first collection.
+      <strong>CONGRATULATIONS!!</strong>, you have created your first collection.
     </p>
 
     <p>
-      <strong>Now you can create additional collections that you will need later to complete the exercises of this tutorial</strong>
+      <strong>Now you can create additional collections to complete the exercises of this tutorial</strong>
     </p>
 
      <div class="placeholder">
@@ -506,7 +507,7 @@
     </figure>
     <figure>
       <img src="images\step2-collection-sorting2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 13: Select the sort order, such as 'Registration Date Ascending'.</figcaption>
+      <figcaption>Figure 13: Select the sort order, such as Registration Date Ascending.</figcaption>
     </figure>
        <p>
         <strong>CONGRATULATIONS!!</strong>, you have created a total of five collections to organize logically experimental steps.
@@ -521,7 +522,7 @@
     <p>
       Any research activity that generates data- such as experiments, measurements, simulations or analyses- can be represented in openBIS as an Experimental Step. 
       This generic object type includes standard metadata field (properties, for example:'start date, Experimental goals and Description') that uniquely identify each Experimental Step. 
-      Users can create custom properties and controlled vocabularies through the openBIS Masterdata (Meta(meta)data) definitions. 
+      Users together with Data Store Stewards (DSSts) can create custom properties and controlled vocabularies through the openBIS Masterdata (Meta(meta)data) definitions. 
       In this tutorial, we will use the predefined metadata of the generic object type 'Experimental Step' to demonstrate how experimental activities are 
       represented and documented in the ELN.
     </p>
