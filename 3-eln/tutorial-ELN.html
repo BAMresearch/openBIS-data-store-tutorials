@@ -219,10 +219,10 @@
       <li><a href="#learning-outcomes">What you will learn</a></li>
       <li><a href="#before-you-begin">Before you begin</a></li>
       <li><a href="#key-concepts">Key concepts</a></li>
-      <li><a href="#Lab Notebook">Lab Notebook</a></li>
-      <li><a href="#Welcome to the Lab Notebook - Exercises section">Welcome to the Lab Notebook - Exercises section</a></li>
+      <li><a href="#Electronic Lab Notebook (ELN)">Electronic Lab Notebook (ELN)</a></li>
+      <li><a href="#Exercises">Exercises</a></li>
       <li><a href="#step-1">Step 1: Register a Project</a></li>
-      <li><a href="#step-2">Step 2: Register a Collection of Experiments</a></li>
+      <li><a href="#step-2">Step 2: Register a Collection of Experiments</a></li>ex
       <li><a href="#step-3">Step 3: Register Experimental steps</a></li>
       <li><a href="#step-4">Step 4: Register Experimental steps using Templates</a></li>
       <li><a href="#step-5">Step 5: Edit Collections and Objects</a></li>
@@ -238,6 +238,10 @@
     <ul>
       <li>How to upload research data to the Electronic Laboratory Notebook (ELN) using the graphical user interface (GUI) of the openBIS Data Store.</li>
       <li>How to document and describe datasets by registering experimental steps in the Lab Notebook.</li>
+      <li>Manage Projects, Collections, Experimental Steps and datasets</li>
+      <li>Use templates and metadata</li>
+      <li>Edit and delete objects</li>
+      <li>Search and filter ELN entries</li>
     </ul>
   </section>
 
@@ -246,9 +250,8 @@
     <p>This tutorial requires no prior experience with openBIS and is designed for openBIS version 20.10.12.</p>
     <ul>
       <li>You need to have access in the openBIS instance of the Data Store.</li>
-      <li>Confirm that you can log in to the playground instance. How to log in to the Data Store instances is described here <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank"></a></li>
+      <li>Confirm that you can log in to the playground instance. How to log in to the Data Store instances is described in the <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank"> Data Store-How to guide: How to log in</a></li>
       <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
-      <li>Download datasets for this tutorial example.</li>
     </ul>
   </section>
 
@@ -256,15 +259,15 @@
     <h2>Key concepts</h2>
     <h3>Research workflow</h3>
     <p>
-      Before uploading data, document in the Electronic Lab Notebook (ELN) the Experimental Steps that describe how each dataset was generated. A useful way to begin is by drawing a flow diagram that represents the logical workflow used to generate data.
+      Begin by drawing the flow diagram that represents the logical workflow used to generate research data.
     </p>
     <p>
-      In this workflow, the Experimental Steps are represented as the “things you do” (yellow boxes), while the research data is represented as datasets (red boxes) attached to experimental steps.
+      In this workflow, the Experimental Steps, describing how datasets are generated, are represented as the “things you do” (yellow boxes). The research data is represented as datasets (red boxes). Every dataset is attached to anexperimental step.
     </p>
 
     <figure>
       <img src="images/workflow.png" alt="Research workflow to be mapped in the Data Store">
-      <figcaption>Figure 1: Research workflow of this tutorial example.</figcaption>
+      <figcaption>Figure 1: Research workflow of this tutorial.</figcaption>
     </figure>
   </section>
 
@@ -293,7 +296,7 @@
   </div>
 
     <p>
-      In openBIS everything is represented as <strong>objects</strong>. In this tutorial example, the project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
+      In openBIS everything is represented as <strong>objects</strong>. In this tutorial, the project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
        which contains the experimental steps done to generate the research data / <strong>Datasets</strong>.
     </p>
     <figure>
@@ -305,8 +308,8 @@
   </section>
 
 
-  <section id="lab-notebook">
-    <h2>Lab Notebook</h2>
+  <section id="Electronic Lab Notebook (ELN)">
+    <h2>Electronic Lab Notebook (ELN)</h2>
     <p>
       In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step
       with datasets attached directly to these steps.
@@ -316,8 +319,8 @@
     </section>
 
 
-  <section id="exercise-overview">
-    <h2>Welcome to the Lab Notebook - Exercises section</h2>
+  <section id="exercises">
+    <h2>Exercises</h2>
     <p>
       The goal of the research project example is to synthesize a material and characterize it before and after a non-destructive chemical treatment. For simplicity, the example used is kept general so that you can focus entirely on learning how to use the openBIS-Data Store system.
     </p>
@@ -337,7 +340,7 @@
     <figure>
       <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
       <figcaption>
-        Figure 3: The tutorial example is a research project named 'Material Synthesis'. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
+        Figure 3: The example is a research project named 'Material Synthesis'. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
          comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
           steps to which datasets (not visible in the left-hand menu) are attached.
       </figcaption>
@@ -356,8 +359,8 @@
       <li>Click the upper <strong>LAB NOTEBOOK</strong> tab.</li>
       <li>Navigate to the Lab Notebook in the left-hand menu and open the drop-down menu to select <strong>Home Space</strong>.</li>
       <li>Click <strong>+ Project</strong> to open the project form.</li>
-      <li>Fill out <strong>Code</strong> and <strong>Description</strong>. In this tutorial example [code='Material Synthesis'] and [Description='This tutorial project demonstrates a simplified workflow for the synthesis and characterization of a material within openBIS. The experimental descriptions, metadata, and datasets were generated using AI and represent synthetic example data created solely for training and demonstration purposes.
-          Although the content has been reviewed for consistency and usability within the tutorial, it has not been validated for scientific accuracy and should not be considered scientifically reliable or reproducible'].</li>
+      <li>Fill out <strong>Code</strong> and <strong>Description</strong>. In this example [code=Material Synthesis] and [Description=This tutorial project demonstrates a simplified workflow for the synthesis and characterization of a material within openBIS. The experimental descriptions, metadata, and datasets were generated using AI and represent synthetic example data created solely for training and demonstration purposes.
+          Although the content has been reviewed for consistency and usability within the tutorial, it has not been validated for scientific accuracy and should not be considered scientifically reliable or reproducible].</li>
       <li>Review the entries and click <strong>Save</strong>.</li>
     </ol>
     </div>
@@ -449,7 +452,7 @@
       <li>Click <strong>+ Other</strong>.</li>
       <li>Select 'Collection' from the drop-down menu.</li>
       <li>Leave autogenerated <strong>Code(*)</strong> unmodified.</li>
-      <li>Enter a meaningful <strong>Name</strong>. In this tutorial example [Name='Synthesis'].</li>
+      <li>Enter a meaningful <strong>Name</strong>. In this example [Name='Synthesis'].</li>
       <li>Leave empty <strong>Default object type</strong>.</li>
       <li>Select 'List view' in <strong>Default collection view</strong>.</li>
       <li>Review the entries and click <strong>Save</strong>.</li>
@@ -768,7 +771,7 @@
     </p>
     <ul>
       <li>Click on the <strong>TOOLS</strong> tab.</li>
-      <li>Select <strong>Trashcan</strong></li>
+      <li>Select <strong>Trashcan</strong>.</li>
       <li>scroll to the right and open the <strong>Operations</strong> drop-down menu.</li>
     </ul>
     
@@ -779,7 +782,7 @@
     <figure>
       <img src="images\step5-trashcan2.png" alt="Screenshot for Step 5">
       <figcaption>Figure 29: Objects deleted from the Trashcan are permanently deleted form the database and cannot be restored.</figcaption>
-    </figure
+    </figure>
 
     <div class="warning">
       <strong>Warning:</strong>
