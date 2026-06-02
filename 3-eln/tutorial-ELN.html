@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload data in openBIS-Data Store Lab Notebook</title>
+  <title>Upload research data in Data Store</title>
   <style>
     :root {
       --primary: #003366;
@@ -207,7 +207,7 @@
   <a id="top"></a>
 
   <header>
-    <h1>Upload data in openBIS-Data Store Lab Notebook</h1>
+    <h1>Upload research data in Data Store</h1>
     <p class="lead">
       This tutorial uses a generic example to show how to upload data and document the Experimental Steps that describe the corresponding datasets. Consistent documentation in the ELN supports traceability, discoverability, reusability, and reproducibility of research data.
     </p>
@@ -356,8 +356,7 @@
       Experimental Steps should also be linked to one another and to all related elements used to carry them out, such as chemicals, instruments, and software. These connections are established through user-defined parent-child relationships.
       In this tutorial, you will learn how to register Experimental Steps and upload data in the Lab Notebook.
     </p>
-    </section>
-
+  </section>
 
   <section id="exercises">
     <h2>Exercises</h2>
@@ -390,11 +389,11 @@
   <section class="step" id="step-1">
     <h2>Step 1: Register a Project</h2>
     <p>
-      Create an openBIS-project in the Lab Notebook to represent the research project <strong>'Material Synthesis'</strong>.
+      Create an openBIS project in the Lab Notebook to represent the research project <strong>Material Synthesis</strong>.
     </p>
 
     <div class="placeholder">
-    Instructions for registering a Project:
+    Registering a project:
     <ol>
       <li>Click the upper <strong>LAB NOTEBOOK</strong> tab.</li>
       <li>Navigate to the Lab Notebook in the left-hand menu and open the drop-down menu to select <strong>Home Space</strong>.</li>
@@ -408,7 +407,7 @@
     <figure>
       <img src="images/step1-project.png" alt="Lab Notebook interface showing how to start a new project">
       <figcaption>
-        Figure 4: The upper tab <strong>LAB NOTEBOOK</strong> displays the Lab Notebook drop-down menu in the left-hand menu. Selecting Home Space opens the middle menu tabs.
+        Figure 4: The upper <strong>LAB NOTEBOOK</strong> tab displays the Lab Notebook drop-down menu in the left-hand menu.
       </figcaption>
     </figure>
 
@@ -421,7 +420,6 @@
       <li>Allowed characters: uppercase letters A-Z, digits 0-9, underscore (<code>_</code>), hyphen (<code>-</code>), and dot (<code>.</code>).</li>
       <li>Separate words with underscores.</li>
       <li>Codes should be meaningful, in English, and between 3 and 30 characters.</li>
-      <li>A code cannot be modified or reused.</li>
     </ul>
 
     <strong>Description requirements</strong>
@@ -433,13 +431,13 @@
     </ul>
 
     <div class="warning">
-      <strong>Warning:</strong> If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
+      <strong>Warning:</strong> If the code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
     </div>
 
     <figure>
       <img src="images/step1-project-ident-info.png" alt="More menu showing the Show Identification Info option">
       <figcaption>
-        Figure 5: The <strong>More</strong> drop-down menu displays "Show Identification Info", including the <strong> Code(*)</strong> field.</figcaption>
+        Figure 5: The <strong>More</strong> drop-down menu displays "Show Identification Info", where the <strong> Code(*)</strong> field could be found.</figcaption>
     </figure>
 
     <figure>
@@ -459,20 +457,22 @@
     </figure>
 
     <p>
-      <strong>CONGRATULATIONS!!</strong>, you have created your first openBIS project.
-    </p>
+      <strong> CONGRATULATIONS!</strong> You have created your first openBIS project.</p>
+      <p>To remove the project, select the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>.</p>
 
     <h3>General information (This is not an exercise)</h3>
-    <p>Access management in openBIS is only possible at the level of "Space" and "Project" levels. "Spaces" are created by the Data Store team upon request, only when necessary. It is recommended to organize
-       data on which you are collaborating with other colleagues or BAM divisions (e.g., service data) in openBIS project folders and manage access at this level. The permissions assigned to the project apply to underlying contents. Access can be modified for 
-      an user or a group by assigning roles such as Observer, User or Admin to the project folder.  Detailed information on the correspondent rights can be found in the Data Store wiki. How to manage access is displayed below.</p>
+    <p>Access management in openBIS is possible at the level of space and project levels. Spaces are created by the Data Store team upon request, when necessary. It is recommended to organize
+      data on which you are collaborating with other colleagues or BAM divisions (e.g., research data) in openBIS projects and manage access at this level. The permissions assigned at the project level apply to underlying contents (collections, objects, and datasets). Different access rights can be given to 
+      an user or a group by assigning roles such as Observer, User or Admin. Detailed information about rights and roles can be found in the Data Store wiki. How to manage access is displayed below.</p>
 
     <strong>Access management at the level of Project</strong>
     <ul>
       <li>Select project in the left-hand menu.</li>
       <li>Open the <strong>More</strong> drop-down menu.</li>
-      <li>Select <strong>manage access</strong>.</li>
-      <li>Assign <strong>Role</strong> and define to <strong>grant to</strong> a Group (Division number) or User (BAM user name, all with non-capitalized letters).</li>
+      <li>Select <strong>Manage access</strong>.</li>
+      <li>Assign <strong>Role</strong> (Admin, User, or Observer in descending order of rights).
+      <li>define <strong>grant to</strong> a group (division number) or user (BAM user name, non-capitalized).</li>
+      <li>Click <strong>Grant access</strong>.</li>
     </ul>
 
 
@@ -486,11 +486,11 @@
       Collections are one way to logically structure experimental work.
     </p>
     <div class="placeholder">
-      Instructions for creating a collection:
+      Registering a collection:
       <ol>
-      <li>Navigate to the project you created in the left-hand menu.</li>
+      <li>Click on the project you created in the left-hand menu.</li>
       <li>Click <strong>+ Other</strong>.</li>
-      <li>Select 'Collection' from the drop-down menu.</li>
+      <li>Select Collection from the drop-down menu by beginning typing in the field.</li>
       <li>Leave autogenerated <strong>Code(*)</strong> unmodified.</li>
       <li>Enter a meaningful <strong>Name</strong>. In this example [Name='Synthesis'].</li>
       <li>Leave empty <strong>Default object type</strong>.</li>
@@ -501,11 +501,11 @@
     </div>
     <figure>
       <img src="images/step2-collection1.png" alt="Project view showing collection creation">
-      <figcaption>Figure 8: Navigate to the project in the left-hand menu and click on the <strong>+ Other</strong> tab  to create a new Collection</figcaption>
+      <figcaption>Figure 8: Navigate to the project in the left-hand menu and click on the <strong>+ Other</strong> tab to create a new collection.</figcaption>
     </figure>
     <figure>
       <img src="images/step2-collection2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 9: In the <strong>Select Collection type</strong> window, select <strong>'Collection'</strong></figcaption>
+      <figcaption>Figure 9: Begin typing collection and select it in the drop-down menu.</figcaption>
     </figure>
     <figure>
       <img src="images/step2.collection3.png" alt="Screenshot for Step 2">
@@ -542,11 +542,11 @@
 
     <figure>
       <img src="images\step2-collection-overview.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 11: Once successfully saved, registered collections are displayed under the correspondent Project 'Material Synthesis'.</figcaption>
+      <figcaption>Figure 11: Once successfully saved, registered collections are displayed under the correspondent project Material Synthesis.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 12: To change the order of displayed collections, localize the mouse over the 'Material Synthesis' project and select <strong>'Change sorting'</strong>.</figcaption>
+      <figcaption>Figure 12: To change the order of displayed collections, localize the mouse over bars icon next to the Material Synthesis project and click <strong>Change sorting</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting2.png" alt="Screenshot for Step 2">
@@ -585,7 +585,7 @@
 
     <h3>General information</h3>
     <p>
-      This section provides guidance for completing the 'New Experimental Step' form.
+      This section provides guidance for completing the New Experimental Step form.
     </p>
     <ul>
       <li>The <strong>Code</strong> is mandatory (*) and is automatically generated by the system. It is not necessary to change it.  However, if you do decide to do so, you must ensure consistency within your division and the Data Store.</li>
@@ -597,7 +597,7 @@
     <div class="warning">
       <strong>Warning:</strong>
       <ul>
-        <li>If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.</li>
+        <li>If the Code field is not displayed, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.</li>
       </ul>
     </div>
 
@@ -607,7 +607,7 @@
     </figure>
     <figure>
       <img src="images\step3-object2.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 15: 'Select an object type' called 'Experimental Step'</figcaption>
+      <figcaption>Figure 15: Select an object type <strong>Experimental Step</strong> in the drop-down menu.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object3.png" alt="Screenshot for Step 3">
@@ -621,7 +621,6 @@
 
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
-
 
 <section class="step" id="step-4">
     <h2>Step 4: Register Experimental Steps using Templates</h2>
