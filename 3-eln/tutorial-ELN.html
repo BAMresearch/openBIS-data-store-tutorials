@@ -209,16 +209,17 @@
   <header>
     <h1>Upload research data in Data Store</h1>
     <p class="lead">
-      This tutorial uses a generic research workflow to demonstrate research data can be to documented, managed, and uploaded  to the Data Store. Focus of this tutorial is to familiarize users with the underlying openBIS software. Consistent documentation in the the Electronic Laboratory Notebook (ELN) supports traceability, discoverability, reusability, and reproducibility of research data.
+      This tutorial uses a generic research workflow to demonstrate how research data can be to documented, managed, and uploaded to the Data Store. Focus of this tutorial is to familiarize users with the underlying openBIS software. Consistent documentation in the Electronic Laboratory Notebook (ELN) supports traceability, discoverability, reusability, and reproducibility of the research data.
     </p>
   </header>
 
   <nav class="toc" aria-label="Table of contents">
     <h2>Contents</h2>
     <ul>
-      <li><a href="#learning-outcomes">What you will learn</a></li>
-      <li><a href="#before-you-begin">Before you begin</a></li>
-      <li><a href="#key-concepts">Key concepts</a></li>
+      <li><a href="#learning-goals">Goals of this tutorial</a></li>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#download-files">Download files to upload as Datasets</a></li>
+      <li><a href="#key-concepts">Key concepts before you begin</a></li>
       <li><a href="#Lab Notebook">Lab Notebook</a></li>
       <li><a href="#Welcome to the Lab Notebook - Exercises section">Welcome to the Lab Notebook - Exercises section</a></li>
       <li><a href="#step-1">Step 1: Register a Project</a></li>
@@ -233,41 +234,38 @@
     </ul>
   </nav>
 
-  <section id="learning-outcomes">
-    <h2>What you will learn</h2>
+  <section id="learning-goals">
+    <h2>Goals of this tutorial</h2>
     <ul>
-      <li>How to upload research data to the ELN using the graphical user interface (GUI) of the Data Store</li>
-      <li>How to document and describe research workflow in the form of experimental steps</li>
-      <li>Registering Projects, Collections, Objects, and Datasets</li>
-      <li>Use Templates</li>
-      <li>Edit and delete Objects</li>
-      <li>Search and filter</li>
+      <li>Getting familiar and learning how to upload research data to the ELN of the Data Store using the graphical user interface (GUI) </li>
+      <li>Learning how to portray and document a research workflow in the form of generic object types such as experimental steps, instruments, chemicals, and samples</li>
     </ul>
   </section>
 
-  <section id="before-you-begin">
-    <h2>Before you begin</h2>
+    <strong>In hands-on exercises, you will learn:</strong>
     <ul>
-<<<<<<< Updated upstream
-      <li>You need to have access in the openBIS instance of the BAM Data Store (access restricted to BAM employees).</li>
-      <li>Confirm that you can log in to the <a href="https://playground.datastore.bam.de/" target="_blank"> playground instance of the Data Store.</a>. How to log in to the Data Store instances is described in the <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank"> Data Store-How to guide: How to log in.</a></li>
-      <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
-=======
+      <li>how to register Projects, Collections, Objects, and Datasets</li>
+      <li>how to use Templates to register an Experimental Step</li>
+      <li>how to edit and delete Objects</li>
+      <li>how to search and filter</li>
+    </ul>
+
+  <section id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
       <li><strong>No prior experience with openBIS</strong> is required for this tutorial.</li>
-      <li>You <strong>need to have an access to the playground</strong> instance of the BAM Data Store. Only BAM Data Store employees have access. How to log in into the Data Store instances is described in the <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank"> Data Store Wiki.</a></li>
+      <li>You <strong>need to have an access to the <a href="https://playground.datastore.bam.de/" target="_blank">playground</a> instance of the BAM Data Store. Only BAM Data Store employees have access. How to log in into the Data Store instances is described in the <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank"> Data Store Wiki.</a></li>
       <li>In case of issues, contact the Data Store team at <strong>datastore@bam.de</strong>.</li>
->>>>>>> Stashed changes
     </ul>
   </section>
 
+  <section id="download-files">
     <h2>Download files to upload as Datasets</h2>
-    <p>
-    Files below will be needed for the exercise described in step 7.
-    </p>
-
-    <p>
-    Download the file 'Parameter1_Macroscopic.zip' and keep it as a zip file, do <strong>not</strong> uncompress it.
-    </p>
+    <ul>
+      Download the file 'Parameter1_Macroscopic.zip' and keep it as a zip file, do <strong>not</strong> uncompress it.
+      <p>
+      Download the file 'datasets.zip', you will need the individual files from it.
+    </ul>
 
     <a href="datasets/Parameter1_Macroscopic.zip" download>
       <button style="
@@ -283,7 +281,7 @@
     </a>
 
     <p>
-    Download the file 'datasets.zip', you will need the individual files from it.
+
     </p>
     <a href="datasets/datasets.zip" download>
       <button style="
@@ -294,21 +292,21 @@
       border:none;
       border-radius:5px;
       cursor:pointer;">
-      Download datasets individual files
+      Download datasets.zip file
      </button>
     </a>
 
-
+    <p>>>>>>>>>>>>> should here be added a script to upload inventory items? <<<<<<<<<<<<<<<<<<<<<<</p>
 
   <section id="key-concepts">
-    <h2>Key concepts</h2>
+    <h2>Key concepts before you begin</h2>
     <h3>Research workflow</h3>
     <p>
-      The research workflow of this tutorial can be seen in fig. 1, where all “things you do” (yellow boxes) such as experimental procedures or other activities are represented in form of experimental steps. All “things you have” (violet boxes) consist of the chemicals, instruments, algorithms, etc., which are used as a starting point(s) in the workflow.  All tangible and non tangible "things you generate" such as samples or code depicted in green boxes. Generated data is represented in form of datasets (red boxes). Every dataset is attached to an experimental step according to the openBIS data model.
+      The research workflow represents the key processes and items involved in the generation of research data. Documenting these elements is essential for ensuring the interpretation and reproducibility of the data. The workflow of this tutorial can be seen in fig. 1, where all “things you do” (yellow boxes) such as experimental procedures or other activities are represented in form of experimental steps. All “things you have” (violet boxes) consist of the chemicals, instruments, algorithms, etc., which are used as a starting point(s) in the workflow.  All tangible and non tangible "things you generate" such as samples or code depicted in green boxes. Generated data is represented in form of datasets (red boxes). Every dataset is attached to an experimental step according to the openBIS data model.
     </p>
 
     <figure>
-      <img src="images/workflow.png" alt="Research workflow to be mapped in the Data Store">
+      <img src="images/workflow.png" alt="Research workflow of this tutorial">
       <figcaption>Figure 1: Research workflow of this tutorial.</figcaption>
     </figure>
   </section>
@@ -320,45 +318,36 @@
     </p>
 
       <div class="warning">
-      <strong>Important Note:</strong> 
+      <strong>Note:</strong> 
+      <ul> Starting from openBIS version 20.10.12, objects can be registered at the Space and Project levels. In addition, the object type Folder, which enables grouping of objects through parent–child relationships, was introduced. Although these features provide additional flexibility, the Data Store team recommends to implement the core openBIS data model (Space → Projects → Collections → Objects → Datasets) rather than organizing data using folder-based structures.</ul>
+
+      <ul> Recommendations are based on the following advantages:</ul>
       <ul>
-        <li>Starting from openBIS version 20.10.12, objects can be registered at the Space and Project levels. In addition, the object type Folder, which enables grouping of objects through parent–child relationships, was introduced. Although these features provide additional flexibility and resemble the folder structures commonly used in Windows file systems, the Data Store team recommends following the core openBIS data model (Space → Projects → Collections → Objects → Datasets) rather than organizing data using folder-based structures.
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            This recommendation is based on the following advantages:
-
-            - Maintaining a lean and clear organization of objects within collections
-            - Keeping the left-hand Lab Notebook menu concise and easier to navigate
-            - Improving the consistency and discoverability of research data
-            - Supporting standardized and scalable data organization across projects and divisions
-            - Encouraging the use of metadata and object relationships instead of file-system-like structures
-            For most research workflows, representing data in Collections and connecting related objects (for example Experimental Steps) using parent–child relationships provides a more robust and sustainable approach than using nested folder structures.
-        </li>
-  </div>
+        <li>Keeping the left-hand main menu concise and easy to navigate</li>
+        <li>Supporting standardized and scalable data organization across projects and divisions</li>
+      </ul>
+    </div>
 
     <p>
-      In openBIS everything is represented as <strong>objects</strong>. In this tutorial, the project named 'Material Synthesis' comprises five <strong>collections</strong> ('Synthesis,Treatment non-destructive, Paremeter 1 and Parameter 2, Parameter 2 Analysis'),
-       which contains the experimental steps done to generate the research data / <strong>Datasets</strong>.
+      After research workflow is established, all elements can be mapped within the openBIS and Data Store data model. Begin by sorting all experimental steps and corresponding datasets to the Lab Notebook, whereas all instruments, chemicals, and samples can be placed other in FB or BAM Inventory. More information on the differences between the FB and BAM <a href="https://datastore.bam.de/en/concepts/inventory" target="_blank">Inventory</a>, as well as the associated roles and rights within each, can be found in the Wiki. When objects are mapped to the data model, decide whether they belong to one or different collection and projects. As you can see in the fig. 2, all experimental steps are organized in the five <strong>collections</strong> (Synthesis,Treatment non-destructive, Parameter 1, Parameter 2, Parameter 2 Analysis). Collection are joined in one project Material Synthesis in the Lab Notebook. Below the experimental steps corresponding <strong>Datasets</strong> are also modeled, and thus all entities need to represent this research workflow are visible with their parent-child relationships depicted as arrows.
     </p>
     <figure>
-      <img src="images\data-model.png" alt="Diagram showing Experimental Steps and datasets organized in the ELN">
+      <img src="images\data-model.png" alt="Data model of the research workflow of this tutorial">
       <figcaption>
-        Figure 2: All Experimental Steps are represented as objects. These are organized in several collections within the openBIS-project named 'Material Synthesis' in the ELN.
+        Figure 2: Data model of the research workflow of this tutorial.
       </figcaption>
     </figure>
   </section>
 
-
-  <section id="Electronic Lab Notebook (ELN)">
-    <h2>Electronic Lab Notebook (ELN)</h2>
+  <section id="Lab Notebook">
+    <h2>Lab Notebook</h2>
     <p>
-      In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step
+      In the Lab Notebook, each user has a personal <strong>Space</strong> for organizing research projects, experiments, simulations, and other activities that lead to the generation of datasets. Each of these activities can be represented as an experimental step
       with datasets attached directly to these steps.
       Experimental Steps should also be linked to one another and to all related elements used to carry them out, such as chemicals, instruments, and software. These connections are established through user-defined parent-child relationships.
       In this tutorial, you will learn how to register Experimental Steps and upload data in the Lab Notebook.
     </p>
   </section>
-
 
   <section id="exercises">
     <h2>Exercises</h2>
