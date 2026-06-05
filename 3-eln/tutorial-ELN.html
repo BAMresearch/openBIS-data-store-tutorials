@@ -249,7 +249,7 @@
     <h2>Before you begin</h2>
     <p>This tutorial requires no prior experience with openBIS and is designed for openBIS version 20.10.12.</p>
     <ul>
-      <li>You need to have access in the openBIS instance of the BAM Data Store (access restricted to BAM employees).</li>
+      <li>You need to have access in the openBIS instance of the BAM Data Store (access restricted to BAM employees with VPN connection).</li>
       <li>Confirm that you can log in to the <a href="https://playground.datastore.bam.de/" target="_blank"> playground instance of the Data Store.</a>. How to log in to the Data Store instances is described in the <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank"> Data Store-How to guide: How to log in.</a></li>
       <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
     </ul>
@@ -307,7 +307,7 @@
 
     <figure>
       <img src="images/workflow.png" alt="Research workflow to be mapped in the Data Store">
-      <figcaption>Figure 1: Research workflow of this tutorial.</figcaption>
+      <figcaption>Figure 1: Research workflow represented in this tutorial.</figcaption>
     </figure>
   </section>
 
@@ -380,7 +380,7 @@
     <figure>
       <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
       <figcaption>
-        Figure 3: The example is a research project named 'Material Synthesis'. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser)and
+        Figure 3: The example is a research project named 'Material Synthesis'. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser) and
          comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
           steps to which datasets (not visible in the left-hand menu) are attached.
       </figcaption>
@@ -394,21 +394,24 @@
     </p>
 
     <div class="placeholder">
-    Instructions for registering a Project:
+    <strong>Instructions for registering a Project:</strong>
     <ol>
-      <li>Click the upper <strong>LAB NOTEBOOK</strong> tab.</li>
-      <li>Navigate to the Lab Notebook in the left-hand menu and open the drop-down menu to select <strong>Home Space</strong>.</li>
-      <li>Click <strong>+ Project</strong> to open the project form.</li>
-      <li>Fill out <strong>Code</strong> and <strong>Description</strong>. In this example [code=Material Synthesis] and [Description=This tutorial project demonstrates a simplified workflow for the synthesis and characterization of a material within openBIS. The experimental descriptions, metadata, and datasets were generated using AI and represent synthetic example data created solely for training and demonstration purposes.
-          Although the content has been reviewed for consistency and usability within the tutorial, it has not been validated for scientific accuracy and should not be considered scientifically reliable or reproducible].</li>
-      <li>Review the entries and click <strong>Save</strong>.</li>
+      <li>Click the upper <strong>LAB NOTEBOOK</strong> tab in the upper navigation bar.</li>
+      <li>In the left-hand menu,  open the <strong>Lab Notebook</strong> drop-down menu to select <strong>Home Space</strong>.</li>
+      <li>Click <strong>+ Project</strong> to open the new project form.</li>
+      <li>Enter the project information: <strong>Code</strong> and <strong>Description</strong>.
+        - <strong>Code</strong>: Material Synthesis
+        - <strong>Description</strong>: This tutorial project demonstrates a simplified workflow for the synthesis and characterization of a material within openBIS. The experimental descriptions, metadata, and datasets were generated using AI and represent synthetic example data created solely for training and demonstration purposes.
+          Although the content has been reviewed for consistency and usability within the tutorial, it has not been validated for scientific accuracy and should not be considered scientifically reliable or reproducible.</li>
+      <li>Review all entries and click <strong>Save</strong>.</li>
     </ol>
     </div>
 
     <figure>
       <img src="images/step1-project.png" alt="Lab Notebook interface showing how to start a new project">
       <figcaption>
-        Figure 4: The upper tab <strong>LAB NOTEBOOK</strong> displays the Lab Notebook drop-down menu in the left-hand menu. Selecting Home Space opens the middle menu tabs.
+        Figure 4: The <strong>LAB NOTEBOOK</strong> tab provides access to the Lab Notebook navigation menu on the left-hand side. Select the <strong>Home Space</strong> to display the available tabs in the central panel and access
+        its contents.
       </figcaption>
     </figure>
 
@@ -433,29 +436,29 @@
     </ul>
 
     <div class="warning">
-      <strong>Warning:</strong> If the Code field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
+      <strong>Warning:</strong> If the <strong>Code</strong> field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
     </div>
 
     <figure>
       <img src="images/step1-project-ident-info.png" alt="More menu showing the Show Identification Info option">
       <figcaption>
-        Figure 5: The <strong>More</strong> drop-down menu displays "Show Identification Info", including the <strong> Code(*)</strong> field.</figcaption>
+        Figure 5: The <strong>More</strong> drop-down menu provides access to <strong>Show Identification Info</strong>, which displays the <strong> Code(*)</strong> the Code (*) and other identification properties.</figcaption>
     </figure>
 
     <figure>
       <img src="images/step1-project-save.png" alt="Project form with save option">
-      <figcaption>Figure 6: Enter Code (*), mandatory in openBIS and description (Mandatory for Data Store), review entries and <strong>Save</strong>.</figcaption>
+      <figcaption>Figure 6: Enter<strong>Code (*)</strong> (mandatory in openBIS) and a <strong>Description</strong> (Mandatory for Data Store). Review the entries and <strong>Save</strong>.</figcaption>
     </figure>
 
     <div class="warning">
-      <strong>Warning:</strong> Once saved, the project code cannot be changed or reused within the same openBIS instance. To remove the project, select
-       the project in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. A project can only be deleted if it is empty, therefore, all collections within the project
-       must be deleted first.
+      <strong>Warning:</strong> Once a project has been saved, its project code cannot be modified or reused within the same openBIS instance. To delete a project, select
+       it in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. A project can only be deleted if it is empty.  Therefore, all collections within the project
+       must be deleted first before the project itself can be deleted.
     </div>
 
     <figure>
       <img src="images/step1-project-ident-info2.png" alt="Saved project shown in the Home Space menu">
-      <figcaption>Figure 7: The saved project is displayed in the left-hand menu under Home Space.</figcaption>
+      <figcaption>Figure 7: The new project is displayed in the left-hand menu under <strong>Home Space</strong>.</figcaption>
     </figure>
 
     <p>
@@ -463,9 +466,10 @@
     </p>
 
     <h3>General information (This is not an exercise)</h3>
-    <p>Access management in openBIS is only possible at the level of "Space" and "Project" levels. "Spaces" are created by the Data Store team upon request, only when necessary. It is recommended to organize
-       data on which you are collaborating with other colleagues or BAM divisions (e.g., service data) in openBIS project folders and manage access at this level. The permissions assigned to the project apply to underlying contents. Access can be modified for 
-      an user or a group by assigning roles such as Observer, User or Admin to the project folder.  Detailed information on the correspondent rights can be found in the Data Store wiki. How to manage access is displayed below.</p>
+    <p>Access management in openBIS is only possible at the "Space" and "Project" levels. "Spaces" are created by the Data Store team upon request and only when justified by specific organizational or access-control requirements.
+      For collaborative work—whether with colleagues within your division or across different BAM divisions (for example, for service-data)—it is recommended to organize data within dedicated <strong>Project</strong> and manage access at the project level.
+       Permissions assigned to a project are automatically inherited by all underlying collections, objects, and datasets.  Access can be granted to individual users or groups by assigning one of the available project roles, such as Observer, User, or Admin.
+        Each role provides a different set of permissions and responsibilities.  Detailed information about roles and rights can be found in the Data Store wiki. The following section demonstrates how to manage project access in openBIS.</p>
 
     <strong>Access management at the level of Project</strong>
     <ul>
@@ -486,37 +490,39 @@
       Collections are one way to logically structure experimental work.
     </p>
     <div class="placeholder">
-      Instructions for creating a collection:
+      <strong>Instructions for creating a collection:</strong>
       <ol>
-      <li>Navigate to the project you created in the left-hand menu.</li>
+      <li>In the left-hand navigation menu, select the project you created in <strong>Step 1</strong> (<strong>Material Synthesis</strong>).</li>
       <li>Click <strong>+ Other</strong>.</li>
-      <li>Select 'Collection' from the drop-down menu.</li>
-      <li>Leave autogenerated <strong>Code(*)</strong> unmodified.</li>
-      <li>Enter a meaningful <strong>Name</strong>. In this example [Name='Synthesis'].</li>
-      <li>Leave empty <strong>Default object type</strong>.</li>
-      <li>Select 'List view' in <strong>Default collection view</strong>.</li>
-      <li>Review the entries and click <strong>Save</strong>.</li>
+      <li>From the drop-down menu, Select <strong>Collection</strong>.</li>
+      <li>Leave autogenerated <strong>Code(*)</strong> unchanged.</li>
+      <li>Enter a meaningful <strong>Name</strong>. In this example (<strong>Name</strong>=Synthesis).</li>
+      <li>Leave <strong>Default object type</strong> empty.</li>
+      <li>Select <strong>List view</strong> as the <strong>Default collection view</strong>.</li>
+      <li>Review all entries and click <strong>Save</strong>.</li>
       </ol>
     
     </div>
     <figure>
       <img src="images/step2-collection1.png" alt="Project view showing collection creation">
-      <figcaption>Figure 8: Navigate to the project in the left-hand menu and click on the <strong>+ Other</strong> tab  to create a new Collection</figcaption>
+      <figcaption>Figure 8: Select the project in the left-hand navigation menu and click <strong>+ Other</strong> to create a new collection.</figcaption>
     </figure>
     <figure>
       <img src="images/step2-collection2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 9: In the <strong>Select Collection type</strong> window, select <strong>'Collection'</strong></figcaption>
+      <figcaption>Figure 9: In the <strong>Select Collection type</strong> window, choose <strong>Collection</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images/step2.collection3.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> and enter a meaningful [<strong>Name</strong>=Synthesis],
-         leave empty <strong>Default object type</strong> and for <strong>Default collection view</strong> select 'List view'</figcaption>
+      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> unchanged and enter a meaningful <strong>Name</strong> (for this tutorial: <strong>Synthesis</strong>).  
+        Leave <strong>Default object type</strong> empty and select select <strong>List view</strong> as the <strong>Default collection view</strong>.</figcaption>
     </figure>
     
     <div class="warning">
-      <strong>Warning:</strong> Collections are simply a group of objects of one or more types. However, it may be more intuitive to organize objects of the same type within 
-      a collection. You will find that objects can also be registered outside of collections (in openBIS folders). However, it is recommended that you organize objects into collections and, 
-       explore the 'FILTERS' tab displayed when selecting a collection. 
+      <strong>Warning:</strong> Collections are containers to organize objects within a project and can contain one or more object types. Although it is technically possible to store
+       different object types within the same collection, it is often more intuitive and easier to manage when related objects or objects of the same type are grouped together.
+       Objects can also be registered outside collections by using openBIS folders. However, the Data Store recommends organizing objects within collections whenever possible. 
+       This approach simplifies navigation, supports a consistent data structure, and allows you to take advantage of the <strong>FILTERS</strong> tab, which is available when viewing a collection
+        and can help you efficiently search and organize objects. 
     </div>
     <p>
       <strong>CONGRATULATIONS!!</strong>, you have created your first collection.
@@ -527,30 +533,30 @@
     </p>
 
      <div class="placeholder">
-      Instructions for creating additional collections:
+      <strong>Instructions for creating additional collections:</strong>
       <ol>
 
-      <li>Follow the instructions under <a href="#step-2">Step 2</a> (1 to 8) and register each the following four collections individually. When doing so, use the collection names
-         listed below.</li>
+      <li>Follow the instructions described in <a href="#step-2">Step 2</a> (1 to 8) and register each of the following four collections individually.</li>
       </ol>
-    Values for Tutorial Example: you can copy paste following values
-    <p>Collection name = 'Treatment non-destructive'</p>
-    <p>Collection name = 'Structure_TEM'</p>
-    <p>Collection name = 'Parameter 1'</p>
-    <p>Collection name = 'Parameter 2'</p>
+    <strong>Values for the Tutorial Example</strong>
+    You can copy and paste the following collection names:
+    <p><strong>Treatment non-destructive</strong></p>
+    <p><strong>Structure_TEM</strong></p>
+    <p><strong>Parameter 1</strong></p>
+    <p><strong>Parameter 2</strong></p>
   </div>
 
     <figure>
       <img src="images\step2-collection-overview.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 11: Once successfully saved, registered collections are displayed under the correspondent Project 'Material Synthesis'.</figcaption>
+      <figcaption>Figure 11: Once successfully saved, the newly registered collections are displayed under the correspondent Project (<strong>Material Synthesis</strong>) in the left-hand navigation menu.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 12: To change the order of displayed collections, localize the mouse over the 'Material Synthesis' project and select <strong>'Change sorting'</strong>.</figcaption>
+      <figcaption>Figure 12: To change the display order of collections, localize the mouse over the <strong>Material Synthesis</strong> project, open the context menu and select <strong>Change sorting</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step2-collection-sorting2.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 13: Select the sort order, such as Registration Date Ascending.</figcaption>
+      <figcaption>Figure 13: Select the desired sorting option, for example <strong>Registration Date Ascending</strong>, to display collections in chronological order based on their registration date.</figcaption>
     </figure>
        <p>
         <strong>CONGRATULATIONS!!</strong>, you have created a total of five collections to organize Experimental Steps.
@@ -563,35 +569,36 @@
   <section class="step" id="step-3">
     <h2>Step 3: Register Experimental Steps</h2>
     <p>
-      Any research activity that generates data- such as experiments, measurements, simulations or analyses- can be represented in openBIS as an Experimental Step. 
-      This generic Object Type includes standard metadata field (properties, for example:'start date, Experimental goals and Description') that uniquely identify each Experimental Step. 
-      Users together with Data Store Stewards (DSSts) can create custom properties and controlled vocabularies through the openBIS Masterdata (Meta(meta)data) definitions. 
-      In this tutorial, we will use the predefined metadata of the generic Object Type 'Experimental Step' to demonstrate how experimental activities are 
+      Any research activity that generates data- such as experiments, measurements, simulations or analyses- can be represented in openBIS as an <strong>Experimental Step</strong>. 
+      This generic Object Type includes standard metadata field (properties), suchs as <strong>Start Date</strong>, <strong>Experimental goals</strong> and <strong>Description</strong> that uniquely identify and describe an Experimental Step. 
+     
+      Users can define custom properties and controlled vocabularies through the openBIS Masterdata definition workflow defined for the Data Store.  For more information visit theData Store wiki. 
+      In this tutorial, we will use the predefined metadata of the generic Object Type <strong>Experimental Step</strong> to demonstrate how experimental activities are 
       represented and documented in the ELN.
     </p>
     <div class="placeholder">
-      Instructions for registering Experimental Steps:
+      <strong>Instructions for registering Experimental Steps:</strong>
       <ol>
-      <li>In the left-hand menu, navigate to the collection you want to use [collection name=Synthesis].</li>
+      <li>In the left-hand menu, navigate to the collection you want to use (<strong>Synthesis</strong>).</li>
       <li>Open the <strong>More</strong>drop-down menu and select <strong>New Object</strong>.</li>
-      <li>Click on <strong>'Select an object type'</strong>.</li>
-      <li>Start typing the Object Type name. (for example, 'exp' or scroll to the list and select 'Experimental Step').</li>
-      <li>In the <strong>'New Experimental Step'</strong> form, fill in the fields displayed in the <strong>'Identification Info'</strong> section.</li>
-      <li>Enter the <strong>[Name=Material Demo 001]</strong></li>
-      <li>Fill in any mandatory and relevant Properties</li>   
+      <li>Click <strong>Select an object type</strong>.</li>
+      <li>Start typing the Object Type name. (for example, exp) or scroll through the list and select <strong>Experimental Step</strong>.</li>
+      <li>In the <strong>New Experimental Step</strong> form, complete the fields displayed in the <strong>Identification Info</strong> section.</li>
+      <li>Enter the <strong>Material Demo 001</strong> in the <strong>Name</strong> field.</li>
+      <li>Complete any mandatory (*) and additional relevant properties</li>   
       <li>Review all entries and click <strong>Save</strong>.</li>
     </ol>
   </div>
 
     <h3>General information</h3>
     <p>
-      This section provides guidance for completing the 'New Experimental Step' form.
+      This section provides guidance for completing the <strong>Experimental Step</strong> form.
     </p>
     <ul>
-      <li>The <strong>Code</strong> is mandatory (*) and is automatically generated by the system. It is not necessary to change it.  However, if you do decide to do so, you must ensure consistency within your division and the Data Store.</li>
-      <li>The <strong>Name</strong> of Experimental Steps should be meaningful to you and your colleagues, as you will see it in the collections and search objects by Name.</li>
-      <li>The relevant information should be entered into the remaining fields/properties. Only properties marked with an asterisk (*) are mandatory and must be filled in so that the object can be saved.</li>
-      <li>Experimental Steps can be edited after saving.</li>
+      <li>The <strong>Code</strong> field is mandatory (*) and is automatically generated by the system. In most cases, it is recommended to leave the generated code unchanged. If you choose to modify it, ensure that the naming convention remains consistent.</li>
+      <li>The <strong>Name</strong> of an Experimental Steps should be meaningful and descriptive, as it will be displayed in collections and can be used to search for objects within the ELN.</li>
+      <li>The remaining fields and properties should be completed with the relevant experimental information. Only fields marked with an asterisk (*) are mandatory and must be filled in before the Experimental Step can be saved.</li>
+      <li>After registration, Experimental Steps can be edited and updated as needed.</li>
     </ul>
 
     <div class="warning">
@@ -603,16 +610,16 @@
 
     <figure>
       <img src="images\step3-object1.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 14: Select the collection "Synthesis” to open the <strong>More</strong> menu and select New Object.</figcaption>
+      <figcaption>Figure 14: Select the <strong>Synthesis</strong> collection in the left-hand menu. Then open the <strong>More</strong> drop-downmenu and choose <strong>New Object</strong> to create a new Experimental Step.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object2.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 15: 'Select an object type' called 'Experimental Step'</figcaption>
+      <figcaption>Figure 15: In the <strong>Select an object type</strong> window, choose <strong>Experimental Step</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object3.png" alt="Screenshot for Step 3">
-      <figcaption>Figure 16: Leave Code(*) unmodified, enter [Name=Material Demo 001] and if any, other mandatory (*) properties and Save
-         the New Experimental Step</figcaption>
+      <figcaption>Figure 16: Leave the automatically generated <strong>Code (*)</strong> unchanged, enter <strong>Material Demo 001</strong> in the <strong>Name</strong> field, complete any other mandatory (*) properties, and click <strong>Save</strong>
+         to register the new Experimental Step.</figcaption>
     </figure>
 
         <p>
@@ -633,19 +640,19 @@
       
     </p>
   <div class="placeholder">
-      Instructions for registering Experimental Steps using Templates:
+      <strong>Instructions for registering Experimental Steps using Templates:</strong>
       <ol>
-      <li>In the left-hand menu, navigate to the collection you want to use [collection name = 'Synthesis'].</li>
-      <li>Open the <strong>More</strong>drop-down menu and select <strong>New Object</strong>.</li>
-      <li>Click <strong>'Select an object type'</strong>.</li>
-      <li>Select 'Experimental Step'.</li>
+      <li>In the left-hand menu, navigate to the collection you want to use (<strong>Synthesis</strong>).</li>
+      <li>Open the <strong>More</strong> drop-down menu and select <strong>New Object</strong>.</li>
+      <li>Click <strong>Select an object type</strong>.</li>
+      <li>Select <strong>Experimental Step</strong>.</li>
       <li>Click on the <strong>Templates</strong> tab.</li>
-      <li>Select the template ['Material Synthesis']</li>
-      <li>Disabled the option 'Merge current parents/children'</li>
+      <li>Select the template <strong>Material Synthesis</strong>.</li>
+      <li>Leave the option <strong>Merge current parents/children</strong> disabled.</li>
       <li>Click <strong>Accept</strong>.</li>
-      <li>Leave Code unchaged and enter a <strong>name</strong>=['Material Synthesis'] for the Experimental Step.</li>
+      <li>Leave the <strong>Code(*)</strong> unchanged and enter the <strong>name</strong> for the Experimental Step (<strong>Material Synthesis</strong>).</li>
       <li>Enter the <strong>Start date</strong> and <strong>End date</strong> using the calendar selector. Entering a time is optional.</li>
-      <li>Scroll down to <strong>'Comments'</strong> setion and enter a comment</li>
+      <li>Scroll down to <strong>Comments</strong> setion and enter a comment</li>
       <li>Review all entries and click <strong>Save</strong>.</li>
       </ol>
   </div>
@@ -675,24 +682,25 @@
 
    <figure>
       <img src="images\step3-object1.png" alt="Screenshot for Step 4">
-      <figcaption>Figure 17: Select the collection called ("Synthesis”) to open the <strong>More</strong> menu and select 'New Object'.</figcaption>
+      <figcaption>Figure 17: To register a new Object, select the collection called <strong>Synthesis</strong>, open the <strong>More</strong> drop-downmenu and select 'New Object'.</figcaption>
     </figure>
     <figure>
       <img src="images\step3-object2.png" alt="Screenshot for Step 4">
-      <figcaption>Figure 18: 'Select the object type' called 'Experimental Step'</figcaption>
+      <figcaption>Figure 18: Then <strong>Select an object type</strong> called <strong>Experimental Step</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step4-object-template2.png"alt="Screenshot for Step 4">
-      <figcaption>Figure 19: Click on the Template tab and select the template 'Material Synthesis'.</figcaption>
+      <figcaption>Figure 19: Click on the Template tab and select the template <strong>Material Synthesis</strong>.</figcaption>
     </figure>
       <figure>
       <img src="images\step4-object-template3.png"alt="Screenshot for Step 4">
-      <figcaption>Figure 20: Enter Name of the Experimental Step and any other mandatory (*) values, enter a comment.</figcaption>
+      <figcaption>Figure 20: Enter the <strong>Name</strong> of the Experimental Step (<strong>Material Synthesis</strong>), add any other mandatory (*) value, enter a comment and <strong>save</strong>.</figcaption>
     </figure>
     <figure>
     </figure>
     <img src="images\step4-object-template5.png" alt="Screenshot for Step 4">
-      <figcaption>Figure 21: Registered Experimental Steps are displayed within the selected collection. Scroll horizontally to explore the metadata fields and view the icons for 'Material Demo1'.</figcaption>
+      <figcaption>Figure 21: Registered Experimental Steps are displayed within the selected collection. Scroll horizontally to explore the available metadata fields and view the associatedicons for <strong>Material Demo1</strong>
+        These icons provide quick access to actions and information related to the Experimental Step.</figcaption>
     <figure>
 
     <div class="warning">
@@ -719,47 +727,49 @@
   <section class="step" id="step-5">
     <h2>Step 5: Edit Collections and objects</h2>
     <p>
-      When working with the Data Store, maintaining consistent naming conventions for all registered enttities (projects, collections, objects, datasets) is essential to ensure clarity and helping both you
-      and other users maintain a clear overview of the stored information. 
-      In the following excercise, you will learn how to edit Collections and Objects to resolve the following inconsistencies:
+      When working with the Data Store, maintaining consistent naming conventions for all registered enttities- such as Projects, Collections, Objects, Datasets- is essential for ensuring clarity and helping users
+      maintain a clear overview of the stored information. 
+      In the following excercises, you will learn how to edit Collections and Objects to resolve the following inconsistencies:
        <ul>
-      <li>Rename the collection ['Structure TEM'] to ['Parameter 2 Analysis']</li>
-      <li>Delete the object ['Material Demo 001']</li>
+      <li>Rename the collection <strong>Structure TEM</strong> to <strong>Parameter 2 Analysis</strong></li>
+      <li>Delete the object <strong>Material Demo 001</strong></li>
       </ul>
     </p>
 
     <h3>Exercise: Edit a collection</h3>
     <p>
-      This section provides guidance on how to edit a collection name.
+      This section provides guidance on how to edit the name of an existing collection.
     </p>
   <div class="placeholder">
-      Instructions for editing collections names:
+      <strong>Instructions for editing collections names:</strong>
       <ol>
-      <li>In the left-hand menu, navigate to the collection you want to edit ['Structure TEM'].</li>
+      <li>In the left-hand menu, navigate to the collection you want to edit <strong>Structure TEM</strong>.</li>
       <li>Open the <strong>More</strong> drop-down menu and select <strong>Edit Collection</strong>.</li>
       <li>Click on the <strong>edit</strong> tab.</li>
-      <li>Change the collection <strong>Name</strong> to 'Parameter 2 Analysis'.</li>
-      <li>Review the entries and click <strong>Save</strong>.</li>
+      <li>Change the collection <strong>Name</strong> to <strong>Parameter 2 Analysis</strong>.</li>
+      <li>Review all entries and click <strong>Save</strong>.</li>
       <li>If the updated collection name is not displayed immediately, refresh the page</li>
       </ol>
   </div>
 
     <figure>
       <img src="images\step5-collection-edit1.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 22: To edit a collection, select it and open the <strong>More</strong> menu to select 'Edit Collection'.</figcaption>
+      <figcaption>Figure 22: To edit a collection, select it in the left-hand menu, open the <strong>More</strong> menu and choose <strong>Edit Collection</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step5-collection-edit2.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 23: Click the 'Edit' tab.</figcaption>
+      <figcaption>Figure 23: Click the <strong>Edit</strong> tab to modify the collection name.</figcaption>
     </figure>
     <figure>
       <img src="images\step5-collection-edit3.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 24: Enter changes in the form. For this example rename to ['Parameter 2 Analysis']; review entries and Save</figcaption>
+      <figcaption>Figure 24: Update the collection name to <strong>Parameter 2 Analysis</strong>; review entries and Save</figcaption>
     </figure>
  
   <p>
     <strong>CONGRATULATIONS!!</strong>, You have edited a Collection.
   </p>
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
   
     <h3>Exercise: Delete object</h3>
     <p>
@@ -767,70 +777,76 @@
     </p>
 
   <div class="placeholder">
-      Instructions for deleting Objects:
+      <strong>Instructions for deleting Objects:</strong>
       <ol>
-      <li>In the left-hand menu, navigate to the collection that contains you want to delete. For this example, ['Synthesis'].</li>
-      <li>Select the object  you want to delete ['Material Demo 001'].</li>
+      <li>In the left-hand menu, navigate to the collection that contains the object you want to delete. For this example, <strong>Synthesis</strong>.</li>
+      <li>Select the object you want to delete <strong>Material Demo 001</strong>.</li>
       <li>Click on the <strong>DELETE</strong> tab.</li>
-      <li>Enter a <strong>Reason(*)</strong> for deletion in the mandatory (*) field. This must be completed before you can continue.</li>
-      <li>Click the <strong>Accept</strong> tab.</li>
-      <li>Click once more the <strong>Accept</strong> tab.</li>
-      <li>Confirm that the Object is deleted. Go back to the [collection name='Synthesis'] in the left-hand menu.</li>
+      <li>Enter a <strong>Reason(*)</strong> for deletion field. This must be completed before you can continue.</li>
+      <li>Click <strong>Accept</strong>.</li>
+      <li>Confirm the deletion by clicking <strong>Accept</strong> again.</li>
+      <li>Verify that the Object has been deleted by returning to the <strong>Synthesis</strong> collection and confirming that <strong>Material Demo 001</strong> is no longer listed.</li>
       </ol>
-  </div>
-  <p>
-    <strong>CONGRATULATIONS!!</strong>, You have deleted sucessfully an object (Experimental Step).
-  </p>
   </div>
 
     <figure>
       <img src="images\step5-object-edit1.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 25: To edit an object, select relevant collection, select the object to delete and click on 'DELETE'.</figcaption>
+      <figcaption>Figure 25: To delete an object, navigate to the relevant collection, select the object (<strong>Material Demo 001</strong>) to delete and click on the <strong>DELETE</strong> tab.</figcaption>
     </figure>
     <figure>
       <img src="images\step5-object-edit3.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 26: Entering 'Reason' for deletion is mandatory(*). leave unselected the option 'Delete also all descendants' and click on 'Accept'.</figcaption>
+      <figcaption>Figure 26: Enter a <strong>Reason</strong> for deletion in the mandatory <strong>Reason (*)</strong> field. Leave the option <strong>Delete also all descendants</strong> unchecked and click <strong>Accept</strong>.</figcaption>
     </figure>
         <figure>
       <img src="images\step5-object-edit4.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 27: Confirm once more if you want to 'Accept' deletion.</figcaption>
+      <figcaption>Figure 27: Review the deletion settings and click <strong></strong>Accept</strong> to confirm the deletion.</figcaption>
     </figure>
+
+  <p>
+    <strong>CONGRATULATIONS!!</strong>, You have deleted sucessfully an object (Experimental Step).
+  </p>
+
+      <a class="back-to-top" href="#top">Back to top</a>
+  </section>
 
     <div class="warning">
       <strong>Warning:</strong>
     <ul>
       When deleting an object, you also have the option to delete connected objects and attached datasets. If you only want to remove the selected object, 
-      leave the option 'Delete also all descendant object(s) including their datasets' unchecked. Descendant objects are objects linked to the object you want to delete.
-      These relationships may include parent objects (originated earlier in the workflow) or child objects (originated later in the workflow). A later tutorial will provide a more detailed
-      explanation of parent-child relationships in openBIS.
+      leave the option <strong>Delete also all descendant object(s) including their datasets</strong> unchecked.
+       Descendant objects are objects linked to the object being deleted through parent-child relationships.  Depending of the workflow, these linked objects may represent earlier (parent) or later (child) objects of the research process.
+      A later tutorial will provide a more detailed explanation of parent-child relationships in openBIS and how they are used to make research workflows traceable.
     </div>
 
     <h3>General information: Revert deletions. (This is not an excercise)</h3>
     <p>
-      Deleted Objects are moved to the 'Trashcan', where they can either be restored or permanently deleted. To explore this functionality:
+      Deleted Objects are moved to the 'Trashcan', where they can either be restored or permanently deleted.
+    </p>
+     <p>
+      To explore this functionality:
     </p>
     <ul>
-      <li>Click on the <strong>TOOLS</strong> tab.</li>
+      <li>Click the <strong>TOOLS</strong> tab.</li>
       <li>Select <strong>Trashcan</strong>.</li>
-      <li>scroll to the right and open the <strong>Operations</strong> drop-down menu.</li>
+      <li>Scroll to the right and open the <strong>Operations</strong> drop-down menu.</li>
     </ul>
     
     <figure>
       <img src="images\step5-trashcan1.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 28: The 'TOOLS' tab displays the 'Trashcan'. Select the object to be deleted and open the 'operations' drop-down menu.</figcaption>
+      <figcaption>Figure 28: Open the <strong>TOOLS</strong> tab and select <strong>Trashcan</strong>. To view the available actions for a deleted object, select the object and open the <strong>Operations</strong> drop-down menu.</figcaption>
     </figure>
     <figure>
       <img src="images\step5-trashcan2.png" alt="Screenshot for Step 5">
-      <figcaption>Figure 29: Objects deleted from the Trashcan are permanently deleted form the database and cannot be restored.</figcaption>
+      <figcaption>Figure 29: Objects that are permanently deleted from the Trashcan are removed database and cannot be restored.</figcaption>
     </figure>
 
     <div class="warning">
       <strong>Warning:</strong>
     <ul>
-      <li>Once an object is permanently deleted, it cannot be recovered. If the object has parent or child objects that you do not
-        want to remove, do not select the 'Dependencies' option when choosing 'Permanently delete'.</li>
-        <li>if you delete a collection that contains objects, the system first deletes the objects within the collection before deleting the collection
-          itself.  These deletion steps can be reverted separately, as described in the section 'Revert deletions'.</li>
+      <li>Once an object is permanently deleted, it cannot be recovered. If the object has linked parent or child objects that you do not
+        want to remove, do not select the <strong>Dependencies</strong> option when choosing <strong></strong>.</li>
+        <li>if you delete a collection that contains objects, the system first deletes the objects within the collection and then deletes the collection
+          itself.  These deletion actions can be reverted separately from the <strong>Trashcan</strong>, provided they have not been permanently deleted.</li>
     </ul>
     </div>
 
@@ -906,7 +922,7 @@
       - Open the Project overview to display all registered objects in one place.
     </p>
     <div class="placeholder">
-      Instructions for viewing registered Experimental Steps.
+      <strong>Instructions for viewing registered Experimental Steps:</strong>
       <ol>
       <li>In the left-hand menu, navigate to the project <strong>Material Synthesis</strong>, where you previously registered the objects.</li>
       <li>Open the <strong>More</strong> drop-down menu and select <strong>Show Overview</strong> (if overview is not already displayed).</li>
@@ -949,7 +965,7 @@
     </p>
 
     <div class="placeholder">
-      Instructions for uploading data from a ZIP file.
+      <strong>Instructions for uploading data from a ZIP file:</strong>
       <ol>
       <li>In the left-hand menu, navigate to the Experimental Step to which you want to upload data, [Name = Parameter 1]  </li>
       <li>Select Experimental Step [Name = Macrostructure Characterization]</li>
@@ -1017,7 +1033,7 @@
       This exercise explains how to attach a dataset and displaying it in the preview section of an Experimental Step within the ELN.
     </p>
     <div class="placeholder">
-      Instructions for attaching an image to the ELN preview
+      <strong>Instructions for attaching an image to the ELN preview:</strong>
       <ol>
      <li>In the left-hand menu, navigate to the Experimental Step which you want to upload data [name = Parameter 1]</li>
       <li>Select the Experimental Step [name = Macrostructure Characterization]</li>
@@ -1066,7 +1082,7 @@
       describing the image that was previously added to the Experimental Step. 
     </p>
     <div class="placeholder">
-      Instructions for uploading a README file.
+      <strong>Instructions for uploading a README file:</strong>
       <ol>
      <li>In the left-hand menu, navigate to the collection containing the Experimental Step you want to upload data [name = Parameter 1]</li>
       <li>Select the Experimental Step [name = Macrostructure Characterization]</li>
@@ -1146,7 +1162,7 @@
       Advanced Search allows you to combine multiple search criteria to locate specific objects or datasets stored in the openBIS.
     </p>
     <div class="placeholder">
-      Instructions for Advaced search
+      <strong>Instructions for Advanced search</strong>
       <ol>
       <li>Select the <strong>TOOLS</strong> tab></li>
       <li>Click <strong>Advanced Search</strong></li>
@@ -1182,7 +1198,7 @@
 
     <p><strong>Reuse saved search</strong>
     </p>
-      Instructions for reusing saved query
+      <strong>Instructions for reusing saved query</strong>
       <ol>
       <li>Select <strong>TOOLS</strong> tab</li>
       <li>Click <strong>Advanced Search</strong>.</li>
