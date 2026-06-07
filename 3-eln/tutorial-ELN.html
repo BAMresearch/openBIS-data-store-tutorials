@@ -844,7 +844,7 @@
       <strong>Warning:</strong>
     <ul>
       <li>Once an object is permanently deleted, it cannot be recovered. If the object has linked parent or child objects that you do not
-        want to remove, do not select the <strong>Dependencies</strong> option when choosing <strong></strong>.</li>
+        want to remove, do not select the <strong>Dependencies</strong> option when choosing <strong>Delete Permanently</strong>.</li>
         <li>if you delete a collection that contains objects, the system first deletes the objects within the collection and then deletes the collection
           itself.  These deletion actions can be reverted separately from the <strong>Trashcan</strong>, provided they have not been permanently deleted.</li>
     </ul>
@@ -853,23 +853,26 @@
     <section class="step" id="step-6">
     <h2>Step 6: Register additional Experimental Steps using Templates</h2>
     <p>
-      As in Step 4, you will now create additional Experimental Steps using predefined templates.  These steps will be required to complete the exercises in this tutorial.
-      
+      As described in Step 4, you will now create four additional Experimental Steps using predefined templates.  These Experimental Steps will be required to complete the remaining exercises in this tutorial.  
+    </p>
+    <p>
+      Repeat the procedure below for each Experimental Step listed in the table. For each registration, select the corresponding <strong>Collection</strong>, <strong>Template</strong>, and <strong>Experimental Step Name</strong>. 
     </p>
   <div class="placeholder">
-      Repeat the following procedure for each Experimental Step listed in the table below. Replace the placeholders in brackets ([ ]) with the corresponding values provided.
+
       <ol>
-      <li>In the left-hand menu, navigate to the collection specified under [<strong>collection name</strong>].</li>
+      <strong>Instructions for Registering Additional Experimental Steps:</strong>
+      <li>In the left-hand menu, navigate to the appropiate collection.</li>
       <li>Open the <strong>More</strong> drop-down menu and select <strong>New Object</strong>.</li>
       <li>Click <strong>Select an object type</strong>.</li>
       <li>Select <strong>Experimental Step</strong>.</li>
       <li>Open the <strong>Templates</strong> tab.</li>
-      <li>Select the template specified under [<strong>Template name</strong>]</li>
-      <li>Disable the 'Merge current parents/children' option</li>
+      <li>Select the appropiate Template</li>
+      <li>Leave the <strong></strong>Merge current parents/children</strong> option disable</li>
       <li>Click <strong>Accept</strong>.</li>
-      <li>Leave the <strong>Code</strong> field unchanged and enter the value specified under [Experimental Step Name] in the <strong>Name</strong> field.</li>
-      <li>Enter the <strong>Start date</strong> and the <strong>End date</strong> using the calendar tool. Entering a time is optional.</li>
-      <li>Scroll down to <strong>Comments</strong> and enter a comment</li>
+      <li>Leave the <strong>Code</strong> field unchanged and enter the corresponding <strong>Experimental Step Name</strong> in the <strong>Name</strong> field.</li>
+      <li>Enter the <strong>Start date</strong> and the <strong>End date</strong> using the calendar selector. Entering a time is optional.</li>
+      <li>Scroll down to <strong>Comments</strong> and enter a comment (your choice)</li>
       <li>Review all entries and click <strong>Save</strong>.</li>
       </ol>
   </div>
@@ -936,7 +939,7 @@
 
     <figure>
       <img src="images\step6-project-overview1.png" alt="Screenshot for Step 6">
-      <figcaption>Figure 30:Navigate to Project, open the <strong>More</strong> menu and select 'Show Overview' .</figcaption>
+      <figcaption>Figure 30:Navigate to Project, open the <strong>More</strong> menu and, if hiddeln, select <strong>Show Overview</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step6-project-overview2.png" alt="Screenshot for Step 6">
@@ -944,7 +947,8 @@
     </figure>
       </div>
   <p>
-    <strong>CONGRATULATIONS!!</strong>, You know now how to get an overview of a project and its objects.
+    <strong>CONGRATULATIONS!!</strong>, You know now how to get an overview, you should see a total of five <strong>Experimental Steps</strong> (<strong>Material Synthesis</strong>, created in Step 4) and four
+    additional Experimental Steps listed above. These Objects will be used in a subsequent tutorial to demonstrate relationships between them and the organization of research workflows in the ELN.
   </p>
   </div>
 
@@ -958,68 +962,76 @@
     <h2>Step 7: Upload Data</h2>
 
     <p>
-      For the Data Store, it is recommended to attach datasets directly to Experimental Steps that describe how data was
-        generated. In openBIS, uploaded files are stored as datasets.
-       openBIS is format-agnostic, meaning that datasets can contain files of any type or format. Small files (up to several gigabytes) can be uploaded directly through the web interface.
-        For very large datasets (terabyte scale), please contact the Data Store team before uploading. Large data uploads should be performed incrementally using scripts to ensure stable Data Store performance.
+      The Data Store recommends to attaching datasets directly to <strong>Experimental Steps</strong> that describe how the data was generated. In openBIS, uploaded files are stored as <strong>Datasets</strong>.
+       Because openBIS is format-agnostic, datasets can contain files of any type or format. 
+    </p>
+    <p>
+      Small and medium-sized files (up to several gigabytes) can be uploaded directly through the web interface. For very large datasets (terabyte scale), please contact the Data Store team before uploading. Large data transfers should
+       be performed incrementally using dedicated scripts to ensure stable Data Store performance and reliable data transfer.
     </p>
 
     <div class="placeholder">
       <strong>Instructions for uploading data from a ZIP file:</strong>
       <ol>
-      <li>In the left-hand menu, navigate to the Experimental Step to which you want to upload data, [Name = Parameter 1]  </li>
-      <li>Select Experimental Step [Name = Macrostructure Characterization]</li>
-      <li>Click on the <strong>+Dataset</strong> tab</li>
-      <li>Select <strong>Data set Type </strong> = <strong>Raw Data</strong></li>
-      <li>Enter <strong>Dataset name</strong> = [Parameter 1 raw]</li>
-      <li>In the <strong>Comments</strong> field enter [Synthetic example images for demo purpose]</li>
-      <li><strong>Select files to upload</strong></li>
-      <li> Click select the zip file = [Parameter1_Marcoscopic.zip] and wait until the green progress bar appears, indicating that the upload is complete.</li>
-      <li>Enable the option: <strong>Uncompress before import</strong> when uploading a Zip file.</li>
-      <li>Review entries and <strong>Save</strong></li>
+      <li>In the left-hand menu, navigate to the Experimental Step <strong>Parameter 1</strong>.</li>
+      <li>Select the Experimental Step <strong>Macrostructure Characterization</strong>.</li>
+      <li>Click on the <strong>+Dataset</strong> tab.</li>
+      <li>Select <strong>Raw Data</strong> as <strong>Dataset Type</strong>.</li>
+      <li>Enter <strong>Parameter 1 raw</strong> as the <strong>Dataset name</strong>.</li>
+      <li>In the <strong>Comments</strong> field enter <strong>Synthetic example images for demo purpose</strong>.</li>
+      <li>Click <strong>Select files to upload</strong>.</li>
+      <li> Select the zip file <strong>Parameter1_Marcoscopic.zip</strong>.</li>
+      <li> Wait until the green progress bar indicates that the upload has completed sucessfully.</li>
+      <li>Enable the option <strong>Uncompress before import</strong> when uploading the Zip file.</li>
+      <li>Review all entries and <strong>Save</strong>.</li>
     </ol>
     </div>
 
-    <div class="Important Note">
-      <strong>Warning:</strong> The Data Store serves as centralized storage for data, metadata, and their relationships. Like most software plaforms, openBIS cannot
-      directly open or edit all file formats.
-      To continue working with uploaded data:
-      -  Download the dataset from the Data Store,
-      - Modify or process the data locally, and
-      - Upload the updated version as a new dataset or within a new Experimental Step.
-
-      If your workflow uses a version control system such as GitHub, it is recommended to:
-      - Store the raw data in the Data Store, and
-      - Create additional Experimental Steps to document downstream processes such as:
-          - data processing, data analysis, or visualization.
-
-      You can include links to relevant GitHub repositories in the <strong>Comment Log</strong> field or another designated metadata field within the Experimental Step.
-      Ensure that your division follows a consistent documentation approach to make information easier to locate and reuse.
+    <div class="warning">
+      <strong>Important Note:</strong>
+    <p>
+      The Data Store serves as centralized storage for research data, metadata, and the relationships between them. Like most software platforms, openBIS cannot
+      directly open, edit or process all file formats.   
+    </p>  
+        To continue working with uploaded data:
+    <p>
+    <li>Download the dataset from the Data Store.</li>
+    <li>Process or modify the data using appropriate software tools.</li>
+    <li>Upload the updated version as a new dataset and remember to document the changes in a new Experimental Step, if required to maintain the traceability of the research workflow.</li>
+    </p>
+    <p>
+      If your workflow uses a version control system such as GitHub, the Data Store recommends the following approach:
+    </p>
+    <li>Store raw data in the Data Store.</li>
+    <li>You can include links to relevant GitHub repositories in the <strong>Comment Log</strong> field or another designated metadata field within the Experimental Step.</li>
+    <li>Ensure that your division follows a consistent documentation approach to make information easier to locate and reuse.</li>
     </div>
   
     <figure>
       <img src="images\step7-data-upload1.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 32: Select collection, and object to attach dataset.</figcaption>
+      <figcaption>Figure 32: Navigate to the <strong>Parameter 1</strong> collection, and select the <strong>Macrostructure Characterization</strong> Experimental Step to which the dataset will be attached.</figcaption>
     </figure>
     <figure>
       <img src="images\step7data-upload2.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 33: Click on '+Dataset' tab.</figcaption>
+      <figcaption>Figure 33: Open the <strong>+Dataset</strong> tab to register a new dataset.</figcaption>
     </figure>
         <figure>
       <img src="images\step7-data-upload3.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 34: Enter Dataset values for <strong>Type, Name and Comments</strong>, upload the dataset file and wait that upload is completed.</figcaption>
+      <figcaption>Figure 34: Enter dataset information, including <strong>Dataset Type, Name </strong> and <strong>Comments</strong>. Upload the dataset file and wait for the upload to complete.</figcaption>
     </figure>
     <figure>
       <img src="images\step7-data-upload4.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 35: Review entries and 'Save'.</figcaption>
+      <figcaption>Figure 35: Review the entries and <strong>Save</strong> to register the dataset.</figcaption>
     </figure>
 
-    <p><strong>Confirm data upload</strong>: In the left-hand menu, navigate to the collection ('Parameter1') and open the Experimental Step
-       ('Macrostructure Characterization') to which the data was uploaded.
+    <p><strong>Confirm Data Upload</strong>
+      <p>
+        To verify that the dataset has been uploaded successfully, navigate to the <strong>Parameter 1</strong> collection in the left-hand menu and open the <strong>Macrostructure Characterization</strong> Experimental Step.
+      </p>.
     </p>
     <figure>
       <img src="images\step7-data-upload5.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 36: uploaded datasets are displayed within the corresponding Experimental step form. To view them, navigate to the relevant collection and open the Experimental step to which the dataset was uploaded.</figcaption>
+      <figcaption>Figure 36: uploaded datasets are displayed within the corresponding Experimental step. To view them, navigate to the relevant collection and open the Experimental step to which the dataset was uploaded.</figcaption>
     </figure>
 
 
@@ -1030,44 +1042,44 @@
 
   <h3>Exercise: Uploading data to the ELN preview.</h3>
     <p>
-      This exercise explains how to attach a dataset and displaying it in the preview section of an Experimental Step within the ELN.
+      This exercise demonstrates how to attach an image as a dataset and display it in the <strong>Preview</strong> section of an Experimental Step within the ELN.
     </p>
     <div class="placeholder">
       <strong>Instructions for attaching an image to the ELN preview:</strong>
       <ol>
-     <li>In the left-hand menu, navigate to the Experimental Step which you want to upload data [name = Parameter 1]</li>
-      <li>Select the Experimental Step [name = Macrostructure Characterization]</li>
-      <li>Click on <strong>+Dataset</strong> tab</li>
-      <li>Select the <strong>Data set Type</strong> = <strong>ELN Preview</strong></li>
-      <li>Enter the <strong>Dataset name</strong> = [Synthetic image1]</li>
-      <li>Enter <strong>Comments</strong>= [This is an artificial example created for demonstration testing]</li>
-      <li>Click on <strong>Select files to upload</strong></li>
-      <li>Select image file [name = 'Synthetic-image1.png'] and wait that green bar is displayed, indicating upload completion</li>
-      <li>Review entries and <strong>Save</strong></li>
+     <li>In the left-hand menu, navigate to <strong>Parameter 1</strong> collection.</li>
+      <li>Select the Experimental Step <strong></strong>Macrostructure Characterization</strong>.</li>
+      <li>Click the <strong>+Dataset</strong> tab.</li>
+      <li>Select <strong>ELN Preview</strong> as  <strong>Data set Type</strong>.</li>
+      <li>Enter <strong>Synthetic image1</strong> as the <strong>Dataset Name</strong>.</li>
+      <li>In the <strong>Comments</strong> field, enter: <strong>This is an artificial example created for demonstration testing</strong>.</li>
+      <li>Click <strong>Select files to upload</strong>.</li>
+      <li>Select the image file <strong>Synthetic-image1.png</strong> and wait until the green progress bar indicates that the has completed sucessfully.</li>
+      <li>Review all entries and <strong>Save</strong></li>
     </ol>
     </div>
 
     <figure>
       <img src="images\step7-data-upload1.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 37: Navigate to the relevant collection and open the Experimental step where the dataset will be uploaded.</figcaption>
+      <figcaption>Figure 37: Navigate to the <strong>Parameter 1</strong> collection and open the <strong>Macrostructure Characterization</strong> Experimental Step where the image dataset will be uploaded.</figcaption>
     </figure>
     <figure>
       <img src="images\step7data-upload2.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 38: Click the '+Dataset' tab to create a new dataset entry.</figcaption>
+      <figcaption>Figure 38: Click the <strong></strong>+Dataset</strong> tab to create a new dataset entry.</figcaption>
     </figure>
     <figure>
       <img src="images\step7-data-eln-preview1.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 39: Enter the dataset information (name and comments), upload the image file and 'Save'.</figcaption>
+      <figcaption>Figure 39: Enter the dataset information (name and comments), upload the image file and <strong>Save</strong>.</figcaption>
     </figure>
 
-    <p><strong>Confirm data upload</strong>: In the left-hand menu, navigate to the collection [name = Parameter1] and open the Experimental Step
-       [name = Macrostructure Characterization] to which the data was uploaded.
-    </p>
+    <p><strong>Confirm Data Upload</strong>
+      <p>
+          To verify that the image dataset has been uploaded successfully and is displayed in the ELN preview, navigate to the <strong>Parameter 1</strong> collection in the left-hand menu and open the <strong>Macrostructure Characterization</strong> Experimental Step.
+      </p>
 
     <figure>
       <img src="images\step7-data-eln-preview2.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 40: Uploaded datasets are displayed in the Experimental step form. To view the uploded image, navigate to the relevant collection and open the Experimental step
-        to which the dataset was uploaded.
+      <figcaption>Figure 40: Uploaded datasets are displayed within the corresponding Experimental Step. Datasets of type <strong>ELN Preview</strong> are shown directly in the Preview section, allowing images to be viewed without downloading the file.
       </figcaption>
     </figure>
 
@@ -1078,32 +1090,34 @@
 
   <h3>Exercise: Uploading an attachment to describe an uploaded image.</h3>
     <p>
-      This section explains how to upload a dataset of type <strong>attachment</strong>. In this example, you will upload a README file 
-      describing the image that was previously added to the Experimental Step. 
+      This exercise demonstrates how to upload a dataset of type <strong>attachment</strong>. In this example, you will upload a README file that provides additional information about the image previously added to the Experimental Step. 
     </p>
     <div class="placeholder">
       <strong>Instructions for uploading a README file:</strong>
       <ol>
-     <li>In the left-hand menu, navigate to the collection containing the Experimental Step you want to upload data [name = Parameter 1]</li>
-      <li>Select the Experimental Step [name = Macrostructure Characterization]</li>
+      <li>In the left-hand menu, navigate to the <strong>Parameter 1</strong> collection</li>
+      <li>Select the Experimental Step <strong>Macrostructure Characterization</strong></li>
       <li>Click on the <strong>+Dataset</strong> tab</li>
-      <li>Select the [<strong>Data set Type </strong> = Attachment] </li>
-      <li>Enter [<strong>Dataset name</strong> = README Synthetic image1]</li>
-      <li>In the [<strong>Comments</strong> field, enter = [This is a README file to explain synthetic image1]</li>
-      <li>Click on <strong>Select files to upload</strong></li>
-      <li>Select README file [name = README-Synthetic-image1.txt] and wait until the green progress bar appears, indicating that the upload is complete</li>
-      <li>Review entries and <strong>Save</strong></li>
+      <li>Select <strong>Attachment</strong> as <strong>Data set Type</strong>.</li>
+      <li>Enter <strong>README Synthetic image1</strong> as the <strong>Dataset name</strong> </li>
+      <li>In the [<strong>Comments</strong> field, enter: <strong>This is a README file to explain synthetic image1</strong>.</li>
+      <li>Click <strong>Select files to upload</strong></li>
+      <li>Select README file <strong>README-Synthetic-image1.txt</strong> and wait until the green progress bar indicates that the upload is completed.</li>
+      <li>Review all entries and <strong>Save</strong></li>
     </ol>
     </div>
 
     <figure>
       <img src="images\step7-eln-preview-README.png" alt="Screenshot for Step 7">
-      <figcaption>Figure 41: All datasets are uploaded using the same procedure.  The main difference is the selected 'Data Set Type'. In this example, the dataset type is <strong>Attachment</strong>.</figcaption>
+      <figcaption>Figure 41: All datasets are uploaded using the same workflow.  The primary difference is the selected <strong>Data Set Type</strong>. In this example, the dataset type is <strong>Attachment</strong>.</figcaption>
     </figure>
   
-    <p><strong>Confirm the upload</strong>: navigate to the collection [name = Parameter1] and open the Experimental Step
-       [name = Macrostructure Characterization] to which the data was uploaded.
+    <p>
+      <strong>Confirm Data Upload</strong>
     </p>
+    <P>
+    To verify that the README file was uploaded successfully, navigate to the <strong>Parameter 1</strong> collection and open the <strong>Macrostructure Characterization</strong> Experimental Step.
+    </P>
 
   <p>
     <strong>CONGRATULATIONS!!</strong>, You have uploaded a dataset of type <strong>Attachment</strong> containing a README file that documents the 
@@ -1113,9 +1127,9 @@
   <div class="warning">
       <strong>Important Note:</strong> 
       <ul>
-        <li>For the Data Store, it is recommended to primarily use the data set types 'Raw data', 'attachment' or 'ELN Preview'.  Other dataset types currently  visible in the drop-down menu 
-          may become deprecated in future versions of openBIS and Data Store data model.</li>
-        <li>uploaded datasets are not displayed in the project overview. To view datasets, To view datasets, open the corresponding Experimental Step directly.</li>
+        <li>The Data Store recommends primarily to use the data set types <strong>Raw data</strong>, <strong>Attachment</strong> or <strong>ELN Preview</strong>.  Other dataset types currently available in the drop-down menu 
+          may be deprecated in future versions of openBIS and future releases of the Data Store data model.</li>
+        <li>Datasets are not displayed directly in the Project or Collection overview. To view uploaded datasets, open the corresponding Experimental Step to which the datasets were attached.</li>
   </div>
 
 
