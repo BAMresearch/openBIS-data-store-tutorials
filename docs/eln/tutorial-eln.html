@@ -853,7 +853,7 @@
     <section class="step" id="step-6">
     <h2>Step 6: Register additional Experimental Steps using Templates</h2>
     <p>
-      As described in Step 4, you will now create four additional Experimental Steps using predefined templates.  These Experimental Steps will be required to complete the remaining exercises in this tutorial.  
+      As described in Step 4, you will now create five additional Experimental Steps using predefined templates.  These Experimental Steps will be required to complete the remaining exercises in this tutorial.  
     </p>
     <p>
       Repeat the procedure below for each Experimental Step listed in the table. For each registration, select the corresponding <strong>Collection</strong>, <strong>Template</strong>, and <strong>Experimental Step Name</strong>. 
@@ -904,12 +904,18 @@
     </tr>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">3</td>
+      <td style="border: 1px solid black; padding: 8px;">Parameter 1</td>
+      <td style="border: 1px solid black; padding: 8px;">Macrostructure Characterization</td>
+      <td style="border: 1px solid black; padding: 8px;">Macrostructure Characterization TS</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">4</td>
       <td style="border: 1px solid black; padding: 8px;">Parameter 2</td>
       <td style="border: 1px solid black; padding: 8px;">Microstructure Characterization</td>
       <td style="border: 1px solid black; padding: 8px;">Microstructure Characterization</td>
     </tr>
     <tr>
-      <td style="border: 1px solid black; padding: 8px;">4</td>
+      <td style="border: 1px solid black; padding: 8px;">5</td>
       <td style="border: 1px solid black; padding: 8px;">Parameter 2 Analysis</td>
       <td style="border: 1px solid black; padding: 8px;">Microstructure data analysis</td>
       <td style="border: 1px solid black; padding: 8px;">Microstructure data analysis</td>
@@ -939,7 +945,7 @@
 
     <figure>
       <img src="images\step6-project-overview1.png" alt="Screenshot for Step 6">
-      <figcaption>Figure 30:Navigate to Project, open the <strong>More</strong> menu and, if hiddeln, select <strong>Show Overview</strong>.</figcaption>
+      <figcaption>Figure 30: Navigate to Project, open the <strong>More</strong> menu and, if hidden, select <strong>Show Overview</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images\step6-project-overview2.png" alt="Screenshot for Step 6">
@@ -947,7 +953,7 @@
     </figure>
       </div>
   <p>
-    <strong>CONGRATULATIONS!!</strong>, You know now how to get an overview, you should see a total of five <strong>Experimental Steps</strong> (<strong>Material Synthesis</strong>, created in Step 4) and four
+    <strong>CONGRATULATIONS!!</strong>, You know now how to get an overview, you should see a total of five <strong>Experimental Steps</strong> (<strong>Material Synthesis</strong>, created in Step 4) and five
     additional Experimental Steps listed above. These Objects will be used in a subsequent tutorial to demonstrate relationships between them and the organization of research workflows in the ELN.
   </p>
   </div>
@@ -1140,13 +1146,14 @@
   <section class="step" id="step-8">
     <h2>Step 8: Filter and Search</h2>
     <p>
-     Collections can be filtered to display only selected properties and to refine the displayed objects based on specific property values.
+     Collections can be filtered to display specific properties and to restrict the displayed objects based on specific property values.
       This is one of the advantages of organizing objects, such as Experimental Steps, within collections.
-
+    </p>
+    <p>
       Filtering helps users:
-      - focus on relevant information,
-      - simplify data navigation, and
-      - quickly locate specific objects within large collections.
+      <li>focus on relevant information,</li>
+      <li>simplify data navigation</li>
+      <li>quickly locate specific objects within large collections.</li>
     </p>
     
     <h3>General information</h3>
@@ -1157,72 +1164,75 @@
       <li>Select the relevant collection from the left-hand menu</li>
       <li>Click on the <strong>COLUMNS</strong> tab</li>
       <li>Select the properties you want to display in the overview table</li>
-      <li>Use the filter options available in each column to restrict the displayed objects based on specific property values</li>
+      <li>Use the filter options available in each column to display only objects that match specific property values.</li>
+      <li>Adjust the filter criteria as needed to refine the results.</li>
     </ul>
 
 
     <figure>
       <img src="images\step8-filter-collection1.png" alt="Screenshot for Step 15">
-      <figcaption>Figure 42: Select and display specific object properties within a collection using the COLUMNS tab./figcaption>
+      <figcaption>Figure 42: Use the <strong>COLUMNS</strong> tab to select which object properties are displayed in the collection overview table.</figcaption>
     </figure>
       <figure>
       <img src="images\step8-filter-collection2.png" alt="Screenshot for Step 15">
-      <figcaption>Figure 43:Filter objects within a Collection based on their property values.</figcaption>
+      <figcaption>Figure 43: Apply filters to individual columns to display only objects that match specific property values. This allows you 
+        to quickly locate objects within large collections.</figcaption>
     </figure>
 
   <h3>Exercise: Advanced search</h3>
     <p>
-      This section explains how to create an advanced search query, save it, and reuse it later.
-      Advanced Search allows you to combine multiple search criteria to locate specific objects or datasets stored in the openBIS.
+      This s exercise demonstrates how to create an <strong>Advanced Search</strong> query. Advanced Search allows you to combine multiple search criteria to
+       locate specific objects or datasets stored in openBIS.
     </p>
     <div class="placeholder">
-      <strong>Instructions for Advanced search</strong>
+      <strong>Instructions for Creating an Advanced Search Query</strong>
       <ol>
-      <li>Select the <strong>TOOLS</strong> tab></li>
+      <li>Click the <strong>TOOLS</strong> tab</li>
       <li>Click <strong>Advanced Search</strong></li>
-      <li>Select [<strong>Search For</strong> = Dataset] </li>
-      <li>Select the <strong>Using</strong> [operator = AND]></li>
-      <li>Set the search  criterion: Select [<strong>Field Type</strong> = All]</li>
-      <li>Enter the [<strong>Field Value</strong> = synthetic] </li>
-      <li>Add query criteria, by clicking on <strong>'+'</strong> icon</li>      
-      <li>Select [<strong>Field Type</strong> = Property] </li>
-      <li>Select [<strong>Field Name</strong> = Modification Date]</li>
-      <li>Select [<strong>Comparator Operator</strong> = thatIsLaterThanOrEqualTo (Date)]
-      <li>Select [<strong>Field Value</strong> = 2026-04-17]. Use the calendar icon to enter date</li>
-      <li>Add query criteria, by clicking on <strong>'+'</strong> icon</li>
-      <li>Select [<strong>Field Type</strong> = Property] </li>
-      <li>Select [<strong>Field Name</strong> = Registrator]</li>
-      <li>Select [<strong>Comparator Operator</strong> = thatEqualsUserId]
-      <li>Select [<strong>Field Value</strong> = your "first last name" for example Elena Mueller]</li>
-      <li>Click on 'search' icon to run the query</li> 
-      <li>Search results are displayed below</li>
-      <li>To save the query, click on <strong>save</strong></li>
-      <li>write [query name = Datasets-synthetic] and click <strong>Save</strong></li>
+      <li>Select <strong>Search For</strong>: <strong>Dataset</strong></li>
+      <li>Select the <strong>Using</strong> operator <strong>AND</strong></li>
+      <li>Define the first search  criterion: 
+        <p>- <strong>Field Type</strong>: <strong>All</strong></p>
+        <p>- <strong>Field Value</strong>: <strong>synthetic</strong></p>
+      <li>Add a second search criterion by clicking the <strong>+</strong> icon:     
+        <p>- Select <strong>Field Type</strong>: <strong>Property</strong></p>
+        <p>- Select <strong>Field Name</strong>: <strong>Modification Date</strong></p>
+        <p>- Select <strong>Comparator Operator</strong>: <strong>thatIsLaterThanOrEqualTo (Date)</strong></p>
+        <p>- Select <strong>Field Value</strong>: <strong>2026-04-17</strong>. Use the calendar icon to enter date</p>
+      <li>Add third query criterion, by clicking the <strong>+</strong> icon: 
+       <p>- Select <strong>Field Type</strong>: <strong>Property</strong></p>
+       <p>- Select <strong>Field Name</strong>: <strong>Registrator</strong></p>
+       <p>- Select <strong>Comparator Operator</strong>: <strong>thatEqualsUserId</strong></p>
+       <p>- Select <strong>Field Value</strong>: <strong>your first last and name</strong>, for example "Elena Mueller".</p>
+      <li>Click on the blue search icon (it looks like a magnifying glass) to execute the query</li> 
+      <li>Review the search results displayed below the query form.</li>
+      <li>To save the query, click <strong>save</strong></li>
+      <li>Enter <strong>Datasets-synthetic</strong> as the query name and click <strong>Save</strong> again.</li>
     </ol>
     </div>
 
     <figure>
       <img src="images\step8-advanced-search1.png" alt="Screenshot for Step 8">
-      <figcaption>Figure 44: Configure and run an advanced search query.</figcaption>
+      <figcaption>Figure 44: Configure the search criteria and execute the advanced Search query.</figcaption>
     </figure>
     <figure>
       <img src="images\step8-advance-search2.png" alt="Screenshot for Step 8">
       <figcaption>Figure 45: Save the configured query for future use.</figcaption>
     </figure>
 
-    <p><strong>Reuse saved search</strong>
+    <p><strong>Reuse a saved search</strong>
     </p>
       <strong>Instructions for reusing saved query</strong>
       <ol>
-      <li>Select <strong>TOOLS</strong> tab</li>
-      <li>Click <strong>Advanced Search</strong>.</li>
-      <li>Select the saved query from the drop-down menu [Datasets-synthetic]</li>
-      <li>Click the <strong>search</strong> icon to display the results.</li>
+      <li>Click the <strong>TOOLS</strong> tab</li>
+      <li>Select <strong>Advanced Search</strong>.</li>
+      <li>Choose the saved query <strong>Datasets-synthetic</strong> from the drop-down menu.</li>
+      <li>Click the <strong>search</strong> icon to execute the query and display the results.</li>
     </ol>
     </div>
     <figure>
       <img src="images\step8-advance-search3.png" alt="Screenshot for Step 8">
-      <figcaption>Figure 46: Saved searches are stored in the ELN settings of your goup. Click the 'TOOLS' tab and follow the steps shown to reuse a saved query.</figcaption>
+      <figcaption>Figure 46: Saved searches are stored in the ELN settings of your group. Open <strong>Advanced Search</strong>, select a saved query, and click the Search icon to reuse it.</figcaption>
     </figure>
 
     <p>
