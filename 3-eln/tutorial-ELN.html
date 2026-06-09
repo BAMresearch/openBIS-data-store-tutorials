@@ -321,16 +321,18 @@
       <div class="warning">
       <strong>Important Note:</strong> 
       <ul>
-        <li>Starting with openBIS version 20.10.12, the core data model was extended to include folders and subfolders. Although this feature may provide additional flexibility and resemble the folder structures
-           commonly used in Windows file systems, the Data Store team recommends primarily using the core openBIS data model (Projects → Collections → Objects → Datasets) instead of organizing data through folders.
-
+        <p>
+          Starting with openBIS version 20.10.12, the core data model was extended to include folders and subfolders. Although this feature may provide additional flexibility and resemble the folder structures
+           commonly used in Windows file systems, the Data Store team recommends primarily using the core openBIS data model (Project → Collection → Object → Dataset) instead of organizing data through folders.
+        </p>
             This recommendation is based on the following advantages:
-
-            - Maintaining a lean and clear organization of objects within collections
-            - Keeping the left-hand Lab Notebook menu concise and easier to navigate
-            - Improving the consistency and discoverability of research data
-            - Supporting standardized and scalable data organization across projects and divisions
-            - Encouraging the use of metadata and object relationships instead of file-system-like structures
+        <p>
+        <li>Maintaining a lean and clear organization of objects within collections.</li>
+        <li>Keeping the left-hand Lab Notebook menu concise and easier to navigate.</li>
+        <li>Improving the consistency and discoverability of research data.</li>
+        <li>Supporting standardized and scalable data organization across projects and divisions.</li>
+        <li>Encouraging the use of metadata and object relationships instead of file-system-like structures.</li>
+        </p>
             For most research workflows, representing data in Collections and connecting related objects (for example Experimental Steps) using parent–child relationships provides a more robust and sustainable approach than using nested folder structures.
         </li>
   </div>
@@ -351,37 +353,37 @@
   <section id="Electronic Lab Notebook (ELN)">
     <h2>Electronic Lab Notebook (ELN)</h2>
     <p>
-      In the Lab Notebook section, each user has a personal folder (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that lead to the creation of datasets. Each of these activities can be represented as an experimental step
-      with datasets attached directly to these steps.
+      In the <strong>Lab Notebook</strong> section, each user has a personal workspace (<strong>Space</strong> in openBIS) for organizing research projects, experiments, simulations, and other activities that generate research data. </p>
+    <p>Within a <strong>Project in openBIS</strong>, research activities can be documented as <strong>Experimental Steps</strong>, with datasets attached directly to the corresponding Experimental Step that describes how the data was generated. Experimental Steps can also be linked
+       to other Experimental Steps and to related entities, such as chemicals, instruments, software, and samples. These connections are established through <strong>parent–child relationships</strong>, which help document complete research workflows and data provenance.</p> 
       Experimental Steps should also be linked to one another and to all related elements used to carry them out, such as chemicals, instruments, and software. These connections are established through user-defined parent-child relationships.
-      In this tutorial, you will learn how to register Experimental Steps and upload data in the Lab Notebook.
     </p>
+    <p>In this tutorial, you will learn how to register Experimental Steps, organize them within Collections, and upload datasets in the Electronic Laboratory Notebook.</p>
     </section>
-
 
   <section id="exercises">
     <h2>Exercises</h2>
     <p>
-      The goal of the research project example is to synthesize a material and characterize it before and after a non-destructive chemical treatment. For simplicity, the example used is kept general so that you can focus entirely on learning how to use the openBIS-Data Store system.
+      This tutorial example demonstrates a simplified workflow for the synthesis and characterization of a material before and after a non-destructive chemical treatment. The example has been intentionally simplified so that you can focus on learning how to use the openBIS Data Store rather than on the scientific details of the workflow.
     </p>
-    <strong>This tutorial will guide you through following Steps:</strong>
+    <p>This tutorial will guide you through following Steps:</p>
     <ul>
-      <li>Step 1: Register a Project.</li>
-      <li>Step 2: Register a Collection of Experimental Steps.</li>
-      <li>Step 3: Register Experimental Steps.</li>
-      <li>Step 4: Register Experimental Steps using Templates.</li>
-      <li>Step 5: Edit Collections of Objects.</li>
-      <li>Step 6: Register additional Experimental Steps using Templates.</li>
-      <li>Step 7: Upload Data.</li>
-      <li>Step 8: Filter and Search.</li>
+      <li>1: Register a Project.</li>
+      <li>2: Register a Collection of Experimental Steps.</li>
+      <li>3: Register Experimental Steps.</li>
+      <li>4: Register Experimental Steps using Templates.</li>
+      <li>5: Edit Collections of Objects.</li>
+      <li>6: Register additional Experimental Steps using Templates.</li>
+      <li>7: Upload Data.</li>
+      <li>8: Filter and Search.</li>
     </ul>
     <p>
 
     <figure>
       <img src="images\overview-example.png" alt="Overview representation of the Material Synthesis research project in the Lab Notebook">
       <figcaption>
-        Figure 3: The example is a research project named 'Material Synthesis'. The research project is represented in the Lab Notebook Home Space (X.1 Ebamuser) and
-         comprises five collections (Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis). Collections contain experimental
+        Figure 3: The tutorial example is organized as an openBIS <strong>Project</strong> named <strong>Material Synthesis</strong> represented in the Lab Notebook within the user´s <strong>Home Space</strong> (for example, X.1 Ebamuser) and you will be doing it in your own <strong>Home Space</strong>.
+         The project <strong>Material Synthesis</srong> comprises five collections: <strong>Synthesis, Treatment non-destructive, Parameter 1, Parameter 2 and Parameter 2 Analysis</strong>. The <strong>Collections</strong> contain experimental
           steps to which datasets (not visible in the left-hand menu) are attached.
       </figcaption>
     </figure>
@@ -390,20 +392,20 @@
   <section class="step" id="step-1">
     <h2>Step 1: Register a Project</h2>
     <p>
-      Create an openBIS-project in the Lab Notebook to represent the research project <strong>'Material Synthesis'</strong>.
+      Create an openBIS-project in the Lab Notebook to represent the research project <strong>Material Synthesis</strong>.
     </p>
 
     <div class="placeholder">
-    <strong>Instructions for registering a Project:</strong>
+    <strong>Instructions for registering a Project:</strong>  
     <ol>
       <li>Click the upper <strong>LAB NOTEBOOK</strong> tab in the upper navigation bar.</li>
       <li>In the left-hand menu,  open the <strong>Lab Notebook</strong> drop-down menu to select <strong>Home Space</strong>.</li>
       <li>Click <strong>+ Project</strong> to open the new project form.</li>
-      <li>Enter the project information: <strong>Code</strong> and <strong>Description</strong>.
-        - <strong>Code</strong>: Material Synthesis
-        - <strong>Description</strong>: This tutorial project demonstrates a simplified workflow for the synthesis and characterization of a material within openBIS. The experimental descriptions, metadata, and datasets were generated using AI and represent synthetic example data created solely for training and demonstration purposes.
+      <li>Enter the project information: Code</strong> and <strong>Description</strong>.
+        <p><strong>Code</strong>: Material Synthesis.</p>
+        <p><strong>Description</strong>: This tutorial project demonstrates a simplified workflow for the synthesis and characterization of a material within openBIS. The experimental descriptions, metadata, and datasets were generated using AI and represent synthetic example data created solely for training and demonstration purposes.
           Although the content has been reviewed for consistency and usability within the tutorial, it has not been validated for scientific accuracy and should not be considered scientifically reliable or reproducible.</li>
-      <li>Review all entries and click <strong>Save</strong>.</li>
+      <li>Review all entries and click <strong>Save</strong>.</li></p>
     </ol>
     </div>
 
@@ -466,19 +468,29 @@
     </p>
 
     <h3>General information (This is not an exercise)</h3>
-    <p>Access management in openBIS is only possible at the "Space" and "Project" levels. "Spaces" are created by the Data Store team upon request and only when justified by specific organizational or access-control requirements.
-      For collaborative work—whether with colleagues within your division or across different BAM divisions (for example, for service-data)—it is recommended to organize data within dedicated <strong>Project</strong> and manage access at the project level.
-       Permissions assigned to a project are automatically inherited by all underlying collections, objects, and datasets.  Access can be granted to individual users or groups by assigning one of the available project roles, such as Observer, User, or Admin.
-        Each role provides a different set of permissions and responsibilities.  Detailed information about roles and rights can be found in the Data Store wiki. The following section demonstrates how to manage project access in openBIS.</p>
+    <p>
+      Access management in openBIS is only possible at the <strong>Space</strong> and <strong>Project</strong> levels. <strong>Spaces</strong> are created by the Data Store team upon request and only when justified by specific organizational or access-control requirements.
+    </p>
+    <p>
+      For collaborative work—whether with colleagues within your division or across different BAM divisions (for example, for service-data)—it is recommended to organize data within dedicated <strong>Projects</strong> and manage access at the project level.  Permissions assigned to a project are automatically inherited by all underlying collections, objects, and datasets.
+    </p>
+      Access can be granted to individual users or groups by assigning one of the available project roles, such as <strong>Observer</strong>, <strong>User</strong>, or <strong>Admin</strong>.
+      Each role provides a different set of permissions. For detailed information see, <a href="https://datastore.bam.de/en/concepts/roles_and_rights/" target="_blank"> roles and rights set per default at the Data Store.</a>.
+    </p>
+    <p> 
+      The following section demonstrates how to manage project access in openBIS.
+    </p>
 
-    <strong>Access management at the level of Project</strong>
+    <strong>Access Management at the Project Level</strong>
     <ul>
-      <li>Select project in the left-hand menu.</li>
+      <li>Select the relevant project in the left-hand menu.</li>
       <li>Open the <strong>More</strong> drop-down menu.</li>
       <li>Select <strong>manage access</strong>.</li>
-      <li>Assign <strong>Role</strong> and define to <strong>grant to</strong> a Group (Division number) or User (BAM user name, all with non-capitalized letters).</li>
+      <li>Assign <strong>Role</strong> (Observer, User, or Admin).
+      <li>Specify whether the role should be granted to a Group (Division number) or User (BAM user name, all with non-capitalized letters).</li>
+      <li>Review the access settings and <strong>Save</strong> the changes.</li>
     </ul>
-
+    <p><strong>Note</strong>: Changes to project permissions apply to all collections, objects, and datasets contained within the project. This ensures consistent access control throughout the project structure.</p>
 
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
@@ -486,17 +498,17 @@
   <section class="step" id="step-2">
     <h2>Step 2: Register Collections of Experimental Steps</h2>
     <p>
-      A project can contain several collections to organize Experimental Steps, measurements, and other activities that generate research data. 
-      Collections are one way to logically structure experimental work.
+      A project can contain multiple collections that help organize Experimental Steps, measurements, and other research activities that generate data. Collections provide a logical structure for grouping
+       related work within a project and facilitate navigation, data management, and data retrieval.
     </p>
     <div class="placeholder">
-      <strong>Instructions for creating a collection:</strong>
+      <strong>Instructions for Creating a Collection:</strong>
       <ol>
-      <li>In the left-hand navigation menu, select the project you created in <strong>Step 1</strong> (<strong>Material Synthesis</strong>).</li>
+      <li>In the left-hand navigation menu, select the project you created in <strong>Step 1</strong>: <strong>Material Synthesis</strong>.</li>
       <li>Click <strong>+ Other</strong>.</li>
       <li>From the drop-down menu, Select <strong>Collection</strong>.</li>
       <li>Leave autogenerated <strong>Code(*)</strong> unchanged.</li>
-      <li>Enter a meaningful <strong>Name</strong>. In this example (<strong>Name</strong>=Synthesis).</li>
+      <li>Enter a meaningful <strong>Name</strong>. In this tutorial <strong>Name</strong>: <strong></strong>Synthesis</strong>.</li>
       <li>Leave <strong>Default object type</strong> empty.</li>
       <li>Select <strong>List view</strong> as the <strong>Default collection view</strong>.</li>
       <li>Review all entries and click <strong>Save</strong>.</li>
@@ -505,7 +517,7 @@
     </div>
     <figure>
       <img src="images/step2-collection1.png" alt="Project view showing collection creation">
-      <figcaption>Figure 8: Select the project in the left-hand navigation menu and click <strong>+ Other</strong> to create a new collection.</figcaption>
+      <figcaption>Figure 8: Select the <strong>Material Synthesis</strong> project in the left-hand navigation menu and click <strong>+ Other</strong> to create a new collection.</figcaption>
     </figure>
     <figure>
       <img src="images/step2-collection2.png" alt="Screenshot for Step 2">
@@ -513,7 +525,7 @@
     </figure>
     <figure>
       <img src="images/step2.collection3.png" alt="Screenshot for Step 2">
-      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> unchanged and enter a meaningful <strong>Name</strong> (for this tutorial: <strong>Synthesis</strong>).  
+      <figcaption>Figure 10: Leave the auto generated <strong>Code(*)</strong> unchanged and enter a meaningful <strong>Name</strong>. In this tutorial: <strong>Synthesis</strong>.  
         Leave <strong>Default object type</strong> empty and select select <strong>List view</strong> as the <strong>Default collection view</strong>.</figcaption>
     </figure>
     
