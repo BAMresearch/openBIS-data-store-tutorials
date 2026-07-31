@@ -1,5 +1,4 @@
-
-
+import re#needed for the search collection function
 #this is for code generation for experiments
 def auto_generated_code(prj = None):#it is imperative that you choose the right project for your experiment, otherwise the code will not be generated correctly
     if prj is None:
@@ -9,6 +8,42 @@ def auto_generated_code(prj = None):#it is imperative that you choose the right 
     code = prj.code + "_EXP_" +str(n+1)
     return code
 
+#function that takes in 2 parameters, project and a keyword.
+#searches and bring indices + names of relevant collections in the project that match the keyword
+def search_collection(project = None, keyword = ""):
+    if project == None:
+        return "Error: Project cannot be None."
+    if len(project.get_collections()) == 0:
+        return "Error: There are no collections in the project."
+    if keyword == "":
+        return "Error: No keyword was provided for search."
+    pattern = r'[^a-z0-9_ -]'
+    if keyword != re.sub(pattern, "", keyword):
+        return "Error: The keyword includes characters outside the allowed set of a-z, A-Z, _, space, and -."
+    #now we are sure there are no errors, so we will now implement the searching
+    col_dict = {}#this is a python dictionary that stores indices and names of collections
+    
+    output = []
+    keyword = keyword.lower()
+    keyword = keyword.replace(" ","")
+    for i,x in enumerate(project.get_collections()):#get all collections with indices
+        col_dict[i] = [x.props.all()['$name'], x.props.all()['$name']]
+    for i,collection in enumerate(col_dict.values()):
+        collection[0] = collection[0].lower()
+        collection[0] = collection[0].replace(" ","")
+        collection[0] = re.sub(pattern, "", collection[0])
+        if keyword == "all":
+            output.append([i,collection[1]])
+        else:
+            if keyword in collection[0]:
+                output.append([i,collection[1]])
+
+    if len(output) == 0:
+        print("Could not find any collections with keyword:", keyword)
+    else:
+        print('Indices\t\tCollections')
+        for x in output:
+            print(str(x[0]) + '\t\t' + str(x[1]))
 
 
 templates = {#this is just copy pasted data from the overview of synthesis from after choosing gui based material synthesis template.
