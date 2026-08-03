@@ -1,15 +1,16 @@
 # data-store-tutorials
-This is a public repository to review and share tutorials. Reviewers are the Data Store team of the .  Contents are tutorials to train how to use the openBIS-Data Store research data management system.
+This is a public repository to review and share tutorials. Reviewers are the Data Store team.  Contents are tutorials to train how to use the openBIS-Data Store research data management system.
 
 ## Purpose
 This repository supports the internal development of tutorials for researchers learning to use openBIS, and shares contents with openBIS users at BAM including:
 
+- Groups settings ELN Customization
 - Inventory
 - ELN / Electronic Lab Notebook
 - Parent-Child connections
-- Customization
 
-Approved tutorials can be tagged as reviewed.
+
+Reviewed tutorials are published in the docs folder of this repository and shared via a link (https://bamresearch.github.io/openBIS-data-store-tutorials/eln/tutorial-eln.html) to users.
 
 ## Repository Structure
 
