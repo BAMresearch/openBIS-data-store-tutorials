@@ -17,7 +17,7 @@ def search_collection(project = None, keyword = ""):
         return "Error: There are no collections in the project."
     if keyword == "":
         return "Error: No keyword was provided for search."
-    pattern = r'[^a-z0-9_ -]'
+    pattern = r'[^a-zA-Z0-9_ -]'
     if keyword != re.sub(pattern, "", keyword):
         return "Error: The keyword includes characters outside the allowed set of a-z, A-Z, _, space, and -."
     #now we are sure there are no errors, so we will now implement the searching
@@ -48,7 +48,7 @@ def search_collection(project = None, keyword = ""):
 
 templates = {#this is just copy pasted data from the overview of synthesis from after choosing gui based material synthesis template.
             'Material Synthesis': 
-                {'$name': 'Material Synthesis',#can also ask the usre to input this data and all other fields if needed..
+                {'$name': 'Material Synthesis',#can also ask the user to input this data and all other fields if needed..
                 '$show_in_project_overview': True,
                 'finished_flag': False,
                 'start_date': None,
@@ -77,14 +77,3 @@ templates = {#this is just copy pasted data from the overview of synthesis from 
             'Microstructure data analysis' : 
                 {'$name': '	Microstructure data analysis',}
 }
-
-
-def display_tree(space):#displays space>projects>collections>samples
-    for project in space.get_projects():
-        print(f'\t{project.code}')
-        for experiment in project.get_experiments():
-            print(f'\t\t{experiment.code}')
-            for sample in experiment.get_samples():
-                print(f'\t\t\t{sample.code}')
-                for dataset in sample.get_datasets():
-                    print(f'\t\t\t\t{dataset.code}')
