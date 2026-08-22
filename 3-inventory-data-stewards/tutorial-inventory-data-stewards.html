@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register inventory items in the openBIS Data Store Inventory</title>
+  <title>Register inventory items in the Data Store </title>
   <style>
     :root {
       --primary: #003366;
@@ -34,6 +34,8 @@
       padding: 1.5rem;
       color: var(--text);
       background: #fff;
+      
+      counter-reset: figure;
     }
 
     header {
@@ -117,6 +119,8 @@
 
     figure {
       margin: 1rem 0 1.5rem;
+      counter-increment: figure;
+
     }
 
     img {
@@ -137,6 +141,11 @@
       font-size: 0.92rem;
       color: var(--muted);
       margin-top: 0.45rem;
+    }
+
+    figcaption::before {
+      content: "Figure " counter(figure) ": ";
+      font-weight: bold;
     }
 
     .note,
@@ -207,10 +216,9 @@
   <a id="top"></a>
 
   <header>
-    <h1>Register inventory items in openBIS Data Store</h1>
+    <h1>Register inventory items in the Data Store</h1>
     <p class="lead">
-      This tutorial shows division members who have been assigned the role <strong>Group Admin</strong> in the Data Store (Data Store Stewards (DSSts), division leads and their deputies) how to register inventory objects used in a synthetic example called "Material Synthesis."  It also
-      explains how to enable collaborators to link these inventory items. Consistently registering inventory items and linking them to the experimental steps registered in the ELN improves the traceability, discoverability, reusability, and reproducibility of research data.  
+      This  tutorials shows division members who have been assigned the role <strong>Group Admin</strong> roles in the Data Store (Data Store Stewards (DSSts), division leads and their deputies) how to register inventory entities such as projects, collections, and objects from the "Material Synthesis" tutorial example. Registering inventory items and linking them to the experimental procedures improves the traceability, findability, reusability, and reproducibility of research data.  
     </p>
   </header>
 
@@ -221,12 +229,12 @@
       <li><a href="#before-you-begin">Before you begin</a></li>
       <li><a href="#key-concepts">Key concepts</a></li>
       <li><a href="#download-excel-files">Download Excel files</a></li>
-      <li><a href="#inventory">Inventory (ELN)</a></li>
+      <li><a href="#inventory">Inventory</a></li>
       <li><a href="#exercises">Exercises</a></li>
-      <li><a href="#step-1">Step 1: Register openBIS projects in FB-Inventory</a></li>
-      <li><a href="#step-2">Step 2: Register Inventory Collections in BAM and FB inventory</a></li>
-      <li><a href="#step-3">Step 3: Register Inventory Objects</a></li>
-      <li><a href="#step-4">Step 4: Manage access to inventory objects</a></li>
+      <li><a href="#step-1">Step 1: Register projects in FB Inventory</a></li>
+      <li><a href="#step-2">Step 2: Register collections in BAM and FB Inventory</a></li>
+      <li><a href="#step-3">Step 3: Register objects</a></li>
+      <li><a href="#manage-access">Manage access in FB Inventory</a></li>
       <li><a href="#result">Result</a></li>
     </ul>
   </nav>
@@ -234,8 +242,8 @@
   <section id="learning-outcomes">
     <h2>What you will learn</h2>
     <ul>
-      <li>How to register inventory objects in BAM and FB inventory using the graphical user interface (GUI) of the openBIS Data Store</li>
-      <li>How to manage access to inventory objects</li>
+      <li>How to register inventory entities such as projects, collections, and objects in BAM and FB inventory using the graphical user interface (GUI).</li>
+      <li>How to manage access in the inventory.</li>
     </ul>
   </section>
 
@@ -250,7 +258,7 @@
     </ul>
   </section>
 
-  <section id="Download Excel files">
+  <section id="download-excel-files">
     <h2>Download Excel files</h2>
     <p>
     Excel files are needed to batch-register objects as described in step 3. Download the following two Excel files.
@@ -295,46 +303,46 @@
     <h2>Key concepts</h2>
     <h3>Research workflow</h3>
     <p>
-      The diagram shows the logical workflow used in this tutorial. Instruments and chemicals are examples of inputs or "things you have" (purple boxes). Samples are for example outputs or "things you generate" (green boxes). 
+      The diagram shows the research workflow used in this tutorial. Instruments and chemicals are inputs or "things you have" (purple boxes). Samples are outputs or "things you generate" (green boxes). 
     </p>
 
     <figure>
       <img src="images/workflow.png" alt="Research workflow to be mapped in the Data Store">
       <figcaption>Figure 1: Research workflow represented for the tutorial example. In this tutorial, the "things you have" and the "things you generate" will be represented.</figcaption>
+      <figcaption> Research workflow represented for the "Material Synthesis" tutorial example. In this tutorial, the "things you have" (purple boxes) and the "things you generate" (green boxes) will be represented.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h3>openBIS Data Model</h3>
+ <h3>openBIS Data Model</h3>
     <p>
-      This tutorial uses the openBIS hierarchy: <strong>Space / Project / Collection / Object / Dataset</strong>. The hierarchy is used in BAM Inventory, FB Inventory and ELN.
+        This tutorial uses the openBIS hierarchy: <strong>Space / Project / Collection / Object / Dataset</strong>. The hierarchy is used in BAM Inventory, FB Inventory and ELN.
        In this tutorial, you will work with BAM Inventory and FB Inventory.
+      In this tutorial, you will work with the <strong>BAM Inventory</strong> and <strong>FB Inventory</strong>.
     </p>
 
       <div class="warning">
       <strong>Important Note:</strong> 
       <ul>
     <p>
-      Starting with openBIS version 20.10.12, the core data model was extended to include folders and subfolders. Although this feature may provide additional flexibility and resemble the folder structures
-      commonly used in Windows file systems, the Data Store team recommends primarily using the core openBIS data model (Project → Collection → Object → Dataset) instead of organizing data through folders.
+      Starting with openBIS version 20.10.12, the core data model  has been expanded so that objects can now be registered at the room and project levels, whereas previously this was only possible at the collection level. 
+ Although this feature offers additional flexibility and resembles the folder structures commonly used in Windows file systems, the Data Store team recommends using the openBIS core data model (Project → Collection → Object → Dataset).
     </p>
     <p>This recommendation is based on the following advantages:</p>
     <ul>
         <li>Maintaining a lean and clear organization of objects within collections</li>
         <li>Keeping the left-hand Lab Notebook menu concise and easier to navigate</li>
-        <li>Improving the consistency and discoverability of research data</li>
         <li>Supporting standardized and scalable data organization across projects and divisions</li>
-        <li>Encouraging the use of metadata and object relationships instead of file-system-like structures</li>
     </ul>
       </p>
-      For most research workflows, representing data in Collections and connecting related objects (for example Instruments, chemicals and samples with  experimental steps) using parent–child relationships provides a more robust and sustainable approach than using nested folder structures.
+      For most research workflows, registering objects in collections and connecting related objects (for example instruments, chemicals and samples with experimental steps) using parent–child relationships provides a more robust and sustainable approach than using nested folder structures.
   </div>
 
   <p>
-      In openBIS everything is represented as <strong>objects</strong>. In this tutorial, the inventory objects used for the research project named 'Material Synthesis' are organized in several <strong>collections</strong> within the FB and the BAM Inventory.  These collections are named logically to organize Instruments and Chemicals  used in the research workflow of this tutorial example.
+      In this tutorial, inventory objects are organized into several collections within the FB and the BAM Inventory.  These collections are named logically to organize Instruments and Chemicals and Samples used in the research workflow of this tutorial example.
   </p>
     <figure>
-      <img src="images/data-model.png" alt="Diagram showing  experimental steps and datasets organized in the ELN">
+      <img src="images/data-model.png" alt="Research workflows represented in the Data Store.  Inventory items are represented in BAM Inventory (Instruments) and FB Inventory (Chemicals)">
       <figcaption>
         Figure 2: All items ("things you have") or inputs and ("things you generate") or outputs for this tutorial example, are represented as inventory objects of BAM Inventory (Instruments) and FB Inventory (Chemicals).
       </figcaption>
@@ -345,7 +353,43 @@
   <section id="Inventory">
     <h2>Inventory</h2>
     <p>
-      The <strong>Inventory</strong> sections for the Data Store are <strong>FB Inventory</strong> and <strong>BAM Inventory</strong>. Once objects are registered in the FB Inventory, they are visible only to division members. Objects registered in the BAM Inventory are visible to BAM members. 
+     The <strong>Inventory</strong> sections for the Data Store are <strong>FB Inventory</strong> and <strong>BAM Inventory</strong>. Once objects are registered in the FB Inventory, they are visible only to division members. Objects registered in the BAM Inventory are visible to BAM members. 
+    </p> 
+    <p>
+      Each division has four workspaces (<strong>Spaces</strong> in openBIS); Equipment, Materials, Methods and Publications in FB and BAM Inventory. These Spaces are labeled as X.1 Equipment (in FB Inventory) and as BAM Equipment (in BAM Inventory) with an additional sub-level (openBIS project) labeled with the division number <strong>X.1 Equipment Open</strong>, <strong>X.1 Materials Open</strong>, etc.
+    </p>
+    <p> 
+      The inventory <strong>Spaces</strong> are used to organize "things you have" (Figure 1), tangible or non-tangible. For example, equipment, materials, methods (standard operating Procedures /SOP) used in workflows to generate research data must be registered in the Data Store. Note that within the Inventory Spaces, you find a Space called <strong>Publications</strong>. The use of this Space is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications metadata.
+    </p>
+    <p><strong>What should be registered? </strong>
+     Not every inventory items used by a division needs to be registered in the Data Store. Register items whose metadata is needed to understand, trace, or reproduce the resulting research data-for example instrument, chemicals and samples and link them to experimental steps.
+    </p> 
+    <p>
+      Each division has four workspaces (<strong>Spaces</strong> in openBIS); Equipment, Materials, Methods and Publications in FB and BAM Inventory. These Spaces are labeled as X.1 Equipment (in FB Inventory) and as BAM Equipment (in BAM Inventory) with an additional sub-level (openBIS project) labeled with the division number <strong>X.1 Equipment Open</strong>, <strong>X.1 Materials Open</strong>, etc.
+    </p>
+    <p> 
+      The inventory <strong>Spaces</strong> are used to organize "things you have" (Figure 1), tangible or non-tangible. For example, equipment, materials, methods (standard operating Procedures /SOP) used in workflows to generate research data must be registered in the Data Store. Note that within the Inventory Spaces, you find a Space called <strong>Publications</strong>. The use of this Space is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications metadata.
+    </p>
+    <p><strong>What should be registered? </strong>
+     Not every inventory items used by a division needs to be registered in the Data Store. Register items whose metadata is needed to understand, trace, or reproduce the resulting research data-for example instrument, chemicals and samples and link them to experimental steps.
+    </p> 
+    <p>
+      Each division has four workspaces (<strong>Spaces</strong> in openBIS); Equipment, Materials, Methods and Publications in FB and BAM Inventory. These Spaces are labeled as X.1 Equipment (in FB Inventory) and as BAM Equipment (in BAM Inventory) with an additional sub-level (openBIS project) labeled with the division number <strong>X.1 Equipment Open</strong>, <strong>X.1 Materials Open</strong>, etc.
+    </p>
+    <p> 
+      The inventory <strong>Spaces</strong> are used to organize "things you have" (Figure 1), tangible or non-tangible. For example, equipment, materials, methods (standard operating Procedures /SOP) used in workflows to generate research data must be registered in the Data Store. Note that within the Inventory Spaces, you find a Space called <strong>Publications</strong>. The use of this Space is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications metadata.
+    </p>
+    <p><strong>What should be registered? </strong>
+     Not every inventory items used by a division needs to be registered in the Data Store. Register items whose metadata is needed to understand, trace, or reproduce the resulting research data-for example instrument, chemicals and samples and link them to experimental steps.
+    </p> 
+    <p>
+      Each division has four workspaces (<strong>Spaces</strong> in openBIS); Equipment, Materials, Methods and Publications in FB and BAM Inventory. These Spaces are labeled as X.1 Equipment (in FB Inventory) and as BAM Equipment (in BAM Inventory) with an additional sub-level (openBIS project) labeled with the division number <strong>X.1 Equipment Open</strong>, <strong>X.1 Materials Open</strong>, etc.
+    </p>
+    <p> 
+      The inventory <strong>Spaces</strong> are used to organize "things you have" (Figure 1), tangible or non-tangible. For example, equipment, materials, methods (standard operating Procedures /SOP) used in workflows to generate research data must be registered in the Data Store. Note that within the Inventory Spaces, you find a Space called <strong>Publications</strong>. The use of this Space is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications metadata.
+    </p>
+    <p><strong>What should be registered? </strong>
+     Not every inventory items used by a division needs to be registered in the Data Store. Register items whose metadata is needed to understand, trace, or reproduce the resulting research data-for example instrument, chemicals and samples and link them to experimental steps.
     </p> 
     <p>
       Each division has four workspaces (<strong>Spaces</strong> in openBIS); Equipment, Materials, Methods and Publications in FB and BAM Inventory. These Spaces are labeled as X.1 Equipment (in FB Inventory) and as BAM Equipment (in BAM Inventory) with an additional sub-level (openBIS project) labeled with the division number <strong>X.1 Equipment Open</strong>, <strong>X.1 Materials Open</strong>, etc.
@@ -356,76 +400,91 @@
     <p><strong>What should be registered? </strong>
      Not every inventory items used by a division needs to be registered in the Data Store. Register items whose metadata is needed to understand, trace, or reproduce the resulting research data-for example instrument, chemicals and samples and link them to experimental steps.
     </p>
-    <p>
-      In standardization processes, for example, the calibration date (metadata) of an instrument, is required for certification and evaluation. Therefore, instruments used in these workflows need to be registered and linked to experimental steps in the Data Store.
-      These connections are established through user-defined parent-child relationships.
-    </p>
-      
+ </p>
+     <p>
     <figure>
-      <img src="images/inventory-overview1.png" alt="Overview Inventory">
+      <img src="images/inventory-overview1.png" alt="The Data Store Inventory has two compartments: <strong>BAM Inventory</strong> and the <strong>FB Inventory</strong>. To display them, click on the upper <strong>INVENTORY</strong> tab and open Inventory drop-down menu in the left-hand menu.">
       <figcaption>
-        Figure 3: The Data Store has two inventory compartments, the <strong>BAM Inventory</strong> and the <strong>FB Inventory</strong> to display them, click on the upper <strong>INVENTORY</strong> tab and navigate both inventories in the left-hand menu.
+        The Data Store Inventory has two compartments: <strong>BAM Inventory</strong> and the <strong>FB Inventory</strong>. To display them, click on the upper <strong>INVENTORY</strong> tab and open Inventory drop-down menu in the left-hand menu.
       </figcaption>
     </figure>
 
-        <figure>
+    <p>
+      Each division (FB) has four <strong>Spaces</strong>: <strong>FB Equipment</strong>, <strong>FB Materials</strong>, <strong>FB Methods</strong> and <strong>FB Publications</strong> in the FB Inventory. The BAM Inventory contains <strong>Projects</strong>: <strong>FB Equipment Open</strong>, <strong>FB Materials Open</strong>, <strong>FB Methods Open</strong> and <strong>FB Publications Open</strong>.
+    </p>
+
+      <figure>
       <img src="images/inventory-overview2.png" alt="Overview BAM Inventory">
       <figcaption>
-        Figure 4: The BAM Inventory compartment contains a pre-defined openBIS project for each division. For example, <strong>X.1 Equipment Open</strong>. Here, divisions should register large devices and BAM instruments used by more than one division.
+        The BAM Inventory Spaces contain four projects for each division: <strong>X.1 Equipment Open</strong>, <strong>X.1 Materials Open</strong>, <strong>X.1 Methods Open</strong> and <strong>X.1 Publications Open</strong>.
       </figcaption>
     </figure>
 
-        <figure>
+    <p> 
+      The sorting of inventory items is based on their type: equipment (measurement devices, analysis instruments, etc.), materials (chemicals, samples, specimens, etc.), and methods (repetitive procedures, standard operating procedures/SOP, etc.). In this tutorial, we will focus on registering inventory items within the BAM Inventory and the FB Inventory according to their type.
+      
+      Note that use of Space <strong>Publications</strong> is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications.
+    </p>
+
+    <figure>
       <img src="images/inventory-overview3.png" alt="Overview Collections in BAM and FB Inventory">
       <figcaption>
-        Figure 5: In this tutorial, you will register inventory objects within the BAM Inventory, in the <strong>X.1 Equipment Open</strong> project level and within the FB inventory in the <strong>X.1 Materials</strong> space level according to the rights related to you <strong>Group Admin</strong> role. 
+        In this tutorial, you will register instruments within the BAM Inventory, in the <strong>X.1 Equipment Open</strong> project. Chemicals will be registered within the FB inventory, in the <strong>FB Materials</strong> space and <strong>Chemicals Synthesis</strong> projects. 
       </figcaption>
     </figure>
+
+
+    <p><strong>What should be registered? </strong>
+     Not every inventory items used by a division needs to be registered in the Data Store. Registration of items whose metadata is needed to understand, trace, or reproduce the research data is recommended. This includes, for example, instrument, chemicals and samples and connect them to experimental steps. These connections are established through user-defined parent-child relationships.
+    </p>
+    <p><strong>What metadata should be registered? </strong>
+     It is recommended to enter metadata which is necessary for understanding, traceability, or reproducibility of the research data. For example, the calibration date (metadata) of an instrument is important for verification of the resulting research data.
+    </p>
 
   </section>
 
   <section id="exercises">
     <h2>Exercises</h2>
     <p>
-      This tutorial example demonstrates a simplified workflow for the synthesis and characterization of a material before and after a non-destructive chemical treatment. The example has been intentionally simplified so that you can focus on learning how to use the openBIS Data Store rather than on the scientific details of the workflow.
+      The tutorial demonstrates a simplified workflow for the synthesis and characterization of a material before and after a non-destructive chemical treatment. The workflow has been intentionally simplified to focus on learning how to navigate the Data Store and openBIS, rather than on the scientific details. In this "Material Synthesis" tutorial example, you will learn how to register inventory items in the Data Store.. The exercises are designed for division members with <strong>Group Admin</strong> roles in the Data Store (Data Store Stewards (DSSts), division leads and their deputies).
+
     </p>
     <p>
       This tutorial guides you through the following steps:
     </p>
     <ul>
-      <li>1. Register a Project</li>
-      <li>2. Register inventory collections</li>
-      <li>3. Register multiple objects with Excel files (batch registration)</li>
+      <li>1. Register projects in FB-Inventory</li>
+      <li>2. Register collections</li>
+      <li>3. Register multiple objects via batch registration with Excel files</li>
       <li>4. Manage access rights for collaborators</li>
     </ul>
     <p>
   </section>
   <section class="step" id="step-1">
-    <h2>Step 1: Register openBIS projects in FB-Inventory</h2>
+    <h2>Step 1: Register projects in FB Inventory</h2>
     <p>
-      Users with sufficient rights (Data Store Stewards, FB leads and their deputies) will create two openBIS projects (CHEMICALS and SAMPLES) in the <strong>FB Inventory</strong> to represent inventory items used in the <strong>Material Synthesis</strong> research workflow implemented in this tutorial example. Other division members do not have sufficient rights to create openBIS projects in the FB inventory. In this tutorial (step 4), DSSts will learn how to give access to division colleagues to enable them to register and link these inventory objects.
+      As a Data Store Steward (DSSt), division lead, or deputy, you can create projects (Chemical Synthesis and Sample Synthesis) in the <strong>FB Inventory</strong>. Other division members do not have sufficient rights to create projects in the FB Inventory Spaces. In Step 4 of this tutorial, you will learn how to grant access to projects in the FB Inventory to support the management of inventory items.
+
     </p>
 
     <div class="placeholder">
-    <strong>Instructions for registering an openBIS project:</strong>  
+    <strong>Instructions for registering a project:</strong>  
     <ol>
-      <li>Click the upper <strong>INVENTORY</strong> tab in the upper navigation bar</li>
-      <li>In the left-hand menu,  open the <strong>Inventory</strong> drop-down menu to select your <strong>FB Materials</strong> (X.1 Materials)</li>
+      <li>Click the <strong>INVENTORY</strong> tab in the upper navigation bar</li>
+      <li>In the left-hand menu,  open the <strong>Inventory</strong> drop-down menu to select your <strong>FB Materials</strong> Space (X.1 Materials)</li>
       <li>Click <strong>+ Project</strong> to open the new project form</li>
-      <li>Enter the project information, <strong>Code</strong> and <strong>Description</strong> copy paste values from the table below</li>
+      <li>Enter the project information by copying and pasting  <strong>Code</strong> and <strong>Description</strong> values from the table below</li>
       <li>Review all entries and click <strong>Save</strong></li>
-      <li>Repeat steps 1 to 5 to register openBIS projects <strong>CHEMICALS_SYNTHESIS</strong> and <strong>SAMPLES_SYNTHESIS</strong> (follow the table below)</li>
     </ol>
     </div>
 
-    
-    <h3>Values to register each openBIS project</h3>
+    Repeat steps 1 to 5 to register projects with code <strong>CHEMICALS_SYNTHESIS</strong> and <strong>SAMPLES_SYNTHESIS</strong> (follow the table below).
+    <h3>Values for registering projects in FB Inventory</h3>
 
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr>
       <th style="border: 1px solid black; padding: 8px;"></th>
-      <th style="border: 1px solid black; padding: 8px;">*FB Inventory</th>
       <th style="border: 1px solid black; padding: 8px;">Space Name</th>
       <th style="border: 1px solid black; padding: 8px;">Code</th>
       <th style="border: 1px solid black; padding: 8px;">Description</th>
@@ -434,14 +493,12 @@
   <tbody>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">1</td>
-      <td style="border: 1px solid black; padding: 8px;">*FB Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Materials</td>
       <td style="border: 1px solid black; padding: 8px;">CHEMICALS_SYNTHESIS</td>
       <td style="border: 1px solid black; padding: 8px;">Chemicals used in the "Material Synthesis" tutorial example. The records are fictional and intended solely for training and demonstration purposes.//Chemikalien aus dem Tutorial Beispiel „Material Synthesis“. Die Einträge sind fiktiv und dienen ausschließlich Schulungs- und Demonstrationszwecken.</td>
     </tr>
         <tr>
       <td style="border: 1px solid black; padding: 8px;">2</td>
-      <td style="border: 1px solid black; padding: 8px;">*FB Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Materials</td>
       <td style="border: 1px solid black; padding: 8px;">SAMPLES_SYNTHESIS</td>
       <td style="border: 1px solid black; padding: 8px;">Samples generated in the "Material Synthesis" tutorial example. The records are fictional and intended solely for training and demonstration purposes.//Proben aus dem Tutorial Beispiel "Material Synthesis". Die Einträge sind fiktiv und dienen ausschließlich Schulungs- und Demonstrationszwecken.</td>
@@ -454,15 +511,20 @@
 </p>
 
     <figure>
-      <img src="images/step1-project.png" alt="Inventory navigation to register an openBIS project">
+      <img src="images/step1-project.png" alt="Inventory navigation to register an project">
       <figcaption>
-        Figure 6: The <strong>INVENTORY</strong> tab provides access to the Inventory navigation menu on the left-hand side. Select the <strong>X.1 Materials</strong> (replace X.1 by your FB number) Space to edit it using the central panel tabs.
+        Click on <strong>INVENTORY</strong> tab. Select the <strong>FB Materials</strong> Space, and press on <strong>+ Project</strong> to open the new project form.
       </figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/step1-project-save.png" alt="Project form with save option">
+      <figcaption> Enter<strong> Code (*)</strong> (mandatory in openBIS) and <strong>Description</strong> (Mandatory for Data Store). Review the entries and <strong>Save</strong>.</figcaption>
     </figure>
 
     <h3>General information</h3>
     <p>
-      This section provides guidance for completing the openBIS project form.
+      This section provides guidance for completing the new project form.
     </p>
 
     <strong>Code requirements</strong>
@@ -483,35 +545,29 @@
     </ul>
 
     <div class="warning">
-      <strong>Warning:</strong> If the <strong>Code</strong> field is not displayed and you encounter a white page, click the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
+      <strong>Warning:</strong> If the <strong>Code</strong> and <strong>Description</strong> fields are not displayed and you encounter a white page, click on the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.
     </div>
 
     <figure>
       <img src="images/step1-project-ident-info.png" alt="More menu showing the Show Identification Info option">
       <figcaption>
-        Figure 7: To display <strong>Code</strong> and <strong>Description</strong>, if hidden, use the <strong>More</strong> drop-down menu to display options.</figcaption>
+        To display <strong>Code</strong> and <strong>Description</strong>, if hidden, click on the <strong>More</strong> drop-down menu and select <strong>Show Identification Info</strong>.</figcaption>
     </figure>
-
-    <figure>
-      <img src="images/step1-project-save.png" alt="Project form with save option">
-      <figcaption>Figure 8: Enter<strong> Code (*)</strong> (mandatory in openBIS) and a <strong>Description</strong> (Mandatory for Data Store). Review the entries and <strong>Save</strong>.</figcaption>
-    </figure>
-
-
-
-    <div class="warning">
-      <strong>Warning:</strong> Once an openBIS project has been saved, its project code cannot be modified or reused within the same openBIS instance. To delete a project, select
-       it in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. A project level can only be deleted if it is empty.  Therefore, all collections within this level
-       must be deleted first before the project itself can be deleted. 
-    </div>
 
     <figure>
       <img src="images/step1-project-overview.png" alt="Saved project shown in the inventory Space">
-      <figcaption>Figure 9: The new projects registered within <strong>X.1 Materials</strong> (you should see your division number instead of X.1) are displayed in the left-hand menu.</figcaption>
+      <figcaption>The new registered projects are visible within <strong>FB Materials</strong> Space, which is displayed in the left-hand menu.</figcaption>
     </figure>
 
+    <div class="warning">
+      <strong>Warning:</strong> Once an project has been saved, its code cannot be modified or reused within the same instance.
+    </div>
+     <p>
+      To delete a project, select it in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. A project can only be deleted if it is empty. Therefore, all collections within this project must be deleted first before the project itself can be deleted. 
+    </p>
+
     <p>
-      <strong>CONGRATULATIONS!!</strong>, you have created two openBIS projects within your FB Inventory.
+      <strong>CONGRATULATIONS! </strong>You have successfully created two projects within the FB Inventory.
     </p>
         
     <a class="back-to-top" href="#top">Back to top</a>
@@ -519,49 +575,48 @@
   </section>
 
   <section class="step" id="step-2">
-    <h2>Step 2: Register Inventory Collections in BAM and FB Inventory</h2>
+    <h2>Step 2: Register collections in BAM and FB Inventory </h2>
     <p>
-      A project can contain multiple collections to organize inventory items. Collections provide a logical structure for grouping objects and facilitate navigation, data management, and data retrieval.  In this tutorial example, you will create three collections and use two of them in step 3. The third collection (Samples) is used by your division colleagues to register samples when they implement their "inventory-users" tutorial.
+      A project can contain multiple collections to group together inventory objects of one or different types. Collections provide a logical structure for grouping objects and facilitate navigation, data management, and data retrieval. In this tutorial example, you will create three collections and use two of them in step 3. The third collection (with name Samples) will be used by your division colleagues to register synthesized and treated samples by implementing steps from the tutorial 4-inventory-users.
     </p>
     <div class="placeholder">
-      <strong>Instructions for Creating a Collection:</strong>
+      <strong>Instructions for registering a collection:</strong>
       <ol>
-      <li>In the left-hand navigation menu, navigate to Inventory Space (<strong>Space Name</strong> follow table below)</li>  
-      <li>Select the openBIS project you want to organize collections (<strong>Project Name</strong> follow table below)</li>
+      <li>In the left-hand main menu, navigate to BAM or FB Inventory spaces, and select the space (space names listed in the table below)</li>  
+      <li>Select the project (project names are in the table below)</li>
       <li>Click <strong>+ Other</strong></li>
-      <li>From the drop-down menu, Select <strong>Collection</strong></li>
+      <li>In the drop-down menu begin typing <strong>Collection</strong> and select it</li>
       <li>Leave autogenerated <strong>Code(*)</strong> unchanged</li>
-      <li>Enter (<strong>Collection Name</strong> tableed in table below)</li>
-      <li>Select an Object type from the <strong>Default object type</strong> drop-down menu (<strong>Object Type</strong> follow table below)</li>
+      <li>Enter <strong>Name</strong> from the table below</li>
+      <li>Select <strong>Object type</strong> (value is in the table below) by beginning to type it in the <strong>Default object type</strong> drop-down menu</li>
       <li>Select <strong>List view</strong> as the <strong>Default collection view</strong></li>
       <li>Review all entries and click <strong>Save</strong></li>
-      <li>Repeat steps 1 to 9 to register a total of three collections <strong>Chemicals</strong>, <strong>Samples</strong> and <strong>Instruments</strong> (follow the table below)</li>
       </ol>
     </div>
 
+    Repeat steps 1 to 9 to register a total of three collections with names <strong>Chemicals</strong>, <strong>Samples</strong> and <strong>Instruments</strong>.
+
     <h3>General information</h3>
     <p>
-      It is possible to register openBIS collections with or without a predefined object type.  If you define an object type, as described above, the <strong>+ Object Type</strong> button will appear in the collection view, allowing users to register new objects of the defined type directly from the collection view. If you leave the object type empty, the <strong>+ Sample</strong> button appears instead and users must select the object type for the objects they wish to register.
+      It is possible to register collections with or without a predefined object type. If you define an object type, as described above, the <strong>+ Object Type</strong> button will appear in the collection view, allowing users to register new objects of the predefined type directly from the collection view. If you leave the default object type drop-down empty, no button with predefined object type will be available, and to register new objects, <strong>More</strong> drop-down needs to be opened and <strong>New Object</strong> needs to be selected.
     </p>
 
 
-    <h3>Values to enter to register each Collection</h3>
+    <h3>Values for registering collections in BAM and FB Inventory</h3>
 
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr>
       <th style="border: 1px solid black; padding: 8px;"></th>
-      <th style="border: 1px solid black; padding: 8px;">Inventory</th>
       <th style="border: 1px solid black; padding: 8px;">Space Name</th>
       <th style="border: 1px solid black; padding: 8px;">Project Name</th>
       <th style="border: 1px solid black; padding: 8px;">Collection Name</th>
-      <th style="border: 1px solid black; padding: 8px;">Object Type</th>
+      <th style="border: 1px solid black; padding: 8px;">Default Object Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">1</td>
-      <td style="border: 1px solid black; padding: 8px;">*FB Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Materials</td>
       <td style="border: 1px solid black; padding: 8px;">Chemicals Synthesis</td>
       <td style="border: 1px solid black; padding: 8px;">Chemicals</td>
@@ -569,7 +624,6 @@
     </tr>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">2</td>
-      <td style="border: 1px solid black; padding: 8px;">*FB Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Materials</td>
       <td style="border: 1px solid black; padding: 8px;">Samples Synthesis</td>
       <td style="border: 1px solid black; padding: 8px;">Samples</td>
@@ -577,7 +631,6 @@
     </tr>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">3</td>
-      <td style="border: 1px solid black; padding: 8px;">BAM Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">BAM Equipment</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Equipment Open</td>
       <td style="border: 1px solid black; padding: 8px;">Instruments</td>
@@ -591,15 +644,16 @@
 </p>
     <figure>
       <img src="images/step2-collection-FB-inventory.png" alt="Collection registration in FB Inventory">
-      <figcaption>Figure 10: The <strong>Chemicals</strong> and <strong>Samples</strong> collections registered in FB Inventory are displayed in the left-hand menu. Click the upper tab <strong>Inventory</strong> and open the <strong>FB Materials</strong> drop-down menu for your division number to display the collection.</figcaption>
+      <figcaption> After registration, the <strong>Chemicals</strong> and <strong>Samples</strong> collections will be visible in the FB Inventory. Open the <strong>FB Materials</strong> space and the <strong>Chemicals Synthesis</strong> and <strong>Samples Synthesis</strong> projects to display the corresponding collections.</figcaption>
     </figure>
+
     <figure>
       <img src="images/step2-collection-BAM-inventory.png" alt="Collection registration in BAM-inventory">
-      <figcaption>Figure 11: The <strong>Instruments</strong> collection registered in BAM-inventory for your division is displayed in the left-hand menu. Click the upper tab <strong>Inventory</strong> and open <strong>FB Equipment</strong> drop-down menu for your division number to display the collections.</figcaption>
+      <figcaption> The registered <strong>Instruments</strong> collection will be visible in BAM-inventory within <strong>FB Equipment Open</strong> project. Note that the button with predefined object type <strong>+ Instrument</strong> is visible under the collection name.</figcaption>
     </figure>
    
     <p>
-      <strong>CONGRATULATIONS!!</strong>, you have created three collections, one in BAM-inventory and two in your FB-inventory.
+      <strong>CONGRATULATIONS!</strong> You have successfully created three collections, one in BAM Inventory and two in FB Inventory.
     </p>
 
 
@@ -608,35 +662,30 @@
 
 
   <section class="step" id="step-3">
-    <h2>Step 3: Register Inventory Objects</h2>
+    <h2>Step 3: Register Inventory Objects via batch registration</h2>
     <p>
-      Tangible inventory items, such as instruments and samples, and intangible items, such as standard operating procedures and software, are represented in openBIS as Objects. An object type defines
-      the properties available for a particular category of objects. In this tutorial, we will register objects of the type <strong>Chemical</strong> in the FB Inventory and <strong>Instrument</strong> in the BAM-inventory.
+      Tangible inventory items, such as instruments and samples, and intangible items, such as standard operating procedures and software, can be represented in openBIS as objects. Objects with similar properties (metadata fields) are grouped under the same object type. For example, all instruments of the same type used for the same purpose can be grouped under the object type <strong>Instrument</strong>. In this tutorial, we will register objects of the type <strong>Chemical</strong> in the FB Inventory and <strong>Instrument</strong> in the BAM Inventory using the Excel files which can be downloaded <a href="#download-excel-files">above</a>. Registration will be achieved through the <strong>Batch registration</strong> functionality, which allows registering multiple objects at once.
+
+      Note that registration of objects of type <strong>Sample</strong> will be demonstrated in a separate tutorial, which is designed for division members with <strong>User</strong> roles in the FB Inventory.
      </p>
-    <h3>General information</h3>
-    <p>
-      Batch registration enables to register more than one object at a time. In a separate tutorial we will be using the <strong>Batch update</strong> option to update existing objects. If you want to register a single object, instead of clicking on the <strong>More</strong> drop-down menu, select the <strong>+Chemical</strong> or <strong>+Instrument</strong> button, complete the object form and Save.
-    </p>
+
   
     <div class="placeholder">
-      <strong>Instructions for registering Objects in the inventory:</strong>
+      <strong>Instructions for registering objects via batch registration</strong>
       <ol>
-      <li>In the left-hand menu, navigate to the <strong>Collection name</strong> you want to use to register the objects (follow table below)</li>
+      <li>In the left-hand menu, navigate to the <strong>Collection</strong> (collection name in the table below)</li>
       <li>Open the <strong>More</strong> drop-down menu and select <strong>XLS Batch Register Objects</strong></li>
       <li>In the <strong>Register Objects</strong> window, click on <strong>Datei auswählen</strong> (choose file), select the Excel file containing the objects to register (follow table below)</li>
       <li>Review the name displayed for the uploaded Excel file and click the <strong>Accept</strong> button</li>
-      <li>Registered objects will be displayed within each corresponding collection as indicated in the table below.  To display them, navigate to the corresponding collection in the left menu</li>
-      <li>Repeat steps 1 to 5 to register <strong>Chemicals</strong> and <strong>Instruments</strong> (follow the table below)</li>
-    </ol>
+      </ol>
   </div>
-
-    <h3>Values and files to batch-register objects</h3>
+    Repeat steps 1 to 4 to register objects in <strong>Chemicals</strong> and <strong>Instruments</strong> collections via batch registration (follow the table below).
+    <h3>Values for registering objects</h3>
 
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr>
       <th style="border: 1px solid black; padding: 8px;"></th>
-      <th style="border: 1px solid black; padding: 8px;">Inventory</th>
       <th style="border: 1px solid black; padding: 8px;">Space Name</th>
       <th style="border: 1px solid black; padding: 8px;">Project Name</th>
       <th style="border: 1px solid black; padding: 8px;">Collection Name</th>
@@ -646,7 +695,6 @@
   <tbody>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">1</td>
-      <td style="border: 1px solid black; padding: 8px;">*FB Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Materials</td>
       <td style="border: 1px solid black; padding: 8px;">Chemicals Synthesis</td>
       <td style="border: 1px solid black; padding: 8px;">Chemicals</td>
@@ -654,7 +702,6 @@
     </tr>
     <tr>
       <td style="border: 1px solid black; padding: 8px;">2</td>
-      <td style="border: 1px solid black; padding: 8px;">BAM Inventory</td>
       <td style="border: 1px solid black; padding: 8px;">BAM Equipment</td>
       <td style="border: 1px solid black; padding: 8px;">*FB Equipment Open</td>
       <td style="border: 1px solid black; padding: 8px;">Instruments</td>
@@ -667,23 +714,26 @@
 </p>
     <figure>
       <img src="images/step3-objects-batch-registration1.png" alt="Objects batch registration in FB-inventory">
-      <figcaption>Figure 12: Select the <strong>Collection</strong> (Chemicals or Instruments) in the left-hand menu. open the <strong>More</strong> drop-down menu and choose <strong>XLS Batch Register Objects</strong>.</figcaption>
+      <figcaption>Select the <strong>Collection</strong> (Chemicals or Instruments). Open the <strong>More</strong> drop-down menu and choose <strong>XLS Batch Register Objects</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images/step3-objects-batch-registration2.png" alt="Excel upload for batch registration">
-      <figcaption>Figure 13: Click <strong>Datei auswählen</strong>, select the corresponding Excel file (chemicals or instruments), and click <strong>Accept</strong>.</figcaption>
+      <figcaption> In Register Objects window, click <strong>Datei auswählen</strong>, select the corresponding Excel file, and click <strong>Accept</strong>.</figcaption>
     </figure>
     <figure>
       <img src="images/step3-objects-batch-registration3.png" alt="Overview for batch registration FB Inventory">
-      <figcaption>Figure 14: The registered objects in FB inventory are displayed once you click on the <strong>Chemicals</strong> collection.</figcaption>
+      <figcaption> The registered objects of type <strong>Chemical</strong> will be displayed in FB Inventory.</figcaption>
     </figure>
     <figure>
       <img src="images/step3-objects-batch-registration4.png" alt="Overview for batch registration BAM Inventory">
-      <figcaption>Figure 15: The registered objects in BAM Inventory are displayed once you click on the <strong>Instruments</strong> collection.</figcaption>
+      <figcaption>The registered objects of type <strong>Instrument</strong> will be displayed in BAM Inventory.</figcaption>
     </figure>
-
+    <h3>General information</h3>
+    <p>
+      In a separate tutorial, we will use the <strong>Batch update</strong> functionality to update the metadata of existing Objects. To register a single Object, click the <strong>+ Chemical</strong> or <strong>+ Instrument</strong> button, complete the Object form, and click <strong>Save</strong>.
+    </p>
         <p>
-          <strong>CONGRATULATIONS!!</strong>, you have batch registered Chemicals and Instruments for your division. To enable colleagues to link these inventory objects to their  experimental steps registered in their ELN, you will manage access in  Step 4 of this tutorial.
+        <strong>CONGRATULATIONS!</strong> You have successfully batch registered objects of the types <strong>Chemical</strong> and <strong>Instrument</strong> in the FB and BAM Inventories, respectively.
         </p>
 
     <a class="back-to-top" href="#top">Back to top</a>
@@ -691,79 +741,55 @@
 
 
 <section class="step" id="step-4">
-      <h3>General information (This is not an exercise)</h3>
-      <h2>Manage access to inventory objects</h2>
+      <h3>General information</h3>
+      <h2>Manage access in FB Inventory</h2>
 <p>
-  In openBIS, access permissions can be assigned at the
-  <strong>space</strong> and <strong>project</strong> levels. For detailed
-  information about the roles and permissions defined by default in the
-  Data Store, see the
+  In openBIS, roles and corresponding access rights are assigned at the <strong>space</strong> and <strong>project</strong> levels. For detailed information about the roles and rights defined by default, see the
   <a
-    href="https://datastore.bam.de/en/concepts/roles_and_rights"
+    href="https://datastore.bam.de/en/openbis_20-10-12/concepts/roles_and_rights"
     target="_blank"
     rel="noopener noreferrer"
   >
-    Rights and Roles concept in the Data Store wiki
+    Roles and Rights concept in the Data Store wiki
   </a>
-  (accessible only to BAM members).
+  (accessible only within the BAM network).
+  Access assigned to space or projects in the FB and BAM Inventory can be revoked or modified by user with Admin role within those spaces or projects. By default, DSSts, division leads and their deputies have <strong> Group Admin</strong> roles and corresponding rights.
+</p>
+<h3>FB Inventory</h3>
+
+<p>
+  In all FB Inventory spaces (<code>/FB_EQUIPMENT</code>, etc.) and their underlying content, DSSts, division leads, and their deputies have <strong>Admin</strong> roles and corresponding rights, allowing them to create projects and manage access to them. Other division members have <strong>User</strong> roles, which means they cannot create projects or manage access rights.
 </p>
 
 <p>
-  In the FB Inventory, Data Store Stewards (DSSts) can create projects and
-  manage access. Other division members can work with inventory content in 
-  their division FB Inventory spaces, but they cannot create projects or manage project-level access.
+  The FB Inventory is used to organize items belonging to a specific division. If these items need to be shared with specific collaborators, access can be granted by the division’s DSSts. This may apply, for example, when samples produced by one division are measured by collaborators from another division, or when one division generates data as a service for another. In such cases, inventory Objects can be registered in the appropriate FB Inventory space, organized within a dedicated project, and access can be managed at the project level by the division’s DSSts. Note that responsibility for maintaining the project and managing its access rights remains with the DSSts of the division.
+</p>
+
+<h3>BAM Inventory</h3>
+
+<p>
+  The BAM Inventory should be used to store items whose data and metadata are intended to be visible and shared across all BAM divisions. For example, large measurement devices that are used across the institution should be registered in the BAM Inventory.
 </p>
 
 <p>
-  When contributors from another division need to edit inventory objects or
-  define connections between objects, a DSSt need to grant the <strong>User</strong> role for the relevant
-   FB Inventory project to an individual contributor or a group of contributors
+  In all BAM Inventory spaces (<code>/BAM_EQUIPMENT</code>, etc.), division members have <strong>Observer</strong> roles.This allows division members to view the contents of the space without an ability to manipulate the data or metadata in any way. Each division has 
+  its division-specific projects (<code>/BAM_EQUIPMENT/FB_EQUIPMENT_OPEN</code>, etc.), where DSSts, division lead, and their deputies have the <strong>Admin</strong> role, while division members have the <strong>User</strong> role with the corresponding rights.
 </p>
 
-<p> The BAM Inventory should be used for resources that are shared by multiple divisions and whose metadata
-   should be visible to all BAM members—for example, large instruments used across the institution. 
-</p>
-
-<p> The FB Inventory is more appropriate when inventory objects belong to a division or when access must be
-    limited to specific collaborators. This may apply, for example, when samples produced by one division are
-    measured by another division or when one division generates data as a service for another. In such cases,
-    register the inventory objects in the appropriate FB Inventory space, organize them in a dedicated project,
-    and grant project-level access to the collaborators who require it.
-</p>
-
-<p> By default, members of a division have the <strong>User</strong> role for their FB Inventory spaces,
-   such as <code>/X.1_EQUIPMENT</code>. They can therefore view and edit inventory content in those spaces, but they cannot create projects or manage access.
-</p>
-
-
-<p> In BAM Inventory spaces, such as <code>/BAM_EQUIPMENT</code>, the BAM group has the <strong>Observer</strong> role.
-    This allows BAM members to view the contents of the space. Each division group has the <strong>User</strong> role for its corresponding
-    division-specific project, such as <code>/BAM_EQUIPMENT/X.1_EQUIPMENT_OPEN</code>. Members of that division can therefore edit inventory content within the project.
-</p>
-
-<p> DSSts can manage access in the FB Inventory but not in the BAM Inventory. Permissions in the BAM Inventory are managed centrally.
-    If a division requires additional permissions or needs existing permissions to be restricted, contact the Data Store team.
-</p>
-
-<p>
-    Access assigned to an openBIS Space or Project in the FB Inventory can be revoked or modified by division members with sufficient rights such as DSSts, FB leads and their deputies.
+<p> DSSts can manage access in the FB Inventory spaces but not in the BAM Inventory projects. Access management in the BAM Inventory is managed by Data Store team. If an access to BAM Inventory needs to be granted or modified, contact the Data Store team.
 </p>
 
   <div class="placeholder">
-      <strong>Instructions to grant another division access to a project in the FB Inventory:</strong>
+      <strong>Instructions to grant access to a project in the FB Inventory to a specific collaborator or another division:</strong>
       <ol>
-      <li>In the left-hand menu, select the relevant project in the FB inventory</li>
+      <li>In the left-hand main menu, select the relevant project in the FB Inventory</li>
       <li>Click on the <strong>More</strong> drop-down menu and select <strong>Manage access</strong></li>
       <li>From the <strong>Role</strong> drop-down menu, select <strong>User</strong> </li>
-      <li> From the <strong>grant to</strong> drop-down menu, select <strong>Group</strong> to grant access to an entire division, or <strong>User</strong> to grant access to an individual</li>
-      <li> In the <strong>Group or User</strong> field, enter the division’s group identifier if you selected <strong>Group</strong>, or the person’s username if you selected <strong>User</strong></li>
+      <li> From the <strong>grant to</strong> drop-down menu, select <strong>Group</strong> to grant access to an entire division, or <strong>User</strong> to grant access to a specific collaborator</li>
+      <li> In the <strong>Group or User</strong> field, enter the division’s number if you selected <strong>Group</strong>, or the BAM username if you selected <strong>User</strong></li>
       <li>Verify the selected role and recipient, and then click <strong>Grant access</strong></li>
       </ol>
   </div>
-
-  <p>
-    <strong>CONGRATULATIONS!!</strong>, You have an overview on <strong> roles and rights</strong> and understand how to manage access in the Data Store inventory.
-  </p>
   
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
@@ -772,8 +798,7 @@
   <section id="result">
     <h2>Result</h2>
     <p>
-      After completing this tutorial, you should be able to create inventory projects and collections, batch-register objects in the BAM and FB Inventories, explain the
-       organizational differences between the two inventories and can manage project-level access in the FB Inventory.
+      After completing this tutorial, you should be able to create inventory projects and collections, batch-register objects in the BAM and FB Inventories, explain the organizational differences between the two inventories, and can manage project-level access in the FB Inventory.
     </p>
   </section>
 
