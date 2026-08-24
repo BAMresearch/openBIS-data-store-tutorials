@@ -597,6 +597,198 @@ git push
 
 ---
 
+---
+
+# Full Tutorial Review Workflow
+
+There are two different review workflows in this repository.
+
+## 1. Contributing a Change
+
+Use a **feature branch and pull request** when a contributor proposes changes that differ from `main`.
+
+```text
+main -> feature branch -> changes -> pull request -> review -> maintainer merge
+```
+
+A pull request is appropriate because GitHub can compare the feature branch with `main` and show reviewers exactly what changed.
+
+Example:
+
+```text
+fix/eln-object-creation -> main
+```
+
+## 2. Maintainer Requests a Full Tutorial Review
+
+Use a **GitHub Issue / review task** when a maintainer wants collaborators to review a complete tutorial that is already present on `main`.
+
+Do **not** create an unchanged feature branch solely to start this review. Pull requests are designed to compare branch differences. If the review branch contains exactly the same content as `main`, GitHub has no changes to show and may report:
+
+```text
+There isn't anything to compare
+```
+
+Instead, the maintainer creates a GitHub Issue as the coordination point for the full review.
+
+```text
+tutorial on main
+      |
+      v
+maintainer creates review Issue
+      |
+      v
+contributors review complete tutorial
+      |
+      v
+findings and discussion in Issue
+      |
+      v
+correction required?
+   |             |
+   no           yes
+   |             |
+   v             v
+close Issue   feature branch
+                 |
+                 v
+              correction
+                 |
+                 v
+              PR -> main
+                 |
+                 v
+              review + merge
+```
+
+## Creating the Full-Review Issue
+
+Use a descriptive Issue title, for example:
+
+```text
+Review requested: ELN tutorial
+```
+
+The Issue should identify:
+
+* The tutorial or tutorial section to review.
+* Its location in the repository.
+* The purpose and scope of the review.
+* The contributors or reviewers responsible for it.
+* Any deadline or review period, if applicable.
+* The criteria reviewers should check.
+* How reviewers should report their findings.
+
+The maintainer can assign the Issue to the relevant collaborators and use an appropriate label such as `review`.
+
+## Suggested Full-Review Checklist
+
+- [ ] Technical correctness
+- [ ] Tutorial steps can be followed in the documented order
+- [ ] Instructions are clear and understandable
+- [ ] Terminology is consistent
+- [ ] Screenshots match the described workflow
+- [ ] Screenshots are readable and contain no sensitive information
+- [ ] Image and internal links work correctly
+- [ ] Formatting is consistent
+- [ ] Required information is not missing
+- [ ] Errors and proposed improvements are documented
+
+## Reporting Findings
+
+Comments, questions, and observations about the existing tutorial should be recorded in the review Issue. This keeps discussion of the complete tutorial in one place.
+
+When a finding requires a repository change, use the normal contribution workflow:
+
+```text
+review finding
+      |
+      v
+feature branch from updated main
+      |
+      v
+make correction
+      |
+      v
+commit + push
+      |
+      v
+pull request -> main
+      |
+      v
+review + merge
+```
+
+Example:
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b fix/eln-object-creation
+```
+
+After making the correction:
+
+```bash
+git add .
+git commit -m "Fix ELN object creation instructions"
+git push -u origin fix/eln-object-creation
+```
+
+Then open:
+
+```text
+fix/eln-object-creation -> main
+```
+
+The pull request should reference the full-review Issue so maintainers can track which finding it addresses.
+
+## Maintainer Responsibilities for a Full Tutorial Review
+
+The maintainer should:
+
+* Ensure the tutorial version to review is clearly identified.
+* Create the GitHub Issue coordinating the review.
+* Define the scope and review expectations.
+* Assign or invite the appropriate reviewers.
+* Keep findings and discussion organized in the Issue.
+* Determine which findings require repository changes.
+* Ensure corrections are submitted through feature branches and pull requests.
+* Review and merge approved corrections.
+* Close the review Issue when the agreed review work is complete.
+
+## Reviewer Responsibilities for a Full Tutorial Review
+
+Reviewers should:
+
+* Review the complete tutorial identified in the Issue.
+* Follow the requested review criteria.
+* Record findings, questions, and observations in the Issue.
+* Avoid creating an unchanged branch solely to initiate review.
+* Create a dedicated feature branch when making an actual correction.
+* Open a pull request into `main` for proposed repository changes.
+* Reference the review Issue when submitting corrections.
+
+## Choosing the Correct Workflow
+
+| Situation | GitHub mechanism |
+| --- | --- |
+| Contributor proposes file changes | Feature branch + Pull Request |
+| Maintainer requests review of an unchanged tutorial already on `main` | GitHub Issue / review task |
+| Reviewer finds a correction during a full tutorial review | Feature branch + Pull Request |
+| Reviewers need a shared place for discussion of the complete tutorial | GitHub Issue |
+
+The key distinction is:
+
+```text
+Pull Request = review proposed changes
+GitHub Issue = coordinate review of existing content
+```
+
+A full tutorial review can therefore begin with an Issue and later produce one or more pull requests for specific corrections.
+
+---
+
 # Questions or Support
 
 If you are unsure about the workflow:
