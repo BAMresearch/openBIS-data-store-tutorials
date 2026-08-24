@@ -12,11 +12,52 @@ This repository is used to collaboratively develop, review, and publish tutorial
 
 * The `main` branch is always considered the stable and review-approved version.
 * Contributors must **not push directly to `main`**.
-* All changes must be made through:
+* Contributors must **not use their `main` branch as the source branch for a pull request**.
+* Each contribution should be developed on a dedicated **feature branch** (also called a topic or contribution branch).
+* All changes must go through:
+  1. A feature branch
+  2. A pull request into `main`
+  3. Review and approval
+  4. Merge by a maintainer
 
-  1. Feature branches
-  2. Pull requests
-  3. Review and approval process
+In short:
+
+```text
+main -> create feature branch -> make changes -> push feature branch
+     -> open pull request into main -> review -> maintainer merges
+```
+
+## Why Use a Feature Branch?
+
+The `main` branch should remain a clean copy of the latest approved repository state. A feature branch is a temporary workspace for one specific contribution.
+
+For example:
+
+```text
+main
+└── tutorial/eln-overview
+```
+
+The pull request should be:
+
+```text
+tutorial/eln-overview -> main
+```
+
+and not:
+
+```text
+main -> main
+```
+
+Using a dedicated feature branch:
+
+* Keeps each pull request isolated to one logical change.
+* Prevents unrelated commits from accidentally appearing in an existing pull request.
+* Allows contributors to work on several contributions in parallel.
+* Lets contributors respond to review comments by pushing additional commits to the same branch.
+* Keeps `main` available as a clean starting point for future work.
+* Makes it easy to delete a completed or abandoned contribution without affecting `main`.
 
 ---
 
@@ -61,26 +102,30 @@ cd openBIS-data-store-tutorials
 
 # Contributor Workflow
 
+The contributor owns the feature branch and updates it throughout the review process. Maintainers review the pull request and merge approved changes into `main`.
+
 ## Step 1 — Update Local `main`
 
-Before starting work:
+Before starting any new contribution, switch to `main` and update it:
 
 ```bash
 git checkout main
 git pull origin main
 ```
 
-This ensures your branch starts from the latest approved version.
+This ensures that your new branch starts from the latest approved version.
+
+Do not begin new work directly on `main`.
 
 ---
 
 ## Step 2 — Create a Feature Branch
 
-Create a dedicated branch for your work.
+Create a dedicated branch for **each logical contribution**.
 
 ### Branch Naming Convention
 
-Use descriptive names.
+Use short, descriptive names that indicate what the branch changes.
 
 Examples:
 
@@ -90,11 +135,31 @@ tutorial/eln-step1
 tutorial/eln-step2
 ```
 
-Create the branch:
+Create the branch from the updated `main` branch:
 
 ```bash
 git checkout -b tutorial/eln-overview
 ```
+
+Confirm the active branch if needed:
+
+```bash
+git branch
+```
+
+The feature branch should be the branch on which you edit, commit, and push your contribution.
+
+### One Branch per Contribution
+
+If you later start a different change, return to `main`, update it, and create another branch:
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b tutorial/another-change
+```
+
+Do not reuse one feature branch for unrelated contributions.
 
 ---
 
@@ -112,10 +177,11 @@ Typical locations:
 
 ### Recommendations
 
-* Use consistent terminology
-* Keep screenshots clean and readable
-* Avoid sensitive or personal information in screenshots
-* Use descriptive image names
+* Use consistent terminology.
+* Keep screenshots clean and readable.
+* Avoid sensitive or personal information in screenshots.
+* Use descriptive image names.
+* Avoid unrelated formatting or file changes in the same contribution.
 
 Good examples:
 
@@ -135,19 +201,19 @@ screenshot-final2.png
 
 ## Step 4 — Review Your Changes
 
-Before committing:
-
-Check modified files:
+Before committing, check which files you changed:
 
 ```bash
 git status
 ```
 
-Review differences:
+Review the differences:
 
 ```bash
 git diff
 ```
+
+Make sure the changes belong to the current contribution and that no temporary, unrelated, or sensitive files are included.
 
 ---
 
@@ -182,12 +248,18 @@ git commit -m "Add introduction to ELN Phase 7 tutorial"
 
 ---
 
-## Step 6 — Push Branch to GitHub
+## Step 6 — Push the Feature Branch to GitHub
 
-Push your branch:
+Push the feature branch, not `main`:
 
 ```bash
-git push origin tutorial/eln-overview
+git push -u origin tutorial/eln-overview
+```
+
+After the first push, later updates to the same branch can normally be pushed with:
+
+```bash
+git push
 ```
 
 ---
@@ -196,34 +268,45 @@ git push origin tutorial/eln-overview
 
 ## Step 7 — Open a Pull Request
 
+The pull request proposes merging your **feature branch into `main`**.
+
 ### GitHub UI Instructions
 
-1. Open the repository on GitHub
-2. Select **Pull Requests**
-3. Click **New Pull Request**
-4. Choose:
+1. Open the repository on GitHub.
+2. Select **Pull Requests**.
+3. Click **New Pull Request**.
+4. Set the branches as follows:
 
-Base branch:
+Base branch — the branch that will receive the approved changes:
 
 ```text
 main
 ```
 
-Compare branch:
+Compare branch — your feature branch containing the proposed changes:
 
 ```text
 tutorial/eln-overview
 ```
 
+The intended direction is:
+
+```text
+tutorial/eln-overview -> main
+```
+
 5. Add:
+   * A clear title.
+   * A summary of the changes.
+   * Any context or notes reviewers need.
+6. Request the appropriate reviewer(s).
+7. Submit the pull request.
 
-   * Clear title
-   * Summary of changes
-   * Notes for reviewers
+### Important: Do Not Open the Pull Request from `main`
 
-6. Request reviewers
+Your contribution should come from a feature branch. Keep `main` clean so it can remain synchronized with the approved repository state and serve as the starting point for future branches.
 
-7. Submit the pull request
+Once a pull request is open, continue making requested changes on the **same feature branch**. You do not need to create a new pull request for every review update.
 
 ---
 
@@ -231,24 +314,46 @@ tutorial/eln-overview
 
 Each pull request should:
 
-* Focus on one logical change
-* Be easy to review
-* Include updated screenshots if relevant
-* Avoid unrelated modifications
+* Come from a dedicated feature branch.
+* Target `main`.
+* Focus on one logical change.
+* Be easy to review.
+* Include updated screenshots if relevant.
+* Avoid unrelated modifications.
+* Explain anything reviewers need to verify.
 
 ---
 
-# Reviewer Guidelines
+# Contributor Responsibilities During Review
 
-Reviewers should verify:
+After opening a pull request, the contributor should:
 
-* Technical correctness
-* Tutorial clarity
-* Consistent terminology
-* Screenshot quality
-* Correct image links
-* Formatting consistency
-* Absence of sensitive information
+* Monitor the pull request for comments or requested changes.
+* Ask questions if reviewer feedback is unclear.
+* Make requested changes on the same feature branch.
+* Commit and push those updates.
+* Avoid adding unrelated work to the branch while the pull request is open.
+
+The existing pull request will update automatically when new commits are pushed to its feature branch.
+
+---
+
+# Reviewer and Maintainer Guidelines
+
+Reviewers and maintainers should verify:
+
+* Technical correctness.
+* Tutorial clarity.
+* Consistent terminology.
+* Screenshot quality.
+* Correct image links.
+* Formatting consistency.
+* Absence of sensitive information.
+* That the pull request contains only the intended logical change.
+
+Reviewers should leave clear, actionable comments when changes are needed.
+
+Maintainers should not make contributors create a new pull request merely to address normal review comments. The contributor should update the existing feature branch instead.
 
 ---
 
@@ -256,13 +361,16 @@ Reviewers should verify:
 
 If reviewers request changes:
 
-1. Update your local branch
-2. Commit the requested modifications
-3. Push again to the same branch
+1. Stay on or switch back to your feature branch.
+2. Make the requested modifications.
+3. Review the changes.
+4. Commit them.
+5. Push again to the same feature branch.
 
 Example:
 
 ```bash
+git checkout tutorial/eln-overview
 git add .
 git commit -m "Address reviewer comments on ELN tutorial"
 git push
@@ -270,11 +378,34 @@ git push
 
 The pull request updates automatically.
 
+The review cycle is therefore:
+
+```text
+feature branch
+      |
+      v
+pull request
+      |
+      v
+review comments
+      |
+      v
+update same feature branch
+      |
+      v
+push commits
+      |
+      v
+pull request updates automatically
+```
+
+Repeat this cycle until the pull request is approved.
+
 ---
 
 # Keeping Your Branch Updated
 
-If `main` changes while you are working:
+If `main` changes while you are working and your feature branch needs those changes:
 
 ```bash
 git checkout main
@@ -283,7 +414,9 @@ git checkout tutorial/eln-overview
 git merge main
 ```
 
-Resolve conflicts if needed.
+Resolve conflicts if needed, then commit and push the result to your feature branch.
+
+Do not solve this by moving your contribution onto `main`.
 
 ---
 
@@ -293,9 +426,37 @@ Only maintainers merge pull requests.
 
 Repository settings enforce:
 
-* Pull request reviews
-* Protected `main` branch
-* Restricted direct pushes
+* Pull request reviews.
+* Protected `main` branch.
+* Restricted direct pushes.
+
+## Contributor
+
+The contributor is responsible for:
+
+* Creating the feature branch.
+* Making and committing the changes.
+* Pushing the feature branch.
+* Opening the pull request into `main`.
+* Responding to review comments on the same branch.
+
+## Reviewer
+
+The reviewer is responsible for:
+
+* Checking the proposed changes.
+* Providing actionable feedback.
+* Approving the pull request when it is ready.
+
+## Maintainer
+
+The maintainer is responsible for:
+
+* Protecting the stability of `main`.
+* Ensuring required reviews are complete.
+* Resolving or coordinating any remaining merge concerns.
+* Merging approved pull requests.
+* Avoiding direct changes to `main` except where repository policy explicitly permits them.
 
 ---
 
@@ -307,22 +468,26 @@ The repository uses:
 Squash and merge
 ```
 
-This keeps the commit history clean and readable.
+This keeps the `main` branch history clean and readable while allowing contributors to use multiple commits during development and review.
 
 ---
 
 # Branch Deletion
 
-After merge:
+After the pull request has been merged, the feature branch has completed its purpose.
 
-* Delete the feature branch on GitHub
-* Optionally delete it locally
+* Delete the feature branch on GitHub.
+* Optionally delete it locally.
 
-Delete local branch:
+Delete the local branch:
 
 ```bash
+git checkout main
+git pull origin main
 git branch -d tutorial/eln-overview
 ```
+
+The next contribution should start from the updated `main` branch and use a new feature branch.
 
 ---
 
@@ -330,10 +495,12 @@ git branch -d tutorial/eln-overview
 
 The `main` branch is protected:
 
-* No direct pushes by contributors
-* Pull requests required
-* Review approval required
-* Maintainers control merges
+* No direct pushes by contributors.
+* Pull requests are required.
+* Review approval is required.
+* Maintainers control merges.
+
+Think of `main` as the stable, approved version of the repository—not as a workspace for an individual contribution.
 
 ---
 
@@ -341,11 +508,11 @@ The `main` branch is protected:
 
 Tutorials should:
 
-* Use consistent structure
-* Include step-by-step instructions
-* Include screenshots where useful
-* Use descriptive headings
-* Keep formatting readable
+* Use consistent structure.
+* Include step-by-step instructions.
+* Include screenshots where useful.
+* Use descriptive headings.
+* Keep formatting readable.
 
 Recommended structure:
 
@@ -363,19 +530,70 @@ tutorial-folder/
 
 ## Do
 
-* Keep pull requests focused
-* Use descriptive branch names
-* Write clear commit messages
-* Ask for review early
-* Update documentation with changes
+* Start each contribution from an updated `main`.
+* Create a dedicated feature branch for each contribution.
+* Keep pull requests focused.
+* Use descriptive branch names.
+* Write clear commit messages.
+* Ask for review early.
+* Push review updates to the same feature branch.
+* Update documentation with changes.
 
 ## Avoid
 
-* Large unrelated pull requests
-* Direct commits to `main`
-* Unclear image names
-* Committing temporary files
-* Including private information in screenshots
+* Working directly on `main`.
+* Opening contribution pull requests from `main`.
+* Reusing one branch for unrelated contributions.
+* Large unrelated pull requests.
+* Unclear image names.
+* Committing temporary files.
+* Including private information in screenshots.
+
+---
+
+# Quick Reference
+
+## Contributor
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b tutorial/eln-overview
+
+# Make changes
+
+git status
+git diff
+git add .
+git commit -m "Describe the contribution"
+git push -u origin tutorial/eln-overview
+```
+
+Then open:
+
+```text
+tutorial/eln-overview -> main
+```
+
+If review changes are requested:
+
+```bash
+# Make requested changes on tutorial/eln-overview
+git add .
+git commit -m "Address reviewer comments"
+git push
+```
+
+## Maintainer / Reviewer
+
+```text
+1. Review the pull request.
+2. Request changes or approve it.
+3. Contributor updates the same feature branch if necessary.
+4. Re-review the updated pull request.
+5. Maintainer uses Squash and merge after approval.
+6. Feature branch is deleted after merge.
+```
 
 ---
 
@@ -383,8 +601,8 @@ tutorial-folder/
 
 If you are unsure about the workflow:
 
-* Contact a maintainer
-* Open a discussion issue
-* Ask before restructuring repository contents
+* Contact a maintainer.
+* Open a discussion issue.
+* Ask before restructuring repository contents.
 
 Thank you for contributing.
