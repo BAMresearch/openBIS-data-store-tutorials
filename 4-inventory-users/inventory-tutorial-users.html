@@ -34,6 +34,8 @@
       background: #fff;
       font-family: Arial, sans-serif;
       line-height: 1.65;
+
+      counter-reset: figure;
     }
 
     header {
@@ -166,6 +168,8 @@
 
     figure {
       margin: 1rem 0 1.5rem;
+      counter-increment: figure;
+
     }
 
     img {
@@ -175,7 +179,6 @@
       border-radius: 6px;
       background: #fff;
     }
-
     .screenshot {
       max-width: 420px;
       width: 100%;
@@ -186,6 +189,11 @@
       font-size: 0.92rem;
       color: var(--muted);
       margin-top: 0.45rem;
+    }
+
+    figcaption::before {
+      content: "Figure " counter(figure) ": ";
+      font-weight: bold;
     }
 
     .download-button {
@@ -309,10 +317,10 @@
   <section id="learning-outcomes">
     <h2>What you will learn</h2>
     <ul>
-      <li>Locate inventory projects, collections, and objects prepared by Data Store Stewards.</li>
-      <li>Distinguish division-specific resources in the BAM Inventory from those in the FB Inventory.</li>
-      <li>Register one Sample and identify yourself as the co-responsible person.</li>
-      <li>Batch-register Sample objects using an Excel file.</li>
+      <li>Locate inventory entities such as projects, collections prepared by Data Store Stewards.</li>
+      <li>Distinguish division-specific inventory items and resources from those in the BAM Inventory.</li>
+      <li>Register one Sample.</li>
+      <!-- <li>Batch-register Sample objects using an Excel file.</li> -->
       <li>Distinguish an Excel file for batch registration from one used for batch update.</li>
     </ul>
   </section>
@@ -320,15 +328,13 @@
   <section id="before-you-begin">
     <h2>Before you begin</h2>
     <p>
-      This tutorial is designed for openBIS version 20.10.12 and assumes that
-      the inventory structure has already been prepared by a Data Store
-      Steward. You must have the <strong>User</strong> role for the relevant
-      FB Inventory projects.
+      This tutorial requires no prior experience with openBIS and is designed for openBIS version 20.10.12. Before you begin, make sure that all inventory entities such as projects and collections have already been prepared by a Data Store
+      Stewards of your division.
     </p>
     <ul>
       <li>Confirm that you can log in to the <a href="https://playground.datastore.bam.de/" target="_blank" rel="noopener noreferrer"> playground instance</a> of the Data Store.
-         How to log in to the Data Store instances is described in the <a href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/How_to_log_in" target="_blank" rel="noopener noreferrer"> 
-          Store-How to guide: How to log in</a>.</li>
+         How to log in is described in the <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/user_ui/how_to_log_in" target="_blank" rel="noopener noreferrer"> Wiki how-to guide</a>.</li>
+      <li>As a division member, you have the <strong>User</strong> role in the inventory spaces and projects. When in doubt, follow this <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/admin_ui/display_assigned_roles_in_instance" target="_blank" rel="noopener noreferrer"> Wiki how-to guide</a> to display your roles and rights in spaces and projects.</li>
       <li>If you encounter problems, contact <strong>the Data Store team</strong></li>
     </ul>
   </section>
@@ -337,20 +343,19 @@
     <h2>Key concepts</h2>
     <h3>Inventory</h3>
     <p>
-    The <strong>Inventory</strong> sections for the Data Store are <strong>FB Inventory</strong> and <strong>BAM Inventory</strong>. By default, objects in the FB Inventory are available to the relevant division. Access can also be granted to collaborators from other divisions at the space or project level. Objects in the BAM Inventory are visible to BAM members with access to the Data Store.
+    The <strong>Inventory</strong> sections of the Data Store are <strong>FB Inventory</strong> and <strong>BAM Inventory</strong>. By default, objects in the FB Inventory are available to the relevant division. Access can also be granted to collaborators from other divisions at the space or project level. Objects in the BAM Inventory are visible and accessible for all BAM members with access to the Data Store.
     </p> 
     <p>
-    Each division has four FB Inventory spaces: Equipment, Materials, Methods, and Publications. These spaces are named using the division identifier, for example, <code>X.1 Equipment</code>and <code>X.1 Materials</code>. The BAM Inventory contains institution-wide spaces such as <code>BAM Equipment</code>. Within these spaces, each division has a predefined project, such as <code>X.1 Equipment Open</code>.
+    Each division has four FB Inventory spaces: Equipment, Materials, Methods, and Publications. These spaces are named using the division number, for example, <code>X.1 Equipment</code> and <code>X.1 Materials</code>, etc. The BAM Inventory contains spaces such as <code>BAM Equipment</code>,<code>BAM Materials</code>, etc. Within these spaces, each division has a predefined project, such as <code>X.1 Equipment Open</code>, <code>X.1 Materials</code>, etc. The Data Store Stewards of each division have prepared the inventory entities such as projects and collections to support the registration of objects in this tutorial.
     </p>
     <p> 
-      Inventory spaces organize tangible and intangible resources used or generated during research—for example, instruments, chemicals, samples, software, and standard operating procedures (SOPs). Note that within the Inventory Spaces, you find a Space called <strong>Publications</strong>. The use this Space is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications metadata.
+      Inventory spaces organize tangible and intangible items and resources used or generated during the research, for example, instruments, chemicals, samples, software, and standard operating procedures (SOPs). Note that within the Inventory, you find a space and project called <strong>Publications</strong>.The use of it is optional and does not replace the purpose of the BAM database <strong>Publica</strong> to store publications and their metadata.
     </p>
     <p><strong>What should be registered? </strong>
-     Not every inventory item used by a division needs to be registered in the Data Store. Register items whose metadata is needed to understand, trace, or reproduce the resulting research data.
+     Not every item or resource used needs to be registered in the Inventory. Register first only items whose metadata is needed to understand, trace, or reproduce the resulting research data.
     </p>
     <p>
-      In standardization processes, for example, the calibration date (metadata) of an instrument is required for certification and evaluation. Therefore, instruments used in these workflows need to be registered and linked to experimental steps in the Data Store.
-      These connections are established through user-defined openBIS parent-child relationships.
+      pAlso it is recommended to register instruments metadata such as calibration date, etc. especially if they are used in standardization processes that require certification and evaluation. Such instruments need to be registered and linked to experimental steps. These connections are established through user-defined openBIS parent-child relationships.
     </p>
      </section>
 
@@ -360,15 +365,15 @@
     <ol>
       <li>Review the objects registered by Data Store Stewards in the BAM and FB Inventories.</li>
       <li>Register one Sample in the <strong>SAMPLES_SYNTHESIS</strong> project and enter your username as the co-responsible person.</li>
-      <li>Modify the supplied Excel file and batch-register additional Samples in the <strong>SAMPLES_SYNTHESIS</strong> project.</li>
+      <li>Modify the provided Excel file and batch-register additional Samples in the <strong>SAMPLES_SYNTHESIS</strong> project.</li>
     </ol>
   </section>
 
   <section class="step" id="step-1">
-    <h2>Step 1: Review the prepared inventory structure</h2>
+    <h2>Step 1: Review registered objects in the BAM and FB Inventories</h2>
     <p>
-      Before registering Samples, review the inventory structure prepared by Data Store Stewards for the “Material Synthesis” example.  In this tutorial, <code>X.1</code> represents your division number. Replace it with the 
-      number of your division. If a required project or collection is missing, contact your Data Store Steward.
+      Before registering Samples, review the inventory entities registered by Data Store Stewards for the “Material Synthesis” example.  In this tutorial, <code>X.1</code> represents your division number. Replace it with the 
+      number of your division. If a required project or collection is missing, contact your Data Store Stewards.
     </p>
 
     <table>
@@ -376,8 +381,8 @@
         <tr>
           <th>Inventory</th>
           <th>Space</th>
-          <th>Project</th>
-          <th>Collection</th>
+          <th>Project code</th>
+          <th>Collection name</th>
           <th>Object type</th>
           <th>Object name</th>
         </tr>
@@ -386,7 +391,7 @@
         <tr>
           <td>BAM Inventory</td>
           <td>BAM Equipment</td>
-          <td>X.1 Equipment Open</td>
+          <td>X.1_EQUIPMENT_OPEN</td>
           <td>Instruments</td>
           <td>Instrument</td>
           <td><p>Synthesis</p> <p>Macrostructure</p><p>Microstructure</p></td>
@@ -411,90 +416,78 @@
     </table>
 
     <div class="instructions">
-      <strong>Instructions:</strong>
+      <strong>Instructions on how to display registered objects</strong>
       <ol>
-        <li>Select the upper <strong>Inventory</strong> tab.</li>
-        <li>In the left-hand navigation menu, open <strong>BAM Inventory</strong> and navigate to <strong>BAM Equipment → X.1 Equipment Open → Instruments</strong>.</li>
-        <li>Review the name of the registered Instrument objects.</li>
-        <li>Scroll down to <strong>FB Inventory</strong> and navigate to <strong>X.1 Materials → CHEMICALS_SYNTHESIS → Chemicals</strong>.</li>
-        <li>Review the names of the registered Chemical objects.</li>
-        <li>Navigate to <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</li>
-        <li>Review that the Samples collection is empty and the blue <strong>+ Sample</strong> button is available in the central panel.</li>
+        <li>Select the upper <strong>INVENTORY</strong> tab.</li>
+        <li>In the left-hand navigation menu, open <strong>Inventory</strong> drop-down and navigate to <strong>BAM Equipment → X.1 Equipment Open → Instruments</strong>.</li>
+        <li>Collection: Instruments form with all registered instruments objects will be displayed.</li>
+        <li>Review the name of the registered instrument objects.</li>
+        <li>Scroll down to and navigate to <strong>X.1 Materials → Chemicals Synthesis → Chemicals</strong>.</li>
+        <li>Collection: Chemicals form with all registered chemical objects will be displayed.</li>
+        <li>Review the names of the registered chemical objects.</li>
+        <li>Navigate to <strong>X.1 Materials → Samples Synthesis → Samples</strong>.</li>
+        <li>Collection: Samples form will be displayed.</li>
+        <li>The Samples collection is empty and the blue <strong>+ Sample</strong> button (with predefined object type) is available next <strong>More</strong> drop-down menu.</li>
       </ol>
-    </div>
-
-    <div class="note">
-      <strong>Access note:</strong> All BAM members can view objects in BAM Inventory spaces. Members of a division can edit content in their
-      corresponding division-specific BAM Inventory project, such as <code>X.1 Equipment Open</code>. In the FB Inventory, division members and collaborators can edit content for which they have been assigned
-      the <strong>User</strong> role, such as <code>CHEMICALS_SYNTHESIS</code> and <code>SAMPLES_SYNTHESIS</code>.  If you encounter any access restrictions, please contact the Data Store Steward assigned for your divsion.
     </div>
 
 
     <figure>
       <img src="images/inventory-overview1.png" alt="Inventory navigation showing the BAM Inventory and FB Inventory sections">
-      <figcaption>
-        Figure 1: 
-        The Data Store contains two Inventory sections: <strong>BAM Inventory</strong> and the <strong>FB Inventory</strong>. Select the upper Inventory tab, and use the
-         drop-down menus in the left-hand navigation panel to browse their contents.
+      <figcaption> The Data Store contains two Inventory sections: <strong>BAM Inventory</strong> and the <strong>FB Inventory</strong>. Select the upper <strong>INVENTORY</strong> tab, and use the
+         Inventory drop-down menus in the left main menu to browse their contents.
       </figcaption>
     </figure>
 
     <figure>
-      <img src="images/inventory-overview2.png" alt="Overview Project in BAM Inventory">
-      <figcaption>
-        Figure 2: The BAM Equipment space contains a predefined project for each division, such as <strong>X.1 Equipment Open</strong>. Use the corresponding division project to register large devices and instruments
-        shared by multiple divisions.
+      <img src="images/inventory-overview2.png" alt="Overview projects in BAM Inventory">
+      <figcaption> The BAM Equipment space contains a predefined project for each division, such as <strong>X.1 Equipment Open</strong>. Use the corresponding division project to register large devices and instruments shared by multiple divisions.
       </figcaption>
     </figure>
 
     <figure>
-      <img src="images/inventory-overview3.png" alt="Overview Collections in BAM and FB Inventory">
-      <figcaption>
-        Figure 3: The inventory structure is prepared by the Data Store Stewards.  Division members will register Samples in <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>. 
+      <img src="images/inventory-overview3.png" alt="Overview collections in BAM Inventory">
+      <figcaption> The predefined structure of BAM and FB Inventories.  Division members will register Samples in <strong>X.1 Materials → Samples Synthesis → Samples</strong>. 
       </figcaption>
     </figure>
-
+    
+    <div class="note">
+      <strong>Access note:</strong> Objects registered in BAM Inventory are visible and accessible to all BAM members with access to the Data Store.  Objects registered in FB Inventory are visible to division members and collaborators with access to the corresponding space or project. Editing collections,objects, and their metadata accessible only if you have been assigned the <strong>User</strong> role in the corresponding space or project. As a division member, you have the <strong>User</strong> role in the BAM and FB inventory projects. Note that creation of new projects in the FB inventory can be done only by the Data Store Stewards, by default. If you encounter any access restrictions, please contact the Data Store Stewards assigned for your division. 
+    </div>
     <a class="back-to-top" href="#top">Back to top</a>
 
   </section>
 
   <section class="step" id="step-2">
-    <h2>Step 2: Register one Sample</h2>
+    <h2>Step 2: Register one object (object type: Sample)</h2>
     <p>
-      Register one Sample in the <strong>SAMPLES</strong>
-      collection. Enter your Data Store username in the
+      Register one Sample in the <strong>Samples</strong>
+      collection. Enter your BAM username in the
       <strong>Co-responsible person</strong> property so that other users can
-      distinguish who registers and shares responsibility for the Sample.
+      identify who registers and shares responsibility for the Sample.
     </p>
 
     <div class="instructions">
-      <strong>Instructions:</strong>
+      <strong>Instructions on how to register an object (object type: Sample):</strong>
       <ol>
-        <li>Navigate to <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</li>
-        <li>Click the <strong>+ Sample</strong> button. Because the collection has the predefined <strong>Sample</strong> object type, this button opens the corresponding metadata form.</li>
-        <li>Enter a Sample name that follows the naming convention agreed within your division. For this tutorial, enter the Sample name: <strong>Synthesized Material</strong></li>
-        <li>Complete Sample properties (see table below). All mandatory <strong>(*)</strong> properties must contain a value.</li>
-        <li>In the object form, in the <strong>Co-responsible person</strong> field, start typing your username (as displayed in the upper-right corner next to the power button) and select the matching entry. 
-           openBIS then displays the complete person-object path <code>/BAM_GLOBAL/BAM_DATA/USERNAME</code>.</li>
+        <li>Navigate to <strong>X.1 Materials → Samples Synthesis → Samples</strong>.</li>
+        <li>Click the <strong>+ Sample</strong> button. <li> Object form with object type specific properties (metadata fields) will open. </li>
+        <li>Enter the name: <strong>Synthesized Material</strong></li>
+        <li>Following the table below, complete mandatory <strong>(*)</strong> properties. Replace <code>X.1</code> with your division number.</li>
+        <li>In the object form, in the <strong>Co-responsible person</strong> field, start typing your username and select the matching entry. After selection, openBIS will displays the complete object path <code>/BAM_GLOBAL/BAM_DATA/USERNAME</code>.</li>
         <li>Review the information and click <strong>Save</strong>.</li>
-        <li>Click on the <strong>Samples</strong> collection in the left-hand menu and confirm the sample <strong>Synthesized Material</strong> is displayed.</li>
+        <li>Reload the browser page to confirm that the <strong>Synthesized Material</strong> sample is successfully registered.</li>
       </ol>
     </div>
+    <p>
 
+    </p>
     <div class="warning">
       <strong>Sample naming convention:</strong>
-         Use a documented naming convention that allows every Sample to be identified
-        unambiguously within your division and across collaborating divisions. In
-        this tutorial, a simplified format is used <code>SAMPLE_NAME</code>.  Properties such as <strong>Sample number</strong>, <strong>Alternative name</strong>, and
-        <strong>Co-responsible person</strong> can provide additional identifying
-        information. Apply the selected formats consistently. Do not rely on the
-        co-responsible person alone as the unique identifier for a Sample.
+         It is recommended to use the naming convention agreed upon within your division. Use a documented naming convention that allows every object of type Sample or other to be identified
+        unambiguously within your and across collaborating divisions. Apply the selected formats consistently. Do not rely on the
+        registrator, co-responsible person property alone as to a way to identify the sample. Properties such as <strong>Sample number</strong>, <strong>Alternative name</strong>, <strong>Description</strong>, etc. can provide additional information.
     </div>
-
-    <p>
-      Values for registering the Sample. Enter the values shown in the following table. Replace <code>X.1</code> with your division number
-       and <strong>username</strong> with your Data Store username.  This is displayed in the upper-right corner next to the power button.
-    </p>
 
     <table>
       <thead>
@@ -502,7 +495,7 @@
           <th>Inventory</th>
           <th>Space</th>
           <th>Project</th>
-          <th>Collection</th>
+          <th>Collection name</th>
           <th>Object type</th>
           <th>Object name</th>
           <th>BAM organizational entity(*)</th>
@@ -513,43 +506,40 @@
         <tr>
           <td>FB Inventory</td>
           <td>X.1 Materials</td>
-          <td>SAMPLES_SYNTHESIS</td>
+          <td>Samples Synthesis</td>
           <td>Samples</td>
           <td>Sample</td>
           <td>Synthesized Material</td>
           <td>X.1</td>
-          <td>your username</td>
+          <td> your username</td>
         </tr>
         </tbody>
     </table>
 
       <figure>
       <img src="images/step2-object-registration1.png" alt="Steps to register sample in FB Inventory">
-      <figcaption>
-        Figure 4: Navigate to <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong> and click on the
-         <strong>+ Sample</strong> button. This button is only displayed because the collection has a predefined Object Type.
+      <figcaption> Navigate to <strong>X.1 Materials → Samples Synthesis → Samples</strong> and click on the <strong>+ Sample</strong> button.
       </figcaption>
     </figure>
 
         <figure>
       <img src="images/step2-object-registration2.png" alt="Sample metadata form and values to enter">
       <figcaption>
-        Figure 5: Fill out the <strong>Sample</strong> form as shown. All mandatory <strong>(*)</strong>
-         properties must contain a value to allow saving the Sample.
+         Fill out the <strong> New Sample</strong> object form as shown. All mandatory <strong>(*)</strong>
+         properties must contain a value to be able to save the  object form.
       </figcaption>
     </figure>
 
         <figure>
       <img src="images/step2-object-registration3.png" alt="Overview registered sample in FB Inventory / Collection">
-      <figcaption>
-        Figure 6: The <strong>Sample</strong> registered in FB Inventory is displayed once you click the
+      <figcaption> The registered <strong>Sample</strong> is displayed once you click the
          <strong>Samples</strong> collection. Note that the columns correspond to the sample properties and your username should 
-         be listed as <strong>Co-responsible person</strong>.
+         be listed in the <strong>Co-responsible person</strong> field.
       </figcaption>
     </figure>
 
   <p>
-    <strong>Congratulations,</strong> You have registered one sample in your FB Inventory. 
+    <strong>Congratulations,</strong> you have successfully registered one sample in the FB Inventory. 
   </p>
 
     <a class="back-to-top" href="#top">Back to top</a>
@@ -558,10 +548,10 @@
   <section class="step" id="step-3">
     <h2>Step 3: Batch-register Samples</h2>
     <p>
-      Use the supplied Excel file to register multiple Sample objects in one
-      operation. Before uploading it, for each sample you want to register, enter your username path in the
-      <strong>Co-responsible person</strong> column and replace <strong>X.1</strong> with your <strong>division number</strong>.
-      Batch registration creates new objects; it does not update objects that already exist.
+      Use the provided Excel file to register multiple samples in one
+      operation. Before start, open Excel file and for each sample you want to register, enter your username in the
+      <strong>Co-responsible person</strong> column in following format: /BAM_GLOBAL/BAM_DATA/USERNAME. Replace all occurrences of <strong>X.1</strong> with your <strong>division number</strong>.
+      Batch registration creates new objects; it does not update already existing onces.
     </p>
 
     <p>
@@ -571,16 +561,13 @@
     </p>
 
     <div class="instructions">
-      <strong>Instructions to prepare the Excel file for batch registration:</strong>
+      <strong>Instructions on how to prepare the Excel file for batch registration:</strong>
       <ol>
-        <li>Download <code>samples.xlsx</code> using the button above.</li>
-        <li>Open the file and review the Sample objects prepared for the “Material Synthesis” example.</li>
-        <li>In the Excel file, replace <strong>X.1</strong> with your division number in the columns <strong>Experiment,
-           Project, Space and BAM Organizational Entity</strong></li>
-        <li>In the <strong>Co-responsible person</strong> column, enter the complete person-object path using the format
-        <code>/BAM_GLOBAL/BAM_DATA/USERNAME</code>. Replace
-        <code>USERNAME</code> with your username displayed in the upper-right corner.</li>   
-        <li>Check Sample names.</li>
+        <li>Download <code>samples.xlsx</code>.</li>
+        <li>Open the file and review the objects.</li>
+        <li>In the Excel file, replace all occurrences of <strong>X.1</strong> with your division number.</li>
+        <li>In the <strong>Co-responsible person</strong> column, enter your username in the following format:
+        <code>/BAM_GLOBAL/BAM_DATA/USERNAME</code>.
         <li>Do not change the column headings, object type information, or worksheet structure.</li>
         <li>Save the modified Excel file under a clear filename, for example <strong>samples_FB_material_synthesis.xlsx</strong>.</li>
       </ol>
@@ -605,13 +592,9 @@
     </li>
   </ul>
 
-  <p>
-    When completing an Excel file, do not rename the columns. openBIS requires
-    the original column headings for batch registration and batch update.
-  </p>
 </div>
 
-    <div class="instructions">
+<!--   <div class="instructions">
       <strong>Instructions for batch registration:</strong>
       <ol>
         <li>In openBIS, navigate to <strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</li>
@@ -626,64 +609,56 @@
         <li>Return to the <strong>Samples</strong> collection and confirm that the new objects are displayed.</li>
       </ol>
     </div>
+-->
 
     <div class="warning">
-      <strong>Mandatory properties (*):</strong>
-      Successful batch registration requires values for all mandatory properties.
+      <strong>Mandatory properties (*): </strong>
+      <p>Successful batch registration requires values to be filled in all mandatory properties fields.
       However, the Excel template generated by openBIS does not indicate which
       properties are mandatory <strong>(*)</strong>. Before completing the template, follow the guide
       on
       <a
-        href="https://datastore.bam.de/en/admin_ui/verify_mandatory_properties"
+        href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/admin_ui/verify_mandatory_properties"
         target="_blank"
         rel="noopener noreferrer"
       >
-        how to identify mandatory properties for an object type
-      </a>.  In the Excel file provided for this tutorial, values for the mandatory properties have already been entered. Review these values and 
-      replace any tutorial placeholders, such as the division number or username, before uploading the file.
+        how to identify mandatory properties of an object type
+      </a>.</p>
     </div>
+
 
     <figure>
       <img src="images/step3-batch-registration-excel.png" alt="Samples Excel template with division and Co-responsible-person columns highlighted">
-      <figcaption>
-        Figure 9: Click <strong>Choose file</strong>—shown as
-        <strong>Datei auswählen</strong> when the browser language is German—and
-        select the completed <code>samples_FB_material_synthesis.xlsx</code> file.
-        Verify that the correct filename is displayed, and then click
-        <strong>Accept</strong> to start the batch registration.
-
-        To create your own batch-registration file, click
-        <strong>Download</strong> under <strong>Template</strong> to obtain a blank
-        Excel template for the predefined <strong>Sample</strong> object type.
+      <figcaption> In the Excel file provided in this tutorial, values in the mandatory properties fields  have already been entered. Review these values and 
+      replace the division number and username, before uploading the file.
     </figcaption>
     </figure>
+
 
     <figure>
       <img src="images/step3-batch-registration1.png" alt="Steps to navigate to Batch-registration function">
       <figcaption>
-        Figure 8: Navigate to <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.  Open the <strong>More</strong> drop-down menu and choose <strong>XLS Batch Register Objects</strong>.
+         Navigate to <strong>X.1 Materials → Sample Synthesis → Samples</strong>.  Open the <strong>More</strong> drop-down menu and choose <strong>XLS Batch Register Objects</strong>.
       </figcaption>
     </figure>
 
     <figure>
       <img src="images/step3-batch-registration2.png" alt="Batch-registration select file and Accept">
       <figcaption>
-        Figure 9: Click <strong>Datei auswählen/choose file</strong>, select the updated Excel file <strong>samples_FB_material_synthesis.xlsx</strong>, and click <strong>Accept</strong>. 
-        When an Excel file is not provided, you can use the <strong>Template: download</strong> option to retrieve a blank Excel file for the specified object type (Sample).
+         Click <strong>Datei auswählen/choose file</strong>, select the updated Excel file <strong>samples_FB_material_synthesis.xlsx</strong>, and click <strong>Accept</strong>. 
+        When an Excel file is not provided, you can use the <strong>Template: download</strong> option to retrieve a blank Excel.
       </figcaption>
     </figure>
 
     <figure>
       <img src="images/step3-batch-registration3.png" alt="Samples collection showing the objects created by batch registration">
-      <figcaption>
-        Figure 10: The registered Samples are displayed once you click on the <strong>Samples</strong> collection. Review that X.1 is replaced 
-        by your division number and your USERNAME path <code>/BAM_GLOBAL/BAM_DATA/USERNAME</code> is displayed as <strong>Co-responsible person</strong>.
+      <figcaption> Registered samples are displayed once you click on the <strong>Samples</strong> collection.
       </figcaption>
     </figure>
 
   <p>
-    <strong>Congratulations,</strong> you have registered a total of four samples.  
-    In a separate tutorial, you will link these samples to the Lab Notebook and other inventory items and complete the tutorial example.
+    <strong>Congratulations,</strong> you have successfully registered a total of five samples.  
+    In a further tutorial, you will learn how to link these samples to the Lab Notebook and other inventory items to complete the "Material Synthesis" tutorial example.
   </p>
 
     <a class="back-to-top" href="#top">Back to top</a>
@@ -693,14 +668,14 @@
     <h2>General information: Prepare Excel files for batch registration and batch update</h2>
     <p>
       Batch registration and batch update are different operations and require
-      differently prepared Excel files.  In this tutorial you used the batch registration to register samples. In a follow-up tutorial, you will batch-update all samples registered in this tutorial to 
-      define their parent-child connections and complete representation of the workflow you started in the Lab Notebook (ELN) tutorial.
+      differently prepared Excel files.  <!-- In this tutorial you used the batch registration to register samples. In a follow-up tutorial, you will batch-update all samples registered in this tutorial to 
+      define their parent-child connections and complete representation of the workflow you started in the Lab Notebook (ELN) tutorial. -->
     </p>
 
     <div class="warning">
-      <strong>Batch registration versus batch update:</strong> Use batch registration only to create new
-      objects. If an object from the Excel file already exists, stop and use
-      the batch-update procedure.
+      The batch registration is meant to be used only to create new
+      objects, while batch update is intended for modifying existing
+      objects, more specifically values in the metadata fields.
     </div>
 
   
@@ -735,8 +710,7 @@
         <td>
           <ol>
             <li>
-              Navigate to the collection in which you want to register the
-              objects.
+              Navigate to the collection.
             </li>
             <li>
               Select
@@ -744,8 +718,7 @@
             </li>
             <li>
               Under <strong>Template</strong>, click
-              <strong>Download</strong> to download the Excel template for
-              the configured object type (see Figure 9).
+              <strong>Download</strong> to download the blank Excel template. Template will contain object types enabled for this collection.
             </li>
           </ol>
         </td>
@@ -754,24 +727,10 @@
             <li>Add one row for each new object.
             </li>
             <li>
-              Identify the mandatory properties for the relevant object type.
-              The Excel template does not indicate which properties are
-              mandatory. For guidance, see
-              <a
-                href="https://datastore.bam.de/en/admin_ui/verify_mandatory_properties"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                how to identify mandatory properties for an object type
-              </a>
+              Fill in the values for each property, especially the mandatory properties.
             </li>
-            <li>Provide values for all mandatory properties.</li>
-            <li>
-              Follow the object-naming and metadata conventions defined by
-              your division.
-            </li>
-            <li>
-              Verify the correctness of property values. 
+            <li>Follow the object-naming conventions defined by
+              your division, if one exists.
             </li>
             <li>
               Do not modify the column headings or worksheet structure.
@@ -779,7 +738,7 @@
             <li>Save the completed Excel file.</li>
             <li>
               Return to the batch registration window and upload the
-              completed file.  Verify the filename and click <strong>Accept</strong>
+              completed file.  Click <strong>Accept</strong>.
             </li>
           </ol>
         </td>
@@ -787,7 +746,7 @@
 
       <tr>
         <td><strong>Batch update</strong></td>
-        <td>Modify objects that already exist</td>
+        <td>Modify existing objects</td>
         <td>
           <ol>
             <li>
@@ -796,7 +755,7 @@
             <li>Select the objects you want to update.</li>
             <li>
               <a
-                href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/Export_metadata_to_excel"
+                href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/user_ui/export_metadata_to_excel"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -807,9 +766,8 @@
         </td>
         <td>
           <ol>
-            <li>Keep an unchanged backup of the exported file.</li>
             <li>
-              Edit only the property values that need to be updated.
+              Edit only the values that need to be updated.
             </li>
             <li>
               Do not modify object identifiers, codes, column headings, or
@@ -831,22 +789,13 @@
   </table>
 </div>
 
-
-    <div class="note">
-      <strong>Batch registration note:</strong> Never use a batch registration file to update
-      existing objects. The exact names of the export and batch-update commands
-      may depend on the configured openBIS interface. If the required commands
-      are not displayed, contact your Data Store Steward before changing any
-      existing objects.
-    </div>
   </section>
 
   <section id="result">
     <h2>Result</h2>
     <p>
       After completing this tutorial, you should be able to locate
-       inventory objects, register individual objects, enter and modify property values such as your username, 
-       batch-register multiple objects using an Excel file, and explain the difference between batch registration and batch update.
+       inventory entities such as projects, collections, and objects. Register individual objects. <!-- You should also be able to batch-register multiple objects using an Excel file, and explain the difference between batch registration and batch update. -->
     </p>
   </section>
 </body>
