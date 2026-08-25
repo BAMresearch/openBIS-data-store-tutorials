@@ -673,9 +673,9 @@
     </p>
 
     <div class="warning">
-      <strong>Batch registration versus batch update:</strong> Use batch registration only to create new
-      objects. If an object from the Excel file already exists, stop and use
-      the batch-update procedure.
+      The batch registration is meant to be used only to create new
+      objects, while batch update is intended for modifying existing
+      objects, more specifically values in the metadata fields.
     </div>
 
   
@@ -710,8 +710,7 @@
         <td>
           <ol>
             <li>
-              Navigate to the collection in which you want to register the
-              objects.
+              Navigate to the collection.
             </li>
             <li>
               Select
@@ -719,8 +718,7 @@
             </li>
             <li>
               Under <strong>Template</strong>, click
-              <strong>Download</strong> to download the Excel template for
-              the configured object type (see .
+              <strong>Download</strong> to download the blank Excel template. Template will contain object types enabled for this collection.
             </li>
           </ol>
         </td>
@@ -729,24 +727,10 @@
             <li>Add one row for each new object.
             </li>
             <li>
-              Identify the mandatory properties for the relevant object type.
-              The Excel template does not indicate which properties are
-              mandatory. For guidance, see
-              <a
-                href="https://datastore.bam.de/en/admin_ui/verify_mandatory_properties"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                how to identify mandatory properties for an object type
-              </a>
+              Fill in the values for each property, especially the mandatory properties.
             </li>
-            <li>Provide values for all mandatory properties.</li>
-            <li>
-              Follow the object-naming and metadata conventions defined by
-              your division.
-            </li>
-            <li>
-              Verify the correctness of property values. 
+            <li>Follow the object-naming conventions defined by
+              your division, if one exists.
             </li>
             <li>
               Do not modify the column headings or worksheet structure.
@@ -754,7 +738,7 @@
             <li>Save the completed Excel file.</li>
             <li>
               Return to the batch registration window and upload the
-              completed file.  Verify the filename and click <strong>Accept</strong>
+              completed file.  Click <strong>Accept</strong>.
             </li>
           </ol>
         </td>
@@ -762,7 +746,7 @@
 
       <tr>
         <td><strong>Batch update</strong></td>
-        <td>Modify objects that already exist</td>
+        <td>Modify existing objects</td>
         <td>
           <ol>
             <li>
@@ -771,7 +755,7 @@
             <li>Select the objects you want to update.</li>
             <li>
               <a
-                href="https://datastore.bam.de/en/openBIS_v20-10-12-2/How_to_guides/Export_metadata_to_excel"
+                href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/user_ui/export_metadata_to_excel"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -782,9 +766,8 @@
         </td>
         <td>
           <ol>
-            <li>Keep an unchanged backup of the exported file.</li>
             <li>
-              Edit only the property values that need to be updated.
+              Edit only the values that need to be updated.
             </li>
             <li>
               Do not modify object identifiers, codes, column headings, or
@@ -806,22 +789,13 @@
   </table>
 </div>
 
-
-    <div class="note">
-      <strong>Batch registration note:</strong> Never use a batch registration file to update
-      existing objects. The exact names of the export and batch-update commands
-      may depend on the configured openBIS interface. If the required commands
-      are not displayed, contact your Data Store Steward before changing any
-      existing objects.
-    </div>
   </section>
 
   <section id="result">
     <h2>Result</h2>
     <p>
       After completing this tutorial, you should be able to locate
-       inventory objects, register individual objects, enter and modify property values such as your username, 
-       batch-register multiple objects using an Excel file, and explain the difference between batch registration and batch update.
+       inventory entities such as projects, collections, and objects. Register individual objects. <!-- You should also be able to batch-register multiple objects using an Excel file, and explain the difference between batch registration and batch update. -->
     </p>
   </section>
 </body>
