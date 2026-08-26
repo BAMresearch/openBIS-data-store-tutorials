@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Store self-learning guideline</title>
+
+  <style>
+    :root {
+      --primary: #1f4e79;
+      --primary-light: #eaf2f8;
+      --secondary: #5b6573;
+      --border: #d9e2ec;
+      --background: #f7f9fb;
+      --white: #ffffff;
+      --success-bg: #eef7ee;
+      --success-border: #5a8f5a;
+      --note-bg: #fff8e6;
+      --note-border: #d6a84b;
+      --text: #222222;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--background);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    h2 {
+      margin-top: 42px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      margin-top: 8px;
+    }
+
+    .intro,
+    .section-card,
+    .milestone,
+    .tutorial-step,
+    .note,
+    .recommendation {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 18px 0;
+    }
+
+    .intro {
+      border-left: 5px solid var(--primary);
+    }
+
+    .milestone {
+      border-left: 5px solid var(--primary);
+    }
+
+    .milestone-title {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .estimated-time {
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .note {
+      background: var(--note-bg);
+      border-left: 5px solid var(--note-border);
+    }
+
+    .recommendation {
+      background: var(--success-bg);
+      border-left: 5px solid var(--success-border);
+    }
+
+    .resource-link {
+      display: inline-block;
+      margin: 6px 8px 8px 0;
+      padding: 6px 10px;
+      border: 1px dashed var(--primary);
+      border-radius: 5px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      background: var(--primary-light);
+    }
+
+    .resource-link:hover {
+      text-decoration: underline;
+    }
+
+    .role-label {
+      display: inline-block;
+      padding: 3px 9px;
+      margin: 3px 4px 8px 0;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .tutorial-sequence {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 20px;
+    }
+
+    .tutorial-step {
+      margin: 0;
+    }
+
+    .tutorial-number {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .tutorial-arrow {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--secondary);
+      line-height: 1;
+      padding: 8px 0;
+    }
+
+    .role-table-wrapper {
+      overflow-x: auto;
+      margin-top: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+  
+
+    .rollout-graphic {
+      margin: 24px 0;
+      text-align: center;
+    }
+
+    .rollout-graphic img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .rollout-graphic figcaption {
+      margin-top: 8px;
+      color: var(--secondary);
+      font-size: 0.9rem;
+    }
+    .timeline {
+      margin: 20px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      position: relative;
+      margin: 0 0 14px;
+      padding: 14px 16px 14px 22px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: 6px;
+    }
+
+    .timeline strong {
+      color: var(--primary);
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding: 20px 14px 40px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .intro,
+      .section-card,
+      .milestone,
+      .tutorial-step,
+      .note,
+      .recommendation {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Data Store self-learning guideline</h1>
+
+      <div class="intro">
+        <p>
+          This guideline explains how the self-learning Data Store rollout is organized,
+          which milestones a division is expected to complete, and how the tutorials
+          build on one another.
+        </p>
+
+        <p>
+          The self-learning approach is designed to prepare both
+          <strong>Data Store Stewards (DSSts)</strong> and
+          <strong>division members (Users)</strong> for working with the Data Store
+          in daily research-data workflows. DSSts first customize the division-specific
+          environment and set an inventory structure. Users then learn how
+          to document research activities, upload data, register Inventory objects
+          and connect related information so that research data remain traceable.
+        </p>
+      </div>
+    </header>
+
+    <div class="note">
+  <strong>Who should use this self-learning guideline?</strong>
+  <p>
+    The Data Store self-learning guideline is intended for:
+  </p>
+
+  <ul>
+    <li>
+      <strong>Divisions (FBs) that have not yet been onboarded to the Data Store.</strong>
+      These divisions should follow the complete self-learning rollout described in this guideline.
+    </li>
+
+    <li>
+      <strong>New BAM employees who handle research data and join a division that has already been onboarded.</strong>
+      In this case, new employees should contact the
+      <strong>Data Store Steward (DSSt)</strong> assigned to their division. Together with the DSSt,
+      they should follow the learning path described in
+      <strong>Section 2: Tutorial sequence and responsibilities</strong>, completing the tutorials
+      relevant to their role.
+    </li>
+  </ul>
+</div>
+
+
+    <section>
+      <h2>1. Self-learning rollout concept</h2>
+
+      <p>
+        The rollout combines role-specific self-learning tutorials, a division workshop,
+        the implementation of a first use case, and a later follow-up meeting.
+      </p>
+
+      <figure class="rollout-graphic">
+        <img src="images/self-learning.png"
+             alt="Overview of the Data Store self-learning rollout">
+        <figcaption>
+          Data Store self-learning rollout and milestones.
+        </figcaption>
+      </figure>
+
+      <div class="note">
+        <strong>Note on the suggested timeline:</strong>
+        The timeline described below is a recommendation based on experience from the
+        previous webinar-guided onboarding concept. Divisions (FBs) should coordinate
+        internally with their Data Store Stewards (DSSts) to plan and complete the
+        tutorials within the self-learning period. This period is framed by the agreed
+        <strong>rollout start date</strong> and <strong>Step 3 – Rollout follow-up</strong>.
+        The rollout follow-up is an <strong>in-person meeting</strong> attended by the
+        DSSts and division leads together with the Data Store team. Divisions should
+        therefore organize their internal tutorial implementation so that the required
+        onboarding and initial implementation activities can be completed within this
+        overall timeframe.
+      </div>
+
+      <h3>Step 1: Assignment of Data Store Stewards</h3>
+      <div class="section-card">
+        <ul>
+          <li>
+            The Data Store team informs the division about the role and requirements
+            of Data Store Stewards.
+          </li>
+          <li>
+            Division leads assign one or two
+            <strong>Data Store Stewards (DSSts)</strong>.
+          </li>
+          <li>
+            The Data Store team coordinates the rollout start date together with the
+            division leads and DSSts.
+          </li>
+        </ul>
+      </div>
+
+      <div class="milestone">
+        <div class="milestone-title">Milestone 1 – Data Store Steward onboarding (Week 1)</div>
+
+        <p>During the first week, DSSts read guidelines and complete the tutorials on:</p>
+
+        <ul>
+          <li>Customization of the ELN settings for the group/division</li>
+          <li>Electronic Lab Notebook (ELN)</li>
+          <li>Inventory</li>
+          <li>Connecting data</li>
+          <li>Masterdata concepts and definition workflow</li>
+        </ul>
+
+        <p class="estimated-time">
+          Estimated time: approximately one week.
+        </p>
+      </div>
+
+      <div class="milestone">
+        <div class="milestone-title">Milestone 2 – User onboarding (Week 2)</div>
+
+        <p>
+          All division members who handle research data complete the tutorials on:
+        </p>
+
+        <ul>
+          <li>Electronic Lab Notebook (ELN)</li>
+          <li>Inventory</li>
+          <li>Connecting data</li>
+        </ul>
+
+        <p class="estimated-time">
+          Estimated time: approximately 6 hours.
+        </p>
+      </div>
+
+      <div class="milestone">
+        <div class="milestone-title">
+          Milestone 3 – Access to the Data Store main instance (Week 3)
+        </div>
+
+        <p>
+          Once Milestones 1 and 2 are completed, all participating division members
+          receive access to the <strong>Data Store main instance</strong>.
+          From this point onward, the division's research data should be stored in the
+          Data Store together with the required metadata and connections needed to make
+          the research data traceable.
+        </p>
+      </div>
+
+      <h3>Step 2: Division workshop</h3>
+      <div class="section-card">
+        <p>
+          The Data Store Stewards organize a workshop within their division to define
+          how the Data Store will be implemented in daily research workflows.
+          Relevant topics include:
+        </p>
+
+        <ul>
+          <li>Common data structures</li>
+          <li>Naming conventions for representing and organizing Data Store objects</li>
+          <li>Use case(s) relevant to the division</li>
+          <li>
+            Roles and responsibilities for handling research data and implementing
+            the Data Store in daily workflows
+          </li>
+          <li>
+            Masterdata requirements, including the need for new Masterdata entities (object types and
+            controlled vocabularies)
+          </li>
+        </ul>
+
+        <p>
+          The Data Store team can join the workshop upon request and provide support.
+        </p>
+      </div>
+
+      <div class="milestone">
+        <div class="milestone-title">Milestone 4 – First use case implementation</div>
+
+        <p>
+          Each division implements a first Data Store use case led by the
+          Data Store Steward(s).
+        </p>
+
+        <p class="estimated-time">
+          Estimated time: approximately 2–3 weeks, depending on the complexity
+          of the selected use case.
+        </p>
+      </div>
+
+      <h3>Step 3: Rollout follow-up</h3>
+      <div class="section-card">
+        <p>
+          Approximately <strong>three months after Milestone 3</strong>, the Data Store
+          team organizes an <strong>in-person rollout follow-up meeting</strong> with
+          the Data Store Stewards and division leads. During this meeting, Data Store
+          Stewards present their implemented use cases, share lessons learned, and
+          discuss opportunities for further optimization together with the Data Store team.
+        </p>
+      </div>
+
+      <div class="recommendation">
+        <strong>Recommendation for division leads:</strong>
+        Division leads are encouraged to complete the
+        <strong>ELN</strong> and <strong>Inventory user</strong> tutorials as well.
+        This provides a practical understanding of the workflows used by division
+        members and supports informed decisions during the rollout.
+      </div>
+
+      <h3>Rollout at a glance</h3>
+      <ul class="timeline">
+        <li>
+          <strong>Week 1:</strong> Data Store Stewards complete their onboarding tutorials.
+        </li>
+        <li>
+          <strong>Week 2:</strong> Division members complete the user tutorials.
+        </li>
+        <li>
+          <strong>Week 3:</strong> Division members receive access to the Data Store main instance.
+        </li>
+        <li>
+          <strong>Following weeks:</strong> The division workshop is held and the first use case is implemented.
+        </li>
+        <li>
+          <strong>Approximately three months after Milestone 3:</strong>
+          The Data Store team conducts the rollout follow-up.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Tutorial sequence and responsibilities</h2>
+
+      <p>
+        The learning sequence starts with a guideline on how to represent research data
+        in the Data Store. It is followed by five tutorials that use the same synthetic
+        research example, <strong>“Material Synthesis.”</strong> Each tutorial builds on
+        the results of the previous tutorial and represents one step in the process of
+        implementing the Data Store in a division's daily research-data workflows.
+      </p>
+
+      <p>
+        The tutorial sequence covers five implementation steps: configuring the
+        Electronic Lab Notebook (ELN), uploading research data, preparing Inventory
+        structures, registering Inventory objects, and connecting Lab Notebook data
+        with the corresponding Inventory objects.
+      </p>
+
+      <div class="note">
+        <strong>Roles in the Data Store:</strong>
+        Each division has at least one assigned <strong>Data Store Steward (DSSt)</strong>.
+        Data Store Stewards, division leads, and their deputies have
+        <strong>Group Admin</strong> rights, which allow them to perform the
+        administrative tasks required to prepare the Data Store environment for their
+        division. 
+        
+        Other division members have the <strong>User</strong> role in the invetory
+        at the project level and work within the structures prepared for them. In the Lab Notebook, 
+        division members have the <strong>Admin</strong> role and therefore have higher rights to 
+        work independenty with it.
+
+      <p>
+        In the <strong>Inventory</strong>, other division members have the
+        <strong>User</strong> role at the project level and work within the structures
+        prepared for them by users with Group Admin rights.
+      </p>
+
+      <p>
+        In the <strong>Lab Notebook (ELN)</strong>, division members have the
+        <strong>Admin</strong> role. This gives them the permissions required to work
+        independently within the Lab Notebook and manage their research-data workflows.
+      </p>
+      </div>
+
+      </div>
+
+      <div class="tutorial-sequence">
+
+        <div class="tutorial-step">
+          <div class="tutorial-number">1. Guideline to represent research data in the Data Store</div>
+          <span class="role-label">Data Store Stewards</span>
+          <span class="role-label">Users</span>
+          <p>
+            Introduces the general concepts and principles for representing research
+            data and related metadata in the Data Store. Read this guideline before
+            starting the role-specific tutorials.
+          </p>
+          <!-- Replace # with the URL of the guideline -->
+          <a class="resource-link" href="#">Link to guideline</a>
+        </div>
+
+        <div class="tutorial-arrow" aria-hidden="true">↓</div>
+
+        <div class="tutorial-step">
+          <div class="tutorial-number">2. Customize ELN settings for your group</div>
+          <span class="role-label">Data Store Stewards only</span>
+          <p>
+            Prepare the Lab Notebook settings required for the division before other
+            users begin working in the ELN.
+          </p>
+          <!-- Replace # with the URL of the tutorial -->
+          <a class="resource-link" href="#">Link to tutorial</a>
+        </div>
+
+        <div class="tutorial-arrow" aria-hidden="true">↓</div>
+
+        <div class="tutorial-step">
+          <div class="tutorial-number">3. Upload data in the Lab Notebook</div>
+          <span class="role-label">Data Store Stewards</span>
+          <span class="role-label">Users</span>
+          <p>
+            Register experimental steps and upload the associated research data.
+          </p>
+          <!-- Replace # with the URL of the tutorial -->
+          <a class="resource-link" href="#">Link to tutorial</a>
+        </div>
+
+        <div class="tutorial-arrow" aria-hidden="true">↓</div>
+
+        <div class="tutorial-step">
+          <div class="tutorial-number">4. Prepare Inventory structures for your division</div>
+          <span class="role-label">Data Store Stewards only</span>
+          <p>
+            Create the required Inventory projects and collections and register
+            shared Inventory items needed by the division.
+          </p>
+          <!-- Replace # with the URL of the tutorial -->
+          <a class="resource-link" href="#">Link to tutorial</a>
+        </div>
+
+        <div class="tutorial-arrow" aria-hidden="true">↓</div>
+
+        <div class="tutorial-step">
+          <div class="tutorial-number">5. Register Inventory items</div>
+          <span class="role-label">Users</span>
+          <span class="role-label">Data Store Stewards</span>
+          <p>
+            Register Inventory items generated or used during the research workflow.
+          </p>
+          <!-- Replace # with the URL of the tutorial -->
+          <a class="resource-link" href="#">Link to tutorial</a>
+        </div>
+
+        <div class="tutorial-arrow" aria-hidden="true">↓</div>
+
+        <div class="tutorial-step">
+          <div class="tutorial-number">
+            6. Connect Lab Notebook data with Inventory items
+          </div>
+          <span class="role-label">Users</span>
+          <span class="role-label">Data Store Stewards</span>
+          <p>
+            Connect experimental steps with the corresponding instruments, chemicals,
+            samples, and other Inventory items to make the research workflow traceable.
+          </p>
+          <!-- Replace # with the URL of the tutorial -->
+          <a class="resource-link" href="#">Link to tutorial</a>
+        </div>
+
+      </div>
+
+      <h3>Role overview</h3>
+      <div class="role-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Tutorial</th>
+              <th>Main activity</th>
+              <th>DSSt</th>
+              <th>User</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Guideline: represent research data in the Data Store</td>
+              <td>Recommended</td>
+              <td>Recommended</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Customize ELN settings</td>
+              <td>Required</td>
+              <td>Not required</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Upload data in the ELN</td>
+              <td>Required</td>
+              <td>Required</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Prepare Inventory structures</td>
+              <td>Required</td>
+              <td>Not required</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Register Inventory items</td>
+              <td>Required</td>
+              <td>Required</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Connect ELN data with Inventory items</td>
+              <td>Required</td>
+              <td>Required</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <strong>Important:</strong>
+        The tutorials should be completed in the indicated sequence because later
+        tutorials reuse structures and objects created in earlier tutorials.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
