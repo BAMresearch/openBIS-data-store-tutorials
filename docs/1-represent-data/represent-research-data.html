@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Represent research data in the Data Store</title>
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #1370bc;
+      --text: #222;
+      --muted: #5a6470;
+      --border: #d9e1e8;
+      --bg-soft: #f7f9fc;
+      --note-bg: #f5f8fc;
+      --warning-bg: #fff5f5;
+      --warning-border: #cc0000;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      color: var(--text);
+      background: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+    }
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+    h1 {
+      margin-bottom: 0.3em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.25rem;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+    p { margin: 0.5rem 0 1rem; }
+    a { color: var(--secondary); }
+    .lead { color: #2d3a45; font-size: 1.05rem; }
+    .toc {
+      margin: 1.5rem 0 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .toc h2 { margin-top: 0; padding-bottom: 0; border-bottom: 0; }
+    .toc ul, ul, ol { margin: 0.5rem 0 1rem; padding-left: 1.35rem; }
+    li { margin: 0.3rem 0; }
+    .step {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .step h2 { margin-top: 0; padding-bottom: 0; border-bottom: 0; }
+    .note, .warning, .instructions {
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+    }
+    .note { background: var(--note-bg); border-left: 4px solid var(--primary); }
+    .warning { background: var(--warning-bg); border-left: 4px solid var(--warning-border); }
+    .instructions { background: #fff9ed; border-left: 4px solid #a06a00; }
+    figure { margin: 1rem 0 1.5rem; }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #cfd7df;
+      border-radius: 6px;
+      background: #fff;
+    }
+    figcaption { font-size: 0.92rem; color: var(--muted); margin-top: 0.45rem; }
+    .model-path {
+      margin: 1rem 0 1.5rem;
+      padding: 1rem;
+      text-align: center;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 1.05rem;
+    }
+    .workflow-sequence {
+      margin: 1rem 0;
+      padding: 1rem;
+      text-align: center;
+      background: var(--note-bg);
+      border-left: 4px solid var(--primary);
+      border-radius: 6px;
+    }
+    .workflow-sequence p { margin: 0.6rem 0; }
+    .workflow-arrow { color: var(--secondary); font-size: 1.35rem; font-weight: bold; }
+    .back-to-top { display: inline-block; margin-top: 0.75rem; font-size: 0.95rem; }
+    @media (max-width: 720px) {
+      body { padding: 1rem; }
+      .step { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+  <header>
+    <h1>Represent research data in the Data Store</h1>
+    <p class="lead">
+      This guideline explains how to move from a conceptual research workflow
+      to a structured representation in the Data Store. The same approach is
+      used throughout the tutorial series and is illustrated with the synthetic
+      <strong>“Material Synthesis”</strong> example.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#research-workflow">Research workflow</a></li>
+      <li><a href="#data-store-data-model">Data Store data model</a></li>
+      <li><a href="#from-workflow-to-data-store">From workflow to Data Store</a></li>
+    </ul>
+  </nav>
+
+  <section id="purpose">
+    <h2>Purpose</h2>
+    <p>
+      Before configuring the Data Store, it is useful to develop a conceptual
+      model of the research workflow. This helps identify which research data,
+      activities, resources, and research outputs need to be represented and
+      how they are connected.
+    </p>
+    <p>
+      The <strong>“Material Synthesis”</strong> example is used throughout the
+      Data Store tutorials to demonstrate this process consistently. The same
+      research workflow is first described conceptually and is then mapped to
+      the Lab Notebook and Inventory using the Data Store data model.
+    </p>
+  </section>
+
+  <section class="step" id="research-workflow">
+    <h2>Research workflow</h2>
+    <p>
+      Start by identifying the research data that should be stored in the Data
+      Store and sketching the workflow through which these data are generated.
+      The workflow should include:
+    </p>
+    <ul>
+      <li>the <strong>datasets</strong> that need to be stored;</li>
+      <li>the <strong>activities or experimental steps</strong> through which the datasets are generated;</li>
+      <li>the <strong>resources used</strong> during these activities, such as instruments, chemicals, methods, or software; and</li>
+      <li>other <strong>research outputs</strong>, such as samples or code, that are generated as part of the workflow.</li>
+    </ul>
+    <p>
+      The resulting research workflow provides a conceptual overview of
+      <strong>what you do, what you use, and what you generate</strong>. It also
+      helps identify the entities that need to be represented as objects in the
+      Data Store and the relationships between them.
+    </p>
+    <figure>
+      <img src="images/workflow.png" alt="Research workflow for the Material Synthesis example showing activities, resources, datasets, and other research outputs">
+      <figcaption>
+        Figure 1: Research workflow for the <strong>“Material Synthesis”</strong> example. The diagram helps identify the activities, resources, datasets, and other research outputs that need to be represented in the Data Store.
+      </figcaption>
+    </figure>
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section class="step" id="data-store-data-model">
+    <h2>Data Store data model</h2>
+    <p>
+      In the next step, map the elements identified in the research workflow to
+      the appropriate Data Store components: <strong>Lab Notebook (ELN)</strong>,
+      <strong>FB Inventory</strong>, and <strong>BAM Inventory</strong>.
+    </p>
+    <p>Objects are organized using the openBIS hierarchy:</p>
+    <div class="model-path"><strong>Space → Project → Collection → Object</strong></div>
+
+    <div class="note">
+  <strong>Recommended Data Store structure:</strong>
+
+  <p>
+    Starting with openBIS version 20.10.12, objects can also be registered
+    directly at the space or project level, providing additional flexibility
+    for organizing data. This can be used to create structures that resemble
+    nested folders in a conventional file system.
+  </p>
+
+  <p>
+    For the Data Store, however, we recommend organizing research data using
+    the following structure:
+  </p>
+
+  <p>
+    <strong>Space → Project → Collection → Object → Dataset</strong>
+  </p>
+
+  <p>
+    In particular, we recommend registering objects within
+    <strong>collections</strong> rather than using spaces or projects directly or creating
+    folder-like hierarchies. This approach:
+  </p>
+
+  <ul>
+    <li>
+      provides a clear and consistent organization of objects;
+    </li>
+    <li>
+      keeps the left-hand Lab Notebook navigation concise and easier to use;
+    </li>
+    <li>
+      encourages the use of metadata and object relationships rather than
+      nested folder-like structures; and
+    </li>
+    <li>
+      supports a standardized and scalable data organization across projects
+      and divisions.
+    </li>
+  </ul>
+
+  <p>
+    For most research workflows, organize objects in collections and use
+    <strong>parent-child relationships</strong> to connect related objects,
+    such as instruments, chemicals, samples, and experimental steps. This
+    provides a more consistent and sustainable representation of the research
+    workflow than creating deeply nested, folder-like structures.
+  </p>
+</div>
+
+    <p>
+      In the Lab Notebook, objects representing experimental steps describe how
+      research data were generated, and the corresponding
+      <strong>datasets are attached to these objects</strong>. Resources and
+      research outputs that need to be referenced across research activities
+      can be represented as objects in the appropriate Inventory.
+    </p>
+    <p>
+      Related objects across the Lab Notebook and Inventory are connected using
+      <strong>parent-child relationships</strong>. These connections make it
+      possible to trace relationships between experimental steps and the
+      instruments, chemicals, samples, and other resources or outputs involved
+      in the research workflow.
+    </p>
+    <figure>
+      <img src="images/data-model.png" alt="Data Store data model for the Material Synthesis example showing the Lab Notebook, FB Inventory, BAM Inventory, objects, and datasets">
+      <figcaption>
+        Figure 2: Data Store data model for the <strong>“Material Synthesis”</strong> example. Elements identified in the research workflow are mapped to the Lab Notebook, FB Inventory, and BAM Inventory and organized using the openBIS hierarchy.
+      </figcaption>
+    </figure>
+    <div class="note">
+      <strong>Traceability:</strong>
+      Objects represented across the Lab Notebook and Inventory should be connected where relationships are relevant to understanding how research data were generated. Parent-child relationships allow these connections to be followed across the Data Store.
+    </div>
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section id="from-workflow-to-data-store">
+    <h2>From workflow to Data Store</h2>
+    <p>The recommended modeling process can be summarized as follows:</p>
+    <div class="workflow-sequence">
+      <p><strong>Research workflow</strong><br><em>What do I do, use, and generate?</em></p>
+      <p class="workflow-arrow">↓</p>
+      <p><strong>Identify objects and datasets</strong><br><em>What needs to be represented in the Data Store?</em></p>
+      <p class="workflow-arrow">↓</p>
+      <p><strong>Map to the Data Store data model</strong><br><em>Where should each object and dataset be represented?</em></p>
+      <p class="workflow-arrow">↓</p>
+      <p><strong>Connect related objects</strong><br><em>How are the Lab Notebook and Inventory linked?</em></p>
+    </div>
+    <p>
+      Following this process helps create a consistent representation of the
+      research workflow and improves the traceability of research data and the
+      resources used to generate them.
+    </p>
+  </section>
+</body>
+</html>
