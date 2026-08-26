@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2026-08-25T14:21:42.122Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="Y6vWmSgDDJXPcvCwu8Dj" version="22.1.2" type="device" pages="3">
+<mxfile host="Electron" modified="2026-08-26T06:58:21.989Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="JFBFAF6sDDow_0PjUm-c" version="22.1.2" type="device" pages="2">
   <diagram name="Workflow" id="YgDw_aPN8VKMHmyF7MRB">
-    <mxGraphModel dx="2536" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1847" dy="496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -251,797 +251,393 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="-YrN0VYknFMxwAo1FwHf" name="DataModel">
-    <mxGraphModel dx="882" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <object label="Lab Notebook" Description="" id="SrnTOlCMw5CpfHyKMoxU-1">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2580" y="881" width="1260" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-4" target="SrnTOlCMw5CpfHyKMoxU-18" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-4" target="SrnTOlCMw5CpfHyKMoxU-23" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="1. Material Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-4">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2590" y="1300" width="198.5" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-6" target="SrnTOlCMw5CpfHyKMoxU-24" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="5. Microstructure Characterization  " Description="" id="SrnTOlCMw5CpfHyKMoxU-6">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3430" y="1318" width="170" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Material Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-7">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2580" y="1039.25" width="1260" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="SPACE" Description="" id="SrnTOlCMw5CpfHyKMoxU-8">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1311.04" y="961.5" width="110" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="PROJECT" Description="" id="SrnTOlCMw5CpfHyKMoxU-9">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1311.04" y="1031.5" width="110" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="COLLECTION" Description="" id="SrnTOlCMw5CpfHyKMoxU-10">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1311.04" y="1117.75" width="110" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="OBJECT" Description="" id="SrnTOlCMw5CpfHyKMoxU-11">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1311.04" y="1200" width="110" height="640" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="DATASET" Description="" id="SrnTOlCMw5CpfHyKMoxU-12">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#b85450;fillColor=#f8cecc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1311.04" y="1850" width="110" height="171.25" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="4. Macrostructure Characterization TS " Description="" id="SrnTOlCMw5CpfHyKMoxU-13">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3130" y="1659" width="180" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-16" target="SrnTOlCMw5CpfHyKMoxU-75" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-16" target="SrnTOlCMw5CpfHyKMoxU-51" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label=" 2. Chemical Treatment" Description="" id="SrnTOlCMw5CpfHyKMoxU-16">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2860" y="1520" width="198.5" height="42" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-18" target="SrnTOlCMw5CpfHyKMoxU-39" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-18" value="Material Sample_001" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="2000" y="1421" width="198.75" height="50" as="geometry" />
-        </mxCell>
-        <object label="Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-19">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2580" y="1120.25" width="240" height="42" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="BAM Inventory" Description="" id="SrnTOlCMw5CpfHyKMoxU-20">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3897" y="890" width="943" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Division (FB ) Inventory" Description="" id="SrnTOlCMw5CpfHyKMoxU-21">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1470" y="881" width="970" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-23" target="SrnTOlCMw5CpfHyKMoxU-16" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-23" value="Material Sample_002&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="2000" y="1536.25" width="190" height="59.75" as="geometry" />
-        </mxCell>
-        <object label="6. Microstructure Data Analysis" Description="" id="SrnTOlCMw5CpfHyKMoxU-24">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3672.46" y="1318" width="167.54" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-25" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;curved=1;dashed=1;dashPattern=8 8;endFill=0;strokeColor=#FF0000;fillColor=none;shape=link;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" edge="1">
-          <mxGeometry width="140" relative="1" as="geometry">
-            <mxPoint x="3866" y="890" as="sourcePoint" />
-            <mxPoint x="3860" y="2049" as="targetPoint" />
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-26" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;curved=1;dashed=1;dashPattern=8 8;endFill=0;strokeColor=#FF0000;fillColor=none;shape=link;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" edge="1">
-          <mxGeometry width="140" relative="1" as="geometry">
-            <mxPoint x="2496" y="881" as="sourcePoint" />
-            <mxPoint x="2490" y="2050" as="targetPoint" />
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-28" target="SrnTOlCMw5CpfHyKMoxU-4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="Chemical 1" Description="" id="SrnTOlCMw5CpfHyKMoxU-28">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1746" y="1200" width="120" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-30" target="SrnTOlCMw5CpfHyKMoxU-16" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="Treatment Solution" Description="" id="SrnTOlCMw5CpfHyKMoxU-30">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1760" y="1520" width="120" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-32" target="SrnTOlCMw5CpfHyKMoxU-4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="Chemical 2" Description="" id="SrnTOlCMw5CpfHyKMoxU-32">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1746" y="1260" width="120" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-33" value="&lt;h2 style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;3. openBIS-Data Store hierarhical data structure: Space &amp;gt; Project &amp;gt; Collection &amp;gt; Object &amp;gt; Dataset&amp;nbsp;&lt;/font&gt;&lt;/h2&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="2050" y="801" width="1880" height="60" as="geometry" />
-        </mxCell>
-        <object label="Instruments" Description="" id="SrnTOlCMw5CpfHyKMoxU-34">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3897" y="1129.25" width="220" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-35" value="FB Equipment Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="3897" y="1048.25" width="215" height="40" as="geometry" />
-        </mxCell>
-        <object label="BAM EQUIPMENT" Description="" id="SrnTOlCMw5CpfHyKMoxU-36">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3897" y="968.25" width="215" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-38" target="SrnTOlCMw5CpfHyKMoxU-4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-38">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3890" y="1300" width="227" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="3. Macrostructure Characterization " Description="" id="SrnTOlCMw5CpfHyKMoxU-39">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3137" y="1320" width="171" height="50" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Treatment non-destructive" Description="" id="SrnTOlCMw5CpfHyKMoxU-40">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2834.76" y="1117.75" width="240" height="42" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Parameter 2" Description="" id="SrnTOlCMw5CpfHyKMoxU-41">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3340" y="1120.25" width="240" height="42" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Parameter 2 Analysis" Description="" id="SrnTOlCMw5CpfHyKMoxU-42">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3603.24" y="1117.75" width="240" height="42" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Parameter 1" Description="" id="SrnTOlCMw5CpfHyKMoxU-43">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3088" y="1118" width="240" height="42" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-44" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3. Parameter 1 raw&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="3137" y="1863.5" width="173" height="55.25" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-46" target="SrnTOlCMw5CpfHyKMoxU-6" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label=" Microstructure" Description="" id="SrnTOlCMw5CpfHyKMoxU-46">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3880" y="1779" width="240" height="39.25" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-49" target="SrnTOlCMw5CpfHyKMoxU-13" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-49" target="SrnTOlCMw5CpfHyKMoxU-39" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="Macrostructure" Description="" id="SrnTOlCMw5CpfHyKMoxU-49">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="3888.5" y="1426.38" width="230" height="39.25" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-51" target="SrnTOlCMw5CpfHyKMoxU-13" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <object label="Treated Sample_001" Description="" id="SrnTOlCMw5CpfHyKMoxU-51">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2240" y="1700" width="203.96" height="39.25" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-52" value="FB Materials Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="4143.5" y="1048" width="215" height="40" as="geometry" />
-        </mxCell>
-        <object label="BAM MATERIALS" Description="" id="SrnTOlCMw5CpfHyKMoxU-53">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="4143.5" y="968" width="215" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-54" value="FB Methods Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="4390" y="1048.25" width="215" height="40" as="geometry" />
-        </mxCell>
-        <object label="BAM METHODS" Description="" id="SrnTOlCMw5CpfHyKMoxU-55">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="4390" y="968.25" width="215" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-56" value="FB Publications Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="4630" y="1047" width="210" height="40" as="geometry" />
-        </mxCell>
-        <object label="BAM PUBLICATIONS" Description="" id="SrnTOlCMw5CpfHyKMoxU-57">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="4630" y="967" width="210" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Chemicals" Description="" id="SrnTOlCMw5CpfHyKMoxU-58">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1740" y="1118.75" width="220" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Instruments" Description="" id="SrnTOlCMw5CpfHyKMoxU-59">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1476" y="1120.25" width="244" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Instruments Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-60">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1476" y="1039.25" width="244" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-61" value="FB EQUIPMENT" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="1476" y="959.25" width="244" height="40" as="geometry" />
-        </mxCell>
-        <object label="Chemicals Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-62">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1736" y="1037" width="224" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-63" value="FB MATERIALS" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="1736" y="955.75" width="704" height="40" as="geometry" />
-        </mxCell>
-        <object label="Samples" Description="" id="SrnTOlCMw5CpfHyKMoxU-64">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1980" y="1117.75" width="460" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="Samples Synthesis" Description="" id="SrnTOlCMw5CpfHyKMoxU-65">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="1980" y="1037" width="460" height="40" as="geometry" />
-          </mxCell>
-        </object>
-        <object label="USER_SPACE" Description="" id="SrnTOlCMw5CpfHyKMoxU-66">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2580" y="956.75" width="1260" height="38" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-67" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;5.&amp;nbsp;Parameter 2_raw data&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="1" vertex="1">
-          <mxGeometry x="3430" y="1863.5" width="170" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-68" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;6. Parameter 2_analyzed data&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="1" vertex="1">
-          <mxGeometry x="3680" y="1863.5" width="163.24" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-69" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&amp;nbsp;Parameter1-analyzed&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="1" vertex="1">
-          <mxGeometry x="3137" y="2039" width="173" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-70" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3.&amp;nbsp;&amp;nbsp;Synthetic image 1&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="3137" y="1918.75" width="173" height="55.25" as="geometry" />
-        </mxCell>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-71" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3.README Synthetic image 1&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-          <mxGeometry x="3137" y="1973.5" width="173" height="55.25" as="geometry" />
-        </mxCell>
-        <object label="DATASET&#xa;(not represented in the tutorial)" Description="" id="SrnTOlCMw5CpfHyKMoxU-72">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#b85450;fillColor=none;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="1" vertex="1">
-            <mxGeometry x="1320" y="2039" width="250" height="61" as="geometry" />
-          </mxCell>
-        </object>
-        <mxCell id="SrnTOlCMw5CpfHyKMoxU-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="SrnTOlCMw5CpfHyKMoxU-75" target="SrnTOlCMw5CpfHyKMoxU-6" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3520" y="1360" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <object label="Treated Sample_002" Description="" id="SrnTOlCMw5CpfHyKMoxU-75">
-          <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
-          </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
-            <mxGeometry x="2240" y="1790" width="203.96" height="39.25" as="geometry" />
-          </mxCell>
-        </object>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram name="Kopie von DataModel" id="K6hNqaBn4Pp072-i8yya">
-    <mxGraphModel dx="2971" dy="1789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="DataModel" id="K6hNqaBn4Pp072-i8yya">
+    <mxGraphModel dx="193" dy="496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="YKdh4P8VKp8YNT2kxaH5-0" />
         <mxCell id="YKdh4P8VKp8YNT2kxaH5-1" parent="YKdh4P8VKp8YNT2kxaH5-0" />
         <object label="Lab Notebook" Description="" id="YKdh4P8VKp8YNT2kxaH5-2">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2580" y="881" width="1260" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="HO4E-U94DLfK5VRqAlPd-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-5" target="O56McvLHH3gFysh1s_1Y-0">
+        <mxCell id="HO4E-U94DLfK5VRqAlPd-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-5" target="O56McvLHH3gFysh1s_1Y-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="1. Material Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-5">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2590" y="1300" width="198.5" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-7" target="YKdh4P8VKp8YNT2kxaH5-25">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-7" target="YKdh4P8VKp8YNT2kxaH5-25" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="5. Microstructure Characterization  " Description="" id="YKdh4P8VKp8YNT2kxaH5-7">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3430" y="1318" width="170" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Material Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-8">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2580" y="1039.25" width="1260" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="SPACE" Description="" id="YKdh4P8VKp8YNT2kxaH5-9">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1311.04" y="961.5" width="110" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="PROJECT" Description="" id="YKdh4P8VKp8YNT2kxaH5-10">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1311.04" y="1031.5" width="110" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="COLLECTION" Description="" id="YKdh4P8VKp8YNT2kxaH5-11">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1311.04" y="1117.75" width="110" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="OBJECT" Description="" id="YKdh4P8VKp8YNT2kxaH5-12">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1311.04" y="1200" width="110" height="640" as="geometry" />
           </mxCell>
         </object>
         <object label="DATASET" Description="" id="YKdh4P8VKp8YNT2kxaH5-13">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#b85450;fillColor=#f8cecc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#b85450;fillColor=#f8cecc;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1311.04" y="1850" width="110" height="171.25" as="geometry" />
           </mxCell>
         </object>
         <object label="4. Macrostructure Characterization TS " Description="" id="YKdh4P8VKp8YNT2kxaH5-14">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3130" y="1659" width="180" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-17" target="YKdh4P8VKp8YNT2kxaH5-75">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-17" target="YKdh4P8VKp8YNT2kxaH5-75" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-17" target="YKdh4P8VKp8YNT2kxaH5-52">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-17" target="YKdh4P8VKp8YNT2kxaH5-52" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label=" 2. Chemical Treatment" Description="" id="YKdh4P8VKp8YNT2kxaH5-17">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2860" y="1520" width="198.5" height="42" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="AO64MgyoLRb5e3v3JeKf-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-19" target="YKdh4P8VKp8YNT2kxaH5-40">
+        <mxCell id="AO64MgyoLRb5e3v3JeKf-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-19" target="YKdh4P8VKp8YNT2kxaH5-40" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-19" value="Material Sample_001" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-19" value="Material Sample_001" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="2000" y="1421" width="198.75" height="50" as="geometry" />
         </mxCell>
         <object label="Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-20">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2580" y="1120.25" width="240" height="42" as="geometry" />
           </mxCell>
         </object>
         <object label="BAM Inventory" Description="" id="YKdh4P8VKp8YNT2kxaH5-21">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3897" y="890" width="943" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Division (FB ) Inventory" Description="" id="YKdh4P8VKp8YNT2kxaH5-22">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1470" y="881" width="970" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-24" target="YKdh4P8VKp8YNT2kxaH5-17">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-24" target="YKdh4P8VKp8YNT2kxaH5-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-24" value="Material Sample_002&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-24" value="Material Sample_002&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="2000" y="1536.25" width="190" height="59.75" as="geometry" />
         </mxCell>
         <object label="6. Microstructure Data Analysis" Description="" id="YKdh4P8VKp8YNT2kxaH5-25">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3672.46" y="1318" width="167.54" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-26" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;curved=1;dashed=1;dashPattern=8 8;endFill=0;strokeColor=#FF0000;fillColor=none;shape=link;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-26" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;curved=1;dashed=1;dashPattern=8 8;endFill=0;strokeColor=#FF0000;fillColor=none;shape=link;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" edge="1">
           <mxGeometry width="140" relative="1" as="geometry">
             <mxPoint x="3866" y="890" as="sourcePoint" />
             <mxPoint x="3860" y="2049" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-27" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;curved=1;dashed=1;dashPattern=8 8;endFill=0;strokeColor=#FF0000;fillColor=none;shape=link;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-27" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;endArrow=none;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;curved=1;dashed=1;dashPattern=8 8;endFill=0;strokeColor=#FF0000;fillColor=none;shape=link;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" edge="1">
           <mxGeometry width="140" relative="1" as="geometry">
             <mxPoint x="2496" y="881" as="sourcePoint" />
             <mxPoint x="2490" y="2050" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-29" target="YKdh4P8VKp8YNT2kxaH5-5">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-29" target="YKdh4P8VKp8YNT2kxaH5-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Chemical 1" Description="" id="YKdh4P8VKp8YNT2kxaH5-29">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1746" y="1200" width="120" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="6_IsF8171ZqEg_EwHx4y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-31" target="YKdh4P8VKp8YNT2kxaH5-17">
+        <mxCell id="6_IsF8171ZqEg_EwHx4y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-31" target="YKdh4P8VKp8YNT2kxaH5-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Treatment Solution" Description="" id="YKdh4P8VKp8YNT2kxaH5-31">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1760" y="1520" width="120" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-33" target="YKdh4P8VKp8YNT2kxaH5-5">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-33" target="YKdh4P8VKp8YNT2kxaH5-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Chemical 2" Description="" id="YKdh4P8VKp8YNT2kxaH5-33">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1746" y="1260" width="120" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-34" value="&lt;h2 style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;3. openBIS-Data Store hierarhical data structure: Space &amp;gt; Project &amp;gt; Collection &amp;gt; Object &amp;gt; Dataset&amp;nbsp;&lt;/font&gt;&lt;/h2&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-34" value="&lt;h2 style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;3. openBIS-Data Store hierarhical data structure: Space &amp;gt; Project &amp;gt; Collection &amp;gt; Object &amp;gt; Dataset&amp;nbsp;&lt;/font&gt;&lt;/h2&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="2050" y="801" width="1880" height="60" as="geometry" />
         </mxCell>
         <object label="Instruments" Description="" id="YKdh4P8VKp8YNT2kxaH5-35">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3897" y="1129.25" width="220" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-36" value="FB Equipment Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-36" value="FB Equipment Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3897" y="1048.25" width="215" height="40" as="geometry" />
         </mxCell>
         <object label="BAM EQUIPMENT" Description="" id="YKdh4P8VKp8YNT2kxaH5-37">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3897" y="968.25" width="215" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-39" target="YKdh4P8VKp8YNT2kxaH5-5">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-39" target="YKdh4P8VKp8YNT2kxaH5-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-39">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3890" y="1300" width="227" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="3. Macrostructure Characterization " Description="" id="YKdh4P8VKp8YNT2kxaH5-40">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3137" y="1320" width="171" height="50" as="geometry" />
           </mxCell>
         </object>
         <object label="Treatment non-destructive" Description="" id="YKdh4P8VKp8YNT2kxaH5-41">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2834.76" y="1117.75" width="240" height="42" as="geometry" />
           </mxCell>
         </object>
         <object label="Parameter 2" Description="" id="YKdh4P8VKp8YNT2kxaH5-42">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3340" y="1120.25" width="240" height="42" as="geometry" />
           </mxCell>
         </object>
         <object label="Parameter 2 Analysis" Description="" id="YKdh4P8VKp8YNT2kxaH5-43">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3603.24" y="1117.75" width="240" height="42" as="geometry" />
           </mxCell>
         </object>
         <object label="Parameter 1" Description="" id="YKdh4P8VKp8YNT2kxaH5-44">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#d6b656;fillColor=#fff2cc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3088" y="1118" width="240" height="42" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-45" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3. Parameter 1 raw&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-45" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3. Parameter 1 raw&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3137" y="1863.5" width="173" height="55.25" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-47" target="YKdh4P8VKp8YNT2kxaH5-7">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-47" target="YKdh4P8VKp8YNT2kxaH5-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label=" Microstructure" Description="" id="YKdh4P8VKp8YNT2kxaH5-47">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3880" y="1779" width="240" height="39.25" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-50" target="YKdh4P8VKp8YNT2kxaH5-14">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-50" target="YKdh4P8VKp8YNT2kxaH5-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-50" target="YKdh4P8VKp8YNT2kxaH5-40">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-50" target="YKdh4P8VKp8YNT2kxaH5-40" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Macrostructure" Description="" id="YKdh4P8VKp8YNT2kxaH5-50">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="3888.5" y="1426.38" width="230" height="39.25" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-52" target="YKdh4P8VKp8YNT2kxaH5-14">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-52" target="YKdh4P8VKp8YNT2kxaH5-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <object label="Treated Sample_001" Description="" id="YKdh4P8VKp8YNT2kxaH5-52">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2240" y="1700" width="203.96" height="39.25" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-53" value="FB Materials Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-53" value="FB Materials Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="4143.5" y="1048" width="215" height="40" as="geometry" />
         </mxCell>
         <object label="BAM MATERIALS" Description="" id="YKdh4P8VKp8YNT2kxaH5-54">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="4143.5" y="968" width="215" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-55" value="FB Methods Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-55" value="FB Methods Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="4390" y="1048.25" width="215" height="40" as="geometry" />
         </mxCell>
         <object label="BAM METHODS" Description="" id="YKdh4P8VKp8YNT2kxaH5-56">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="4390" y="968.25" width="215" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-57" value="FB Publications Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-57" value="FB Publications Open" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="4630" y="1047" width="210" height="40" as="geometry" />
         </mxCell>
         <object label="BAM PUBLICATIONS" Description="" id="YKdh4P8VKp8YNT2kxaH5-58">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="4630" y="967" width="210" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Chemicals" Description="" id="YKdh4P8VKp8YNT2kxaH5-59">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1740" y="1118.75" width="220" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Instruments" Description="" id="YKdh4P8VKp8YNT2kxaH5-60">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1476" y="1120.25" width="244" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Instruments Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-61">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1476" y="1039.25" width="244" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-62" value="FB EQUIPMENT" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-62" value="FB EQUIPMENT" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="1476" y="959.25" width="244" height="40" as="geometry" />
         </mxCell>
         <object label="Chemicals Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-63">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1736" y="1037" width="224" height="40" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-64" value="FB MATERIALS" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-64" value="FB MATERIALS" style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="1736" y="955.75" width="704" height="40" as="geometry" />
         </mxCell>
         <object label="Samples" Description="" id="YKdh4P8VKp8YNT2kxaH5-65">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;fillColor=#fff2cc;strokeColor=#d6b656;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1980" y="1117.75" width="460" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="Samples Synthesis" Description="" id="YKdh4P8VKp8YNT2kxaH5-66">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#82b366;fillColor=#d5e8d4;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1980" y="1037" width="460" height="40" as="geometry" />
           </mxCell>
         </object>
         <object label="USER_SPACE" Description="" id="YKdh4P8VKp8YNT2kxaH5-67">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#9673a6;fillColor=#e1d5e7;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2580" y="956.75" width="1260" height="38" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-68" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;5.&amp;nbsp;Parameter 2_raw data&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-68" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;5.&amp;nbsp;Parameter 2_raw data&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3430" y="1863.5" width="170" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-69" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;6. Parameter 2_analyzed data&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-69" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;6. Parameter 2_analyzed data&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3680" y="1863.5" width="163.24" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-70" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&amp;nbsp;Parameter1-analyzed&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-70" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;&amp;nbsp;Parameter1-analyzed&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3137" y="2039" width="173" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-71" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3.&amp;nbsp;&amp;nbsp;Synthetic image 1&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-71" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3.&amp;nbsp;&amp;nbsp;Synthetic image 1&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3137" y="1918.75" width="173" height="55.25" as="geometry" />
         </mxCell>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-72" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3.README Synthetic image 1&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-72" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;3.README Synthetic image 1&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="3137" y="1973.5" width="173" height="55.25" as="geometry" />
         </mxCell>
         <object label="DATASET&#xa;(not represented in the tutorial)" Description="" id="YKdh4P8VKp8YNT2kxaH5-73">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#b85450;fillColor=none;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=1;strokeColor=#b85450;fillColor=none;fontSize=16;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;strokeWidth=4;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="1320" y="2039" width="250" height="61" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="YKdh4P8VKp8YNT2kxaH5-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-75" target="YKdh4P8VKp8YNT2kxaH5-7">
+        <mxCell id="YKdh4P8VKp8YNT2kxaH5-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="YKdh4P8VKp8YNT2kxaH5-75" target="YKdh4P8VKp8YNT2kxaH5-7" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="3520" y="1360" as="targetPoint" />
           </mxGeometry>
@@ -1049,17 +645,17 @@
         <object label="Treated Sample_002" Description="" id="YKdh4P8VKp8YNT2kxaH5-75">
           <openbis visualisationType="tree" treeType="inventory" treeHierarchy="space">
           </openbis>
-          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+          <mxCell style="fillOpacity=100;whiteSpace=wrap;fontStyle=0;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
             <mxGeometry x="2240" y="1790" width="203.96" height="39.25" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="6_IsF8171ZqEg_EwHx4y-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="O56McvLHH3gFysh1s_1Y-0" target="YKdh4P8VKp8YNT2kxaH5-19">
+        <mxCell id="6_IsF8171ZqEg_EwHx4y-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="O56McvLHH3gFysh1s_1Y-0" target="YKdh4P8VKp8YNT2kxaH5-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="6_IsF8171ZqEg_EwHx4y-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="YKdh4P8VKp8YNT2kxaH5-1" source="O56McvLHH3gFysh1s_1Y-0" target="YKdh4P8VKp8YNT2kxaH5-24">
+        <mxCell id="6_IsF8171ZqEg_EwHx4y-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="YKdh4P8VKp8YNT2kxaH5-1" source="O56McvLHH3gFysh1s_1Y-0" target="YKdh4P8VKp8YNT2kxaH5-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="O56McvLHH3gFysh1s_1Y-0" value="Synthesized Material" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="YKdh4P8VKp8YNT2kxaH5-1">
+        <mxCell id="O56McvLHH3gFysh1s_1Y-0" value="Synthesized Material" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="YKdh4P8VKp8YNT2kxaH5-1" vertex="1">
           <mxGeometry x="1995.63" y="1340" width="198.75" height="50" as="geometry" />
         </mxCell>
       </root>
