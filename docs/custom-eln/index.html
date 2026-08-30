@@ -196,8 +196,8 @@
   <header>
     <h1>Guidance – Custom ELN settings for the group</h1>
     <p class="lead">
-      This tutorial shows <strong>Data Store Stewards (DSSTs)</strong> who have been assigned the
-      <strong>Admin role</strong> how to customise the ELN settings for their division/group in a
+      This tutorial shows <strong>Data Store Stewards (DSSts)</strong> who have been assigned the
+      <strong>Admin role</strong> how to customise the ELN settings for their group (division / BAM-FB) in a
       multi-group Data Store instance based on openBIS 20.10.12.
     </p>
   </header>
@@ -234,27 +234,40 @@
   <section id="before-you-begin">
     <h2>Before you begin</h2>
     <p>
-      This guidance is designed for <strong>openBIS version 20.10.12</strong> and for DSSTs with the
+      This guidance is designed for <strong>openBIS version 20.10.12</strong> and for DSSts with the
       <strong>Admin role</strong> for their group. In a multi-group instance, a designated group admin can
       customise Group ELN Settings for the Spaces assigned to that group without requiring Instance Admin rights.
     </p>
+        <div class="note">
+      <strong>Data Store multi-group setup:</strong> The BAM Data Store is configured as an
+      <strong>openBIS multi-group instance</strong>. This allows multiple BAM divisions to use the same Data Store
+      instance while maintaining division-specific Spaces and ELN settings. DSSTs therefore manage the relevant
+      Group ELN Settings for their own division. When following this tutorial, always make sure that you have
+      selected the correct division under <strong>Select Group Settings</strong>.
+    </div>
     <ul>
-      <li>Confirm that you can log in to the relevant Data Store instance.</li>
-      <li>Confirm that you have the Admin role required to edit your division's Group ELN Settings.</li>
+      <li>You need to have access to the <a href="https://playground.datastore.bam.de/" target="_blank" rel="noopener noreferrer"> playground instance</a> (access restricted to BAM employees with VPN connection). How to log in to the Data Store instances is described in this <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/user_ui/how_to_log_in" target="_blank" rel="noopener noreferrer"> guide</a>.</li>
+      <li>You must be assigned the <strong>Group Admin</strong> role in Data Store. This role is assigned to Data Store Stewards (DSSt), division leads, and their deputies. Check your assigned role following this <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/admin_ui/display_assigned_roles_in_instance" target="_blank" rel="noopener noreferrer"> guide</a> to confirm that you have sufficient rights to complete this tutorial.</li>
       <li>Know your division number, for example <code>X.1</code>.</li>
-      <li>If a change concerns instance-wide settings or masterdata rather than group-specific ELN behaviour, contact the responsible Data Store or instance administrators.</li>
+      <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
     </ul>
   </section>
 
   <section id="key-concepts">
     <h2>Key concepts</h2>
 
+        <div class="note">
+      <strong>Data Store = openBIS multi-group instance:</strong> The Data Store uses openBIS multi-group
+      configuration so that several BAM divisions can work in the same instance while group-specific settings and
+      Spaces can be managed for each division.
+    </div>
+
     <h3>Group ELN settings in a multi-group instance</h3>
     <p>
       In a multi-group openBIS instance, each configured group can have its own ELN settings. These settings control
       selected parts of the ELN behaviour and presentation for the Spaces belonging to that group. This allows a
-      division to adapt the interface to its working practices while keeping centrally managed masterdata and
-      instance-wide configuration separate.
+      division to adapt the interface to its working practices while keeping centrally managed masterdata (meta-metadata: 
+      object types and controlled vocabularies) and instance-wide configuration separate.
     </p>
 
     <div class="comparison-table-wrapper">
@@ -274,7 +287,7 @@
           </tr>
           <tr>
             <td><strong>Group settings</strong></td>
-            <td>DSST / designated group admin</td>
+            <td>DSSt / designated group admin</td>
             <td>Control selected ELN behaviour for the group, including templates and Object Type visibility.</td>
           </tr>
         </tbody>
@@ -282,7 +295,7 @@
     </div>
 
     <div class="note">
-      <strong>Scope of this guidance:</strong> This tutorial focuses on Group ELN Settings that DSSTs can use to
+      <strong>Scope of this guidance:</strong> This tutorial focuses on Group ELN Settings that DSSts can use to
       customise how their division works in the ELN. Creating or modifying masterdata, such as Object Types,
       properties or controlled vocabularies, is a separate administrative task.
     </div>
@@ -292,14 +305,14 @@
     <h2>Tutorial workflow</h2>
     <p>
       To make it easier to start the <strong>self-learning path</strong>, the Data Store team has already prepared the
-      relevant ELN group settings for the tutorial example <strong>“Material Synthesis”</strong>. In this guidance, DSSTs
+      relevant ELN group settings for the tutorial example <strong>“Material Synthesis”</strong>. In this guidance, DSSts
       first review these prepared settings and then learn how the same settings are created and maintained.
     </p>
     <div class="note">
-      <strong>DSST responsibility in normal operation:</strong> The settings used in the self-learning path are
+      <strong>DSSt responsibility in normal operation:</strong> The settings used in the self-learning path are
       preconfigured for training purposes. For day-to-day work, these configuration steps normally need to be
-      carried out and maintained by the DSSTs for their own division. The steps below therefore explain both what
-      has already been prepared for the tutorial and how DSSTs can configure the corresponding settings themselves.
+      carried out and maintained by the DSSts for their own division. The steps below therefore explain both what
+      has already been prepared for the tutorial and how DSSts can configure the corresponding settings themselves.
     </div>
     <ol>
       <li>Open the Group ELN Settings for your division and review the configuration prepared for the tutorial.</li>
@@ -313,8 +326,9 @@
   <section class="step" id="step-1">
     <h2>Step 1: Open your group settings</h2>
     <p>
-      In a multi-group Data Store instance, use the group selector in the Settings page to open the configuration
-      assigned to your division. In this tutorial, <code>X.1</code> represents your division number.
+      Because the Data Store is configured as a <strong>multi-group openBIS instance</strong>, first select your
+      division to review or modify its Group ELN Settings. Use the group selector in the Settings page to open the
+      configuration assigned to your division. In this tutorial, <code>X.1</code> represents your division number.
     </p>
 
     <div class="instructions">
@@ -399,12 +413,12 @@
       <strong>Why Object Types come first:</strong> Every template is created for a specific Object Type.
       Reviewing Object Types before templates therefore makes it clearer which kind of object the template will
       create or pre-fill. In this self-learning path, the Data Store team has already prepared both the relevant
-      Object Types and the tutorial templates so that DSSTs can first review the setup and then learn how to
+      Object Types and the tutorial templates so that DSSts can first review the setup and then learn how to
       configure the same settings for their own division.
     </div>
 
     <div class="note">
-      <strong>Responsibility for templates:</strong> Only <strong>Data Store Stewards (DSSTs)</strong> can create
+      <strong>Responsibility for templates:</strong> Only <strong>Data Store Stewards (DSSts)</strong> can create
       templates in the system. However, the information, pre-defined values and relationships included in a template
       should be discussed and worked out together with members of the division. This helps ensure that templates
       reflect actual research workflows, are meaningful to group members and are used consistently.
@@ -435,22 +449,22 @@
         <li>Open <strong>Tools → Utilities → Settings</strong>.</li>
         <li>Under <strong>Select Group Settings</strong>, select your division number.</li>
         <li>Open the <strong>Templates</strong> section.</li>
-        <li>Review the templates displayed for the selected group. You do not need to create a new template to obtain this overview.</li>
+        <li>Review the templates displayed for the selected group. You do not need to create a new template.</li>
       </ol>
     </div>
 
     <h3>Templates prepared for the “Material Synthesis” tutorial example</h3>
     <p>
       For the self-learning path, the Data Store team has already provided five templates for each group. These
-      templates represent the main stages of the tutorial workflow and allow DSSTs to review how pre-defined
+      templates represent the main stages of the tutorial workflow and allow DSSts to review how pre-defined
       Experimental Step structures can support consistent documentation.
     </p>
     <ol>
-      <li><strong>1. Material Synthesis</strong></li>
-      <li><strong>2. Chemical Treatment</strong></li>
-      <li><strong>3. Macrostructure Characterization</strong></li>
-      <li><strong>4. Microstructure Characterization</strong></li>
-      <li><strong>5. Microstructure data analysis</strong></li>
+      <li><strong>Material Synthesis</strong></li>
+      <li><strong>Chemical Treatment</strong></li>
+      <li><strong>Macrostructure Characterization</strong></li>
+      <li><strong>Microstructure Characterization</strong></li>
+      <li><strong>Microstructure data analysis</strong></li>
     </ol>
     <div class="warning">
       <strong>Synthetic tutorial data:</strong> The information pre-filled in the five templates provided for the
@@ -460,10 +474,13 @@
     </div>
 
     <div class="note">
-      <strong>Parent and child relationships:</strong> Existing parent(s) and child(ren) already present on the Object
-      are merged with those defined by the Template. A template therefore does not simply replace relationships that
-      already exist on the Object.
+      <strong>Parent and child relationships</strong>: Applying a template does not replace <a href="https://datastore.bam.de/en/openbis_20-10-12/concepts/parent-child_relationship" target="_blank" rel="noopener noreferrer">
+        Parent and child relationships</a> that are already assigned to the Object. Existing relationships are retained, and parent(s)
+       and child(ren) defined in the Template are added to them.
     </div>
+            
+          Masterdata definition process and related concepts
+        </a>.
 
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
@@ -515,11 +532,57 @@
     <a class="back-to-top" href="#top">Back to top</a>
   </section>
 
+  <section class="step" id="step-5">
+    <h2>Step 5: Customize the Main Menu</h2>
+    <p>
+      The <strong>Main Menu</strong> settings control which Data Store functions are displayed to users of the
+      selected group. For the self-learning path, review the configuration prepared for your division and confirm
+      that all of the functions listed below are enabled.
+    </p>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Open <strong>Tools → Utilities → Settings</strong>.</li>
+        <li>Under <strong>Select Group Settings</strong>, select your <strong>division number</strong>.</li>
+        <li>Click the <strong>Edit</strong> tab.</li>
+        <li>Open the <strong>Main Menu</strong> settings section.</li>
+        <li>Review the available Main Menu options.</li>
+        <li>Confirm that each of the following options is enabled for your group:
+          <ul>
+            <li><code>showLabNotebook</code></li>
+            <li><code>showInventory</code></li>
+            <li><code>showObjectBrowser</code></li>
+            <li><code>showExports</code></li>
+            <li><code>showStorageManager</code></li>
+            <li><code>showAdvancedSearch</code></li>
+            <li><code>showTrashcan</code></li>
+            <li><code>showVocabularyViewer</code></li>
+            <li><code>showUserManager</code></li>
+            <li><code>showUserProfile</code></li>
+            <li><code>showBarcodes</code></li>
+            <li><code>showDatasets</code></li>
+          </ul>
+        </li>
+        <li>If one or more required options are disabled, enable them.</li>
+        <li>Review the configuration and click <strong>Save</strong> if you made changes.</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <strong>How to review the result:</strong> After saving, return to the Data Store interface and review the
+      Main Menu. The enabled functions should be available to users of the group, subject to the permissions and
+      functionality configured for their accounts.
+    </div>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+
   <section id="other-settings">
     <h2>Other group settings</h2>
     <p>
-      The openBIS Group ELN Settings also contain additional functions that can be relevant for DSSTs. The exact
-      options available depend on the configuration of the Data Store instance.
+     Group ELN Settings that can be customized by DSSts.
     </p>
 
     <div class="comparison-table-wrapper">
@@ -537,11 +600,8 @@
           </tr>
           <tr>
             <td><strong>Object Type definitions Extension</strong></td>
-            <td>Extend ELN behaviour for Object Types, including visibility in drop-downs and the Lab Notebook main menu and, depending on configuration, further ELN-specific options.</td>
-          </tr>
-          <tr>
-            <td><strong>Inventory Spaces</strong></td>
-            <td>Control supported placement or presentation of Spaces in the Inventory or Lab Notebook areas of the ELN.</td>
+            <td>Extend ELN behaviour for Object Types, including visibility in drop-downs and the Lab Notebook main
+               menu and, settings for parent and child relationships.</td>
           </tr>
           <tr>
             <td><strong>Main menu</strong></td>
@@ -555,13 +615,16 @@
       <strong>Group settings are not masterdata:</strong> Divisions can define new Object Types when required to
       represent or map their research workflows in the Data Store. This process is called <strong>masterdata
       definition</strong> and includes the definition of Object Types and controlled vocabularies. Masterdata work is
-      coordinated by DSSTs within the divisions together with the Data Store team. The <strong>BAM data model work task
+      coordinated by DSSts within the divisions together with the Data Store team. The <strong>BAM data model work task
       force</strong> coordinates the definition of BAM masterdata with the aim of creating a coherent data model that
       makes BAM research data reusable within BAM and across the relevant scientific disciplines.
-      <p><strong>When to start:</strong> The recommended time to begin the masterdata definition process is after a division has completed the Data Store self-learning path and starts implementing its own use cases. Masterdata definition is therefore <strong>not part of Data Store onboarding</strong>; it belongs to the subsequent <strong>rollout process</strong>, when division-specific research workflows and metadata requirements can be translated into appropriate Object Types and controlled vocabularies.</p>
+      <p><strong>When to start:</strong> The recommended time to begin the masterdata definition process is after a division has 
+      completed the Data Store self-learning path and starts implementing its own use cases. Masterdata definition is therefore <strong>not part 
+      of Data Store onboarding</strong>; it belongs to the subsequent <strong>rollout process</strong>, when division-specific research workflows 
+      and metadata requirements can be translated into appropriate Object Types and controlled vocabularies.</p>
       <p>
         For details, see the Data Store wiki page: 
-        <a href="MASTERDATA_DEFINITION_PROCESS_URL" target="_blank" rel="noopener noreferrer">
+        <a href="https://datastore.bam.de/en/masterdata_definition" target="_blank" rel="noopener noreferrer">
           Masterdata definition process and related concepts
         </a>.
       </p>
@@ -601,18 +664,8 @@
     <h3>Data Store Wiki</h3>
     <ul>
       <li><a href="https://datastore.bam.de/en/home" target="_blank" rel="noopener noreferrer">BAM Data Store – FDM@BAM</a></li>
-      <li><a href="#" title="Placeholder – replace with the final Data Store Wiki URL">Masterdata definition process and related concepts</a> <em>(link placeholder)</em></li>
     </ul>
 
-    <h3>BAM Masterdata definition</h3>
-    <p>
-      The definition of new BAM masterdata is coordinated between DSSTs in the divisions, the Data Store team and
-      the BAM data model work task force. The purpose is to develop shared Object Types and controlled vocabularies
-      that support a reusable BAM data model within BAM and across the relevant scientific disciplines.
-      Currently, more than <strong>100 Object Types</strong> have already been defined by divisions during previous
-      Data Store rollout phases. These existing Object Types are undergoing revision as part of the
-      <strong>BAM data model definition</strong> to improve consistency, reuse and alignment of masterdata across BAM.
-    </p>
   </section>
 </body>
 </html>
