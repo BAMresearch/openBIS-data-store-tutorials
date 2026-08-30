@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guidance – Custom ELN settings for the group</title>
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #1370bc;
+      --text: #222;
+      --muted: #5a6470;
+      --border: #d9e1e8;
+      --bg-soft: #f7f9fc;
+      --note-bg: #f5f8fc;
+      --warning-bg: #fff5f5;
+      --warning-border: #cc0000;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      color: var(--text);
+      background: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin-bottom: 0.3em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.25rem;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    p { margin: 0.5rem 0 1rem; }
+    a { color: var(--secondary); }
+
+    code {
+      padding: 0.1rem 0.3rem;
+      background: #f3f5f7;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      margin: 1rem 0 1.5rem;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.65rem;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--primary);
+      background: var(--bg-soft);
+    }
+
+    .lead {
+      color: #2d3a45;
+      font-size: 1.05rem;
+    }
+
+    .toc {
+      margin: 1.5rem 0 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .toc ul, ul, ol {
+      margin: 0.5rem 0 1rem;
+      padding-left: 1.35rem;
+    }
+
+    li { margin: 0.3rem 0; }
+
+    .step {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .step h2 {
+      margin-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .note, .warning, .instructions {
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+    }
+
+    .note {
+      background: var(--note-bg);
+      border-left: 4px solid var(--primary);
+    }
+
+    .warning {
+      background: var(--warning-bg);
+      border-left: 4px solid var(--warning-border);
+    }
+
+    .instructions {
+      background: #fff9ed;
+      border-left: 4px solid #a06a00;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin: 1rem 0 1.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table-wrapper table {
+      width: 100%;
+      min-width: 760px;
+      margin: 0;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    .comparison-table-wrapper th,
+    .comparison-table-wrapper td {
+      padding: 0.65rem;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--border);
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .comparison-table-wrapper th {
+      color: var(--primary);
+      background: var(--bg-soft);
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 1rem; }
+      .step { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+
+  <header>
+    <h1>Guidance – Custom ELN settings for the group</h1>
+    <p class="lead">
+      This tutorial shows <strong>Data Store Stewards (DSSts)</strong> who have been assigned the
+      <strong>Admin role</strong> how to customise the ELN settings for their group (division / BAM-FB) in a
+      multi-group Data Store instance based on openBIS 20.10.12.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#learning-outcomes">What you will learn</a></li>
+      <li><a href="#before-you-begin">Before you begin</a></li>
+      <li><a href="#key-concepts">Key concepts</a></li>
+      <li><a href="#tutorial-workflow">Tutorial workflow</a></li>
+      <li><a href="#step-1">Step 1: Open your group settings</a></li>
+      <li><a href="#step-2">Step 2: Review and enable Object Types in drop-down menus</a></li>
+      <li><a href="#step-3">Step 3: Review and create templates</a></li>
+      <li><a href="#step-4">Step 4: Show Object Types in the Lab Notebook menu</a></li>
+      <li><a href="#other-settings">Other group settings</a></li>
+      <li><a href="#result">Result</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ul>
+  </nav>
+
+  <section id="learning-outcomes">
+    <h2>What you will learn</h2>
+    <ul>
+      <li>Explain the difference between instance-wide ELN settings and group-specific ELN settings.</li>
+      <li>Open the settings assigned to your division in a multi-group Data Store instance.</li>
+      <li>Create a template for an Object Type.</li>
+      <li>Enable an Object Type so that it is available in ELN drop-down menus.</li>
+      <li>Enable an Object Type so that it is displayed in the Lab Notebook main menu.</li>
+      <li>Recognise other settings that can be customised at group level.</li>
+    </ul>
+  </section>
+
+  <section id="before-you-begin">
+    <h2>Before you begin</h2>
+    <p>
+      This guidance is designed for <strong>openBIS version 20.10.12</strong> and for DSSts with the
+      <strong>Admin role</strong> for their group. In a multi-group instance, a designated group admin can
+      customise Group ELN Settings for the Spaces assigned to that group without requiring Instance Admin rights.
+    </p>
+        <div class="note">
+      <strong>Data Store multi-group setup:</strong> The BAM Data Store is configured as an
+      <strong>openBIS multi-group instance</strong>. This allows multiple BAM divisions to use the same Data Store
+      instance while maintaining division-specific Spaces and ELN settings. DSSTs therefore manage the relevant
+      Group ELN Settings for their own division. When following this tutorial, always make sure that you have
+      selected the correct division under <strong>Select Group Settings</strong>.
+    </div>
+    <ul>
+      <li>You need to have access to the <a href="https://playground.datastore.bam.de/" target="_blank" rel="noopener noreferrer"> playground instance</a> (access restricted to BAM employees with VPN connection). How to log in to the Data Store instances is described in this <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/user_ui/how_to_log_in" target="_blank" rel="noopener noreferrer"> guide</a>.</li>
+      <li>You must be assigned the <strong>Group Admin</strong> role in Data Store. This role is assigned to Data Store Stewards (DSSt), division leads, and their deputies. Check your assigned role following this <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/admin_ui/display_assigned_roles_in_instance" target="_blank" rel="noopener noreferrer"> guide</a> to confirm that you have sufficient rights to complete this tutorial.</li>
+      <li>Know your division number, for example <code>X.1</code>.</li>
+      <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
+    </ul>
+  </section>
+
+  <section id="key-concepts">
+    <h2>Key concepts</h2>
+
+        <div class="note">
+      <strong>Data Store = openBIS multi-group instance:</strong> The Data Store uses openBIS multi-group
+      configuration so that several BAM divisions can work in the same instance while group-specific settings and
+      Spaces can be managed for each division.
+    </div>
+
+    <h3>Group ELN settings in a multi-group instance</h3>
+    <p>
+      In a multi-group openBIS instance, each configured group can have its own ELN settings. These settings control
+      selected parts of the ELN behaviour and presentation for the Spaces belonging to that group. This allows a
+      division to adapt the interface to its working practices while keeping centrally managed masterdata (meta-metadata: 
+      object types and controlled vocabularies) and instance-wide configuration separate.
+    </p>
+
+    <div class="comparison-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Setting level</th>
+            <th>Typical responsibility</th>
+            <th>Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Instance settings</strong></td>
+            <td>Instance administration / system-level governance</td>
+            <td>Apply to the whole openBIS instance and are not independently customised by every group.</td>
+          </tr>
+          <tr>
+            <td><strong>Group settings</strong></td>
+            <td>DSSt / designated group admin</td>
+            <td>Control selected ELN behaviour for the group, including templates and Object Type visibility.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <strong>Scope of this guidance:</strong> This tutorial focuses on Group ELN Settings that DSSts can use to
+      customise how their division works in the ELN. Creating or modifying masterdata, such as Object Types,
+      properties or controlled vocabularies, is a separate administrative task.
+    </div>
+  </section>
+
+  <section id="tutorial-workflow">
+    <h2>Tutorial workflow</h2>
+    <p>
+      To make it easier to start the <strong>self-learning path</strong>, the Data Store team has already prepared the
+      relevant ELN group settings for the tutorial example <strong>“Material Synthesis”</strong>. In this guidance, DSSts
+      first review these prepared settings and then learn how the same settings are created and maintained.
+    </p>
+    <div class="note">
+      <strong>DSSt responsibility in normal operation:</strong> The settings used in the self-learning path are
+      preconfigured for training purposes. For day-to-day work, these configuration steps normally need to be
+      carried out and maintained by the DSSts for their own division. The steps below therefore explain both what
+      has already been prepared for the tutorial and how DSSts can configure the corresponding settings themselves.
+    </div>
+    <ol>
+      <li>Open the Group ELN Settings for your division and review the configuration prepared for the tutorial.</li>
+      <li>Review the generic Object Types enabled for the tutorial and learn how to make Object Types available in ELN drop-down menus.</li>
+      <li>Review the five templates supplied for the <strong>“Material Synthesis”</strong> example and learn how to create a template for a specific Object Type.</li>
+      <li>Configure an Object Type to be shown in the Lab Notebook main menu.</li>
+      <li>Review other group-level settings and verify the effect of your changes.</li>
+    </ol>
+  </section>
+
+  <section class="step" id="step-1">
+    <h2>Step 1: Open your group settings</h2>
+    <p>
+      Because the Data Store is configured as a <strong>multi-group openBIS instance</strong>, first select your
+      division to review or modify its Group ELN Settings. Use the group selector in the Settings page to open the
+      configuration assigned to your division. In this tutorial, <code>X.1</code> represents your division number.
+    </p>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Open the <strong>Tools</strong> tab.</li>
+        <li>Under <strong>Utilities</strong>, select <strong>Settings</strong>.</li>
+        <li>Open the <strong>Select Group Settings</strong> drop-down menu.</li>
+        <li>Select your <strong>division number</strong>.</li>
+        <li>Click the <strong>Edit</strong> tab before changing the group configuration.</li>
+      </ol>
+    </div>
+
+    <div class="warning">
+      <strong>Check the selected group:</strong> Before editing, verify that you selected the correct division number.
+      Group settings are intended to affect the Spaces assigned to the selected group.
+    </div>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section class="step" id="step-2">
+    <h2>Step 2: Review and enable Object Types in drop-down menus</h2>
+    <p>
+      An <strong>Object Type</strong> defines a category of objects that can be registered in openBIS and determines
+      the kind of research entity represented and the metadata structure available for that category. Examples include
+      an experimental step, a sample, a chemical or an instrument.
+    </p>
+    <p>
+      For the <strong>“Material Synthesis”</strong> tutorial sequence, the Data Store team has enabled the following
+      generic Object Types in the relevant group drop-down menus because they are used throughout the self-learning path:
+    </p>
+    <ul>
+      <li><strong>Experimental Step</strong></li>
+      <li><strong>Sample</strong></li>
+      <li><strong>Chemical</strong></li>
+      <li><strong>Instrument</strong></li>
+    </ul>
+    <p>
+      New Object Types do not automatically appear in ELN drop-down menus. Use the Object Type definition extension
+      in the Group ELN Settings to control whether an Object Type is offered in these menus.
+    </p>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Open the Group ELN Settings for your division and click <strong>Edit</strong>.</li>
+        <li>Open <strong>Object Type definitions Extension</strong>.</li>
+        <li>Select the Object Type you want to configure.</li>
+        <li>Enable <strong>Show in drop downs</strong>.</li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <strong>Result:</strong> The configured Object Type can be selected in ELN drop-down menus where Object Types
+      are offered to users in the group.
+    </div>
+    <div class="instructions">
+      <strong>How to review which Object Types are enabled in drop-down menus:</strong>
+      <ol>
+        <li>Open the Group ELN Settings for your division.</li>
+        <li>Open <strong>Object Type definitions Extension</strong>.</li>
+        <li>Review the configured Object Types and their settings.</li>
+        <li>For each relevant Object Type, check whether <strong>Show in drop downs</strong> is enabled.</li>
+      </ol>
+    </div>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+
+
+  <section class="step" id="step-3">
+    <h2>Step 3: Review and create templates</h2>
+    <p>
+      Templates provide pre-defined values for an Object Type and can make repeated registration tasks more
+      consistent. A group can have several templates for the same Object Type, for example different templates for
+      <strong>Experimental Step</strong> objects.
+    </p>
+    <div class="note">
+      <strong>Why Object Types come first:</strong> Every template is created for a specific Object Type.
+      Reviewing Object Types before templates therefore makes it clearer which kind of object the template will
+      create or pre-fill. In this self-learning path, the Data Store team has already prepared both the relevant
+      Object Types and the tutorial templates so that DSSts can first review the setup and then learn how to
+      configure the same settings for their own division.
+    </div>
+
+    <div class="note">
+      <strong>Responsibility for templates:</strong> Only <strong>Data Store Stewards (DSSts)</strong> can create
+      templates in the system. However, the information, pre-defined values and relationships included in a template
+      should be discussed and worked out together with members of the division. This helps ensure that templates
+      reflect actual research workflows, are meaningful to group members and are used consistently.
+    </div>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Open <strong>Tools → Utilities → Settings</strong>.</li>
+        <li>From <strong>Select Group Settings</strong>, select your <strong>division number</strong>.</li>
+        <li>Click the <strong>Edit</strong> tab.</li>
+        <li>Open the <strong>Templates</strong> section.</li>
+        <li>Click <strong>+ Template</strong>.</li>
+        <li>Select the <strong>Object Type</strong> for which the template is intended, for example <strong>Experimental Step</strong>.</li>
+        <li>Fill out the values that should be pre-defined by the template.</li>
+        <li>Add <strong>parent(s)</strong> and/or <strong>child(ren)</strong> if required.</li>
+        <li>Review the entries and click <strong>Save</strong>.</li>
+      </ol>
+    </div>
+
+    <p>
+      All templates available to your group are displayed in the <strong>Templates</strong> section of the selected
+      Group ELN Settings.
+    </p>
+    <div class="instructions">
+      <strong>How to get an overview of registered templates:</strong>
+      <ol>
+        <li>Open <strong>Tools → Utilities → Settings</strong>.</li>
+        <li>Under <strong>Select Group Settings</strong>, select your division number.</li>
+        <li>Open the <strong>Templates</strong> section.</li>
+        <li>Review the templates displayed for the selected group. You do not need to create a new template.</li>
+      </ol>
+    </div>
+
+    <h3>Templates prepared for the “Material Synthesis” tutorial example</h3>
+    <p>
+      For the self-learning path, the Data Store team has already provided five templates for each group. These
+      templates represent the main stages of the tutorial workflow and allow DSSts to review how pre-defined
+      Experimental Step structures can support consistent documentation.
+    </p>
+    <ol>
+      <li><strong>Material Synthesis</strong></li>
+      <li><strong>Chemical Treatment</strong></li>
+      <li><strong>Macrostructure Characterization</strong></li>
+      <li><strong>Microstructure Characterization</strong></li>
+      <li><strong>Microstructure data analysis</strong></li>
+    </ol>
+    <div class="warning">
+      <strong>Synthetic tutorial data:</strong> The information pre-filled in the five templates provided for the
+      <strong>“Material Synthesis”</strong> tutorial example is synthetic training data. It is designed only to
+      demonstrate Data Store functions and the self-learning workflow and does <strong>not</strong> aim to be
+      scientifically correct or suitable for real research documentation.
+    </div>
+
+    <div class="note">
+      <strong>Parent and child relationships</strong>: Applying a template does not replace <a href="https://datastore.bam.de/en/openbis_20-10-12/concepts/parent-child_relationship" target="_blank" rel="noopener noreferrer">
+        Parent and child relationships</a> that are already assigned to the Object. Existing relationships are retained, and parent(s)
+       and child(ren) defined in the Template are added to them.
+    </div>
+            
+          Masterdata definition process and related concepts
+        </a>.
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section class="step" id="step-4">
+    <h2>Step 4: Show Object Types in the Lab Notebook menu</h2>
+    <p>
+      Object Types can also be configured to appear in the <strong>Lab Notebook</strong> section of the main menu.
+      In the standard ELN configuration, <strong>Entry</strong> and <strong>Experimental Step</strong> are displayed
+      there by default.
+    </p>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Open the Group ELN Settings for your division and click <strong>Edit</strong>.</li>
+        <li>Open <strong>Object Type definitions Extension</strong>.</li>
+        <li>Select the relevant Object Type.</li>
+        <li>Enable <strong>Show in lab notebook main menu</strong>.</li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <strong>Lab Notebook versus Inventory:</strong> The <strong>Show in lab notebook main menu</strong> option is
+      intended for the Lab Notebook. Inventory objects are generally handled through their Inventory Spaces,
+      Projects, Collections and object tables rather than by adding every Inventory Object Type to the main menu.
+    </div>
+    <div class="note">
+      <strong>How these settings are used by group members:</strong> Object Types and templates become visible to
+      users when they register objects in the <strong>Lab Notebook</strong> and in the <strong>Inventory</strong>.
+      Object Types determine which kind of object can be registered, while templates can provide pre-defined values
+      and relationships for supported Object Types. Their practical use will become clearer in the follow-up
+      tutorials of this self-learning path, where users create and connect objects for the
+      <strong>“Material Synthesis”</strong> example.
+    </div>
+
+    <div class="instructions">
+      <strong>How to review which Object Types are enabled in the Lab Notebook menu:</strong>
+      <ol>
+        <li>Open the Group ELN Settings for your division.</li>
+        <li>Open <strong>Object Type definitions Extension</strong>.</li>
+        <li>Review the configured Object Types and their settings.</li>
+        <li>For each relevant Object Type, check whether <strong>Show in lab notebook main menu</strong> is enabled.</li>
+        <li>Verify the result in the <strong>Lab Notebook</strong> main menu, where the enabled Object Types are displayed.</li>
+      </ol>
+    </div>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section class="step" id="step-5">
+    <h2>Step 5: Customize the Main Menu</h2>
+    <p>
+      The <strong>Main Menu</strong> settings control which Data Store functions are displayed to users of the
+      selected group. For the self-learning path, review the configuration prepared for your division and confirm
+      that all of the functions listed below are enabled.
+    </p>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li>Open <strong>Tools → Utilities → Settings</strong>.</li>
+        <li>Under <strong>Select Group Settings</strong>, select your <strong>division number</strong>.</li>
+        <li>Click the <strong>Edit</strong> tab.</li>
+        <li>Open the <strong>Main Menu</strong> settings section.</li>
+        <li>Review the available Main Menu options.</li>
+        <li>Confirm that each of the following options is enabled for your group:
+          <ul>
+            <li><code>showLabNotebook</code></li>
+            <li><code>showInventory</code></li>
+            <li><code>showObjectBrowser</code></li>
+            <li><code>showExports</code></li>
+            <li><code>showStorageManager</code></li>
+            <li><code>showAdvancedSearch</code></li>
+            <li><code>showTrashcan</code></li>
+            <li><code>showVocabularyViewer</code></li>
+            <li><code>showUserManager</code></li>
+            <li><code>showUserProfile</code></li>
+            <li><code>showBarcodes</code></li>
+            <li><code>showDatasets</code></li>
+          </ul>
+        </li>
+        <li>If one or more required options are disabled, enable them.</li>
+        <li>Review the configuration and click <strong>Save</strong> if you made changes.</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <strong>How to review the result:</strong> After saving, return to the Data Store interface and review the
+      Main Menu. The enabled functions should be available to users of the group, subject to the permissions and
+      functionality configured for their accounts.
+    </div>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+
+  <section id="other-settings">
+    <h2>Other group settings</h2>
+    <p>
+     Group ELN Settings that can be customized by DSSts.
+    </p>
+
+    <div class="comparison-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Group setting</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Storages</strong></td>
+            <td>Create and configure storage structures used by the group where storage functionality is enabled.</td>
+          </tr>
+          <tr>
+            <td><strong>Object Type definitions Extension</strong></td>
+            <td>Extend ELN behaviour for Object Types, including visibility in drop-downs and the Lab Notebook main
+               menu and, settings for parent and child relationships.</td>
+          </tr>
+          <tr>
+            <td><strong>Main menu</strong></td>
+            <td>Adjust selected menu behaviour so that the group's navigation reflects the workflows used by the division.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning">
+      <strong>Group settings are not masterdata:</strong> Divisions can define new Object Types when required to
+      represent or map their research workflows in the Data Store. This process is called <strong>masterdata
+      definition</strong> and includes the definition of Object Types and controlled vocabularies. Masterdata work is
+      coordinated by DSSts within the divisions together with the Data Store team. The <strong>BAM data model work task
+      force</strong> coordinates the definition of BAM masterdata with the aim of creating a coherent data model that
+      makes BAM research data reusable within BAM and across the relevant scientific disciplines.
+      <p><strong>When to start:</strong> The recommended time to begin the masterdata definition process is after a division has 
+      completed the Data Store self-learning path and starts implementing its own use cases. Masterdata definition is therefore <strong>not part 
+      of Data Store onboarding</strong>; it belongs to the subsequent <strong>rollout process</strong>, when division-specific research workflows 
+      and metadata requirements can be translated into appropriate Object Types and controlled vocabularies.</p>
+      <p>
+        For details, see the Data Store wiki page: 
+        <a href="https://datastore.bam.de/en/masterdata_definition" target="_blank" rel="noopener noreferrer">
+          Masterdata definition process and related concepts
+        </a>.
+      </p>
+    </div>
+  </section>
+
+  <section id="result">
+    <h2>Result</h2>
+    <p>
+      After completing this guidance, you should be able to open your division-specific Group ELN Settings, create
+      templates, enable Object Types in drop-down menus, and control which Object Types are displayed in the Lab
+      Notebook main menu.
+    </p>
+
+    <div class="note">
+      <strong>Before you finish:</strong>
+      <ul>
+        <li>Confirm that the correct division/group was selected when the changes were saved.</li>
+        <li>For templates, check all pre-defined metadata and parent/child relationships.</li>
+        <li>Distinguish <strong>Show in drop downs</strong> from <strong>Show in lab notebook main menu</strong>.</li>
+        <li>Verify the result in the ELN using a representative Space from your group.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+
+    <h3>openBIS</h3>
+    <ul>
+      <li><a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-admin-users/admins-documentation/multi-group-set-up.html" target="_blank" rel="noopener noreferrer">openBIS 20.10.12 – Multi Group Set Up</a></li>
+      <li><a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-admin-users/admins-documentation/create-templates-for-objects.html" target="_blank" rel="noopener noreferrer">openBIS 20.10.12 – Create Templates for Objects</a></li>
+      <li><a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-admin-users/admins-documentation/new-entity-type-registration.html" target="_blank" rel="noopener noreferrer">openBIS 20.10.12 – New Entity Type Registration / Object Type configuration</a></li>
+      <li><a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-admin-users/admins-documentation/customise-the-main-menu.html" target="_blank" rel="noopener noreferrer">openBIS 20.10.12 – Customise the Main Menu</a></li>
+    </ul>
+
+    <h3>Data Store Wiki</h3>
+    <ul>
+      <li><a href="https://datastore.bam.de/en/home" target="_blank" rel="noopener noreferrer">BAM Data Store – FDM@BAM</a></li>
+    </ul>
+
+  </section>
+</body>
+</html>
