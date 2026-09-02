@@ -279,7 +279,7 @@ th {
   <header>
     <h1>Prepare inventory structures for the group</h1>
     <p class="lead">
-      This tutorial prepares the inventory structure used in the follow-up tutorial for users (Register inventory objects). You will create 
+      This tutorial prepares the inventory structure used in the follow-up tutorial for users "Register inventory items". You will create 
       the required projects and collections, register the Chemical and Instrument objects used in the “Material Synthesis” example 
       so that division members can subsequently register Sample objects. 
       
@@ -337,7 +337,7 @@ th {
 </section>
 
   <section id="key-concepts">
-    <h2>Key Concepts</h2>
+    <h2>Key concepts</h2>
 
   <section id="Inventory">
     <h3>Inventory in the Data Store</h3>
@@ -361,6 +361,14 @@ th {
      </section>
     </p>
 
+    <div class="note">
+  <strong>Division-number placeholder:</strong>
+  In this tutorial, <code>X.1</code> represents your division number.
+  Replace <code>X.1</code> with the number assigned to your division whenever
+  it appears in a space name, project name, navigation path, table, or Excel
+  file.
+</div>
+
     <figure>
       <img src="images/inventory-overview1.png" alt="Inventory navigation showing the BAM Inventory and FB Inventory sections">
       <figcaption>
@@ -372,9 +380,10 @@ th {
       <figure>
       <img src="images/inventory-overview2.png" alt="Overview Project in BAM Inventory">
       <figcaption>
-        The BAM Equipment space contains a predefined project for each division, such as <strong>X.1 Equipment Open</strong>. Use the corresponding 
-        wour division project to register large devices and instruments
-        shared by multiple divisions.      
+        The <strong>BAM Equipment</strong> space contains a predefined project for
+        each division, such as <strong>X.1 Equipment Open</strong>. Replace
+        <code>X.1</code> with your division number and use the corresponding project
+        to register large devices and instruments shared by multiple divisions.
       </figcaption>
       </figure>
 
@@ -391,7 +400,7 @@ th {
 
   <p>
     In this tutorial, you will set up the parts of the data model that are
-    required for the follow-up User tutorial (Register inventory objects). This includes creating the
+    required for the follow-up User tutorial "Register inventory items". This includes creating the
     division-specific projects and collections in the FB Inventory, preparing
     the Instruments collection in the BAM Inventory, and registering the
     Chemical and Instrument objects used in the “Material Synthesis” example.
@@ -437,7 +446,7 @@ th {
   <p>
     The <strong>Samples</strong> collection is intentionally prepared without
     the Sample objects used later in the workflow. In the follow-up user tutorial
-    (Register inventory objects),
+    "Register inventory items",
     Users review the prepared Inventory structure and register these Sample
     objects themselves. The registered inventory objects can subsequently be
     connected with the corresponding experimental steps in the Lab Notebook.
@@ -468,6 +477,10 @@ th {
        the <strong>FB Inventory</strong>. Other division members do not have sufficient rights to create projects in the FB inventory spaces. In Step 4 of this tutorial,
         you will learn how to grant access to projects in the FB Inventory to enable them to register and link these inventory objects.
     </p>
+    <p>
+  In the following instructions, replace <code>X.1</code> with your division
+  number.
+</p>
 
     <div class="instructions">
     <strong>Instructions for registering a project:</strong>  
@@ -490,9 +503,9 @@ th {
 <table>
   <thead>
     <tr>
-      <th>Space Name</th>
-      <th>Code</th>
-      <th>Description</th>
+      <th scope="col">Space name</th>
+      <th scope="col">Code</th>
+      <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -503,8 +516,6 @@ th {
          solely for training and demonstration purposes.//Chemikalien aus dem Tutorial Beispiel „Material Synthesis“. 
          Die Einträge sind fiktiv und dienen ausschließlich Schulungs- und Demonstrationszwecken.</td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td>X.1 Materials</td>
       <td>SAMPLES_SYNTHESIS</td>
@@ -512,10 +523,10 @@ th {
         and demonstration purposes.//Proben aus dem Tutorial Beispiel "Material Synthesis". Die Einträge sind fiktiv und dienen 
         ausschließlich Schulungs- und Demonstrationszwecken.</td>
     </tr>
+  </tbody>
   </thead>
   </tbody>
 </table>
-
 
     <figure>
       <img src="images/step1-project.png" alt="Inventory navigation to register a project">
@@ -571,11 +582,13 @@ th {
       <figcaption>The newly registered <code>CHEMICALS_SYNTHESIS</code> and <code>SAMPLES_SYNTHESIS</code>projects are displayed under <code>X.1 Materials</code> in the left-hand navigation menu.</figcaption>
     </figure>
 
-
     <div class="note">
-  <strong>Delete a project</strong>, a project level can only be deleted if it is empty.  Therefore, all collections within this level
-       must be deleted first before the project itself can be deleted. To delete a project, select it in the left-hand menu, open the <strong>More</strong> drop-down menu, and select <strong>Delete</strong>. 
-    </div>
+      <strong>Deleting a project:</strong>
+      A project can be deleted only when it is empty. Delete all collections within
+      the project before deleting the project itself. Then select the project in
+      the left-hand navigation menu and choose
+      <strong>More → Delete</strong>.
+    </div> 
     <p>
       <strong>Congratulations! </strong>You have successfully created two projects within the FB Inventory.
     </p>
@@ -587,10 +600,16 @@ th {
   <section class="step" id="step-2">
     <h2>Step 2: Register collections in BAM and FB inventories </h2>
     <p>
-      A project can contain multiple collections to organize  together inventory objects of one or different types. Collections 
-      provide a logical structure for grouping objects and facilitate navigation, data management, and data retrieval. In this tutorial example, you will create three collections and use two of them in step 3.
-       The third collection <strong>Samples</strong> will be used by you and your division colleagues to register samples when implementing the tutorial "Regoster omvemtpry objects"
-       (inventory-users).
+      A project can contain multiple collections for organizing inventory objects
+      of one or more types. Collections provide a logical structure that supports
+      navigation, data management, and data retrieval.
+
+    <p>
+      In this tutorial, you will create three collections. The
+      <strong>Chemicals</strong> and <strong>Instruments</strong> collections will
+      be used for batch registration in Step 3. Division members will use the
+      <strong>Samples</strong> collection in the follow-up tutorial,
+      <strong>“Register inventory items.”</strong>
     </p>
 
   
@@ -709,7 +728,7 @@ th {
       <ol>
         <li>Download <code>instruments.xlsx</code> using the button above.</li>
         <li>Open the file and review the instrument objects prepared for the “Material Synthesis” example.</li>
-        <li>In the Excel file, replace <strong>X.1</strong> with your division number in the columns <strong>BAM Organizational Entity</strong></li>  
+        <li>In the <strong>BAM Organizational Entity</strong> column, replace <code>X.1</code> with your division number</li>
         <li>Check Instrument names.</li>
         <li>Do not change the column headings, object type information, or worksheet structure.</li>
         <li>Save the modified Excel file under a clear filename, for example <strong>instruments_BAM_material_synthesis.xlsx</strong>.</li>
@@ -796,17 +815,23 @@ th {
     </figure>
     <figure>
       <img src="images/step3-objects-batch-registration2.png" alt="Excel upload for batch-registration">
-      <figcaption>Click <strong>Datei auswählen/choose file</strong>, select the updated, and click <strong>Accept</strong>. 
-        When an Excel file is not provided, use <strong>Template: Download</strong> to retrieve a blank Excel template for the default object type configured for the selected collection, for example <strong>Chemical</strong> or <strong>Instrument</strong>.
+      <figcaption>
+        Click <strong>Choose file</strong>—shown as
+        <strong>Datei auswählen</strong> when the browser language is German—and
+        select the corresponding Excel file. Verify the filename, and then click
+        <strong>Accept</strong> to start the batch registration. To create a new
+        batch-registration file, click <strong>Download</strong> under
+        <strong>Template</strong> to obtain a blank Excel template for the default
+        object type.
       </figcaption>
     </figure>
     <figure>
       <img src="images/step3-objects-batch-registration3.png" alt="Overview for batch-registration FB Inventory">
-      <figcaption> The registered objects of type <strong>Chemical</strong> will be displayed in FB Inventory.</figcaption>
+      <figcaption> The registered objects of type <strong>Chemical</strong> are displayed in FB Inventory.</figcaption>
     </figure>
     <figure>
       <img src="images/step3-objects-batch-registration4.png" alt="Overview for batch-registration BAM Inventory">
-      <figcaption>The registered objects of type <strong>Instrument</strong> will be displayed in BAM Inventory.</figcaption>
+      <figcaption>The registered objects of type <strong>Instrument</strong> are displayed in BAM Inventory.</figcaption>
     </figure>
     <h3>General information</h3>
     <p>
@@ -919,7 +944,7 @@ th {
 
   <p>
     For the <strong>“Material Synthesis”</strong> example, you have prepared the
-    inventory structure required for the follow-up User tutorial (Register inventory objects):
+    inventory structure required for the follow-up User tutorial "Register inventory items":
   </p>
 
   <ul>
@@ -939,7 +964,7 @@ th {
 
   <p>
     Division members with the <strong>User</strong> role can now continue with
-    the follow-up tutorial (Register inventory objects) to review these inventory items and register the Samples
+    the follow-up tutorial "Register inventory items" to review these inventory items and register the Samples
     generated during the <strong>“Material Synthesis”</strong> workflow.
   </p>
   </section>
