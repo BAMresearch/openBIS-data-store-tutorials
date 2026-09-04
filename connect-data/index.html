@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Connect Lab Notebook data with Inventory items</title>
+<style>
+:root {
+      --primary: #003366;
+      --secondary: #1370bc;
+      --text: #222;
+      --muted: #5a6470;
+      --border: #d9e1e8;
+      --bg-soft: #f7f9fc;
+      --note-bg: #f5f8fc;
+      --warning-bg: #fff5f5;
+      --warning-border: #cc0000;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      color: var(--text);
+      background: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+    }
+    
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin-bottom: 0.3em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.25rem;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    a {
+      color: var(--secondary);
+    }
+
+    code {
+      padding: 0.1rem 0.3rem;
+      background: #f3f5f7;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      margin: 1rem 0 1.5rem;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 0.65rem;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--primary);
+      background: var(--bg-soft);
+    }
+
+    .lead {
+      color: #2d3a45;
+      font-size: 1.05rem;
+    }
+
+    .toc {
+      margin: 1.5rem 0 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .toc ul,
+    ul,
+    ol {
+      margin: 0.5rem 0 1rem;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin: 0.3rem 0;
+    }
+
+    .step {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .step h2 {
+      margin-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .note,
+    .warning,
+    .instructions {
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+    }
+
+    .note {
+      background: var(--note-bg);
+      border-left: 4px solid var(--primary);
+    }
+
+    .warning {
+      background: var(--warning-bg);
+      border-left: 4px solid var(--warning-border);
+    }
+
+    .instructions {
+      background: #fff9ed;
+      border-left: 4px solid #a06a00;
+    }
+
+    figure {
+      margin: 1rem 0 1.5rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #cfd7df;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .screenshot {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 0.45rem;
+    }
+
+body {
+  counter-reset: figure;
+}
+
+figure {
+  counter-increment: figure;
+}
+
+figcaption::before {
+  content: "Figure " counter(figure) ": ";
+}
+    .download-button {
+      display: inline-block;
+      padding: 12px 20px;
+      color: #fff;
+      background-color: #005a9c;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .download-button:hover {
+      background-color: #004578;
+    }
+
+    .download-button:focus-visible {
+      outline: 3px solid #ffbf47;
+      outline-offset: 3px;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1rem;
+      }
+
+      .step {
+        padding: 1rem;
+      }
+
+
+    }
+
+.comparison-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem 0 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table-wrapper table {
+  width: 100%;
+  min-width: 900px;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.comparison-table-wrapper th,
+.comparison-table-wrapper td {
+  padding: 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--border);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.comparison-table-wrapper th {
+  color: var(--primary);
+  background: var(--bg-soft);
+}
+
+.table caption {
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  font-weight: bold;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--border);
+}
+
+.table th {
+  color: var(--primary);
+  background-color: var(--bg-soft);
+}
+
+.table ol {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.table li {
+  margin: 0 0 0.5rem;
+  padding-left: 0.15rem;
+}
+
+.table li:last-child {
+  margin-bottom: 0;
+}
+
+.table a {
+  overflow-wrap: anywhere;
+}
+
+    .table-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin: 1rem 0 1.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-wrapper table {
+      margin: 0;
+      min-width: 760px;
+    }
+
+    .relationship-model,
+    .workflow-sequence {
+      margin: 1rem 0 1.5rem;
+      padding: 1rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .relationship-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0.6rem 0;
+      text-align: center;
+    }
+
+    .node {
+      padding: 0.55rem 0.8rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .arrow,
+    .workflow-arrow {
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .workflow-sequence {
+      text-align: center;
+    }
+
+    .workflow-sequence p {
+      margin: 0.6rem 0;
+    }
+
+    @media (max-width: 720px) {
+      .relationship-row {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<a id="top"></a>
+<header>
+<h1>Connect Lab Notebook data with Inventory items</h1>
+<p class="lead">
+      This tutorial shows division members how to connect research data registered in the
+      Lab Notebook with related Inventory objects in the Data Store. Using the synthetic
+      <strong>“Material Synthesis”</strong> example, you will connect Experimental Steps with
+      instruments, chemicals, samples, and other Experimental Steps using parent-child
+      relationships so that the origin and processing history of research datasets can be traced.
+    </p>
+</header>
+<nav aria-label="Table of contents" class="toc">
+<h2>Contents</h2>
+<ul>
+<li><a href="#learning-outcomes">What you will learn</a></li>
+<li><a href="#before-you-begin">Before you begin</a></li>
+<li><a href="#tutorial-sequence">Tutorial sequence</a></li>
+<li><a href="#key-concepts">Key concepts</a></li>
+<li><a href="#material-synthesis-connections">Connections for “Material Synthesis”</a></li>
+<li><a href="#tutorial-workflow">Tutorial workflow</a></li>
+<li><a href="#step-1">Step 1: Connect one Experimental Step</a></li>
+<li><a href="#step-2">Step 2: Batch-update Samples from the same Collection</a></li>
+<li><a href="#step-3">Step 3: Batch-update objects from different Collections</a></li>
+<li><a href="#step-4">Step 4: Visualise and verify the relationship hierarchy</a></li>
+<li><a href="#result">Result</a></li>
+</ul>
+</nav>
+<section id="learning-outcomes">
+<h2>What you will learn</h2>
+<ul>
+<li>Explain how parent-child relationships connect objects represented in openBIS.</li>
+<li>Connect one Experimental Step in the Lab Notebook with related Inventory objects.</li>
+<li>Use batch update to add relationships to multiple Sample objects from the same Collection.</li>
+<li>Use the Object Browser to prepare a batch update for objects located in different Collections.</li>
+<li>Visualise parent-child relationships between Objects using the <strong>Hierarchy Graph</strong> and <strong>Hierarchy Table</strong>, and use those views to support dataset traceability.</li>
+</ul>
+</section>
+<section id="before-you-begin">
+<h2>Before you begin</h2>
+<p>
+      This tutorial is designed for <strong>openBIS version 20.10.12</strong> and requires
+      prior experience with openBIS. It builds directly on the earlier Lab Notebook and
+      Inventory tutorials. Before starting, you should already be comfortable navigating
+      Projects, Collections, Objects, and Datasets and editing registered objects.
+    </p>
+<p>Before starting this tutorial, you must:</p>
+<ul>
+<li>
+        Read the guideline <strong>“How to represent research data in the Data Store”</strong>
+        and understand the recommended structure
+        <strong>Space → Project → Collection → Object → Dataset</strong>.
+      </li>
+<li>
+        Complete <strong>“Upload data in the Lab Notebook”</strong>. Your User Space should
+        contain the <strong>Material Synthesis</strong> Project, the tutorial Collections,
+        Experimental Steps, and the datasets attached to the corresponding Experimental Steps.
+      </li>
+<li>
+        Complete <strong>“Register inventory items”</strong>. The required Instrument and
+        Chemical objects should be available and the Sample objects for the tutorial should
+        already be registered in the Inventory.
+      </li>
+<li>
+        Have the required permissions to edit the relevant Lab Notebook and FB Inventory objects.
+      </li>
+<li>
+        Have access to the
+        <a href="https://playground.datastore.bam.de/" rel="noopener noreferrer" target="_blank">playground instance</a>
+        (access restricted to BAM employees with VPN connection). How to log in to the Data Store
+        instances is described in this
+        <a href="https://datastore.bam.de/en/openbis_20-10-12/how-to_guides/user_ui/how_to_log_in" rel="noopener noreferrer" target="_blank">guide</a>.
+      </li>
+<li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
+</ul>
+<div class="warning">
+<strong>Do not continue with an incomplete tutorial structure:</strong>
+      this tutorial updates objects that already exist. If Experimental Steps, Instruments,
+      Chemicals, or Samples from the previous tutorials are missing, register or restore them
+      first rather than creating substitutes during the connection exercises.
+    </div>
+</section>
+<section id="tutorial-sequence">
+<h2>Tutorial sequence</h2>
+<p>
+<strong>Tutorial sequence:</strong> This tutorial is <strong>Step 5 of 5</strong> in the
+      synthetic <strong>“Material Synthesis”</strong> example. The previous tutorials created
+      the Lab Notebook structure and datasets and registered the corresponding Inventory items.
+      This final tutorial connects those objects and completes the representation of the research
+      workflow in the Data Store.
+    </p>
+</section>
+<section id="key-concepts">
+<h2>Key concepts</h2>
+<h3>Parent-child relationships</h3>
+<p>
+      Objects represented in openBIS can be connected using <strong>parent-child relationships</strong>.
+      For research-data traceability, these relationships can link Experimental Steps in the Lab Notebook
+      with the resources used during an activity and with the outputs generated by that activity.
+      Datasets remain attached to the Experimental Step that describes how they were generated.
+    </p>
+<div aria-label="Example relationship model" class="relationship-model">
+<div class="relationship-row">
+<div class="node"><strong>Instrument / Chemical / input Sample</strong><small>resource or input object</small></div>
+<div class="arrow">→</div>
+<div class="node"><strong>Experimental Step</strong><small>activity recorded in the Lab Notebook</small></div>
+<div class="arrow">→</div>
+<div class="node"><strong>Sample / next Experimental Step</strong><small>research output or downstream activity</small></div>
+</div>
+<div class="relationship-row">
+<div class="node"><strong>Dataset</strong><small>attached to the Experimental Step that generated it</small></div>
+</div>
+</div>
+<div class="warning">
+<strong>Important: openBIS parent-child relationships:</strong> The <strong>Hierarchy Graph only visualises parent-child connections from Object to Object</strong>. These relationships describe a directed connection between registered openBIS Objects. The terms <em>parent</em> and <em>child</em> therefore do not have the same meaning as in programming languages, where they often describe inheritance, class hierarchies, or ownership in a software structure. In openBIS, they are links used to represent how research Objects are related. Decide which Object is the parent and which is the child before saving or batch-updating a relationship. A useful convention for this tutorial is to represent resources and inputs as parents of an Experimental Step, and generated Samples or downstream Experimental Steps as its children.
+    </div>
+<div class="note">
+<strong>Remember:</strong> <strong>Datasets are not visible in the Hierarchy Graph.</strong> A dataset remains attached to the Experimental Step that describes how it was generated. Open that Experimental Step and use its Object-to-Object hierarchy to trace the Inventory items, inputs, outputs, and downstream activities associated with the dataset.
+    </div>
+<h3>Traceability through connected objects</h3>
+<p>
+      Parent-child connections create a navigable hierarchy between the Lab Notebook and Inventory.
+      In the openBIS ELN, parent-child relationships between <strong>Objects</strong> can be visualised as a
+      <strong>Hierarchy Graph</strong> or <strong>Hierarchy Table</strong>. Because datasets are attached to
+      Experimental Steps, use the object hierarchy to document the resources, inputs, outputs, and downstream
+      activities associated with the Experimental Step that generated a dataset.
+    </p>
+<div class="note">
+<strong>What the hierarchy view contains:</strong> the relationship visualisation is an Object genealogy.
+      The dataset itself is not the starting node of the Hierarchy Graph. To trace a dataset, first open the
+      Experimental Step to which the dataset is attached, and then visualise that Experimental Step's Object
+      relationships.
+    </div>
+<h3>Single-object editing and batch update</h3>
+<p>
+      Use direct object editing when you want to create or correct a small number of relationships.
+      Use <strong>batch update</strong> when several existing objects need relationship changes. Batch
+      update modifies objects that already exist; it is different from batch registration, which creates
+      new objects.
+    </p>
+</section>
+<section id="material-synthesis-connections">
+<h2>Connections for “Material Synthesis”</h2>
+<p>
+      The tutorial example combines Experimental Steps from the Lab Notebook with Instrument,
+      Chemical, and Sample objects in the Inventory. The relevant Inventory structure includes
+      Instruments in the BAM Inventory and Chemicals and Samples in the FB Inventory. In this tutorial,
+      <code>X.1</code> represents your division number.
+    </p><figure><img alt="Data model for the Material Synthesis example showing parent-child relationships between Lab Notebook and Inventory objects" src="images/data-model.png"/><figcaption>Data model for the <strong>“Material Synthesis”</strong> example. The unidirectional arrows connecting Objects in the Lab Notebook and Inventories represent the parent-child relationships used to describe the research workflow and make its provenance traceable.</figcaption></figure>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Role in workflow</th>
+<th>Object type</th>
+<th>Tutorial examples</th>
+<th>Typical relationship direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resources</td>
+<td>Instrument</td>
+<td>Synthesis; Macrostructure; Microstructure</td>
+<td>Instrument → Experimental Step</td>
+</tr>
+<tr>
+<td>Resources / inputs</td>
+<td>Chemical</td>
+<td>Chemical 1; Chemical 2; Treatment Solution</td>
+<td>Chemical → Experimental Step</td>
+</tr>
+<tr>
+<td>Activities</td>
+<td>Experimental Step</td>
+<td>Material Synthesis; Chemical Treatment; Macrostructure Characterization; Microstructure Characterization; data-analysis steps</td>
+<td>Input object → Experimental Step → output object</td>
+</tr>
+<tr>
+<td>Research outputs / later inputs</td>
+<td>Sample</td>
+<td>Synthesized Material and the additional Samples registered in the Inventory tutorial</td>
+<td>Experimental Step → Sample; Sample → downstream Experimental Step when reused</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<strong>Modeling principle:</strong> connect only relationships that are relevant to understanding
+      how the research data were generated. The goal is not to connect every object to every other object,
+      but to represent the meaningful sequence of resources, activities, and outputs.
+    </div>
+</section>
+<section id="tutorial-workflow">
+<h2>Tutorial workflow</h2>
+<ol>
+<li>Connect one Experimental Step manually to learn how parent-child relationships are represented.</li>
+<li>Batch-update the Sample objects from the same Samples Collection to add their workflow relationships efficiently.</li>
+<li>Use the Object Browser to select objects from different Collections and prepare a batch update across the workflow.</li>
+<li>Open an Experimental Step and use <strong>More… → Hierarchy Graph</strong> (or <strong>Hierarchy Table</strong>) to review its Object genealogy and verify that the attached dataset is supported by the intended workflow connections.</li>
+</ol>
+</section>
+<section class="step" id="step-1">
+<h2>Step 1: Connect one Experimental Step</h2>
+<p>
+  Start with one Experimental Step so that you can review the direction of each relationship before
+  updating multiple objects. Use the <strong>Material Synthesis</strong> Experimental Step in the
+  <strong>Synthesis</strong> Collection.
+</p>
+<div class="note">
+<strong>Remember the workflow before assigning relationships:</strong>
+  the parent and child Objects must reflect the research workflow represented in the Data Store.
+  For <strong>Material Synthesis</strong>, the Instrument and Chemicals used by the activity are
+  <strong>parents</strong>, while the Sample generated by the activity is a <strong>child</strong>.
+  If you are unsure which Objects belong on either side of the Experimental Step, review the
+  <a href="#material-synthesis-connections">Connections for “Material Synthesis”</a> section before continuing.
+</div>
+<h3>Identify the Objects to connect</h3>
+<p>
+  Before editing the Experimental Step, determine the <strong>Name</strong> or <strong>Code</strong> of every Object
+  that you want to connect. This tutorial illustrates two ways to do this.
+</p>
+<h3>Option 1: You know the Object name</h3>
+<p>
+  When you already know the Object name, you can use openBIS auto-completion while assigning the relationship.
+  In this example, add the Instrument <strong>Synthesis</strong> and the Chemicals
+  <strong>Chemical 1</strong> and <strong>Chemical 2</strong> as parents.
+</p>
+
+<h3>Option 2: Find the Code of the Sample to connect</h3>
+<p>
+  The child of <strong>Material Synthesis</strong> is the Sample <strong>Synthesized Material</strong> that you
+  registered in the previous tutorial <strong>“Register inventory items”</strong>. Because all division members
+  registered Samples with the same tutorial names, the Name alone is not sufficient to identify your Sample.
+  Filter the Samples Collection using the <strong>Co-responsible person</strong> property and then note the
+  <strong>Code</strong> of your Sample.
+</p>
+<div class="instructions">
+<strong>Filter the Samples Collection and find your Sample Code:</strong>
+<ol>
+<li>Select the upper <strong>Inventory</strong> tab.</li>
+<li>Navigate to <strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</li>
+<li>Select the <strong>Samples</strong> Collection.</li>
+<li>Click <strong>FILTERS</strong> and select <strong>Filter Per Column</strong>.</li>
+<li>In the property field for <strong>Co-responsible person</strong>, enter your username or the value that identifies you.</li>
+<li>Review the filtered results and locate <strong>Synthesized Material</strong>.</li>
+<li>Note or copy the <strong>Code</strong> of your Sample. You will use it when adding the Sample as a child of the Experimental Step.</li>
+</ol>
+</div>
+<div class="note">
+<strong>Filtering reminder:</strong> Collection filtering was introduced previously in
+  <strong>Step 8: Filter and Search</strong> of the tutorial <strong>“Upload data in the Lab Notebook”</strong>.
+  Here, filtering is used specifically to distinguish your Sample from Samples with the same tutorial name registered by other users.
+</div>
+
+    </p><figure><img alt="Filter samples collection" src="images/step1-connect1.png"/><figcaption>Data model for the <strong>“Material Synthesis”</strong> example. The unidirectional arrows connecting Objects in the Lab Notebook and Inventories represent the parent-child relationships used to describe the research workflow and make its provenance traceable.</figcaption></figure>
+
+<h3>Relationships to add to “Material Synthesis”</h3>
+<div class="comparison-table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Object type</th>
+<th>Object Name</th>
+<th>Role in the workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parent</td>
+<td>Instrument</td>
+<td>Synthesis</td>
+<td>Instrument used during the Experimental Step</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>Chemical</td>
+<td>Chemical 1</td>
+<td>Chemical used during the Experimental Step</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>Chemical</td>
+<td>Chemical 2</td>
+<td>Chemical used during the Experimental Step</td>
+</tr>
+<tr>
+<td>Child</td>
+<td>Sample</td>
+<td>Synthesized Material</td>
+<td>Sample generated by the Experimental Step</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Add all parents and children to the Experimental Step</h3>
+<p>
+  Parent-child relationships can be assigned to an Experimental Step or any other Object from the Object's
+  <strong>Edit</strong> tab. Add all relationships listed above in one editing session and save once after you
+  have reviewed the complete set.
+</p>
+<div class="instructions">
+<strong>Instructions:</strong>
+<ol>
+<li>Select the upper <strong>LAB NOTEBOOK</strong> tab.</li>
+<li>Navigate to your User Space → <strong>Material Synthesis</strong> Project → <strong>Synthesis</strong> Collection.</li>
+<li>Open the Experimental Step <strong>Material Synthesis</strong>.</li>
+<li>Click the <strong>Edit</strong> tab.</li>
+<li>In the <strong>Parents</strong> section, click <strong>Search Any</strong>.</li>
+<li>Select <strong>Instrument</strong> as the Object <strong>Type</strong>, start typing <strong>Synthesis</strong> in the <strong>Code/Name</strong> field, wait for auto-completion, and select the correct Instrument.</li>
+<li>Still in the <strong>Parents</strong> section, click <strong>Search Any</strong> again, select <strong>Chemical</strong> as the Object <strong>Type</strong>, and add <strong>Chemical 1</strong>.</li>
+<li>Repeat the previous action to add <strong>Chemical 2</strong> as a parent.</li>
+<li>In the <strong>Children</strong> section, click <strong>Search Any</strong>.</li>
+<li>Select <strong>Sample</strong> as the Object <strong>Type</strong>.</li>
+<li>In the <strong>Code/Name</strong> field, enter or start typing the <strong>Code</strong> of your filtered <strong>Synthesized Material</strong> Sample and select the matching Object.</li>
+<li>Review that the Experimental Step has three parents—instrument<strong>Synthesis</strong>, <strong>Chemical 1</strong>, and <strong>Chemical 2</strong>—and one child—your <strong>Synthesized Material</strong> Sample, with your name as <strong>Co-responsible person</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+<li>Reopen the Experimental Step and confirm that the intended parents and child are displayed.</li>
+</ol>
+</div>
+<div class="note">
+<strong>Parent-child relationship guide:</strong> for additional background, see
+  <a href="https://datastore.bam.de/en/openbis_20-10-12/concepts/parent-child_relationship" rel="noopener noreferrer" target="_blank">parent-child relationships in the Data Store</a>.
+</div>
+
+</p><figure><img alt="Open experimental step" src="images/step1-connect2.png"/><figcaption>Open the <strong>Material Synthesis</strong> Experimental Step.</figcaption></figure>
+</p><figure><img alt="Edit experimental step" src="images/step1-connect3.png"/><figcaption>Open the <strong>Material Synthesis</strong> Experimental Step, select the <strong>Edit</strong> tab.</figcaption></figure>
+</p><figure><img alt="Locate parents and children sections" src="images/step1-connect4.png"/><figcaption>locate the <strong>Parents</strong> section with the <strong>Search Any</strong> controls, use the <strong>select an Object Type</strong> field with auto-completion to add <strong>Instrument</strong>.</figcaption></figure>
+</p><figure><img alt="Select object type" src="images/step1-connect5.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion to add <strong>Synthesis</strong> as parent.</figcaption></figure>
+</p><figure><img alt="Locate parents and children sections" src="images/step1-connect6.png"/><figcaption>locate the <strong>Parents</strong> section with the <strong>Search Any</strong> controls, use the <strong>select an Object Type</strong> field with auto-completion to add <strong>Chemical</strong>.</figcaption></figure>
+</p><figure><img alt="Select object type" src="images/step1-connect7.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion to add <strong>Chemical 1</strong> and <strong>Chemical 2</strong> as parents.</figcaption></figure>
+</p><figure><img alt="Confirm relationships for parents" src="images/step1-connect8.png"/><figcaption>Confirm that instrument <strong>Synthesis</strong>, <strong>Chemical 1</strong> and <strong>Chemical 2</strong> are added as parents.</figcaption></figure>
+</p><figure><img alt="Locate parents and children sections" src="images/step1-connect9.png"/><figcaption>locate the <strong>Children</strong> section with the <strong>Search Any</strong> controls, use the <strong>select an Object Type</strong> field with auto-completion to add <strong>Sample</strong>.</figcaption></figure>
+</p><figure><img alt="Select object type" src="images/step1-connect10.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion to add <strong>The code of your Sample</strong>, this should start with <strong>SAM</strong>and be followed by three numbers.</figcaption></figure>
+</p><figure><img alt="Confirm relationships for children and save" src="images/step1-connect11.png"/><figcaption>Confirm the sample <strong>Synthesized Material</strong> with your name as <strong>Co-responsible person</strong> is added as a child and <code>Save</code>.</figcaption></figure>
+
+<a class="back-to-top" href="#top">Back to top</a>
+</section>
+<section class="step" id="step-2">
+<h2>Step 2: Batch-update Samples from the same Collection</h2>
+<p>
+      The Sample objects registered in the previous Inventory tutorial are located in the same
+      <strong>Samples</strong> Collection. Instead of editing each Sample separately, export their metadata,
+      add the required relationship information, and use <strong>XLS Batch Update Objects</strong>.
+    </p>
+<div class="instructions">
+<strong>Instructions to obtain the update file:</strong>
+<ol>
+<li>Select the upper <strong>Inventory</strong> tab.</li>
+<li>Navigate to <strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</li>
+<li>Select the Sample objects that you want to connect.</li>
+<li>Export the selected object metadata to an Excel file.</li>
+<li>Save an unchanged backup copy of the exported file before editing it.</li>
+</ol>
+</div>
+<div class="instructions">
+<strong>Instructions to prepare and upload the batch update:</strong>
+<ol>
+<li>Open the exported Excel file.</li>
+<li>Identify the columns representing parent and child relationships.</li>
+<li>Add the object identifiers required to connect each Sample to the Experimental Step that generated it and, where applicable, to the downstream Experimental Step in which it is used.</li>
+<li>Edit only the relationship values that need to change.</li>
+<li>Do not modify object identifiers, codes, column headings, or the worksheet structure.</li>
+<li>Save the updated Excel file under a clear filename, for example <code>samples_material_synthesis_connections.xlsx</code>.</li>
+<li>Return to the <strong>Samples</strong> Collection and select <strong>More → XLS Batch Update Objects</strong>.</li>
+<li>Upload the updated file, verify the filename, and click <strong>Accept</strong>.</li>
+<li>Open several updated Sample objects and verify their parent-child relationships.</li>
+</ol>
+</div>
+<div class="warning">
+<strong>Batch registration versus batch update:</strong> do not use
+      <strong>XLS Batch Register Objects</strong> for this step. These Sample objects already exist.
+      Batch registration creates new objects; batch update modifies existing objects.
+    </div>
+
+</p><figure><img alt="Navigate to Samples collection" src="images/step2-connect1.png"/><figcaption>In Inventory, navigate to the <strong>X.1 Materials</strong> -> <strong>Samples Synthesis</strong> -> <strong>Samples</strong> collection and click on it to display registered <strong>Samples</strong>.</figcaption></figure>
+</p><figure><img alt="Display registered samples" src="images/step2-connect2.png"/><figcaption>Increase the <strong>Raws per page</strong> to see all samples registered by your colleagues.</figcaption></figure>
+</p><figure><img alt="Filter samples by co-responsible person" src="images/step2-connect3.png"/><figcaption>Use the <strong>FILTERS</strong> tab to <strong>Filter Per Column</strong>. Navigate to the <strong>Co-responsible person</strong> column and start typing your <strong>user name</strong> to select your samples.</figcaption></figure>
+</p><figure><img alt="Select samples to batch update and export excel file" src="images/step2-connect4.png"/><figcaption>Select the sample you want to update and export the Excel file. Samples to update are:<strong>Synthesized Material</strong>, <strong>Material Sample_001</strong> and <strong>Material Sample_002</strong></figcaption></figure>
+</p><figure><img alt="Update excel file to set parent-child relationships" src="images/step2-connect5.png"/><figcaption>Update Excel file for <strong>$</strong>, <strong>Parents</strong> and <strong>Children</strong> columns using the sample <strong>Identifier</strong> to define the relationships and save the file.</figcaption></figure>
+
+<p>
+<a class="download-button" href="datasets/updated_samples.xlsx" download>Download example updated samples.xlsx</a>
+</p>
+
+</p><figure><img alt="Batch update the samples" src="images/step2-connect6.png"/><figcaption>Navigate to <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.  Open the <strong>More</strong> drop-down menu and choose <strong>XLS Batch Update Objects</strong>.</figcaption></figure>
+</p><figure><img alt="Update Excel file to update the samples" src="images/step2-connect7.png"/><figcaption>Click <strong>Datei auswählen/choose file</strong>, select the updated Excel file <strong>updated_samples.xlsx</strong>, replace the file by your own and click <strong>Accept</strong>.</figcaption></figure>
+
+
+<p>Visualize the connections you have created between the samples.</p>
+</p><figure><img alt="Navigate to updated samples" src="images/step2-connect8.png"/><figcaption>Navigate to the updated samples and visualize the connections.</figcaption></figure>
+</p><figure><img alt="Display hierarchical graph for updated samples" src="images/step2-connect9.png"/><figcaption>Open the hierarchical graph for the <strong>Synthesized Material</strong> sample that you registered to view the relationships.</figcaption></figure>
+</p><figure><img alt="hierarchical Synthesized Material" src="images/step2-connect10.png"/><figcaption>The hierarchical graph for the <strong>Synthesized Material</strong> sample that you registered should display by now all the connections you define in Steps 1 and 2.</figcaption></figure>
+
+
+
+<a class="back-to-top" href="#top">Back to top</a>
+</section>
+
+<section class="step" id="step-3"><h2>Step 3: Batch-update objects from different Collections</h2>
+<p>
+  The complete <strong>“Material Synthesis”</strong> workflow spans several Collections and Object types.
+  openBIS 20.10.12+ supports updating existing Objects of different types in different Collections from
+  <strong>Tools → Utilities → Object Browser → XLS Batch Update Objects</strong>.
+  In this tutorial, use this function to complete several parent-child relationships in one Excel-based update.
+</p>
+<div class="note">
+<strong>What openBIS needs for a cross-Collection XLS batch update:</strong>
+<p>
+    After you select the Object types, openBIS generates an Excel template. For every Object to be updated,
+    the file must identify its <strong>Space</strong>, <strong>Project</strong>, <strong>Collection</strong>,
+    and unique <strong>Identifier</strong>. Use the complete Project and Collection paths expected by the
+    generated template. The Identifier is essential because it tells openBIS exactly which existing Object
+    has to be updated.
+  </p>
+</div>
+<h3>Prepare the identifiers before editing the multi-type template</h3>
+<p>
+  The easiest and safest approach is to first collect the identifiers from the Collections where the
+  Objects are already registered. Do not try to reconstruct identifiers from Object names.
+</p>
+<div class="instructions">
+<strong>Recommended way to extract the required metadata:</strong>
+<ol>
+<li>Open the Collection that contains the Objects you need, for example <strong>Instruments</strong>,
+        <strong>Chemicals</strong>, <strong>Samples</strong>, or a Lab Notebook Collection containing Experimental Steps.</li>
+<li>In the Collection table, use <strong>Columns</strong> to display at least <strong>Identifier</strong>
+        and <strong>Name</strong>. For Samples, also display <strong>Co-responsible person</strong> so that you can
+        distinguish the Samples you registered from Samples with the same names registered by other division members.</li>
+<li>If necessary, filter the table so that only the Objects needed for the Material Synthesis workflow remain.</li>
+<li>Export the table with <strong>Import Compatible = YES</strong> and export the selected columns.
+        Keep these exports as reference files; do not upload them as the cross-Collection update file.</li>
+<li>Repeat this for each relevant Collection. You now have the exact identifiers and locations of the existing Objects.</li>
+</ol>
+</div>
+<div class="note">
+<strong>Why use Collection exports as reference files?</strong>
+  The openBIS documentation explicitly describes an import-compatible table export as the preparation method
+  for XLS batch updates within one Collection. For an update across several Collections, the documentation
+  instead requires the template generated in Object Browser. Combining the two workflows is practical:
+  use Collection exports to obtain reliable identifiers and use the Object Browser template as the file that
+  you actually complete and upload.
+</div>
+<h3>Collect metadata for the four Object types</h3>
+<div class="comparison-table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Object type</th>
+<th>Where to obtain the metadata</th>
+<th>What to copy to the Object Browser template</th>
+<th>Useful check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instrument</strong></td>
+<td><strong>BAM Inventory → BAM Equipment → X.1 Equipment Open → Instruments</strong></td>
+<td>Complete location information and the Identifier for the required Instrument, for example <strong>Synthesis</strong>.</td>
+<td>Match the Identifier to the Instrument name before copying it.</td>
+</tr>
+<tr>
+<td><strong>Chemical</strong></td>
+<td><strong>FB Inventory → X.1 Materials → CHEMICALS_SYNTHESIS → Chemicals</strong></td>
+<td>Complete location information and Identifiers for the required Chemicals, for example <strong>Chemical 1</strong> and <strong>Chemical 2</strong>.</td>
+<td>Use the registered Object identifiers, not only the displayed names.</td>
+</tr>
+<tr>
+<td><strong>Experimental Step</strong></td>
+<td>The relevant Collections in your personal <strong>Material Synthesis</strong> Project in the Lab Notebook.</td>
+<td>Complete location information and the Identifier of every Experimental Step whose relationships you want to update.</td>
+<td>Export from each relevant Lab Notebook Collection if the Experimental Steps are distributed across several Collections.</td>
+</tr>
+<tr>
+<td><strong>Sample</strong></td>
+<td><strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong></td>
+<td>Complete location information and the Identifier for each Sample used as an input or output in the workflow.</td>
+<td>Filter by <strong>Co-responsible person</strong> to identify the Samples you registered in the previous tutorial.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Create and complete the cross-Collection update file</h3>
+<div class="instructions">
+<strong>Instructions:</strong>
+<ol>
+<li>Open <strong>Tools → Utilities → Object Browser</strong>.</li>
+<li>Select <strong>XLS Batch Update Objects</strong>.</li>
+<li>Select the Object types required for this update:
+        <strong>Chemical</strong>, <strong>Instrument</strong>, <strong>Experimental Step</strong>, and <strong>Sample</strong>.</li>
+<li>Download the Excel template generated by openBIS for these Object types.</li>
+<li>Use your reference exports to complete the <strong>Space</strong>, <strong>Project</strong>,
+        <strong>Collection</strong>, and <strong>Identifier</strong> information for every existing Object to be updated.
+        Use the complete paths required by the template.</li>
+<li>In the relationship columns supplied by the generated template, enter the identifiers of the existing
+        parent and/or child Objects needed to represent the Material Synthesis workflow.
+        When several related Objects must be entered in one relationship cell, follow the syntax provided by
+        the generated openBIS template and do not invent separators.</li>
+<li>Only include Objects whose relationships you intend to update. Review the identifiers carefully against
+        your reference exports before saving the file.</li>
+<li>Save the completed file under a clear name, for example
+        <code>material_synthesis_relationships_batch_update.xlsx</code>.</li>
+<li>Return to <strong>Object Browser → XLS Batch Update Objects</strong>, upload the completed file, verify the filename, and click <strong>Accept</strong>.</li>
+<li>Open representative Experimental Step, Instrument, Chemical, and Sample Objects and verify that the intended parent-child relationships are present.</li>
+</ol>
+</div>
+<div class="warning">
+<strong>Do not use the batch-registration workflow:</strong>
+  these Objects already exist. Step 3 changes their relationships, so use
+  <strong>XLS Batch Update Objects</strong>. Also keep an unchanged copy of each metadata export and of the
+  completed update file before upload.
+</div>
+<div class="note">
+<strong>Important when editing an update file:</strong>
+  the openBIS documentation states that removing a column or leaving a cell empty preserves the corresponding
+  existing value. Deleting an existing value or parent-child connection requires the special deletion value
+  defined by openBIS; do not use an empty cell to mean “delete”.
+</div>
+<div class="note">
+<strong>Documentation basis:</strong>
+  For updates within one Collection, openBIS documents displaying the <strong>Identifier</strong> and the fields
+  to update, optionally filtering the table, and exporting with <strong>Import Compatible = YES</strong>.
+  For updates across several Collections, openBIS documents using
+  <strong>Tools → Utilities → Object Browser → XLS Batch Update Objects</strong>, selecting the Object types,
+  downloading the generated template, and providing complete Space/Project/Collection paths and unique Object
+  identifiers.
+  See
+  <a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-users/inventory-of-materials-and-methods.html#batch-update-entries-in-several-collections" rel="noopener noreferrer" target="_blank">Batch update entries in several Collections</a>.
+</div>
+<figure><img alt="Suggested screenshot for Step 3" src="images/step3-object-browser.png"/><figcaption>Object Browser opened from <strong>Tools → Utilities</strong>, with <strong>XLS Batch Update Objects</strong> selected and the Chemical, Instrument, Experimental Step, and Sample Object types chosen for the update.</figcaption></figure><figure><img alt="Suggested screenshot for Step 3" src="images/step3-reference-export.png"/><figcaption>Example of an import-compatible Collection export used as a reference to obtain the exact Object <strong>Identifier</strong> and location information. For Samples, include <strong>Co-responsible person</strong> to identify your own registered Objects.</figcaption></figure><figure><img alt="Suggested screenshot for Step 3" src="images/step3-batch-update-template.png"/><figcaption>Object Browser XLS batch-update template completed with the required Object locations, unique identifiers, and parent-child relationship values before upload.</figcaption></figure><a class="back-to-top" href="#top">Back to top</a></section>
+
+
+
+<section class="step" id="step-4">
+<h2>Step 4: Visualise and verify the relationship hierarchy</h2>
+<p>
+      After the relationships have been added, use openBIS to visualise the parent-child genealogy of an
+      <strong>Object</strong>. The <strong>Hierarchy Graph displays only Object-to-Object parent-child relationships</strong>;
+      it does not display datasets. For this tutorial, start from an Experimental Step that has an attached dataset.
+      Use that Experimental Step as the link between the Object genealogy shown in the graph and the dataset whose
+      provenance you want to understand.
+    </p>
+<div class="instructions">
+<strong>Instructions to open the Hierarchy Graph:</strong>
+<ol>
+<li>Open the <strong>Lab Notebook</strong> and navigate to the <strong>Material Synthesis</strong> Project.</li>
+<li>Open an <strong>Experimental Step</strong> that has an attached dataset.</li>
+<li>In the Object form, open the <strong>More…</strong> drop-down menu.</li>
+<li>Select <strong>Hierarchy Graph</strong>.</li>
+<li>Review the parents and children shown around the Experimental Step.</li>
+<li>If the graph is large, reduce it by selecting how many levels of <strong>parents</strong> and/or <strong>children</strong> to display and by limiting the <strong>Object types</strong> shown.</li>
+</ol>
+</div>
+<div class="workflow-sequence">
+<p><strong>Parent Objects</strong><br/><em>Which resources or inputs led into this activity?</em></p>
+<p class="workflow-arrow">↓</p>
+<p><strong>Experimental Step</strong><br/><em>Which activity is documented here?</em></p>
+<p class="workflow-arrow">↓</p>
+<p><strong>Child Objects</strong><br/><em>Which Samples or downstream activities resulted from it?</em></p>
+</div>
+<div class="instructions">
+<strong>Traceability check:</strong>
+<ol>
+<li>Confirm that the Experimental Step has the expected dataset attached.</li>
+<li>In the <strong>Hierarchy Graph</strong>, confirm that the expected parent Objects are present, for example the Instrument, Chemical, or input Sample used in the activity.</li>
+<li>Confirm that the expected child Objects are present, for example a generated Sample or downstream Experimental Step.</li>
+<li>For larger genealogies, prune the graph to the parent/child depth and Object types needed for the question you are checking.</li>
+<li>Repeat the check for the main Experimental Steps in the <strong>“Material Synthesis”</strong> workflow.</li>
+<li>If a connection is missing or reversed, correct the parent-child relationship using direct editing or batch update, then reopen the hierarchy view to verify the correction.</li>
+</ol>
+</div>
+<h3>Alternative view: Hierarchy Table</h3>
+<p>
+      If a graphical tree is difficult to review, return to the Object form and select
+      <strong>More… → Hierarchy Table</strong>. This presents the genealogy of the selected Object in a
+      tabular format and provides an alternative way to inspect the same parent-child structure.
+    </p>
+<div class="note">
+<strong>Documentation basis:</strong> the openBIS 20.10.12+ documentation states that parent-child
+      relationships between Objects can be visualised as trees or tables in the ELN. The genealogical tree is
+      opened with <strong>More… → Hierarchy Graph</strong> from an Object form; large trees can be pruned by
+      parent/child levels and Object types. The tabular genealogy is available through
+      <strong>More… → Hierarchy Table</strong>. See
+      <a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-users/additional-functionalities.html#visualise-relationships" rel="noopener noreferrer" target="_blank">
+        Visualise Relationships
+      </a>.
+    </div>
+<figure><!-- TODO: add screenshot image here --><figcaption>Experimental Step Object form with More… → Hierarchy Graph selected.</figcaption></figure><figure><!-- TODO: add screenshot image here --><figcaption>Hierarchy Graph showing the connected Objects and the controls for pruning parent/child levels or Object types.</figcaption></figure><figure><!-- TODO: add screenshot image here --><figcaption>Hierarchy Table opened from More… as an alternative tabular view of the Object parent-child relationships.</figcaption></figure>
+<a class="back-to-top" href="#top">Back to top</a>
+</section>
+<section id="result">
+<h2>Result</h2>
+<p>
+      After completing this tutorial, you should be able to connect research data by linking Experimental
+      Steps registered in the Lab Notebook with Inventory items such as Instruments and Chemicals and with
+      research outputs such as Samples. You should also be able to update relationships efficiently for
+      objects in one Collection or across different Collections. You should also be able to open the
+      <strong>Hierarchy Graph</strong> or <strong>Hierarchy Table</strong> for an Experimental Step, inspect and
+      prune its Object genealogy, and use that hierarchy together with the dataset attached to the Experimental
+      Step to reconstruct which resources were used, which Samples were produced, and how outputs were used in
+      later activities.
+    </p>
+</section>
+</body>
+</html>
