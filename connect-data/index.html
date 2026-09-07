@@ -813,6 +813,22 @@ figcaption::before {
   use Collection exports to obtain reliable identifiers and use the Object Browser template as the file that
   you actually complete and upload.
 </div>
+
+</p><figure><img alt="Navigate to Samples collection" src="images/step2-connect1.png"/><figcaption>In Inventory, navigate to the <strong>X.1 Materials</strong> -> <strong>Samples Synthesis</strong> -> <strong>Samples</strong> collection and click on it to display registered <strong>Samples</strong>.</figcaption></figure>
+</p><figure><img alt="Display registered samples" src="images/step2-connect2.png"/><figcaption>Increase the <strong>Raws per page</strong> to see all samples registered by your colleagues.</figcaption></figure>
+</p><figure><img alt="Filter samples by co-responsible person" src="images/step2-connect3.png"/><figcaption>Use the <strong>FILTERS</strong> tab to <strong>Filter Per Column</strong>. Navigate to the <strong>Co-responsible person</strong> column and start typing your <strong>user name</strong> to select your samples.</figcaption></figure>
+</p><figure><img alt="Select samples to batch update and export excel file" src="images/step3-connect1.png"/><figcaption>Select the sample you want to update and export the Excel file. Samples to update are:<strong>Synthesized Material</strong>, <strong>Material Sample_001</strong> and <strong>Material Sample_002</strong>, <strong>Treated Sample_001</strong> and <strong>Treated Sample_002</strong>. Select <strong>EXPORTS</strong> conditions to include only the selected columns.</figcaption></figure>
+</p><figure><img alt="Example Excel file for Samples for batch updates" src="images/step3-connect2.png"/><figcaption>Confirm your name in <strong>Co-responsible person</strong> column for exported samples. You will need the <strong>Identifier</strong> to update <strong>parents</strong> and <strong>child</strong> relationships in the next step.</figcaption></figure>
+
+</p><figure><img alt="Navigate to Chemicals collection to filter columns" src="images/step3-connect3.png"/><figcaption>In Inventory, navigate to <strong>Chemicals</strong> collection and click on it to display registered <strong>Chemicals</strong> and click on the <strong>COLUMNS</strong> button.</figcaption></figure>
+</p><figure><img alt="Filter columns in Chemicals collection" src="images/step3-connect4.png"/><figcaption>Use the <strong>COLUMNS</strong> tab to <strong>Filter Per Column</strong>. Click on <strong>HIDE ALL</strong> and then select the columns you want to include in the export: <strong>name</strong> and <strong>Identifier</strong>.</figcaption></figure>
+</p><figure><img alt="Select chemicals to batch update and export excel file" src="images/step3-connect5.png"/><figcaption>Select the chemicals you want to update and export the Excel file. Select <strong>EXPORTS</strong> conditions to include only the <strong>name</strong> and <strong>Identifier</strong> columns.</figcaption></figure>
+</p><figure><img alt="Example Excel file for Chemicals for batch updates" src="images/step3-connect6.png"/><figcaption>The exported Excel file will contain the <strong>name</strong> and <strong>Identifier</strong> columns for the selected chemicals. You will need the <strong>Identifier</strong> to update <strong>parents</strong> and <strong>child</strong> relationships in the next step.</figcaption></figure>
+
+</p><figure><img alt="Navigate to Instruments collection and export Excel file with name and identifier for Batch updates" src="images/step3-connect7.png"/><figcaption>In Inventory, navigate to the <strong>Instruments</strong> collection and click on it to display registered <strong>Instruments</strong>. Select the instruments you want to update and export the Excel file. The exported Excel file will contain the <strong>name</strong> and <strong>Identifier</strong> columns for the selected instruments. You will need the <strong>Identifier</strong> to update <strong>parents</strong> and <strong>child</strong> relationships in the next step.</figcaption></figure>
+
+</p><figure><img alt="In the Lab Notebook navigate to each collection of Experimental steps and export the Excel file with name and identifier for Batch updates" src="images/step3-connect8.png"/><figcaption>In the Lab Notebook, navigate to the each collection of Experimental steps and export the Excel file with name and identifier for Batch updates.</figcaption></figure>
+
 <h3>Collect metadata for the four Object types</h3>
 <div class="comparison-table-wrapper">
 <table>
@@ -820,62 +836,62 @@ figcaption::before {
 <tr>
 <th>Object type</th>
 <th>Where to obtain the metadata</th>
-<th>What to copy to the Object Browser template</th>
+<th>Identifiers of Objects required for the Object Browser template</th>
 <th>Useful check</th>
+<tr>
+<td><strong>Sample</strong></td>
+<td><strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</td>
+<td><p><strong>Material Sample 001</strong></p> <p><strong>Material Sample 002</strong></p> <p><strong>Treated Sample 001</strong></p><p><strong>Treated Sample 002</strong></p>.</td>
+<td>Filter by <strong>Co-responsible person</strong> to identify the Samples you registered in the previous tutorial.</td>
+</tr>
+<tr>
+<td><strong>Experimental Step</strong></td>
+<td>Lab Notebook → <strong>Home Space</strong> → <strong>Material Synthesis</strong> → <strong>Synthesis</strong>.</td>
+<td><strong>Chemical Treatment</strong> <p><strong>Macrostructure Characterization</strong></p><strong>Macrostructure Characterization TS</strong><p><strong>Microstructure Characterization</strong></p><p><strong>Microstructure Characterization TS</strong></p><p><strong>Microstructure Data Analysis</strong></p>.</td>
+<td>Export from each relevant Lab Notebook Collection as the Experimental Steps are distributed across several Collections.</td>
+</tr>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Instrument</strong></td>
 <td><strong>BAM Inventory → BAM Equipment → X.1 Equipment Open → Instruments</strong></td>
-<td>Complete location information and the Identifier for the required Instrument, for example <strong>Synthesis</strong>.</td>
+<td><strong><p>Macrostructure</p><p>Microcstructure</p></strong>.</td>
 <td>Match the Identifier to the Instrument name before copying it.</td>
 </tr>
 <tr>
 <td><strong>Chemical</strong></td>
 <td><strong>FB Inventory → X.1 Materials → CHEMICALS_SYNTHESIS → Chemicals</strong></td>
-<td>Complete location information and Identifiers for the required Chemicals, for example <strong>Chemical 1</strong> and <strong>Chemical 2</strong>.</td>
-<td>Use the registered Object identifiers, not only the displayed names.</td>
-</tr>
-<tr>
-<td><strong>Experimental Step</strong></td>
-<td>The relevant Collections in your personal <strong>Material Synthesis</strong> Project in the Lab Notebook.</td>
-<td>Complete location information and the Identifier of every Experimental Step whose relationships you want to update.</td>
-<td>Export from each relevant Lab Notebook Collection if the Experimental Steps are distributed across several Collections.</td>
-</tr>
-<tr>
-<td><strong>Sample</strong></td>
-<td><strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong></td>
-<td>Complete location information and the Identifier for each Sample used as an input or output in the workflow.</td>
-<td>Filter by <strong>Co-responsible person</strong> to identify the Samples you registered in the previous tutorial.</td>
+<td><strong>Treatment Solution</strong></td>
+<td>Match the Identifier to the Chemical name before copying it.</td>
 </tr>
 </tbody>
 </table>
 </div>
+
+
 <h3>Create and complete the cross-Collection update file</h3>
 <div class="instructions">
 <strong>Instructions:</strong>
 <ol>
 <li>Open <strong>Tools → Utilities → Object Browser</strong>.</li>
-<li>Select <strong>XLS Batch Update Objects</strong>.</li>
+<li>Open the drop-down menu <strong>More</strong> and select <strong>XLS Batch Update Objects</strong>.</li>
 <li>Select the Object types required for this update:
         <strong>Chemical</strong>, <strong>Instrument</strong>, <strong>Experimental Step</strong>, and <strong>Sample</strong>.</li>
-<li>Download the Excel template generated by openBIS for these Object types.</li>
-<li>Use your reference exports to complete the <strong>Space</strong>, <strong>Project</strong>,
-        <strong>Collection</strong>, and <strong>Identifier</strong> information for every existing Object to be updated.
-        Use the complete paths required by the template.</li>
-<li>In the relationship columns supplied by the generated template, enter the identifiers of the existing
-        parent and/or child Objects needed to represent the Material Synthesis workflow.
-        When several related Objects must be entered in one relationship cell, follow the syntax provided by
-        the generated openBIS template and do not invent separators.</li>
-<li>Only include Objects whose relationships you intend to update. Review the identifiers carefully against
-        your reference exports before saving the file.</li>
-<li>Save the completed file under a clear name, for example
-        <code>material_synthesis_relationships_batch_update.xlsx</code>.</li>
+<li><strong>Download</strong> the Excel template generated by openBIS for these Object types.</li>
+<li>Open the reference exports that you previously downloaded for <strong>Samples</strong>, <strong>Experimental Steps</strong>, <strong>Chemicals</strong>, and <strong>Instruments</strong>.</li>
+<li>Open the <strong>Material Synthesis</strong> Data Model to visualize the relationships.</li>
+<li>Start updating the relationships for <strong>Samples</strong> following the worfklow order, copy-paste the <strong>identifiers</strong> of <strong>Parents</strong> and <strong>Children</strong> in the corresponding columns.  When several related Objects must be entered in one relationship cell, paste identifiers below each other.</li>
+<li>Update then the relationships for <strong>Experimental Steps</strong> following the workflow order, copy-paste the <strong>identifiers</strong> of <strong>Parents</strong> and <strong>Children</strong> in the corresponding columns.</li>
+<li>Review the identifiers and save the Excel file  under a clear name, for example <code>material_synthesis_relationships_batch_update.xlsx</code> for batch update.</li>
 <li>Return to <strong>Object Browser → XLS Batch Update Objects</strong>, upload the completed file, verify the filename, and click <strong>Accept</strong>.</li>
-<li>Open representative Experimental Step, Instrument, Chemical, and Sample Objects and verify that the intended parent-child relationships are present.</li>
-</ol>
+<li>Follow step 4 <strong>Visualize and verify relationship hierarchy</strong>.</li>
 </div>
+
+
+<li>In the Lab Notebook, navigate to a representative Experimental Step: <strong>Home Space</strong> --> <strong>Material Synthesis</strong> --> <strong>Synthesis</strong>,  click on <strong>Material Synthesis</strong> to open the object.</li>
+<li>Open the <strong>More</strong> menu and select <strong>Hierarchy Graph</strong> to verify that the batch updated parent-child relationships are present.</li>
+</ol>
 <div class="warning">
 <strong>Do not use the batch-registration workflow:</strong>
   these Objects already exist. Step 3 changes their relationships, so use
@@ -899,9 +915,22 @@ figcaption::before {
   See
   <a href="https://openbis.readthedocs.io/en/20.10.12-plus/user-documentation/general-users/inventory-of-materials-and-methods.html#batch-update-entries-in-several-collections" rel="noopener noreferrer" target="_blank">Batch update entries in several Collections</a>.
 </div>
-<figure><img alt="Suggested screenshot for Step 3" src="images/step3-object-browser.png"/><figcaption>Object Browser opened from <strong>Tools → Utilities</strong>, with <strong>XLS Batch Update Objects</strong> selected and the Chemical, Instrument, Experimental Step, and Sample Object types chosen for the update.</figcaption></figure><figure><img alt="Suggested screenshot for Step 3" src="images/step3-reference-export.png"/><figcaption>Example of an import-compatible Collection export used as a reference to obtain the exact Object <strong>Identifier</strong> and location information. For Samples, include <strong>Co-responsible person</strong> to identify your own registered Objects.</figcaption></figure><figure><img alt="Suggested screenshot for Step 3" src="images/step3-batch-update-template.png"/><figcaption>Object Browser XLS batch-update template completed with the required Object locations, unique identifiers, and parent-child relationship values before upload.</figcaption></figure><a class="back-to-top" href="#top">Back to top</a></section>
+<div class="warning">
+<strong>The Excel files exported from Collections differ from Excel template generated by openBIS for batch update of objects from different collections:</strong>
+  We tested that the order of the columns does not affect the update process and recommend to facilitate copy-pasting of <strong>parent</strong> and <strong>children</strong> <strong>identifiers</strong> from the Excel files exported from Collections into the Excel file for batch update of objects from differen collections.
+</div>
 
+<figure><img alt="Open Object Browser" src="images/step3-connect9.png"/><figcaption>Object Browser opened from <strong>Tools → Utilities</strong>, with <strong>XLS Batch Update Objects</strong>.</figcaption></figure>
 
+<figure><img alt="Suggested screenshot for Step 3" src="images/step3-connect10.png"/><figcaption><strong>Chemical, Instrument, Experimental Step, and Sample</strong> Object types chosen to download Excel template for the Batch update.</figcaption></figure>
+
+<figure><img alt="Downloaded Excel template for batch update" src="images/step3-connect11.png"/><figcaption>Each Excel sheet corresponds to one of the selected Object types.</figcaption></figure>
+
+<figure><img alt="Update objects of Samples" src="images/step3-connect12.png"/><figcaption>Update four <strong>Samples</strong>. From reference exports, copy and paste the unique identifiers for each Sample and their corresponding relationships. Names are copied to facilitate navigation and verify identifiers.</figcaption></figure>
+
+<figure><img alt="Update objects of Experimental Steps" src="images/step3-connect13.png"/><figcaption>Update four <strong>Experimental Steps</strong>. From reference exports, copy and paste the unique identifiers for each Experimental Step and their corresponding relationships. Names are copied to facilitate navigation and verify identifiers.</figcaption></figure>
+
+<figure><img alt="Confirmation of batch update" src="images/step3-connect14.png"/><figcaption>openBIS gives a short confirmation of the number of update objects.</figcaption></figure>
 
 <section class="step" id="step-4">
 <h2>Step 4: Visualise and verify the relationship hierarchy</h2>
