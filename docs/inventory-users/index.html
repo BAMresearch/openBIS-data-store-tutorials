@@ -357,6 +357,13 @@ figcaption::before {
       Steward. You must have the <strong>User</strong> role for the relevant
       FB Inventory projects.
     </p>
+    <div class="note">
+      <strong>Data Store and openBIS:</strong>
+      The <strong>Data Store</strong> is BAM's institutional research data management system and is based on the
+      <strong>openBIS</strong> software platform. In this tutorial, <em>Data Store</em> refers to the institutional
+      system and its configured research data environment, while <em>openBIS</em> is used when referring specifically
+      to functionality, terminology, versioning, or behaviour of the underlying software.
+    </div>
     <ul>
       <li>You need to have access to the <a href="https://playground.datastore.bam.de/" target="_blank" rel="noopener noreferrer"> 
         playground instance</a> (access restricted to BAM employees with VPN connection). How to log in to the Data Store instances 
@@ -394,7 +401,7 @@ figcaption::before {
     </p>
 
     <p>
-      Each division has four FB Inventory spaces:
+      In the Data Store setup, <strong>FB (Fachbereich)</strong> corresponds to a <strong>division</strong>, which is represented as a <strong>group</strong> in openBIS. Each division has four FB Inventory spaces:
       <strong>Equipment</strong>, <strong>Materials</strong>,
       <strong>Methods</strong>, and <strong>Publications</strong>.
       These spaces are identified by the division number, for example,
@@ -476,7 +483,7 @@ figcaption::before {
 
     <div class="note">
       <strong>Inventory structure used in this tutorial
-      (FB corresponds to X.1 in the tutorial example):</strong>
+      (FB means <em>Fachbereich</em> and corresponds to a division, represented as a group in openBIS; <code>X.1</code> represents your division number in the tutorial example):</strong>
       <ul>
         <li>
           <strong>BAM Inventory → BAM Equipment → X.1 Equipment Open → Instruments</strong>:
