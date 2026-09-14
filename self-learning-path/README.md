@@ -1,30 +1,40 @@
-# openBIS Data Store Tutorials
+# Self-learning path: Graphical User Interface (GUI) Level 1
 
-This repository contains tutorials and guidelines for learning how to work with the **openBIS Data Store** at BAM.
+This self-learning path provides a structured introduction to working with the **openBIS Data Store** through its graphical user interface (GUI).
 
-The learning materials are intended for:
+## Learning objectives
 
-- **Data Store Stewards (DSSt)**, who prepare and maintain Data Store structures and settings for their organizational unit.
-- **Users**, who document their research activities, upload research data, and register and connect relevant research objects.
+After completing this learning path, you should be able to:
+
+navigate the openBIS Data Store using the GUI;
+work with inventory data;
+use the electronic lab notebook (ELN);
+connect research data with your openBIS records;
+
+
+## Learning by role in the Data Store:
+
+- **Data Store Stewards (DSSt)** with group admin role prepare and maintain Data Store structures and settings for their organizational unit.
+- **Users** document their research activities, upload research data, and register and connect relevant research objects.
 
 ## Self-learning path
 
 If you are new to the Data Store, follow the **self-learning path** provided with these tutorials.
 
-The tutorials build on each other. Complete them in the indicated order because later tutorials reuse structures and objects created in earlier steps.
+The tutorials build on each other and need to be completed in the indicated order because later tutorials reuse structures and objects created in earlier steps.
 
-### Learning sequence
+### Tutorial sequence
 
-1. **Understand how research data should be represented in the Data Store**  
-   Recommended for Data Store Stewards and Users.
+1. **Guideline to represent research data in the Data Store**  
+   Required for Data Store Stewards and Users.
 
-2. **Customize ELN settings for your group**  
+2. **Custom ELN settings for the group**  
    Required for Data Store Stewards.
 
 3. **Upload data in the Lab Notebook**  
    Required for Data Store Stewards and Users.
 
-4. **Prepare Inventory structures for your division**  
+4. **Prepare Inventory structures for the group**  
    Required for Data Store Stewards.
 
 5. **Register Inventory items**  
@@ -35,19 +45,8 @@ The tutorials build on each other. Complete them in the indicated order because 
 
 The complete learning path, including role-specific guidance and links to the individual tutorials, is available here:
 
-**[Start the self-learning path](self-learning-path.html)**
+**[Start the self-learning path](https://bamresearch.github.io/openBIS-data-store-tutorials/self-learning-path)**
 
-## Before you start
-
-We recommend first reading the **[Guideline to represent research data in the Data Store](https://bamresearch.github.io/openBIS-data-store-tutorials/1-represent-data/represent-research-data.html)**.
-
-It introduces the general concepts and principles used throughout the tutorials and provides the foundation for representing research data and related metadata in the Data Store.
-
-## Learning by role
-
-**Data Store Stewards** should complete the full learning sequence, including the tutorials for configuring the ELN and preparing Inventory structures.
-
-**Users** can focus on the common tutorials: representing research data, uploading data in the Lab Notebook, registering Inventory items, and connecting Inventory items with experimental data.
 
 ## About the tutorials
 
