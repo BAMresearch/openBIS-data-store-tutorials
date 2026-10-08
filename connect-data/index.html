@@ -434,9 +434,6 @@ figcaption::before {
         Chemical objects should be available and the Sample objects for the tutorial should
         already be registered in the Inventory.
       </li>
-<li>
-        Have the <strong>user</strong> role to edit the relevant FB Inventory objects.
-      </li>
 
 <li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
 </ul>
@@ -468,14 +465,14 @@ figcaption::before {
     </p>
 <div aria-label="Example relationship model" class="relationship-model">
 <div class="relationship-row">
-<div class="node"><strong>Instrument / Chemical / input Sample</strong><small>resource or input object</small></div>
+<div class="node"><strong>Instrument / Chemical / input Sample</strong><small> resource or input object</small></div>
 <div class="arrow">→</div>
-<div class="node"><strong>Experimental Step</strong><small>activity recorded in the Lab Notebook</small></div>
+<div class="node"><strong>Experimental Step</strong><small> activity recorded in the Lab Notebook</small></div>
 <div class="arrow">→</div>
-<div class="node"><strong>Sample / next Experimental Step</strong><small>research output or downstream activity</small></div>
+<div class="node"><strong>Sample / next Experimental Step</strong><small> research output or downstream activity</small></div>
 </div>
 <div class="relationship-row">
-<div class="node"><strong>Dataset</strong><small>attached to the Experimental Step that generated it</small></div>
+<div class="node"><strong>Dataset</strong><small> attached to the Experimental Step that generated it</small></div>
 </div>
 </div>
 <div class="warning">
@@ -544,7 +541,7 @@ figcaption::before {
 </p>
 <p>
   For the dataset(s) attached to the <strong>Macrostructure Characterization</strong> experimental step, the researcher can identify the Instrument, 
-  the Samples and up-stream Experimental Stepsconnected as parents. The Experimental Step
+  the Samples and up-stream Experimental Steps connected as parents. The Experimental Step
   metadata, its attached dataset, and the connected Objects together provide the context needed
   to understand how the data were produced.
 </p>
@@ -742,7 +739,7 @@ A more robust approach is to use Sample <strong>Properties</strong>, such as <st
 located the correct Sample, use its <strong>Code</strong> or <strong>Identifier</strong> when you need to reference it unambiguously.
 </div>
 <figure><img alt="Filter samples collection" src="images/step1-connect1.png"/><figcaption>Navigate to the <strong>Samples</strong> collection in the inventory. Filter by <strong>Co-responsible person</strong> 
-   using your username to loacate your <strong>Synthesized Material</strong> and identify its <strong>Code</strong>.</figcaption></figure>
+   using your username to allocate your <strong>Synthesized Material</strong> and identify its <strong>Code</strong>.</figcaption></figure>
 <h3>Add all parents and children to the Experimental Step</h3>
 <p>
   Parent-child relationships can be assigned to an Experimental Step or any other Object from the Object's
@@ -757,7 +754,7 @@ located the correct Sample, use its <strong>Code</strong> or <strong>Identifier<
 <li>Navigate to your User Space → <strong>Material Synthesis</strong> Project → <strong>Synthesis</strong> Collection.</li>
 <li>Open the <strong>Material Synthesis</strong> Experimental Step and select the <strong>Edit</strong> tab.</li>
 <li>In the <strong>Parents</strong> section, click <strong>Search Any</strong>.</li>
-<li>Select <strong>Instrument</strong> as the Object <strong>Type</strong>. In the <strong>Code/Name</strong> field, start typing <strong>Synthesis</strong>, wait for auto-completion, and select the <strong>Synthesis</strong> Instrument.</li>
+<li>Select <strong>Instrument</strong> as the Object <strong>Type</strong>. In the <strong>Code/Name</strong> field, start typing <strong>Synthesis</strong>, wait for auto-completion, and select the <strong>Synthesis</strong> Instrument <strong> containing your division number</strong>.</li>
 <li>In the <strong>Parents</strong> section, click <strong>Search Any</strong> again. Select <strong>Chemical</strong> as the Object <strong>Type</strong> and add <strong>Chemical 1</strong>.</li>
 <li>Repeat the previous step to add <strong>Chemical 2</strong> as a parent.</li>
 <li>In the <strong>Children</strong> section, click <strong>Search Any</strong>.</li>
@@ -771,15 +768,23 @@ located the correct Sample, use its <strong>Code</strong> or <strong>Identifier<
 </ol>
 </div>
 
+<div class="warning">
+<strong>BAM inventory is visible to all Data Store users:</strong>
+<p>
+  Objects registered in BAM inventory should be registered with unique names. In this tutorial example, chemicals and instruments are registered with the same names for all divisions.
+  When selecting Chemicals or Instruments as parents make sure to select the ones from your division. Your division number is displayed in the <strong>Code</strong> of the object autocompleted by the system. For example, the <strong>Synthesis</strong> Instrument for division X.1 has the code <strong>BAM_EQUIPMENT/X.1_EQUIPMENT_OPEN/INS5108</strong>.
+  </p>
+</div>
+
 <h3>Register the connections</h3><figure><img alt="Open experimental step" src="images/step1-connect2.png"/><figcaption>In the Lab Notebook, open the <strong>Material Synthesis</strong> Experimental Step.</figcaption></figure>
 <figure><img alt="Edit experimental step" src="images/step1-connect3.png"/><figcaption>Click on the <strong>Edit</strong> tab to display the object form with parent and child sections.</figcaption></figure>
-<figure><img alt="Locate parents and children sections" src="images/step1-connect4.png"/><figcaption>Locate the <strong>Parents</strong> section, click on <strong>Search Any</strong>, use the <strong>select an Object Type</strong> field with auto-completion to add <strong>Instrument</strong>.</figcaption></figure>
+<figure><img alt="Locate parents and children sections" src="images/step1-connect4.png"/><figcaption>Locate the <strong>Parents</strong> section, click on <strong>Search Any</strong>, use the <strong>select an Object Type</strong> field with auto-completion to add the <strong>Synthesis</strong> instrument containing your division number.</figcaption></figure>
 <figure><img alt="Select object type" src="images/step1-connect5.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion and start typing <strong>Synthesis</strong> as parent.</figcaption></figure>
 <figure><img alt="Locate parents and children sections" src="images/step1-connect6.png"/><figcaption>locate the <strong>Parents</strong> section, click on <strong>Search Any</strong>, use the <strong>select an Object Type</strong> field with auto-completion to add <strong>Chemical</strong>.</figcaption></figure>
 <figure><img alt="Select object type" src="images/step1-connect7.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion and start typing <strong>Chemical 1</strong>, then <strong>Chemical 2</strong> to add them as parents.</figcaption></figure>
 <figure><img alt="Confirm relationships for parents" src="images/step1-connect8.png"/><figcaption>Confirm that instrument <strong>Synthesis</strong>, <strong>Chemical 1</strong> and <strong>Chemical 2</strong> are added as parents.</figcaption></figure>
 <figure><img alt="Locate parents and children sections" src="images/step1-connect9.png"/><figcaption>locate the <strong>Children</strong> section, click on <strong>Search Any</strong>, use the <strong>select an Object Type</strong> field with auto-completion to add <strong>Sample</strong>.</figcaption></figure>
-<figure><img alt="Select object type" src="images/step1-connect10.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion to add <strong>The code of your Sample</strong>, this should start with <strong>SAM</strong> and be followed by three numbers.</figcaption></figure>
+<figure><img alt="Select object type" src="images/step1-connect10.png"/><figcaption>use the <strong>Code/Name</strong> field with auto-completion to add <strong>The code of your Sample</strong>, this should start with <strong>SAM</strong> and be followed by four numbers.</figcaption></figure>
 <figure><img alt="Confirm relationships for children and save" src="images/step1-connect11.png"/><figcaption>Confirm the sample <strong>Synthesized Material</strong> with your name as <strong>Co-responsible person</strong> is added as a child and <code>Save</code>.</figcaption></figure>
 <a class="back-to-top" href="#top">Back to top</a>
 </section>
@@ -860,6 +865,10 @@ In this step you will connect the <strong>Synthesized Sample</strong> with its t
 <figure><img alt="Select samples to batch update and export excel file" src="images/step2-connect4.png"/><figcaption>Select the sample you want to update and export the Excel file. Samples to update are:<strong>Synthesized Material</strong>, <strong>Material Sample 001</strong> and <strong>Material Sample 002</strong></figcaption></figure>
 <figure><img alt="Update excel file to set parent-child relationships" src="images/step2-connect5.png"/><figcaption>Update Excel file for <strong>$</strong>, <strong>Parents</strong> and <strong>Children</strong> columns using the sample <strong>Identifier</strong> to define the relationships and save the file.</figcaption></figure>
 <p>
+  <div class="warning">
+<strong>$ Symbol is rquired by openBIS for correct import of Excel files:</strong>
+  If $ symbol disspears from the Excel file, format the cell as <strong>Text</strong> before typing $1, $2 and $3.
+</div>
 <a class="download-button" download="" href="datasets/updated_samples.xlsx">Download example updated samples.xlsx</a>
 </p>
 <figure><img alt="Batch update the samples" src="images/step2-connect6.png"/><figcaption>Navigate to <strong>X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.  Open the <strong>More</strong> drop-down menu and choose <strong>XLS Batch Update Objects</strong>.</figcaption></figure>
