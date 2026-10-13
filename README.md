@@ -1,70 +1,40 @@
-# data-store-tutorials
-This is a public repository to review and share tutorials. Reviewers are the Data Store team.  Contents are tutorials to train how to use the openBIS-Data Store research data management system.
+# openBIS Data Store Tutorials
 
-## Purpose
-This repository supports the internal development of tutorials for researchers learning to use openBIS, and shares contents with openBIS users at BAM including:
+This repository provides practical guidelines and tutorials for using the openBIS Data Store to organize research data, document experiments and corresponding datasets and connect Lab Notebook datasets with Inventory items for traceability.
 
-- Groups settings ELN Customization
-- Inventory
-- ELN / Electronic Lab Notebook
-- Parent-Child connections
+## Getting started
 
+Start with the research data representation guideline, then follow the tutorials relevant to your role. **Data Store Stewards** should complete the group setup tutorials before division members begin working with the corresponding features.
 
-Reviewed tutorials are published in the docs folder of this repository and shared via a link (https://bamresearch.github.io/openBIS-data-store-tutorials/eln/tutorial-eln.html) to users.
+## Tutorials
 
-## Repository Structure
+| # | Tutorial | Intended audience | What you will learn |
+|---|---|---|---|
+| 1 | [Guideline to represent research data in the Data Store](https://bamresearch.github.io/openBIS-data-store-tutorials/represent-data-research-data/) | Data Store Stewards and division members | Learn the principles for representing research data and metadata. **Start here.** |
+| 2 | [Custom ELN settings for the group](https://bamresearch.github.io/openBIS-data-store-tutorials/custom-eln) | Data Store Stewards only | Prepare the division's electronic Lab Notebook settings before other users begin. |
+| 3 | [Upload data in the Lab Notebook](https://bamresearch.github.io/openBIS-data-store-tutorials/lab-notebook/) | Data Store Stewards and division members | Register experimental steps and upload associated research data. |
+| 4 | [Prepare Inventory structures for the group](https://bamresearch.github.io/openBIS-data-store-tutorials/inventory-data-stewards/) | Data Store Stewards only | Create Inventory projects and collections and register shared items. |
+| 5 | [Register Inventory items](https://bamresearch.github.io/openBIS-data-store-tutorials/inventory-users/) | Data Store Stewards and division members | Register Inventory items generated or used during research. |
+| 6 | [Connect Lab Notebook data with Inventory items](https://bamresearch.github.io/openBIS-data-store-tutorials/connect-data/) | Data Store Stewards and division members | Connect experimental steps with instruments, chemicals, and samples for traceability. |
 
-```text
-openbis-tutorials-template/
-  README.md
-  CONTRIBUTING.md
-  REVIEW_CHECKLIST.md
-  PUBLISHING.md
-  tutorials/
-    overview/
-      index.html
-      images/
-      assets/
-      README.md
-    inventory/
-      index.html
-      images/
-      assets/
-      README.md
-    eln/
-      index.html
-      images/
-      assets/
-      README.md
-    parent-child-connections/
-      index.html
-      images/
-      assets/
-      README.md
-    customization/
-      index.html
-      images/
-      assets/
-      README.md
-  .github/
-    PULL_REQUEST_TEMPLATE/
-      tutorial_review.md
-    workflows/
-      validate-tutorials.yml
-```
+## Using this repository
 
-## Tutorial Folder Convention
+Open a tutorial from the table above and follow its instructions in order. To browse the source files, use the [repository's file listing](https://github.com/BAMresearch/openBIS-data-store-tutorials/tree/main).
 
-Each tutorial should follow this structure:
+## Repository structure
 
-```text
-/tutorial-name/
-  index.html
-  assets/
-  datasets/
-  images/
-    step1-name-1.png
-    step1-name-2.png
-    step2-name-1.png
-  README.md
-```
+Tutorials are organized by topic in top-level folders. In addition to the tutorial folders:
+
+- [`docs/`](docs/) contains documentation and materials intended for publication.
+- [`openbis-tutorials-template/`](openbis-tutorials-template/) contains a template for creating tutorials.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) explains how to contribute.
+
+Browse the [full repository](https://github.com/BAMresearch/openBIS-data-store-tutorials/tree/main) to see all files and supporting resources.
+
+## Contributing and feedback
+
+Found a broken link, unclear instruction, outdated screenshot, or have an idea for a tutorial? [Open an issue](https://github.com/BAMresearch/openBIS-data-store-tutorials/issues) with the tutorial name and a brief description, or follow the [contribution guidelines](CONTRIBUTING.md) to propose changes. Tutorial updates are reviewed by the Data Store team.
+
+## License
+
+Content is shared under the [Creative Commons Attribution 4.0 International license](LICENSE).
