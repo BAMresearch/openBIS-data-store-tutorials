@@ -391,15 +391,15 @@ figcaption::before {
 <li><a href="#material-synthesis-connections">Connections for “Material Synthesis”</a></li>
 <li><a href="#tutorial-workflow">Tutorial workflow</a></li>
 <li><a href="#step-1">Step 1: Connect one Experimental Step</a></li>
-<li><a href="#step-2">Step 2: Batch-update Samples from the same Collection</a></li>
-<li><a href="#step-3">Step 3: Batch-update objects from different Collections</a></li>
+<li><a href="#step-2">Step 2: Batch update Samples from the same Collection</a></li>
+<li><a href="#step-3">Step 3: Batch update objects from different Collections</a></li>
 <li><a href="#step-4">Step 4: Visualise and verify the relationship hierarchy</a></li>
 <li><a href="#result">Result</a></li>
 </ul>
 </nav>
 <section id="learning-outcomes">
 <h2>What you will learn</h2>
-<ul><li>Explain how parent-child relationships represent logical connections between Objects in a research workflow.</li><li>Connect an Experimental Step manually with related Inventory Objects and research outputs.</li><li>Batch-update parent-child relationships between Sample Objects in the same Collection.</li><li>Batch-update parent-child relationships between Objects located in different Collections using the Object Browser.</li><li>Visualise and verify connected Objects using the Hierarchy Graph and Hierarchy Table, and use these relationships to trace the provenance of Samples and datasets.</li></ul>
+<ul><li>Explain how parent-child relationships represent logical connections between Objects in a research workflow.</li><li>Connect an Experimental Step manually with related Inventory Objects and research outputs.</li><li>Batch update parent-child relationships between Sample Objects in the same Collection.</li><li>Batch update parent-child relationships between Objects located in different Collections using the Object Browser.</li><li>Visualise and verify connected Objects using the Hierarchy Graph and Hierarchy Table, and use these relationships to trace the provenance of Samples and datasets.</li></ul>
 </section>
 <section id="before-you-begin">
 <h2>Before you begin</h2>
@@ -499,11 +499,13 @@ figcaption::before {
   show a larger part of the research workflow.
 </p>
 <div class="note">
-<strong>What the graph contains:</strong>
-  The Hierarchy Graph visualises only parent-child relationships between <strong>Objects</strong>.
-  <strong>Datasets are not displayed as nodes.</strong> A dataset remains attached to the Experimental Step
-  that describes how it was generated. To understand a dataset in context, open its Experimental Step and
-  inspect the Object hierarchy around that step.
+<strong>What the graph displays:</strong>
+  The Hierarchy Graph visualises parent-child relationships between <strong>Objects</strong>, 
+  but the visible graph does not necessarily show every relationship in the connected workflow. The displayed
+   relationships depend on the selected starting Object, the number of parent and child levels shown, and the
+    Object types included in the view. Relationships outside the displayed levels or excluded Object types may
+     still exist in the Data Store. <strong>Datasets are not displayed as nodes.</strong> because they remain 
+     attached to their corresponding Experimental Steps.
 </div>
 <p>The Hierarchy Graph is therefore the software view of the same research logic shown in the workflow: conceptual arrows become stored Object-to-Object parent-child connections that can be inspected in the Data Store.</p><figure><img alt="Hierarchy Graph generated in openBIS for the Material Synthesis example" src="images/key-concept-hierarchygraph.png"/><figcaption>
   Hierarchy Graph generated in openBIS for the <strong>“Material Synthesis”</strong> example. The graph
@@ -644,8 +646,8 @@ figcaption::before {
 <h2>Tutorial workflow</h2>
 <ol>
 <li>Connect one Experimental Step manually to learn how parent-child relationships are represented.</li>
-<li>Batch-update the Sample objects from the same Collection to add their workflow relationships.</li>
-<li>Batch-update objects from different Collections to add the workflow relationships of all other objects.</li>
+<li>Batch update the Sample objects from the same Collection to add their workflow relationships.</li>
+<li>batch update objects from different Collections to add the workflow relationships of all other objects.</li>
 <li>Visualise the <strong>Hierarchy Graph</strong> (or <strong>Hierarchy Table</strong>) of an Experimental Step to review the traceability of the workflow datasets and other outputs such as samples.</li>
 </ol>
 </section>
@@ -659,7 +661,8 @@ figcaption::before {
 <h3>Identify the Objects to connect</h3>
 In this step you will connect the <strong>Material Synthesis</strong> Experimental Step with three parents and one child.  The parent and child Objects must reflect the research workflow represented for <strong>Material Synthesis</strong>, the Instrument and Chemicals used by the activity are
   <strong>parents</strong>, while the Sample generated by the activity is a <strong>child</strong>
-<p>In the workflow figures used in Steps 1–3, a <strong>red square</strong> highlights the Objects and relationships addressed in the current step.</p><p>Start by identifying the Objects involved in this step and the direction of each parent-child relationship. Use the workflow figure first, then confirm the exact relationships in the table below.</p><figure><img alt="Connect one experimental step" src="images/step1-connections.png"/><figcaption>Objects and relationships addressed in Step 1. The <strong>red square</strong> highlights the <strong>Material Synthesis</strong> Experimental Step and the Objects that will be connected manually in this step.</figcaption></figure><h3>Relationships to add to the Experimental step “Material Synthesis”</h3><div class="comparison-table-wrapper">
+<p>In the workflow figures used in Steps 1–3, a <strong>red square</strong> highlights the Objects and relationships addressed in the current step.</p><p>Start by identifying the Objects involved in this step and the direction of each parent-child relationship. Use the workflow figure first, then confirm the exact relationships in the table below.</p>
+<figure><img alt="Connect one experimental step" src="images/step1-connections.png"/><figcaption>Objects and relationships addressed in Step 1. The <strong>red square</strong> highlights the <strong>Material Synthesis</strong> Experimental Step and the Objects that will be connected manually in this step.</figcaption></figure><h3>Relationships to add to the Experimental step “Material Synthesis”</h3><div class="comparison-table-wrapper">
 <table>
 <thead>
 <tr>
@@ -789,9 +792,9 @@ located the correct Sample, use its <strong>Code</strong> or <strong>Identifier<
 <a class="back-to-top" href="#top">Back to top</a>
 </section>
 <section class="step" id="step-2">
-<h2>Step 2: Batch-update Samples from the same Collection</h2>
+<h2>Step 2: Batch update Samples from the same Collection</h2>
 <p>
-      The Sample objects registered in the previous Inventory tutorial are located in the same
+      The Samples registered in the previous Inventory tutorial are located in the
       <strong>Samples</strong> Collection. Instead of editing each Sample separately, export the metadata of the samples to update, edit the exported Excel file
       to add parent-child relationships and use it for <strong>XLS Batch Update Objects</strong>.
     </p>
@@ -836,7 +839,7 @@ In this step you will connect the <strong>Synthesized Sample</strong> with its t
 <li>Select the upper <strong>Inventory</strong> tab.</li>
 <li>Navigate to <strong>FB Inventory → X.1 Materials → SAMPLES_SYNTHESIS → Samples</strong>.</li>
 <li>Select the Sample objects that you want to connect.</li>
-<li>Export the selected object metadata to an Excel file.</li>
+<li>Export the selected object metadata to an Excel file. Follow the screenshots below for detailed instructions.</li>
 <li>Save an unchanged backup copy of the exported file before editing it.</li>
 </ol>
 </div>
@@ -876,16 +879,22 @@ In this step you will connect the <strong>Synthesized Sample</strong> with its t
 <h3>Verify the batch update</h3><p>Visualise the connections you have created between the samples.</p>
 <figure><img alt="Navigate to updated samples" src="images/step2-connect8.png"/><figcaption>Navigate to the updated samples and visualize the connections.</figcaption></figure>
 <figure><img alt="Display Hierarchy Graph for updated samples" src="images/step2-connect9.png"/><figcaption>Open the Hierarchy Graph for the <strong>Synthesized Material</strong> sample that you registered to view the relationships.</figcaption></figure>
-<figure><img alt="hierarchical Synthesized Material" src="images/step2-connect10.png"/><figcaption>The Hierarchy Graph for the <strong>Synthesized Material</strong> sample that you registered should display by now all the connections you define in Steps 1 and 2. Click on the <strong>Synthesized Material</strong> sample, open the <strong>More</strong> menu and select <strong>Hierarchy Graph</strong>.</figcaption></figure>
+<figure><img alt="hierarchical Synthesized Material" src="images/step2-connect10.png"/><figcaption>The Hierarchy Graph for the <strong>Synthesized Material</strong> sample that you registered should display by now all the connections you define in Steps 1 and 2.</figcaption></figure>
 <a class="back-to-top" href="#top">Back to top</a>
 </section>
-<section class="step" id="step-3"><h2>Step 3: Batch-update objects from different Collections</h2>
+<section class="step" id="step-3"><h2>Step 3: Batch update objects from different Collections</h2>
 <h3>Identify the Objects to connect</h3>
 In this step you will connect several samples with Experimental steps, instruments and Chemicals.  The parent and child relationships must reflect the research workflow represented for <strong>Material Synthesis</strong>, the Instrument and Chemicals used by the activity are
   <strong>parents</strong>, while the Sample generated by the activity is a <strong>child</strong> when output or a <strong>parent</strong> when input to another Experimental Step.
 
+<p>Identify the remaining Objects and parent-child relationships needed to complete the <strong>Material Synthesis</strong> workflow. Use the following figure as a simplified overview, then consult the relationship tables below for the connections to establish before preparing the cross-Collection batch update.</p>
 
-<p>Identify the remaining Objects and relationships that must be added to complete the workflow. Use the red-square workflow figure as the overview, then inspect the detailed relationship tables before collecting identifiers and preparing the cross-Collection update.</p><figure><img alt="Connect one experimental step" src="images/step3-connections.png"/><figcaption>Objects and relationships addressed in Step 3. The <strong>red square</strong> highlights the remaining Objects and parent-child relationships that will be added across different Collections to complete the <strong>Material Synthesis</strong> workflow.</figcaption></figure><h3>Relationships to add to the experimental step "Macrostructure characterization"</h3><div class="comparison-table-wrapper">
+<figure><img alt="Connect one experimental step" src="images/step3-connections.png"/><figcaption>Objects and relationships addressed in Step 3. The <strong>red square</strong> highlights the part of the <strong>Material Synthesis</strong> workflow addressed in this step. 
+  For clarity, the figure shows only a subset of the parent-child relationships; additional relationships involving downstream <strong>Experimental Steps</strong>, <strong>Samples</strong>, and <strong>Instruments</strong> are omitted.
+  To explore these relationships, open the <strong>Hierarchy Graph</strong> from a downstream Object and adjust the displayed parent and child levels.</figcaption></figure>
+
+
+<h3>Relationships to add to the experimental step "Macrostructure characterization"</h3><div class="comparison-table-wrapper">
 <table>
 <thead>
 <tr>
@@ -1179,7 +1188,7 @@ In this step you will connect several samples with Experimental steps, instrumen
 <li>In the Object form, open the <strong>More</strong> drop-down menu.</li>
 <li>Select <strong>Hierarchy Graph</strong>.</li>
 <li>Review the parents and children shown around the object.</li>
-<li>If the graph is large, reduce with the slide bars for <strong>parents</strong> and <strong>children</strong> or reduce the number of <strong>Object types</strong> shown.</li>
+<li>Adjust the displayed parent and child levels and Object types to explore more or fewer relationships. If the graph does not show all the relationships you expect, increase the relevant levels or open the Hierarchy Graph from a downstream Object to inspect its connections in more detail.</li>
 </ol>
 </div>
 <div class="note">
@@ -1220,12 +1229,11 @@ In this step you will connect several samples with Experimental steps, instrumen
 <figure><img alt="Open the Experimental Step form" src="images/step4-connect2.png"/><figcaption>In the object form, open the More drop-down menu and select <strong>Hierarchy Graph</strong> or <strong>Hierarchy Table</strong>.</figcaption></figure>
 <figure><img alt="Hierarchy graph" src="images/step4-connect3.png"/><figcaption>The hierarchy graph with <strong>Material Synthesis</strong> as the starting node displays the workflow objects. Manage the size of the graph and displayed objects by selecting the number of <strong>Shown Types</strong>.</figcaption></figure>
 <div class="note">
-<strong>What the hierarchy view contains:</strong> All activities related to the research project <strong>Material synthesis</strong> are displayed, their inputs and outputs, and the parent-child relationships between them.
-      Note that not all instruments and chemicals are displayed for downstream nodes due to the size of the graph. An alternative to see all related objects is to select different nodes and open the <strong>Hierarchy Table</strong>.
+<strong>What the hierarchy view contains:</strong> The Hierarchy Graph displays the parent-child relationships between the Objects included in the current view of the <strong>Material synthesis</strong> workflow. Depending on the selected starting Object, displayed levels, and Object types, some relationships—particularly those involving Instruments and Chemicals connected to downstream Experimental Steps—may not be visible. To explore additional relationships, adjust the graph settings or open the <strong>Hierarchy Table</strong> or <strong>Hierarchy Table</strong> from another connected Object.
     </div>
 <figure><img alt="Hierarchy table" src="images/step4-connect4.png"/><figcaption>The hierarchy table displays the parent-child relationships in a tabular format. Manage the displayed columns and rows by increasing the <strong>Rows per page</strong> and filter the table with the <strong>COLUMNS</strong> and <strong>FILTERS</strong> tabs.</figcaption></figure>
 <a class="back-to-top" href="#top">Back to top</a>
 </section>
-<section id="result"><h2>Result</h2><p>After completing this tutorial, you have connected the Objects of the <strong>Material Synthesis</strong> research workflow using parent-child relationships. You have:</p><ul><li>connected an Experimental Step manually with its related Instrument, Chemicals, and generated Sample;</li><li>batch-updated parent-child relationships between Samples in the same Collection;</li><li>batch-updated parent-child relationships between Objects located in different Collections using the Object Browser;</li><li>completed the parent-child relationship network representing the Material Synthesis workflow; and</li><li>used the Hierarchy Graph and Hierarchy Table to verify the connections and trace the provenance of Samples and datasets.</li></ul><p>These connections provide the context around the research data: datasets remain attached to the Experimental Steps that generated them, while parent-child relationships connect those Experimental Steps with the Samples, Instruments, Chemicals, and other Experimental Steps involved in the research workflow. Together, these linked Objects provide a traceable representation of the research workflow in the Data Store.</p></section>
+<section id="result"><h2>Result</h2><p>After completing this tutorial, you have connected the Objects of the <strong>Material Synthesis</strong> research workflow using parent-child relationships. You have:</p><ul><li>connected an Experimental Step manually with its related Instrument, Chemicals, and generated Sample;</li><li>batch updated parent-child relationships between Samples in the same Collection;</li><li>batch updated parent-child relationships between Objects located in different Collections using the Object Browser;</li><li>completed the parent-child relationship network representing the Material Synthesis workflow; and</li><li>used the Hierarchy Graph and Hierarchy Table to verify the connections and trace the provenance of Samples and datasets.</li></ul><p>These connections provide the context around the research data: datasets remain attached to the Experimental Steps that generated them, while parent-child relationships connect those Experimental Steps with the Samples, Instruments, Chemicals, and other Experimental Steps involved in the research workflow. Together, these linked Objects provide a traceable representation of the research workflow in the Data Store.</p></section>
 </section></body>
 </html>
