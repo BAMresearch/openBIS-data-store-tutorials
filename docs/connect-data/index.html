@@ -435,7 +435,7 @@ figcaption::before {
         already be registered in the Inventory.
       </li>
 
-<li>If you encounter problems, contact <strong>the Data Store team</strong>.</li>
+<li>If you encounter problems, contact the Data Store Steward (DSSt) assigned in your division. If the issue cannot be resolved in this way, please contact <strong>the Data Store team</strong>.</li>
 </ul>
 <div class="warning">
 <strong>Do not continue with an incomplete tutorial structure:</strong>
@@ -465,24 +465,22 @@ figcaption::before {
     </p>
 <div aria-label="Example relationship model" class="relationship-model">
 <div class="relationship-row">
-<div class="node"><strong>Instrument / Chemical / input Sample</strong><small> resource or input object</small></div>
+<div class="node"><strong>Instrument / Chemical / Sample</strong><small> resource or input object</small></div>
 <div class="arrow">→</div>
 <div class="node"><strong>Experimental Step</strong><small> activity recorded in the Lab Notebook</small></div>
 <div class="arrow">→</div>
-<div class="node"><strong>Sample / next Experimental Step</strong><small> research output or downstream activity</small></div>
+<div class="node"><strong>Sample / next Experimental Step</strong><small> workflow output or downstream activity</small></div>
 </div>
 <div class="relationship-row">
-<div class="node"><strong>Dataset</strong><small> attached to the Experimental Step that generated it</small></div>
 </div>
 </div>
 <div class="warning">
 <strong>openBIS parent-child relationships</strong> describe a directed connection between registered openBIS Objects. The terms <em>parent</em> and <em>child</em> therefore do not have the same meaning as in programming languages, where they often describe inheritance, class hierarchies, or ownership in a software structure. In the Data Store, these links are implemented using openBIS parent-child relationships to represent how research Objects are related. Decide which Object is the parent and which is the child before saving or batch-updating a relationship. A useful convention for this tutorial is to represent resources and inputs as parents of an Experimental Step, and generated Samples or downstream Experimental Steps as its children.
     </div>
-<p>In the <strong>“Material Synthesis”</strong> example, the logical connections drawn in the research workflow are implemented in openBIS as parent-child relationships. The direction of each arrow helps determine which Object is the parent and which is the child: resources and input Samples point toward the Experimental Step in which they are used, while an Experimental Step points toward the Sample or downstream activity it generates.</p><figure><img alt="Research workflow for the Material Synthesis example showing logical connections between objects" src="images/research-workflow.png"/><figcaption>
-  Research workflow for the <strong>“Material Synthesis”</strong> example. The arrows connecting the activities, resources, 
-  datasets and other research outputs represented in the Data Store represent the connections that describe the research workflow and the parent-child relationships used to
-   make the provenance of each component traceable.
+<p>In the <strong>“Material Synthesis”</strong> example, the logical connections drawn in the research workflow are implemented in openBIS as parent-child relationships. The direction of each arrow helps determine which Object is the parent and which is the child: resources and input Samples point toward the Experimental Step in which they are used, while an Experimental Step points toward the Sample or downstream activity it generates.
 
+</p><figure><img alt="Research workflow for the Material Synthesis example showing logical connections between objects" src="images/research-workflow.png"/><figcaption>
+  Research workflow for the <strong>“Material Synthesis”</strong> example. The arrows illustrate the logical connections between research activities, resources, and outputs. In the Data Store, these connections are represented by parent-child relationships between Objects, enabling the provenance of Samples and research data to be traced. Datasets are not connected through parent-child relationships; instead, they remain attached to the Experimental Steps that describe how they were generated.
 </figcaption></figure><h3>Parent-child hierarchy graph generated in openBIS</h3>
 <p>
   Once parent-child connections have been assigned between Objects in the Data Store, openBIS can visualise them as a
@@ -1210,7 +1208,7 @@ In this step you will connect several samples with Experimental steps, instrumen
   What was done to generate this dataset? Which experiment generated it? Which resources were used?
   Can the process be reproduced?
 </div>
-<figure><img alt="Hierarchy Graph" src="images/step4-usecase2-1.png"/><figcaption>Localize the dataset attached to the Experimental Step <strong>Macrostructure Characterization</strong> and open its form to select <strong>Hiearchy Graph</strong> from the More drop-down menu.</figcaption></figure>
+<figure><img alt="Hierarchy Graph" src="images/step4-usecase2-1.png"/><figcaption>Localize the dataset attached to the Experimental Step <strong>Macrostructure Characterization</strong> and open its form to select <strong>Hierarchy Graph</strong> from the More drop-down menu.</figcaption></figure>
 <figure><img alt="Hierarchy Graph" src="images/step4-usecase2-2.png"/><figcaption>The hierarchy graph with the <strong>Macrostructure Characterization</strong> as starting node displays all related objects required to understand the provenance of the dataset(s) attached to this experimental step.</figcaption></figure>
 
 <div class="note">
