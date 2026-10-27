@@ -386,60 +386,107 @@ pre code {padding:0; background:transparent; white-space:pre;}
 </style>
 </head>
 <body><main><a id="top"></a>
-<header><h1>Install pyBIS and set up your workshop environment</h1><p class="lead">A step-by-step guide for participants who have never used a Miniforge Prompt or Python environment before.</p><div class="meta"><span>Beginner friendly. Duration: 20–30 min.</span></div></header><div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
+<header><h1>Install pyBIS and set up your workshop environment</h1><p class="lead">A step-by-step guide for researchers with no prior experience using Python or command-line tools such as Miniforge Prompt, or Jupyter Notebooks.</p><div class="meta"><span>Beginner friendly. Duration: 20–30 min.</span></div></header><div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
 
 
 
-<p>This guide will help you install <strong>pyBIS</strong> and prepare your computer for the pyBIS workshop. No previous experience with Python is required.</p>
-<h3>What will you install? </h3>
-<ul><li><strong>Python:</strong> the programming language used in the workshop.</li><li><strong>pyBIS:</strong> a Python package for communicating with openBIS.</li><li><strong>Miniforge3:</strong> a minimal installer for conda, which is used here to create and manage the isolated Python environment and install workshop packages.</li><li><strong>Visual Studio Code (VS Code):</strong> an application for writing and running code.</li><li><strong>Jupyter Notebook:</strong> an interactive document where you run Python code one cell at a time.</li><li><strong>Python environment:</strong> an isolated workspace containing Python and the workshop packages.</li></ul>
+<p>This guide helps you prepare your computer for the pyBIS workshop. You do not need previous programming experience.</p>
+<h3>What tools will you use? </h3>
+<ul><li><strong>Python:</strong> the programming language used in the workshop.
+</li><li><strong>pyBIS:</strong> a Python package for communicating with openBIS.
+</li><li><strong>Miniforge3:</strong> a minimal installer for conda, which is used here to create and manage the isolated Python environment and install workshop packages.
+</li><li><strong>Visual Studio Code (VS Code):</strong> an application for writing and running code.</li>
+<li><strong>Jupyter Notebook:</strong> an interactive document where you can write and run Python code one cell at a time.</li>
+<li><strong>Python environment:</strong> a separate workspace containing a Python version and the packages needed for the workshop.</li></ul>
+
 <div class="note"><strong>Installation of Python with Miniforge3.</strong></div>
-<nav class="toc"><strong>Contents</strong><ul><li><a href="#step1">Step 1: Install Visual Studio Code</a></li><li><a href="#step2">Step 2: Create pybis environment and install pyBIS package</a></li><li><a href="#step3">Step 3: Open a Jupyter Notebook and select the pybis environment</a></li><li><a href="#step4">Step 4: Verify Python and pyBIS installations</a></li><li><a href="#troubleshooting">Troubleshooting: Common issues</a></li><li><a href="#checklist">Final checklist</a></li></ul></nav>
+<nav class="toc"><strong>Contents</strong><ul>
+  <li><a href="#step1">Step 1: Install Visual Studio Code</a></li>
+  <li><a href="#step2">Step 2: Create pybis environment and install pyBIS package</a></li>
+  <li><a href="#step3">Step 3: Open a Jupyter Notebook and select the pybis environment</a></li>
+  <li><a href="#step4">Step 4: Test your pyBIS installation</a></li>
+  <li><a href="#troubleshooting">Troubleshooting: Common issues</a></li>
+  <li><a href="#checklist">Final checklist</a></li></ul></nav>
+
 <section class="step" id="step1"><h2>Step 1: Install Visual Studio Code</h2>
-<h3>1.1 Install VS Code</h3><ol><li>Open the <a href="https://infoportal.bam.de/cocoon/portal/res?id=10315&amp;doctype=Dokument&amp;refModule=Volltextsuche&amp;t=1&amp;ci=1&amp;si=0&amp;i=10315&amp;d=Dokument&amp;v=DETAIL&amp;x=DETAIL&amp;hra=5&amp;hi=4138&amp;hd=Navknoten&amp;hc=30532&amp;sichtc=cms&amp;r=&amp;cid=30532&amp;rt=&amp;nd=Aufgabe&amp;ni=183&amp;uki=&amp;ukd=&amp;uksi=&amp;ukg=0&amp;ucid=30532&amp;bereich=&amp;ber=&amp;lim=&amp;ord=&amp;os=&amp;asc=&amp;pm=&amp;arch=false&amp;l=&amp;s=&amp;su=&amp;p=&amp;bn=&amp;bc=">Symantec Software Portal</a>.</li><li>Search for <strong>Visual Studio Code</strong> and install it.</li> <figure><img alt="Install Visual Studio Code" loading="lazy" src="images/step1-vs-code.png"/><figcaption>Install Visual Studio Code.</figcaption></figure>
+<h3>1.1 Install VS Code</h3>
+<ol><li>Open the <a href="https://infoportal.bam.de/cocoon/portal/res?id=10315&amp;doctype=Dokument&amp;refModule=Volltextsuche&amp;t=1&amp;ci=1&amp;si=0&amp;i=10315&amp;d=Dokument&amp;v=DETAIL&amp;x=DETAIL&amp;hra=5&amp;hi=4138&amp;hd=Navknoten&amp;hc=30532&amp;sichtc=cms&amp;r=&amp;cid=30532&amp;rt=&amp;nd=Aufgabe&amp;ni=183&amp;uki=&amp;ukd=&amp;uksi=&amp;ukg=0&amp;ucid=30532&amp;bereich=&amp;ber=&amp;lim=&amp;ord=&amp;os=&amp;asc=&amp;pm=&amp;arch=false&amp;l=&amp;s=&amp;su=&amp;p=&amp;bn=&amp;bc=">Symantec Software Portal</a>.</li>
+  <li>Search for <strong>Visual Studio Code</strong> and install it.</li>
+   <figure><img alt="Install Visual Studio Code" loading="lazy" src="images/step1-vs-code.png"/><figcaption>Install Visual Studio Code.</figcaption></figure>
 <li>Open VS Code from the Windows Start menu.</li></ol>
-<h3>1.2 Install the Python and Jupyter extensions</h3><ol><li>In VS Code, click the <strong>Extensions</strong> icon (four squares) in the left sidebar.</li><li>Search for <strong>Python</strong>, select the extension published by <strong>Microsoft</strong>, and click <strong>Install</strong>.</li></ol>
+
+<h3>1.2 Install the Python and Jupyter extensions</h3>
+<ol><li>In VS Code, click the <strong>Extensions</strong> icon (four squares) in the left sidebar.</li>
+  <li>Search for <strong>Python</strong>, select the extension published by <strong>Microsoft</strong>, and click <strong>Install</strong>.</li></ol>
+
 <figure><img alt="Python extension in VS Code" loading="lazy" src="images/step1-extensions-python.png"/><figcaption>Install the Microsoft Python extension.</figcaption></figure>
+
 <ol start="3"><li>Search for <strong>Jupyter</strong>, select the extension published by <strong>Microsoft</strong>, and click <strong>Install</strong>.</li></ol>
+
 <figure><img alt="Jupyter extension in VS Code" loading="lazy" src="images/step1-extensions-jupyter.png"/><figcaption>Install the Microsoft Jupyter extension.</figcaption></figure>
-<p>If you see <strong>Installed</strong> or <strong>Uninstall</strong>, the extension is already installed.</p><div class="note"><strong>Checkpoint:</strong> VS Code is installed with the Python and Jupyter extensions.</div><a class="back-to-top" href="#top">Back to top</a></section>
-<section class="step" id="step2"><h2>Step 2: Create pybis environment and install pyBIS package</h2><p>A Python environment keeps the workshop packages together and separate from other Python projects.</p>
+<p>If you see <strong>Installed</strong> or <strong>Uninstall</strong>, the extension is already installed.</p>
+<div class="note"><strong>Checkpoint:</strong> VS Code is installed with the Python and Jupyter extensions.</div><a class="back-to-top" href="#top">Back to top</a></section>
+
+<section class="step" id="step2"><h2>Step 2: Create pybis environment and install pyBIS package</h2>
+  <p>A Python environment keeps the workshop packages together and separate from other Python projects.</p>
 <div class="note"><strong> What is a Python environment?</strong> A Python environment is a separate workspace that contains a specific Python version and the packages needed for your work.</div>
 <p>For this workshop, you will create an environment called pybis. You can continue using it for working with pyBIS package after the workshop.</p>
 <p>Good to know: Different projects may need different Python versions or packages. Creating a separate environment for each project helps prevent conflicts when packages are installed or updated. If an environment stops working, you can recreate it without affecting your other environments.</p>
 
 <h3>2.1 Install Miniforge3</h3>
-<ol><li>Open the Symantec Software Portal.</li><li>Search for <strong>Miniforge</strong>.</li><li>Install it and wait until installation is complete.</li></ol>
+<ol><li>Open the Symantec Software Portal.</li>
+  <li>Search for <strong>Miniforge</strong>.</li>
+  <li>Install Miniforge3 and wait until installation is complete.</li></ol>
 <figure><img alt="Miniforge3 in the Software Portal" loading="lazy" src="images/step2-miniforge.png"/><figcaption>Miniforge3 in the Software Portal.</figcaption></figure>
 
 <h3>2.2 Open Miniforge Prompt</h3><ol><li>Click the Windows Start button.</li><li>Search for <strong>Miniforge Prompt</strong> and open it.</li></ol>
 
  <figure><img alt="Miniforge Prompt app" loading="lazy" src="images/step2-miniforge-prompt-app.png"/><figcaption>Open Miniforge Prompt.</figcaption></figure> 
 
-<div class="note"><strong> How to use Miniforge Prompt?</strong> Miniforge Prompt is a window where you type commands to tell the Miniforge, which includes conda for managing Python environments and packages, what to do. To run each command below, copy the text from the code box, paste it into Miniforge Prompt (usually using Ctrl + V or right-click), and press Enter. Wait until the command finishes before continuing.</div>
+<div class="note">
+  <strong>How to use Miniforge Prompt?</strong>
+  <p>
+    Miniforge Prompt is a s a window where you type commands to tell your computer what to do. You will use it to create a Python environment and install packages.
+  </p>
+  <p>
+    For each command below, copy the text from the code box, paste
+    it into the Miniforge prompt (usually using Ctrl + V or right-click), and
+    press Enter. Wait until the command finishes before continuing.
+  </p>
+</div>
 
-<h3>2.3 Create the pybis environment</h3><ol><li>Copy command below and enter it in the Miniforge Prompt terminal:</li>
+<h3>2.3 Create the pybis environment</h3><ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter:</li>
 <pre><code>conda create --name pybis --channel conda-forge python=3.14</code></pre></ol>
-This creates an environment called <code>pybis</code> with Python 3.14 using the <code>conda-forge</code> package repository.
+This creates an environment named <code>pybis</code> with Python 3.14. <code>conda-forge</code> is the package repository to obtain the software.
 
-<figure><img alt="Creating an environment in the Miniforge Prompt terminal" loading="lazy" src="images/step2-miniforge-prompt.png"/><figcaption>Creating an environment in the Miniforge Prompt terminal.</figcaption></figure>
+<figure><img alt="Creating an environment in the Miniforge Prompt" loading="lazy" src="images/step2-miniforge-prompt.png"/><figcaption>Creating an environment in the Miniforge Prompt.</figcaption></figure>
 
-<p>If the terminal asks <code>Proceed ([y]/n)?</code> with installation of the packages, type <code>y</code> and press <strong>Enter</strong>.</p><figure><img alt="Confirm installation of the packages" loading="lazy" src="images/step2-miniforge-prompt-proceed.png"/><figcaption>Confirm installation of the packages.</figcaption></figure>
+<p>If the Miniforge prompt asks <code>Proceed ([y]/n)?</code>, type <code>y</code> and press <strong>Enter</strong>.</p><figure><img alt="Confirm installation of the packages" loading="lazy" src="images/step2-miniforge-prompt-proceed.png"/><figcaption>Confirm installation of the packages.</figcaption></figure>
 
 <h3>2.4 Activate the environment</h3>
-<ol><li>Copy the command below and enter it in the Miniforge Prompt terminal:</li></ol>
-<pre><code>conda activate pybis</code></pre><p>You should now see <code>(pybis)</code> at the start of the terminal line, for example <code>(pybis) C:\Users\yourusername&gt;</code>.</p><figure><img alt="Activated pybis environment" loading="lazy" src="images/step2-miniforge-prompt-activated.png"/><figcaption>Activated pybis environment.</figcaption></figure>
-<h3>2.5 Install pyBIS and enable Jupyter Notebooks</h3>
-<ol><li>Copy the command below and paste it into the Miniforge Prompt to install <code>pyBIS</code> and <code>ipykernel</code>:</li></ol>
-<pre><code>conda install --channel conda-forge pybis ipykernel</code></pre><p>The <code>pyBIS</code> package lets Python communicate with openBIS. <code>ipykernel</code> lets Jupyter run notebook code using Python from the pybis environment.</p><figure><img alt="Installing pybis and ipykernel" loading="lazy" src="images/step2-miniforge-prompt-pybis-ipykernel.png"/><figcaption>Installing pyBIS and ipykernel.</figcaption></figure>
+<ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter:</li></ol>
+<pre><code>conda activate pybis</code></pre>
+<p>You should see <code>(pybis)</code> at the beginning of the command line, for example <code>(pybis) C:\Users\yourusername&gt;</code>.  This indicates that the environment is activate in Miniforge Prompt.</p>
+<figure><img alt="Activated pybis environment" loading="lazy" src="images/step2-miniforge-prompt-activated.png"/><figcaption>Activated pybis environment.</figcaption></figure>
+
+<h3>2.5 Install pyBIS and prepare the environment for Jupyter Notebooks</h3>
+<ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter.</li></ol>
+<pre><code>conda install --channel conda-forge pybis ipykernel</code></pre>
+<p>The <code>pyBIS</code> package lets Python communicate with openBIS. The <code>ipykernel</code> allows Jupyter Notebooks to run Python code using this environment.</p><figure><img alt="Installing pybis and ipykernel" loading="lazy" src="images/step2-miniforge-prompt-pybis-ipykernel.png"/><figcaption>Installing pyBIS and ipykernel.</figcaption></figure>
 <div class="note"><strong>Checkpoint:</strong> The <code>pybis</code> environment is ready. Close Miniforge Prompt and continue to <a href="#step3">Step 3</a>.</div>
 <a class="back-to-top" href="#top">Back to top</a></section>
+
 <section class="step" id="step3"><h2>Step 3: Open a Jupyter Notebook and select the pybis environment</h2>
-<h3>3.1 Open new Jupyter Notebook in VS Code</h3><ol><li>Open <strong>VS Code</strong>.</li><li>Choose <strong>File → New File</strong>.</li><li>Select <strong>Jupyter Notebook</strong>.</li></ol>
+<h3>3.1 Open a Jupyter Notebook in VS Code</h3><ol>
+  <li>Open <strong>Visual Studio Code (Vs Code)</strong>.</li>
+  <li>Choose <strong>File → New File</strong>.</li>
+  <li>Select <strong>Jupyter Notebook</strong>.</li></ol>
 <figure><img alt="New Jupyter Notebook in VS Code" loading="lazy" src="images/step3-vs-code-jupyter-notebook.png"/><figcaption>New Jupyter Notebook in VS Code.</figcaption></figure>
+
 <div class="note"><strong> What is a Jupyter Notebook?</strong> A Jupyter Notebook lets you write and run Python code in separate sections called code cells. To run a cell, click its ▶ Run button or press Shift + Enter.</div>
+
 <h3>3.2 Select the <code>pybis</code> environment</h3>
-<p>Before running Python code, you need to choose which Python environment the notebook will use. In Jupyter Notebooks, this is called selecting a kernel.</p>
+<p>Before running Python code, choose which Python environment the notebook will use. In a Jupyter Notebook, this is means selecting a kernel (the Python interpreter that runs your code).</p>
 
 <ol><li>Click <strong>Select Kernel</strong> in the upper-right corner of the notebook.</li></ol>
 <figure><img alt=" <strong>Select Kernel</strong>" loading="lazy" src="images/step3-vs-code-jupyter-notebook-select-kernel.png"/><figcaption>Select Kernel</figcaption></figure>
@@ -447,7 +494,7 @@ This creates an environment called <code>pybis</code> with Python 3.14 using the
 <figure><img alt="Python Environments" loading="lazy" src="images/step3-vs-code-jupyter-notebook-python-environments.png"/><figcaption> Choose Python Environments.</figcaption></figure>
 <ol start="3"><li>Select the <code>pybis</code> environment you created in Step 2.</li></ol>
 <figure><img alt="Select the <code>pybis</code> environment " loading="lazy" src="images/step3-vs-code-jupyter-notebook-pybis-env.png"/><figcaption>Select the <code>pybis</code> environment.</figcaption></figure>
-<div class="note"><strong>Checkpoint:</strong>  The notebook is now configured to use the <code>pybis</code> environment. You should see pybis in the upper-right corner.</div>
+<div class="note"><strong>Checkpoint:</strong>  The notebook is configured to use the <code>pybis</code> environment. You should see pybis in the upper-right corner.</div>
 
 <figure><img alt="" loading="lazy" src="images/step3-vs-code-jupyter-notebook-pybis-env-selected.png"/><figcaption>The <code>pybis</code> environment is selected.</figcaption></figure>
 
@@ -456,24 +503,32 @@ This creates an environment called <code>pybis</code> with Python 3.14 using the
 <h3>4.1 Run your first Python code</h3>
 <ol><li>Copy the code below and paste it into a notebook code cell.</li></ol>
 <ol start="2"><li>Press <code>Shift + Enter</code> to run the code.</ol></li>
-<pre><code>print("Hello! My Python environment is working.")</code></pre><p>You should see:</p><pre><code>Hello! My Python environment is working.</code></pre>
-<h3>4.2 Check pyBIS</h3><p>
+<pre><code>print("Hello! My Python environment is working.")</code></pre>
+<p>You should see:</p><pre><code>Hello! My Python environment is working.</code></pre>
+<p>This confirms that the notebook can run Python code.</p>
 
-  Click + Code to add a new code cell below it.
-Copy the code below, paste it into the new cell, and press Shift + Enter.</p><pre><code>import pybis
+<h3>4.2 Check that pyBIS is installed</h3><p>
+<ol start="1"></ol><li>Move your mouse below the code cell you just ran.</li></ol>
+<ol start="2"><li>Click <strong>+ Code</strong> to add a new code cell.</li></ol>
+<ol start="3"><li>Copy the code below, paste it into the new cell and press Shift + Enter.</li></ol>
+ <pre><code>import pybis
 
-print("pyBIS was imported successfully!")</code></pre><p>Expected output:</p><pre><code>pyBIS was imported successfully!</code></pre>
-<div class="note"><strong> What does <code>import</code> mean?</strong>  In Python, <code>import</code> makes a package available for use in your code. If the code runs without errors, pyBIS is installed and can be imported in the selected environment. You do not need to connect to an openBIS server for this test.</div>
+print("pyBIS was imported successfully!")</code></pre>
+<p>>You should see the following output:</p><pre><code>pyBIS was imported successfully!</code></pre>
+<div class="note"><strong> What does <code>import</code> mean?</strong>  In Python, <code>import</code> makes a package available for use in your code. If the cell runs without errors, pyBIS can be imported from the selected environment. You do not need to connect to an openBIS server for this test.</div>
+
 <h3>4.3 Save the notebook</h3>
 <ol><li>Press <code>Ctrl + Shift + S</code>.</ol></li>
-<ol start="2"><li> Choose a location and save the notebook as <code>pybis_installation_test.ipynb</code>.</li></ol>
+<ol start="2"><li> Choose a folder you can find again and save the notebook as <code>pybis_installation_test.ipynb</code>.</li></ol>
 <p>The .ipynb extension identifies a Jupyter Notebook file.</p>
-<div class="note"><strong>Checkpoint:</strong>  Your notebook runs Python code, pyBIS can be imported successfully, and your notebook is saved. You are ready to start working with pyBIS.</div><a class="back-to-top" href="#top">Back to top</a></section>
+
+<div class="note"><strong>Checkpoint:</strong>  Your notebook runs Python code, pyBIS can be imported, and your notebook is saved. You are ready to start working with pyBIS.</div><a class="back-to-top" href="#top">Back to top</a></section>
+
 <section class="step" id="troubleshooting"><h2>Troubleshooting: Common problems</h2>
 <h3>I cannot find Miniforge Prompt</h3><p>Search for <strong>Miniforge Prompt</strong> in the Windows Start menu. If it is missing, check that Miniforge3 finished installing through the Software Portal.</p>
-<h3>My terminal says a command is not recognized</h3><p>If <code>conda</code> is not recognized, make sure you opened <strong>Miniforge Prompt</strong> rather than PowerShell.</p>
+<h3>My Miniforge prompt says a command is not recognized</h3><p>If <code>conda</code> is not recognized, make sure you opened <strong>Miniforge Prompt</strong> rather than PowerShell.</p>
 <h3>VS Code cannot find my Python environment</h3><ol><li>Check that the Microsoft Python and Jupyter extensions are installed.</li><li>Restart VS Code and click <strong>Select Kernel → Python Environments</strong>.</li><li>Select the <code>pybis</code> environment.</li></ol>
-<h3>I see “No module named pybis”</h3><p>The notebook may be using the wrong environment. Click <strong>Select Kernel</strong>, choose the environment you created, and run the test again.</p>
+<h3>I see “No module named pybis”</h3><p>The notebook may be using the wrong environment. Click <strong>Select Kernel → Python Environments</strong>, choose <code>pybis</code>, and run the test again.  If the error continues, return to Step 2.5 to check that pyBIS was installed.</p>
 <h3>Installation fails because of a network or permission error</h3><p>Check that you are connected to your organization's network or VPN, then retry. If the error persists, contact IT support or the Data Store Team.</p></section>
 <section class="step" id="checklist"><h2>Final checklist: Are you ready?</h2><ul class="checklist"><li><label><input type="checkbox"/>VS Code is installed.</label></li><li><label><input type="checkbox"/>The Python extension is installed.</label></li><li><label><input type="checkbox"/>The Jupyter extension is installed.</label></li><li><label><input type="checkbox"/>A Python environment was created with Miniforge3.</label></li><li><label><input type="checkbox"/>pyBIS and ipykernel are installed.</label></li><li><label><input type="checkbox"/>A Jupyter Notebook opens in VS Code.</label></li><li><label><input type="checkbox"/>The correct notebook kernel is selected.</label></li><li><label><input type="checkbox"/>The test code runs and imports pyBIS without errors.</label></li></ul><div class="note"><strong>You're ready for the pyBIS workshop!</strong> If something does not work, bring the error message or a screenshot to the workshop.</div></section>
 <div class="footer"><p><strong>Documentation path:</strong> <a href="https://datastore.bam.de/en/pybis/how-to_guides/installation_and_environment">Wiki</a> · <strong>Language:</strong> EN</p><p><strong>Further reading:</strong> <a href="https://biapol.github.io/blog/mara_lampert/getting_started_with_miniforge_and_python/readme.html">Miniforge tutorial</a> · <a href="https://code.visualstudio.com/docs/python/python-tutorial">VS Code documentation</a> · <a href="https://pypi.org/project/pybis/">pyBIS on PyPI</a></p></div>
