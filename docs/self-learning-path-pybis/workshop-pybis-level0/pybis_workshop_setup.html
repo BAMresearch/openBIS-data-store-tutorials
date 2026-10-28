@@ -450,7 +450,7 @@ pre code {padding:0; background:transparent; white-space:pre;}
   </p>
   <p>
     For each command below, copy the text from the code box, paste
-    it into the Miniforge prompt (usually using Ctrl + V or right-click), and
+    it into the Miniforge Prompt (usually using Ctrl + V or right-click), and
     press Enter. Wait until the command finishes before continuing.
   </p>
 </div>
@@ -461,7 +461,7 @@ This creates an environment named <code>pybis</code> with Python 3.14. <code>con
 
 <figure><img alt="Creating an environment in the Miniforge Prompt" loading="lazy" src="images/step2-miniforge-prompt.png"/><figcaption>Creating an environment in the Miniforge Prompt.</figcaption></figure>
 
-<p>If the Miniforge prompt asks <code>Proceed ([y]/n)?</code>, type <code>y</code> and press <strong>Enter</strong>.</p><figure><img alt="Confirm installation of the packages" loading="lazy" src="images/step2-miniforge-prompt-proceed.png"/><figcaption>Confirm installation of the packages.</figcaption></figure>
+<p>If the Miniforge Prompt asks <code>Proceed ([y]/n)?</code>, type <code>y</code> and press <strong>Enter</strong>.</p><figure><img alt="Confirm installation of the packages" loading="lazy" src="images/step2-miniforge-prompt-proceed.png"/><figcaption>Confirm installation of the packages.</figcaption></figure>
 
 <h3>2.4 Activate the environment</h3>
 <ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter:</li></ol>
@@ -478,7 +478,7 @@ This creates an environment named <code>pybis</code> with Python 3.14. <code>con
 
 <section class="step" id="step3"><h2>Step 3: Open a Jupyter Notebook and select the pybis environment</h2>
 <h3>3.1 Open a Jupyter Notebook in VS Code</h3><ol>
-  <li>Open <strong>Visual Studio Code (Vs Code)</strong>.</li>
+  <li>Open <strong>Visual Studio Code (VS Code)</strong>.</li>
   <li>Choose <strong>File → New File</strong>.</li>
   <li>Select <strong>Jupyter Notebook</strong>.</li></ol>
 <figure><img alt="New Jupyter Notebook in VS Code" loading="lazy" src="images/step3-vs-code-jupyter-notebook.png"/><figcaption>New Jupyter Notebook in VS Code.</figcaption></figure>
@@ -508,13 +508,13 @@ This creates an environment named <code>pybis</code> with Python 3.14. <code>con
 <p>This confirms that the notebook can run Python code.</p>
 
 <h3>4.2 Check that pyBIS is installed</h3><p>
-<ol start="1"></ol><li>Move your mouse below the code cell you just ran.</li></ol>
+<ol start="1"><li>Move your mouse below the code cell you just ran.</li></ol>
 <ol start="2"><li>Click <strong>+ Code</strong> to add a new code cell.</li></ol>
 <ol start="3"><li>Copy the code below, paste it into the new cell and press Shift + Enter.</li></ol>
  <pre><code>import pybis
 
 print("pyBIS was imported successfully!")</code></pre>
-<p>>You should see the following output:</p><pre><code>pyBIS was imported successfully!</code></pre>
+<p>You should see the following output:</p><pre><code>pyBIS was imported successfully!</code></pre>
 <div class="note"><strong> What does <code>import</code> mean?</strong>  In Python, <code>import</code> makes a package available for use in your code. If the cell runs without errors, pyBIS can be imported from the selected environment. You do not need to connect to an openBIS server for this test.</div>
 
 <h3>4.3 Save the notebook</h3>
@@ -526,10 +526,10 @@ print("pyBIS was imported successfully!")</code></pre>
 
 <section class="step" id="troubleshooting"><h2>Troubleshooting: Common problems</h2>
 <h3>I cannot find Miniforge Prompt</h3><p>Search for <strong>Miniforge Prompt</strong> in the Windows Start menu. If it is missing, check that Miniforge3 finished installing through the Software Portal.</p>
-<h3>My Miniforge prompt says a command is not recognized</h3><p>If <code>conda</code> is not recognized, make sure you opened <strong>Miniforge Prompt</strong> rather than PowerShell.</p>
+<h3>My Miniforge Prompt says a command is not recognized</h3><p>If <code>conda</code> is not recognized, make sure you opened <strong>Miniforge Prompt</strong> rather than PowerShell.</p>
 <h3>VS Code cannot find my Python environment</h3><ol><li>Check that the Microsoft Python and Jupyter extensions are installed.</li><li>Restart VS Code and click <strong>Select Kernel → Python Environments</strong>.</li><li>Select the <code>pybis</code> environment.</li></ol>
 <h3>I see “No module named pybis”</h3><p>The notebook may be using the wrong environment. Click <strong>Select Kernel → Python Environments</strong>, choose <code>pybis</code>, and run the test again.  If the error continues, return to Step 2.5 to check that pyBIS was installed.</p>
 <h3>Installation fails because of a network or permission error</h3><p>Check that you are connected to your organization's network or VPN, then retry. If the error persists, contact IT support or the Data Store Team.</p></section>
-<section class="step" id="checklist"><h2>Final checklist: Are you ready?</h2><ul class="checklist"><li><label><input type="checkbox"/>VS Code is installed.</label></li><li><label><input type="checkbox"/>The Python extension is installed.</label></li><li><label><input type="checkbox"/>The Jupyter extension is installed.</label></li><li><label><input type="checkbox"/>A Python environment was created with Miniforge3.</label></li><li><label><input type="checkbox"/>pyBIS and ipykernel are installed.</label></li><li><label><input type="checkbox"/>A Jupyter Notebook opens in VS Code.</label></li><li><label><input type="checkbox"/>The correct notebook kernel is selected.</label></li><li><label><input type="checkbox"/>The test code runs and imports pyBIS without errors.</label></li></ul><div class="note"><strong>You're ready for the pyBIS workshop!</strong> If something does not work, bring the error message or a screenshot to the workshop.</div></section>
+<section class="step" id="checklist"><h2>Final checklist: Are you ready?</h2><ul class="checklist"><li><label><input type="checkbox"/>VS Code is installed.</label></li><li><label><input type="checkbox"/>The Python extension is installed.</label></li><li><label><input type="checkbox"/>The Jupyter extension is installed.</label></li><li><label><input type="checkbox"/>A Python environment was created with Miniforge3.</label></li><li><label><input type="checkbox"/>pyBIS and ipykernel are installed.</label></li><li><label><input type="checkbox"/>A Jupyter Notebook opens in VS Code.</label></li><li><label><input type="checkbox"/>The correct kernel is selected.</label></li><li><label><input type="checkbox"/>The test code runs and imports pyBIS without errors.</label></li></ul><div class="note"><strong>You're ready for the pyBIS workshop!</strong> If something does not work, bring the error message or a screenshot to the workshop.</div></section>
 <div class="footer"><p><strong>Documentation path:</strong> <a href="https://datastore.bam.de/en/pybis/how-to_guides/installation_and_environment">Wiki</a> · <strong>Language:</strong> EN</p><p><strong>Further reading:</strong> <a href="https://biapol.github.io/blog/mara_lampert/getting_started_with_miniforge_and_python/readme.html">Miniforge tutorial</a> · <a href="https://code.visualstudio.com/docs/python/python-tutorial">VS Code documentation</a> · <a href="https://pypi.org/project/pybis/">pyBIS on PyPI</a></p></div>
 </main></body></html>
