@@ -1,0 +1,6 @@
+Sample_ID,Image_ID,Filename,Magnification,Field_of_View_mm,Surface_Roughness_um,Defect_Count,Average_Defect_Size_um,Image_Type,Notes
+Sample-1,Img-1,Img-1_synthetic_microscopy.png,10,5.0,12.5,2,150,Synthetic example microscopy image,Generated to correspond to prior CSV example dataset
+Sample-1,Img-2,Img-2_synthetic_microscopy.png,20,2.5,11.8,3,120,Synthetic example microscopy image,Generated to correspond to prior CSV example dataset
+Sample-1,Img-3,Img-3_synthetic_microscopy.png,50,1.0,13.2,5,95,Synthetic example microscopy image,Generated to correspond to prior CSV example dataset
+Sample-1,Img-4,Img-4_synthetic_microscopy.png,100,0.5,12.9,7,80,Synthetic example microscopy image,Generated to correspond to prior CSV example dataset
+Sample-1,Img-5,Img-5_synthetic_microscopy.png,200,0.25,13.5,9,60,Synthetic example microscopy image,Generated to correspond to prior CSV example dataset
