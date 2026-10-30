@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Group Activity: From Research Workflow to Data Model</title><style>
+:root {
+      --primary: #003366;
+      --secondary: #1370bc;
+      --text: #222;
+      --muted: #5a6470;
+      --border: #d9e1e8;
+      --bg-soft: #f7f9fc;
+      --note-bg: #f5f8fc;
+      --warning-bg: #fff5f5;
+      --warning-border: #cc0000;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      color: var(--text);
+      background: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+    }
+    
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      margin-bottom: 0.3em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.25rem;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    a {
+      color: var(--secondary);
+    }
+
+    code {
+      padding: 0.1rem 0.3rem;
+      background: #f3f5f7;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      margin: 1rem 0 1.5rem;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 0.65rem;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--primary);
+      background: var(--bg-soft);
+    }
+
+    .lead {
+      color: #2d3a45;
+      font-size: 1.05rem;
+    }
+
+    .toc {
+      margin: 1.5rem 0 2rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .toc ul,
+    ul,
+    ol {
+      margin: 0.5rem 0 1rem;
+      padding-left: 1.35rem;
+    }
+
+    li {
+      margin: 0.3rem 0;
+    }
+
+    .step {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .step h2 {
+      margin-top: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .note,
+    .warning,
+    .instructions {
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+    }
+
+    .note {
+      background: var(--note-bg);
+      border-left: 4px solid var(--primary);
+    }
+
+    .warning {
+      background: var(--warning-bg);
+      border-left: 4px solid var(--warning-border);
+    }
+
+    .instructions {
+      background: #fff9ed;
+      border-left: 4px solid #a06a00;
+    }
+
+    figure {
+      margin: 1rem 0 1.5rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #cfd7df;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .screenshot {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 0.45rem;
+    }
+
+body {
+  counter-reset: figure;
+}
+
+figure {
+  counter-increment: figure;
+}
+
+figcaption::before {
+  content: "Figure " counter(figure) ": ";
+}
+    .download-button {
+      display: inline-block;
+      padding: 12px 20px;
+      color: #fff;
+      background-color: #005a9c;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .download-button:hover {
+      background-color: #004578;
+    }
+
+    .download-button:focus-visible {
+      outline: 3px solid #ffbf47;
+      outline-offset: 3px;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1rem;
+      }
+
+      .step {
+        padding: 1rem;
+      }
+
+
+    }
+
+.comparison-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem 0 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table-wrapper table {
+  width: 100%;
+  min-width: 900px;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.comparison-table-wrapper th,
+.comparison-table-wrapper td {
+  padding: 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--border);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.comparison-table-wrapper th {
+  color: var(--primary);
+  background: var(--bg-soft);
+}
+
+.table caption {
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  font-weight: bold;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--border);
+}
+
+.table th {
+  color: var(--primary);
+  background-color: var(--bg-soft);
+}
+
+.table ol {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.table li {
+  margin: 0 0 0.5rem;
+  padding-left: 0.15rem;
+}
+
+.table li:last-child {
+  margin-bottom: 0;
+}
+
+.table a {
+  overflow-wrap: anywhere;
+}
+
+    .table-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin: 1rem 0 1.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-wrapper table {
+      margin: 0;
+      min-width: 760px;
+    }
+
+    .relationship-model,
+    .workflow-sequence {
+      margin: 1rem 0 1.5rem;
+      padding: 1rem;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .relationship-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 0.6rem 0;
+      text-align: center;
+    }
+
+    .node {
+      padding: 0.55rem 0.8rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .arrow,
+    .workflow-arrow {
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .workflow-sequence {
+      text-align: center;
+    }
+
+    .workflow-sequence p {
+      margin: 0.6rem 0;
+    }
+
+    @media (max-width: 720px) {
+      .relationship-row {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+
+  
+/* Workshop-specific elements using the same tutorial visual language */
+main { width:100%; }
+.subtitle { color:#2d3a45; font-size:1.05rem; }
+.meta { color:var(--muted); margin:0.5rem 0 1rem; font-size:0.95rem; }
+.toolbar { text-align:right; margin-bottom:1rem; }
+.toolbar button { background:#005a9c; color:white; border:0; border-radius:5px; padding:0.7rem 1rem; font:inherit; cursor:pointer; }
+.toolbar button:hover { background:#004578; }
+.toolbar button:focus-visible {outline:3px solid #ffbf47;outline-offset:3px;}
+pre { background:#f3f5f7; padding:1rem; border:1px solid var(--border); border-radius:6px; overflow-x:auto; line-height:1.5; }
+pre code {padding:0; background:transparent; white-space:pre;}
+.note.warning {background:var(--warning-bg); border-left:4px solid var(--warning-border);}
+.checklist { list-style:none; padding-left:0; }
+.checklist li {margin:0.6rem 0;}
+.checklist input {margin-right:0.55rem; accent-color:var(--primary);}
+.footer {margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); color:var(--muted);font-size:0.9rem;}
+@media print { .toolbar {display:none;} .step {break-inside:auto;box-shadow:none;} a {color:var(--primary);} }
+
+
+.pill {display:inline-block;padding:.2rem .65rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:20px;margin:.15rem .3rem .15rem 0;font-size:.9rem;color:var(--primary)}
+.action-row {display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0}
+.action-row a {display:inline-block;padding:.7rem 1rem;border:1px solid var(--border);border-radius:5px;text-decoration:none;font-weight:bold}
+.action-row a.primary {background:#005a9c;color:#fff;border-color:#005a9c}
+.action-row a:hover {text-decoration:underline}
+.small {color:var(--muted);font-size:.93rem}
+.canvas-grid {display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.canvas-box {border:1px solid var(--border);border-radius:8px;padding:1rem;min-height:150px;background:white}
+.canvas-box h3 {margin-top:0}
+.canvas-wide {grid-column:1 / -1}
+.blank {border-bottom:1px dotted #a5b1bd;min-height:1.6rem;margin:.4rem 0}
+@media(max-width:720px){.canvas-grid{grid-template-columns:1fr}.canvas-wide{grid-column:auto}}
+@media print {.action-row,.toc,.back-to-top,.toolbar{display:none!important}body{max-width:none;padding:.25in}.canvas-box{break-inside:avoid}.step{break-inside:avoid}}
+</style></head><body><main id="top"><header><h1>Group Activity: From Research Workflow to Data Model</h1><p class="lead">Map it, question it, model it — a collaborative exercise to prepare an initial openBIS data modelling proposal.</p></header>
+<div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
+<nav class="toc"><strong>Contents</strong><ul><li><a href="#activity">3. Group activity</a></li><li><a href="#organisers">4. Guidance for organisers</a></li><li><a href="#canvas">Research Workflow Canvas</a></li></ul></nav>
+<section class="step" id="activity"><h2>3. Group activity — Map it, question it, model it!</h2>
+<p><span class="pill">35 min group work</span><span class="pill">10 min reporting</span><span class="pill">3-4 people per group</span></p>
+<p>Bring a real research workflow, pitch it to colleagues and collaborate on an initial description that could support <strong>traceability in openBIS</strong>. This is a conceptual modelling activity: no Python or pyBIS is required.</p>
+<h3>Participants</h3><p>Researchers work in groups of 3-4. Each person briefly pitches a workflow, and the group selects one to develop. The workflow owner explains the science; colleagues ask clarifying questions and challenge gaps in traceability.</p>
+<h3>Input — What to bring</h3><ul><li>A real research workflow from your work, even if it is not fully documented.</li><li>Its research goal, main activities, inputs (materials, samples, data) and expected outputs.</li><li>What you currently record, and what is difficult to find or reconstruct later.</li></ul>
+<div class="note"><strong>Preparation question:</strong> “If another researcher had to understand how your result was produced, what information would they need?”</div>
+<h3>Workflow — 35 minutes</h3>
+<table><thead><tr><th>Time</th><th>Step</th><th>What to do</th></tr></thead><tbody>
+<tr><td>5 min</td><td><strong>1. Pitch and choose</strong></td><td>Each participant introduces a workflow and makes a short case for modelling it. Choose one case together.</td></tr>
+<tr><td>10 min</td><td><strong>2. Ask traceability questions</strong></td><td>Interview the workflow owner. Clarify steps, inputs, outputs, identifiers, decisions, instruments, conditions and missing information.</td></tr>
+<tr><td>10 min</td><td><strong>3. Draw the workflow</strong></td><td>Sketch activities and their connections. Mark the objects that should be tracked independently and the relationships needed to trace results to inputs.</td></tr>
+<tr><td>10 min</td><td><strong>4. Reuse or propose</strong></td><td>Consult the BAM object-type catalogue. Identify candidate existing types, possible new types, essential metadata and unresolved questions.</td></tr>
+</tbody></table>
+<h3>Output — One draft per group</h3><ol><li>A workflow diagram showing major steps, inputs, outputs and relationships.</li><li>A list of candidate object types classified as <strong>reuse existing BAM type</strong>, <strong>propose new type</strong> or <strong>needs clarification</strong>.</li><li>Essential metadata properties needed for traceability.</li><li>Open questions and next steps for discussion with the Data Store team.</li></ol>
+<div class="note"><strong>Success criterion:</strong> A clear first draft and meaningful questions — not a finished or approved data model.</div>
+<a class="back-to-top" href="#top">Back to top</a></section>
+<section class="step" id="organisers"><h2>4. Guidance for workshop organisers</h2>
+<h3>Before the activity</h3><ul><li>Ask participants to bring one workflow they can explain briefly.</li><li>Prepare printed A3 canvases or a shared digital whiteboard and provide access to the BAM Masterdata - BAM object-type catalogue.</li><li>Arrange groups of 3–4. Invite each group to choose a facilitator/timekeeper and a note-taker.</li><li>Ensure facilitators know where to find the institutional tools for proposing object types; provide the actual links during the workshop.</li></ul>
+<h3>Guide the 35-minute discussion</h3><p>Keep groups moving through the four timed steps. Encourage peers to ask questions before jumping to technical definitions:</p>
+<ul><li>What triggers the workflow and what is the final research output?</li><li>What should have a unique identifier: instrument, input, sample, material, experiment, measurement, output?</li><li>Can each result be traced to its inputs, conditions and steps done?</li><li>What metadata must be recorded to interpret or reproduce the work?</li><li>Does an existing BAM object type already cover the need?</li><li>What remains unclear and needs the Data Store team's advice?</li></ul>
+<h3>Wrap up in 10 minutes</h3>
+<table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody>
+<tr><td>0–6 min</td><td><strong>Rapid reports:</strong> Each group shares its workflow, one reusable type, one possible new type and one unresolved question (about 2 minutes each for up to three groups).</td></tr>
+<tr><td>6–8 min</td><td><strong>Synthesis:</strong> Highlight recurring modelling challenges, traceability gaps and where reuse may prevent duplicate type definitions.</td></tr>
+<tr><td>8–10 min</td><td><strong>Next steps:</strong> Explain how to refine the canvas and propose object types through the institutional process to the Data Store team.</td></tr>
+</tbody></table>
+<p class="small">With more than three groups, use a gallery walk or ask for one key finding per group instead of full reports.</p>
+<a class="back-to-top" href="#top">Back to top</a></section>
+<section class="step" id="canvas"><h2>Research Workflow Canvas</h2><p>Use this printable A3-friendly template during the activity. It guides groups from research context to workflow mapping, traceability requirements and object-type decisions.</p>
+<div class="action-row"><a class="primary" href="research_workflow_canvas.html" download="research_workflow_canvas.html">Download Research Workflow Canvas (HTML)</a><a href="research_workflow_canvas.html" target="_blank" rel="noopener">Open / print canvas in new tab</a></div>
+<p class="small">The downloaded HTML can be opened in any browser and printed on A3 paper or saved as PDF using the browser's Print command. Keep the three HTML files in the same folder so these links work.</p>
+<a class="back-to-top" href="#top">Back to top</a></section>
+<div class="action-row"><a href="pybis_workshop_overview.html">Workshop description and agenda</a><a href="pybis_workshop_setup.html">Computer setup instructions</a></div>
+<footer class="footer"><p>Beyond the GUI · pyBIS and Data Modelling for Research Workflows · BAM Data Store workshop</p></footer></main></body></html>
