@@ -429,9 +429,51 @@ pre code {padding:0; background:transparent; white-space:pre;}
 
 <section class="step" id="step2"><h2>Step 2: Create pybis environment and install pyBIS package</h2>
   <p>A Python environment keeps the workshop packages together and separate from other Python projects.</p>
-<div class="note"><strong> What is a Python environment?</strong> A Python environment is a separate workspace that contains a specific Python version and the packages needed for your work.</div>
-<p>For this workshop, you will create an environment called pybis. You can continue using it for working with pyBIS package after the workshop.</p>
-<p>Good to know: Different projects may need different Python versions or packages. Creating a separate environment for each project helps prevent conflicts when packages are installed or updated. If an environment stops working, you can recreate it without affecting your other environments.</p>
+<div class="note"><strong> What is a Python environment?</strong> A Python environment is a separate workspace containinga specific Python version and the packages needed for a project, such as pyBIS and Jupyter.
+ <p>
+    <strong>Why is creating an environment good practice?</strong>
+    It keeps the workshop's packages separate from those used
+    in other projects. This helps prevent conflicts between
+    package versions, makes troubleshooting easier and allows
+    you to work on different projects without affecting
+    each other's setup.
+  </p>
+
+  <p>
+    <strong>For this workshop</strong>, a dedicated environment named <strong>pybis</strong> helps everyone
+    work with a consistent Python setup while keeping their
+    existing Python installations and projects unaffected.
+  </p>
+  <p>
+    <strong>After the workshop:</strong>
+    You can continue using this environment to work with pyBIS
+    and manage your own research data in openBIS.
+    You do not need to create a new environment every time
+    you use pyBIS. Simply activate and reuse it.
+  </p>
+  <p>
+    <strong>What if the environment stops working?</strong>
+    Python environments can usually be repaired or recreated.
+    Before creating a new one, try these troubleshooting steps:
+  </p>
+
+  <ol>
+    <li>Check that you have activated the correct Python environment.</li>
+    <li>Check that VS Code or Jupyter is using the correct Python kernel.</li>
+    <li>Check that pyBIS and the required packages are installed
+        in that environment.</li>
+    <li>If necessary, reinstall missing packages or recreate the
+        environment by following the setup instructions.</li>
+  </ol>
+
+  <p>
+    <strong>Remember:</strong>
+    Recreating your Python environment does not affect research
+    data stored in openBIS. Your notebooks and local research
+    files will also remain safe as long as they are saved
+    outside the environment folder.
+  </p></div>
+
 
 <h3>2.1 Install Miniforge3</h3>
 <ol><li>Open the Symantec Software Portal.</li>
@@ -524,14 +566,64 @@ print("pyBIS was imported successfully!")</code></pre>
 
 <div class="note"><strong>Checkpoint:</strong>  Your notebook runs Python code, pyBIS can be imported, and your notebook is saved. You are ready to start working with pyBIS.</div><a class="back-to-top" href="#top">Back to top</a></section>
 
-<section class="step" id="troubleshooting"><h2>Troubleshooting: Common issues</h2>
-<h3>I cannot find Miniforge Prompt</h3><p>Search for <strong>Miniforge Prompt</strong> in the Windows Start menu. If it is missing, check that Miniforge3 finished installing through the Software Portal.</p>
-<h3>My Miniforge Prompt says a command is not recognized</h3><p>If <code>conda</code> is not recognized, make sure you opened <strong>Miniforge Prompt</strong> rather than PowerShell.</p>
-<h3>VS Code cannot find my Python environment</h3><ol><li>Check that the Microsoft Python and Jupyter extensions are installed.</li><li>Restart VS Code and click <strong>Select Kernel → Python Environments</strong>.</li><li>Select the <code>pybis</code> environment.</li></ol>
-<h3>I see “No module named pybis”</h3><p>The notebook may be using the wrong environment. Click <strong>Select Kernel → Python Environments</strong>, choose <code>pybis</code>, and run the test again.  If the error continues, return to Step 2.5 to check that pyBIS was installed.</p>
-<h3>Installation fails because of a network or permission error</h3><p>Check that you are connected to your organization's network or VPN, then retry. If the error persists, contact IT support or the Data Store Team.</p>
-<h3>How to update packages installed in the <code>pybis</code> environment</h3>If you haven't used the pybis environment for a while, you may want to update its installed packages to the latest compatible versions. Open the Miniforge Prompt and run the following commands:
+<section class="step" id="troubleshooting">
+<h2>Troubleshooting: Common issues</h2>
+<p>Start with the five checks below. Use <strong>Miniforge Prompt</strong> for terminal commands, as in Step 2. The workshop environment is named <code>pybis</code>, uses <strong>Python 3.14</strong>, and installs <code>pybis</code> and <code>ipykernel</code> from <code>conda-forge</code>.</p>
+<div class="note"><strong>First identify the problem:</strong> If Python cannot import <code>pybis</code>, or VS Code cannot start the notebook kernel, this is an <strong>installation/environment problem</strong>. If pyBIS imports successfully but you cannot log in to openBIS, this is a <strong>connection or authentication problem</strong>. The installation test in Step 4 does not connect to a server.</div>
+<h3>Self-help check 1 — Open Miniforge Prompt and find your environment</h3>
+<p>Open <strong>Miniforge Prompt</strong> from the Windows Start menu. If it is missing, confirm that Miniforge3 was installed through the Symantec Software Portal (Step 2.1). If <code>conda</code> is not recognised, use Miniforge Prompt rather than a terminal that has not been configured for Conda.</p>
+<pre><code>conda env list</code></pre>
+<p>Look for an environment named <code>pybis</code>. If you see <code>EnvironmentNameNotFound</code> when activating, check the name shown in this list. If <code>pybis</code> is absent, follow <a href="#step2">Step 2</a> to create it.</p>
+<h3>Self-help check 2 — Activate pybis and verify Python</h3>
+<pre><code>conda activate pybis
+python --version
+python -c "import sys; print(sys.executable)"</code></pre>
+<p>The prompt should begin with <code>(pybis)</code>; Python should report <code>3.14</code> (or its patch version), and the displayed executable path should refer to the <code>pybis</code> environment. If not, return to Step 2.4 and activate the correct environment.</p>
+<h3>Self-help check 3 — Select the correct VS Code / Jupyter kernel</h3>
+<p>In your notebook, click <strong>Select Kernel → Python Environments → pybis</strong>, as shown in <a href="#step3">Step 3</a>. Run this in a notebook code cell:</p>
+<pre><code>import sys
+print(sys.executable)</code></pre>
+<p>The path should point to the <code>pybis</code> environment. If the kernel is missing, confirm that the Microsoft Python and Jupyter extensions are installed, then continue to check 4.</p>
+<h3>Self-help check 4 — Verify the required packages</h3>
+<p>In <strong>Miniforge Prompt</strong>, with <code>(pybis)</code> activated, run:</p>
+<pre><code>conda list pybis
+conda list ipykernel
+python -c "import pybis; print('pyBIS import successful')"</code></pre>
+<p>If <code>ModuleNotFoundError: No module named 'pybis'</code> appears, first check the notebook kernel (check 3). If pyBIS or <code>ipykernel</code> is missing from the environment, install the packages using the <strong>same command as Step 2.5</strong>:</p>
+<pre><code>conda install --channel conda-forge pybis ipykernel</code></pre>
+<p>If the notebook cannot start because <code>ipykernel</code> is missing, the same command installs it. Restart the kernel after installation.</p>
+<h3>Self-help check 5 — Check installation errors and test again</h3>
+<p>If Conda reports a network, SSL or permission error, check your organisation's network/VPN connection and retry the command from Step 2.5. Do not disable certificate verification or use administrator privileges as a workaround; ask IT support if the error persists.</p>
+<p>Return to <a href="#step4">Step 4</a> and run the two notebook tests: <code>print("Hello! My Python environment is working.")</code> and <code>import pybis</code>. If both work, your <strong>local installation is ready</strong>.</p>
+<h3>Quick retry 6 — Restart VS Code and the notebook kernel</h3>
+<p>After installing packages or changing kernels, restart the notebook kernel. If necessary, close and reopen VS Code, reopen the notebook, select <strong>pybis</strong> again and repeat the Step 4 tests.</p>
+<h3>Last resort 7 — Recreate the environment</h3>
+<div class="warning"><strong>Last resort:</strong> Only remove the environment after completing checks 1–6. Keep notebooks and local research files <strong>outside</strong> the Conda environment folder. Removing an environment deletes the packages installed inside it. If you added other packages, note them before proceeding.</div>
+<p>In <strong>Miniforge Prompt</strong>, deactivate the environment and remove only the environment named <code>pybis</code>:</p>
+<pre><code>conda deactivate
+conda env remove --name pybis</code></pre>
+<p>Then recreate it with the <strong>exact workshop commands from Step 2</strong>:</p>
+<pre><code>conda create --name pybis --channel conda-forge python=3.14
+conda activate pybis
+conda install --channel conda-forge pybis ipykernel</code></pre>
+<p>Confirm any <code>Proceed ([y]/n)?</code> prompt as described in Step 2. Reopen VS Code, select the new <code>pybis</code> kernel and repeat the Step 4 tests.</p>
+<div class="note"><strong>Your data:</strong> Recreating this environment does not delete research data stored in openBIS. Local notebooks and files saved outside the environment folder are not removed by these commands.</div>
+<h3>Connection problems — pyBIS imports, but openBIS cannot be reached</h3>
+<p><strong>Example:</strong> <code>import pybis</code> succeeds, but a later notebook cell cannot connect or log in to your openBIS server. This is different from a missing-package or kernel problem; <strong>do not recreate the Python environment just because a login fails</strong>.</p>
+<ol>
+<li>Check that the openBIS server address in the workshop notebook is correct.</li>
+<li>Check your network/VPN connection and whether you can access the openBIS web interface in your browser.</li>
+<li>Check your credentials or authentication method without sharing passwords or tokens in screenshots or Teams messages.</li>
+<li>If the web interface also fails, or access is denied, contact the Data Store team or IT support with the error message (redact sensitive details).</li>
+</ol>
+<h3>Updating packages after the workshop</h3>
+<p>If you have not used the environment for a while, you may want to update its installed packages. Updates can change package versions, so <strong>do not update as your first troubleshooting step</strong> immediately before the workshop. Open Miniforge Prompt and run:</p>
 <pre><code>conda update -n pybis --all -c conda-forge</code></pre>
-<section class="step" id="checklist"><h2>Final checklist: Are you ready?</h2><ul class="checklist"><li><label><input type="checkbox"/>VS Code is installed.</label></li><li><label><input type="checkbox"/>The Python extension is installed.</label></li><li><label><input type="checkbox"/>The Jupyter extension is installed.</label></li><li><label><input type="checkbox"/>A Python environment was created with Miniforge3.</label></li><li><label><input type="checkbox"/>pyBIS and ipykernel are installed.</label></li><li><label><input type="checkbox"/>A Jupyter Notebook opens in VS Code.</label></li><li><label><input type="checkbox"/>The correct kernel is selected.</label></li><li><label><input type="checkbox"/>The test code runs and imports pyBIS without errors.</label></li></ul><div class="note"><strong>You're ready for the pyBIS workshop!</strong> If something does not work, do a screenshot of the error message and communicate via the MsTeams we will setting up for this workshop.</div></section>
+<p>After updating, select the <code>pybis</code> kernel and repeat the Step 4 tests. If you still need help, share a screenshot of the error in the workshop Microsoft Teams channel, without including credentials or tokens.</p>
+<a class="back-to-top" href="#top">Back to top</a>
+</section>
+
+
+<section class="step" id="checklist"><h2>Final checklist: Are you ready?</h2><ul class="checklist"><li><label><input type="checkbox"/>VS Code is installed.</label></li><li><label><input type="checkbox"/>The Python extension is installed.</label></li><li><label><input type="checkbox"/>The Jupyter extension is installed.</label></li><li><label><input type="checkbox"/>A Python environment was created with Miniforge3.</label></li><li><label><input type="checkbox"/>pyBIS and ipykernel are installed.</label></li><li><label><input type="checkbox"/>A Jupyter Notebook opens in VS Code.</label></li><li><label><input type="checkbox"/>The correct kernel is selected.</label></li><li><label><input type="checkbox"/>The test code runs and imports pyBIS without errors.</label></li></ul><div class="note"><strong>You're ready for the pyBIS workshop!</strong> If something does not work, do a screenshot of the error message and communicate via the MsTeams set for this workshop.</div></section>
 <div class="footer"><p><strong>Further reading:</strong> <a href="https://biapol.github.io/blog/mara_lampert/getting_started_with_miniforge_and_python/readme.html">Miniforge tutorial</a> · <a href="https://code.visualstudio.com/docs/python/python-tutorial">VS Code documentation</a> · <a href="https://pypi.org/project/pybis/">pyBIS on PyPI</a></p></div>
 </main></body></html>
