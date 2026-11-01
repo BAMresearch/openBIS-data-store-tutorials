@@ -395,7 +395,11 @@ pre code {padding:0; background:transparent; white-space:pre;}
 @media print {.action-row,.toc,.back-to-top,.toolbar{display:none!important}body{max-width:none;padding:.25in}.canvas-box{break-inside:avoid}.step{break-inside:avoid}}
 </style></head><body><main id="top"><header><h1>Beyond the GUI: Hands-On with pyBIS and Data Modelling for Research Workflows</h1><p class="lead">Five-hour user-friendly workshop combining Python-based research data management and collaborative research workflow modelling.</p></header>
 <div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
-<nav class="toc"><strong>Contents</strong><ul><li><a href="#description">1. Workshop description</a></li><li><a href="#agenda">2. Agenda</a></li></ul></nav>
+<nav class="toc"><strong>Contents</strong><ul>
+  <li><a href="#description">1. Workshop description</a></li>
+  <li><a href="#preparation">2. Workshop preparation</a></li>
+  <li><a href="#agenda">3. Agenda</a></li>
+</ul></nav>
 <section class="step" id="description"><h2>1. Workshop description</h2>
 <p>Discover how to manage your research data more efficiently in <strong>openBIS</strong> using Python, and learn how to represent your research workflows in openBIS-Data Store.</p>
 <p>This five-hour workshop combines <strong>hands-on pyBIS (3.5 hours)</strong> with a separate <strong>conceptual data modelling session (1.5 hours)</strong>. The data modelling activity does not require pyBIS.</p>
@@ -410,10 +414,129 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <li>Describe a research workflow in terms of traceable steps, inputs, outputs and relationships.</li>
 <li>Distinguish reusable BAM object types from potential new object-type proposals.</li>
 <li>Understand the institutional workflow for proposing object types to the Data Store team.</li></ul>
-<h3>Before the workshop</h3><p>Follow the <a href="pybis_workshop_setup.html">computer setup instructions</a> and use the workshop <strong>Microsoft Teams channel</strong> for questions and troubleshooting. For the modelling activity, think of one real research workflow you would like to make easier to document and trace.</p>
-<div class="action-row"><a class="primary" href="pybis_workshop_setup.html">Computer setup instructions</a></div>
+</section>
+
+<section class="step" id="preparation">
+  <h2>2. Workshop preparation</h2>
+
+
+<div class="warning">
+  <strong>Highly recommended: Complete the openBIS Lab Notebook tutorial before the workshop!</strong>
+
+  <p>
+    To get the most out of this workshop, we strongly encourage you
+    to complete the
+    <a href="https://bamresearch.github.io/openBIS-data-store-tutorials/lab-notebook/"
+       target="_blank" rel="noopener noreferrer">
+      openBIS Lab Notebook tutorial
+    </a>
+    beforehand.
+  </p>
+
+  <p>
+    Becoming familiar with the openBIS-Data Store graphical user
+    interface (GUI) will help you follow the
+    <strong>hands-on pyBIS exercises</strong> more easily and
+    understand how to go <strong>beyond the GUI</strong>.
+    You will learn to manage your research data more efficiently,
+    automate repetitive tasks and make better use of openBIS
+    for your own research.
+  </p>
+
+  <p>
+    The tutorial will also help you follow the
+    <strong>data modelling section</strong> of the workshop.
+    By exploring how research samples, experiments, metadata
+    and their relationships are represented in openBIS,
+    you will be better prepared to discuss your own research
+    workflow and contribute to the collaborative modelling activity.
+  </p>
+
+  <p>
+    <strong>Good to know:</strong> The tutorial is recommended,
+    not mandatory. The workshop also supports participants
+    who have not completed it.
+  </p>
+</div>
+
+<p>Prepare for both parts of the workshop by completing these two steps:</p>
+
+<ol>
+  <li>
+    <strong>Set up your computer for pyBIS.</strong>
+    Follow the computer setup instructions
+    </a>
+    before the workshop. Use the workshop
+    <strong>Microsoft Teams channel</strong>
+    to ask questions and get help with installation or troubleshooting.
+
+    <div class="action-row">
+      <a class="primary"
+         href="pybis_workshop_setup.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        Open computer setup instructions
+      </a>
+    </div>
+  </li>
+
+  <li>
+    <strong>Bring a research workflow for the data modelling activity.</strong>
+    Think of a real workflow from your research that you would like
+    to document and trace more easily in openBIS.
+
+    Read the
+    <a href="data_modelling_group_activity.html"
+       target="_blank"
+       rel="noopener noreferrer">
+      group activity instructions
+    </a>
+    and start filling in the
+    <a href="research_workflow_canvas.html"
+       target="_blank"
+       rel="noopener noreferrer">
+      Research Workflow Canvas
+    </a>
+    
+    before the workshop.
+
+    You will have an opportunity to
+    <strong>pitch your workflow to colleagues</strong>,
+    explain why it matters and invite them to work with you
+    on a draft data model. Your canvas does not need to be complete.
+
+    <div class="action-row">
+      <a href="data_modelling_group_activity.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read group activity instructions
+      </a>
+
+      <a href="research_workflow_canvas.html"
+         target="_blank"
+         rel="noopener noreferrer">
+        Open Research Workflow Canvas
+      </a>
+
+      <a href="research_workflow_canvas.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="event.preventDefault(); const canvas = window.open(this.href, '_blank'); if (canvas) { canvas.addEventListener('load', () => canvas.print(), { once: true }); }">
+        Print Research Workflow Canvas
+      </a>
+    </div>
+  </li>
+</ol>
+<div class="note">
+  <strong>Preparation tip:</strong>
+  Choose a workflow you can describe in 2–3 minutes:
+  its goal, main steps, inputs, outputs and the information
+  needed to trace results back to their origins.
+</div>
+
 <a class="back-to-top" href="#top">Back to top</a></section>
-<section class="step" id="agenda"><h2>2. Agenda</h2><p><span class="pill">Total: 5 hours</span><span class="pill">pyBIS: 3 h 30 min</span><span class="pill">Data modelling: 1 h 30 min</span></p>
+<section class="step" id="agenda">
+  <h2>3. Agenda</h2><p><span class="pill">Total: 5 hours</span><span class="pill">pyBIS: 3 h 30 min</span><span class="pill">Data modelling: 1 h 30 min</span></p>
 <h3>Part 1 — Hands-on pyBIS (210 minutes)</h3>
 <table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody>
 <tr><td>30 min</td><td>Getting started: Jupyter, pyBIS, connection and training objects</td></tr>

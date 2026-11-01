@@ -395,8 +395,8 @@ pre code {padding:0; background:transparent; white-space:pre;}
 @media print {.action-row,.toc,.back-to-top,.toolbar{display:none!important}body{max-width:none;padding:.25in}.canvas-box{break-inside:avoid}.step{break-inside:avoid}}
 </style></head><body><main id="top"><header><h1>Group Activity: From Research Workflow to Data Model</h1><p class="lead">Map it, question it, model it — a collaborative exercise to prepare an initial openBIS data modelling proposal.</p></header>
 <div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
-<nav class="toc"><strong>Contents</strong><ul><li><a href="#activity">3. Group activity</a></li><li><a href="#organisers">4. Guidance for organisers</a></li><li><a href="#canvas">Research Workflow Canvas</a></li></ul></nav>
-<section class="step" id="activity"><h2>3. Group activity — Map it, question it, model it!</h2>
+<nav class="toc"><strong>Contents</strong><ul><li><a href="#activity">1. Group activity</a></li><li><a href="#organisers">2. Guidance for organisers</a></li><li><a href="#canvas">Research Workflow Canvas</a></li></ul></nav>
+<section class="step" id="activity"><h2>1. Group activity — Map it, question it, model it!</h2>
 <p><span class="pill">35 min group work</span><span class="pill">10 min reporting</span><span class="pill">3-4 people per group</span></p>
 <p>Bring a real research workflow, pitch it to colleagues and collaborate on an initial description that could support <strong>traceability in openBIS</strong>. This is a conceptual modelling activity: no Python or pyBIS is required.</p>
 <h3>Participants</h3><p>Researchers work in groups of 3-4. Each person briefly pitches a workflow, and the group selects one to develop. The workflow owner explains the science; colleagues ask clarifying questions and challenge gaps in traceability.</p>
@@ -407,12 +407,33 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <tr><td>5 min</td><td><strong>1. Pitch and choose</strong></td><td>Each participant introduces a workflow and makes a short case for modelling it. Choose one case together.</td></tr>
 <tr><td>10 min</td><td><strong>2. Ask traceability questions</strong></td><td>Interview the workflow owner. Clarify steps, inputs, outputs, identifiers, decisions, instruments, conditions and missing information.</td></tr>
 <tr><td>10 min</td><td><strong>3. Draw the workflow</strong></td><td>Sketch activities and their connections. Mark the objects that should be tracked independently and the relationships needed to trace results to inputs.</td></tr>
-<tr><td>10 min</td><td><strong>4. Reuse or propose</strong></td><td>Consult the BAM object-type catalogue. Identify candidate existing types, possible new types, essential metadata and unresolved questions.</td></tr>
+<tr><td>10 min</td><td><strong>4. Reuse or propose</strong></td><td>Consult the BAM Masterdata to find existing object types. Identify candidate existing types, possible new types, essential metadata and unresolved questions.</td></tr>
 </tbody></table>
 <h3>Output — One draft per group</h3><ol><li>A workflow diagram showing major steps, inputs, outputs and relationships.</li><li>A list of candidate object types classified as <strong>reuse existing BAM type</strong>, <strong>propose new type</strong> or <strong>needs clarification</strong>.</li><li>Essential metadata properties needed for traceability.</li><li>Open questions and next steps for discussion with the Data Store team.</li></ol>
 <div class="note"><strong>Success criterion:</strong> A clear first draft and meaningful questions — not a finished or approved data model.</div>
 <a class="back-to-top" href="#top">Back to top</a></section>
-<section class="step" id="organisers"><h2>4. Guidance for workshop organisers</h2>
+<section class="step" id="organisers"><h2>2. Guidance for workshop organisers</h2>
+  <div class="note">
+  <strong>Purpose of this guide:</strong>
+  This guidance supports researchers in organising a small-group
+  activity with their colleagues and collaboratively develop a
+  <strong>conceptual data model</strong> for representing their
+  research data and workflows in openBIS-Data Store.
+
+  The aim is to discuss which research objects, metadata and
+  relationships are needed to make data and results <strong>findable, accessible, interoperable and
+  reusable (FAIR)</strong> and <strong>traceable in openBIS</strong>—not to configure the
+  system during the activity.
+
+  A shared conceptual model is an important first step before
+  technical implementation: it helps the team agree on what
+  should be documented, identify practical benefits for their
+  research, and build motivation to integrate openBIS into
+  everyday research routines.
+
+  The data model draft can then be refined with the Data Store team
+  before implementation.
+</div>
 <h3>Before the activity</h3><ul><li>Ask participants to bring one workflow they can explain briefly.</li><li>Prepare printed A3 canvases or a shared digital whiteboard and provide access to the BAM Masterdata - BAM object-type catalogue.</li><li>Arrange groups of 3–4. Invite each group to choose a facilitator/timekeeper and a note-taker.</li><li>Ensure facilitators know where to find the institutional tools for proposing object types; provide the actual links during the workshop.</li></ul>
 <h3>Guide the 35-minute discussion</h3><p>Keep groups moving through the four timed steps. Encourage peers to ask questions before jumping to technical definitions:</p>
 <ul><li>What triggers the workflow and what is the final research output?</li><li>What should have a unique identifier: instrument, input, sample, material, experiment, measurement, output?</li><li>Can each result be traced to its inputs, conditions and steps done?</li><li>What metadata must be recorded to interpret or reproduce the work?</li><li>Does an existing BAM object type already cover the need?</li><li>What remains unclear and needs the Data Store team's advice?</li></ul>
@@ -428,5 +449,5 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <div class="action-row"><a class="primary" href="research_workflow_canvas.html" download="research_workflow_canvas.html">Download Research Workflow Canvas (HTML)</a><a href="research_workflow_canvas.html" target="_blank" rel="noopener">Open / print canvas in new tab</a></div>
 <p class="small">The downloaded HTML can be opened in any browser and printed on A3 paper or saved as PDF using the browser's Print command. Keep the three HTML files in the same folder so these links work.</p>
 <a class="back-to-top" href="#top">Back to top</a></section>
-<div class="action-row"><a href="pybis_workshop_overview.html">Workshop description and agenda</a><a href="pybis_workshop_setup.html">Computer setup instructions</a></div>
+<div class="action-row"><a href="pybis_workshop_overview.html">Workshop description and agenda</a></div>
 <footer class="footer"><p>Beyond the GUI · pyBIS and Data Modelling for Research Workflows · BAM Data Store workshop</p></footer></main></body></html>
