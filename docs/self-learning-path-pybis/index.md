@@ -2,7 +2,7 @@
 
 This learning path introduces **pyBIS**, the Python API for openBIS, and explores programmatic data management.
 
-> **Work in progress:** This learning path is currently under development. Its first resource is the introductory **pyBIS Level 0 workshop**, prepared for the **Data Store Days at BAM (11–13 November 2026)**. Additional materials may be added over time.
+> **Work in progress:** This learning path is currently under development. Its first resource is the introductory **pyBIS Level 0 workshop**, prepared for the **Data Store Days at BAM (11–13 November 2026)**. Additional materials will be added over time.
 
 ## Workshop: pyBIS Level 0
 
@@ -32,8 +32,6 @@ Completing the [Lab Notebook tutorial](https://bamresearch.github.io/openBIS-dat
 
 Follow the [computer setup guide](workshop-pybis-level0/pybis_workshop_setup.html) to prepare your Python environment, and bring a research workflow you can discuss during the group activity.
 
-## Browse the workshop
+## Link to the repository-README
 
-See the [pyBIS Level 0 workshop folder](workshop-pybis-level0/) for all available materials.
-
-[Back to the repository README](../../README.md).
+[Back to the repository README](https://github.com/BAMresearch/openBIS-data-store-tutorials#readme).
