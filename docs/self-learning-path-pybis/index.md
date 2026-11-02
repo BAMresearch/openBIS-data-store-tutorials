@@ -1,16 +1,10 @@
-# Self-learning path: pyBIS
+# Beyond the GUI: Hands-On with pyBIS and Data Modelling for Research Workflows
 
-This learning path introduces **pyBIS**, the Python API for openBIS, and explores programmatic data management.
+> This workshop has been prepared for the **Data Store Days at BAM (11–13 November 2026)** and is the first module of the **pyBIS-self-learning path**. It introduces participants to **pyBIS**, the Python API for openBIS and explores programmatic data management.
 
-> **Work in progress:** This learning path is currently under development. Its first resource is the introductory **pyBIS Level 0 workshop**, prepared for the **Data Store Days at BAM (11–13 November 2026)**. Additional materials will be added over time.
+This introductory workshop is intended for researchers interested in working with the openBIS-Data Store using Python and exploring data modelling for research workflows. **No prior Python experience is required.** 
 
-## Workshop: pyBIS Level 0
-
-**Beyond the GUI: Hands-On with pyBIS and Data Modelling for Research Workflows**
-
-This five-hour introductory workshop is intended for researchers interested in working with the openBIS Data Store using Python and thinking through how their research workflows can be represented in openBIS. **No prior Python experience is required.**
-
-The workshop has two complementary parts:
+The workshop has two separate parts:
 
 1. **Hands-on pyBIS (3.5 hours):** Follow a guided Jupyter Notebook to connect to openBIS, retrieve and filter research objects, modify metadata, automate data uploads, and export information.
 2. **Conceptual data modelling (1.5 hours):** Explore how research workflows, objects, metadata, and relationships can be represented in openBIS. In small groups, develop an initial modelling proposal based on a research workflow, considering existing BAM object types and potential new types.
