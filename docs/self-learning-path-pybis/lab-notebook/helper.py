@@ -1,5 +1,6 @@
 import re#needed for the search collection function
 #this is for code generation for experiments
+
 def auto_generated_code(prj = None):#it is imperative that you choose the right project for your experiment, otherwise the code will not be generated correctly
     if prj is None:
         raise ValueError("Project cannot be None")
