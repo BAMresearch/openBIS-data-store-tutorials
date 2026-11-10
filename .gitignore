@@ -1,1 +1,3 @@
 **/images/Thumbs.db
+# Ignore Windows thumbnail cache files
+Thumbs.db
