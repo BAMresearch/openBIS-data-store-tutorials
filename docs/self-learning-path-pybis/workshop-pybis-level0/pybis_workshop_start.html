@@ -395,6 +395,7 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <div class="toolbar"><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
 <div class="note"><strong>Today's goal:</strong> Open the provided exercise notebook, choose the correct Python environment and run its Step 0 checks. <strong>Stop before Part A</strong> and wait for the instructor.</div>
 <nav class="toc" aria-label="On this page"><strong>Steps</strong><ol>
+<li><a href="#step1">Download and extract the workshop files</a></li>  
 <li><a href="#step1">Find and extract the workshop files</a></li>
 <li><a href="#step2">Open the exercise notebook in VS Code</a></li>
 <li><a href="#step3">Select the pybis kernel</a></li>
@@ -402,18 +403,34 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <li><a href="#step5">Confirm you are ready</a></li>
 <li><a href="#help">If something does not work</a></li>
 </ol></nav>
-<section class="step" id="step1"><h2>Step 1: Find and extract the workshop files</h2>
-<ol><li>Locate the workshop ZIP file provided on your computer's <strong>C: drive</strong>.</li>
-<li>In Windows File Explorer, right-click the ZIP file and choose <strong>Extract All…</strong>.</li>
-<li>Open the extracted folder. Find <code>pybis_workshop_exercises.ipynb</code> and the <code>datasets</code> folder.</li>
-<li>Keep the notebook and <code>datasets</code> folder in their supplied folder structure. Do not move individual files out of the extracted folder.</li></ol>
+<section class="step" id="step1"><h2>Step 1: Download the Workshop Materials</h2>
+
+  <p>
+    Download the complete workshop package before starting
+    the exercises. It contains the Jupyter Notebook, the
+    Python helper.py file, and all required datasets.
+  </p>
+  <p><a class="download-button" href="https://raw.githubusercontent.com/BAMresearch/openBIS-data-store-tutorials/main/docs/self-learning-path-pybis/workshop-pybis-level0/pybis-workshop-level0.zip" download>Download workshop Materials ZIP file</a></p>
+
+  <ol>
+<li>Click <strong>Download workshop ZIP file</strong> above to download the workshop materials.</li>
+<li>Open <strong>Windows File Explorer</strong> and locate the downloaded ZIP file (usually in your <strong>Downloads</strong> folder).</li>
+<li>Right-click the ZIP file and select <strong>Extract All…</strong>. Follow the prompts to extract the files.</li>
+<li>Open the extracted folder and check that it contains <code>pybis_workshop_exercises.ipynb</code> and the <code>datasets</code> folder.</li>
+<li>Keep the notebook and <code>datasets</code> folder in their original folder structure. Do not move individual files out of the extracted folder.</li>
+</ol>
+</section>
+
 <div class="note"><strong>Checkpoint:</strong> You can see the exercise notebook and datasets in the extracted workshop folder.</div>
 <a class="back-to-top" href="#top">Back to top</a></section>
 <section class="step" id="step2"><h2>Step 2: Open the exercise notebook in VS Code</h2>
 <ol><li>Open <strong>Visual Studio Code (VS Code)</strong>.</li>
 <li>Choose <strong>File → Open Folder…</strong> and select the <strong>extracted workshop folder</strong>.</li>
-<li>In the Explorer sidebar on the left, click <code>pybis_workshop_exercises.ipynb</code>.</li>
-<li>If VS Code asks whether you trust the folder, confirm only if it is the workshop folder supplied by the organisers.</li></ol>
+<li>Click the Explorer icon at the top of the left sidebar in VS Code, then click <strong>Open Folder</strong>. Navigate to the folder containing <code>pybis_workshop_exercises.ipynb</code> and click <strong>Select Folder</strong> at the bottom of the window.</li>
+<li>If VS Code asks whether you trust the folder, confirm only if it is the workshop folder supplied by the organisers.</li>
+<li>In the <strong>Explorer</strong> sidebar, click <code>pybis_workshop_exercises.ipynb</code> to open the notebook.</li>
+</ol>
+
 <div class="note"><strong>Checkpoint:</strong> The provided notebook is open in VS Code. You should see its introduction and the heading <strong>Step 0 - Check your workshop environment</strong> further down.</div>
 <a class="back-to-top" href="#top">Back to top</a></section>
 <section class="step" id="step3"><h2>Step 3: Select the <code>pybis</code> kernel</h2>
@@ -435,7 +452,7 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <section class="step" id="step5"><h2>Step 5: Confirm you are ready</h2>
 <p>Tick each item when it is complete:</p>
 <ul class="checklist">
-<li><label><input type="checkbox"> The workshop ZIP is extracted, and the notebook and <code>datasets</code> folder are present.</label></li>
+<li><label><input type="checkbox"> The workshop ZIP is extracted, and the notebook and <code>datasets</code> folder and the <code>helper.py</code> are present.</label></li>
 <li><label><input type="checkbox"> <code>pybis_workshop_exercises.ipynb</code> is open in VS Code.</label></li>
 <li><label><input type="checkbox"> The selected notebook kernel is <code>pybis</code>.</label></li>
 <li><label><input type="checkbox"> Step 0 shows <code>Environment check passed.</code></label></li>
@@ -444,6 +461,8 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <div class="note"><strong>Ready!</strong> Stop at <strong>Part A — Connect and prepare</strong> and wait for the instructor. The notebook will guide you through connecting to the BAM Data Store Playground and selecting your assigned Space.</div>
 <a class="back-to-top" href="#top">Back to top</a></section>
 <section class="step" id="help"><h2>If something does not work</h2>
+  <h3>I cannot find the downloaded ZIP file</h3>
+<p>Check your browser's downloads list or the <strong>Downloads</strong> folder in Windows File Explorer. If the download did not complete, return to <a href="#step1">Step 1</a> and try again.</p>
 <h3>I cannot see the <code>pybis</code> kernel</h3>
 <p>Check that the Microsoft <strong>Python</strong> and <strong>Jupyter</strong> extensions are installed in VS Code. Close and reopen VS Code, then try <strong>Select Kernel → Python Environments</strong> again.</p>
 <h3>Step 0 reports the wrong environment</h3>
