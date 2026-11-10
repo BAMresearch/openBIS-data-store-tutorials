@@ -1,5 +1,25 @@
+from pybis.pybis import Spreadsheet # for creating spreadsheets in the lab notebook
 import re#needed for the search collection function
-#this is for code generation for experiments
+
+# this function returns a spreadsheet to be used during the registration of objects that require a spreadsheet
+def create_spreadsheet():
+    table = [
+        ["Component", "c [mol/L]", "MW [g/mol]", "c [g/L]", "Vol [L]", "m [g]", "", "", "", ""],
+        ["Component A", 0.348, 192, 66.816, 0.3, 20.0448, "", "", "", ""],
+    ]
+
+    spreadsheet = Spreadsheet(columns=len(table[0]), rows=len(table))
+
+    for row_number, row in enumerate(table, start=1):
+        for column_number, value in enumerate(row, start=1):
+            spreadsheet.cell(column_number, row_number).formula = value
+    
+    return spreadsheet
+
+
+
+
+#this function is for code generation for experiments
 
 def auto_generated_code(prj = None):#it is imperative that you choose the right project for your experiment, otherwise the code will not be generated correctly
     if prj is None:
