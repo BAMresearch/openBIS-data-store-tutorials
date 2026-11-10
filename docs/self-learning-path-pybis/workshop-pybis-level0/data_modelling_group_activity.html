@@ -397,17 +397,17 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
 <nav class="toc"><strong>Contents</strong><ul><li><a href="#activity">1. Group activity</a></li><li><a href="#organisers">2. Guidance for organisers</a></li><li><a href="#canvas">Research Workflow Canvas</a></li></ul></nav>
 <section class="step" id="activity"><h2>1. Group activity — Map it, question it, model it!</h2>
-<p><span class="pill">35 min group work</span><span class="pill">10 min reporting</span><span class="pill">3-4 people per group</span></p>
+<p><span class="pill">50 min group work</span><span class="pill"> 20 min reporting</span><span class="pill">3-4 people per group</span></p>
 <p>Bring a real research workflow, pitch it to colleagues and collaborate on an initial description that could support <strong>traceability in openBIS</strong>. This is a conceptual modelling activity: no Python or pyBIS is required.</p>
 <h3>Participants</h3><p>Researchers work in groups of 3-4. Each person briefly pitches a workflow, and the group selects one to develop. The workflow owner explains the science; colleagues ask clarifying questions and challenge gaps in traceability.</p>
 <h3>Input — What to bring</h3><ul><li>A real research workflow from your work, even if it is not fully documented.</li><li>Its research goal, main activities, inputs (materials, samples, data) and expected outputs.</li><li>What you currently record, and what is difficult to find or reconstruct later.</li></ul>
 <div class="note"><strong>Preparation question:</strong> “If another researcher had to understand how your result was produced, what information would they need?”</div>
-<h3>Workflow — 35 minutes</h3>
+<h3>Workflow — 50 minutes</h3>
 <table><thead><tr><th>Time</th><th>Step</th><th>What to do</th></tr></thead><tbody>
-<tr><td>5 min</td><td><strong>1. Pitch and choose</strong></td><td>Each participant introduces a workflow and makes a short case for modelling it. Choose one case together.</td></tr>
-<tr><td>10 min</td><td><strong>2. Ask traceability questions</strong></td><td>Interview the workflow owner. Clarify steps, inputs, outputs, identifiers, decisions, instruments, conditions and missing information.</td></tr>
-<tr><td>10 min</td><td><strong>3. Draw the workflow</strong></td><td>Sketch activities and their connections. Mark the objects that should be tracked independently and the relationships needed to trace results to inputs.</td></tr>
-<tr><td>10 min</td><td><strong>4. Reuse or propose</strong></td><td>Consult the BAM Masterdata to find existing object types. Identify candidate existing types, possible new types, essential metadata and unresolved questions.</td></tr>
+<tr><td>8 min</td><td><strong>1. Pitch and choose</strong></td><td>Each participant introduces a workflow and makes a short case for modelling it. Choose one case together.</td></tr>
+<tr><td>12 min</td><td><strong>2. Ask traceability questions</strong></td><td>Interview the workflow owner. Clarify steps, inputs, outputs, identifiers, decisions, instruments, conditions and missing information.</td></tr>
+<tr><td>15 min</td><td><strong>3. Draw the workflow</strong></td><td>Sketch activities and their connections. Mark the objects that should be tracked independently and the relationships needed to trace results to inputs.</td></tr>
+<tr><td>15 min</td><td><strong>4. Reuse or propose</strong></td><td>Consult the BAM Masterdata to find existing object types. Identify candidate existing types, possible new types, essential metadata and unresolved questions.</td></tr>
 </tbody></table>
 <h3>Output — One draft per group</h3><ol><li>A workflow diagram showing major steps, inputs, outputs and relationships.</li><li>A list of candidate object types classified as <strong>reuse existing BAM type</strong>, <strong>propose new type</strong> or <strong>needs clarification</strong>.</li><li>Essential metadata properties needed for traceability.</li><li>Open questions and next steps for discussion with the Data Store team.</li></ol>
 <div class="note"><strong>Success criterion:</strong> A clear first draft and meaningful questions — not a finished or approved data model.</div>
@@ -435,19 +435,49 @@ pre code {padding:0; background:transparent; white-space:pre;}
   before implementation.
 </div>
 <h3>Before the activity</h3><ul><li>Ask participants to bring one workflow they can explain briefly.</li><li>Prepare printed A3 canvases or a shared digital whiteboard and provide access to the BAM Masterdata - BAM object-type catalogue.</li><li>Arrange groups of 3–4. Invite each group to choose a facilitator/timekeeper and a note-taker.</li><li>Ensure facilitators know where to find the institutional tools for proposing object types; provide the actual links during the workshop.</li></ul>
-<h3>Guide the 35-minute discussion</h3><p>Keep groups moving through the four timed steps. Encourage peers to ask questions before jumping to technical definitions:</p>
+<h3>Guide the 50-minute discussion</h3><p>Keep groups moving through the four timed steps. Encourage peers to ask questions before jumping to technical definitions:</p>
 <ul><li>What triggers the workflow and what is the final research output?</li><li>What should have a unique identifier: instrument, input, sample, material, experiment, measurement, output?</li><li>Can each result be traced to its inputs, conditions and steps done?</li><li>What metadata must be recorded to interpret or reproduce the work?</li><li>Does an existing BAM object type already cover the need?</li><li>What remains unclear and needs the Data Store team's advice?</li></ul>
-<h3>Wrap up in 10 minutes</h3>
+<h3>Wrap up in 20 minutes</h3>
 <table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody>
 <tr><td>0–6 min</td><td><strong>Rapid reports:</strong> Each group shares its workflow, one reusable type, one possible new type and one unresolved question (about 2 minutes each for up to three groups).</td></tr>
-<tr><td>6–8 min</td><td><strong>Synthesis:</strong> Highlight recurring modelling challenges, traceability gaps and where reuse may prevent duplicate type definitions.</td></tr>
-<tr><td>8–10 min</td><td><strong>Next steps:</strong> Explain how to refine the canvas and propose object types through the institutional process to the Data Store team.</td></tr>
+<tr><td>7-13 min</td><td><strong>Synthesis:</strong> Highlight recurring modelling challenges, traceability gaps and where reuse may prevent duplicate type definitions.</td></tr>
+<tr><td>14–20 min</td><td><strong>Next steps:</strong> Explain how to refine the canvas and propose object types through the institutional process to the Data Store team.</td></tr>
 </tbody></table>
 <p class="small">With more than three groups, use a gallery walk or ask for one key finding per group instead of full reports.</p>
 <a class="back-to-top" href="#top">Back to top</a></section>
 <section class="step" id="canvas"><h2>Research Workflow Canvas</h2><p>Use this printable A3-friendly template during the activity. It guides groups from research context to workflow mapping, traceability requirements and object-type decisions.</p>
-<div class="action-row"><a class="primary" href="research_workflow_canvas.html" download="research_workflow_canvas.html">Download Research Workflow Canvas (HTML)</a><a href="research_workflow_canvas.html" target="_blank" rel="noopener">Open / print canvas in new tab</a></div>
-<p class="small">The downloaded HTML can be opened in any browser and printed on A3 paper or saved as PDF using the browser's Print command. Keep the three HTML files in the same folder so these links work.</p>
-<a class="back-to-top" href="#top">Back to top</a></section>
-<div class="action-row"><a href="pybis_workshop_overview.html">Workshop description and agenda</a></div>
+
+<div class="action-row">
+  <a class="primary"
+     href="research_workflow_canvas.html"
+     download="research_workflow_canvas.html">
+    Download Research Workflow Canvas (HTML)
+  </a>
+
+  <a class="primary"
+     href="research_workflow_canvas.html"
+     target="_blank"
+     rel="noopener noreferrer">
+    Open / print canvas in new tab
+  </a>
+</div>
+
+<p class="small">
+  The downloaded HTML can be opened in any browser
+  and printed on A3 paper or saved as PDF using the
+  browser's Print command. Keep the three HTML files
+  in the same folder so these links work.
+</p>
+
+<a class="back-to-top" href="#top">Back to top</a>
+</section>
+
+<div class="action-row">
+  <a class="primary"
+     href="pybis_workshop_overview.html">
+    Workshop description and agenda
+  </a>
+</div>
+
+
 <footer class="footer"><p>Beyond the GUI · pyBIS and Data Modelling for Research Workflows · BAM Data Store workshop</p></footer></main></body></html>
