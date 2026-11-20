@@ -395,6 +395,7 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <ul><li><strong>Python:</strong> the programming language used in the workshop.
 </li><li><strong>pyBIS:</strong> a Python package for communicating with openBIS.
 </li><li><strong>Miniforge3:</strong> a minimal installer for conda, which is used here to create and manage the isolated Python environment and install workshop packages.
+</li><li><strong>uv:</strong> a modern Python package and environment manager.
 </li><li><strong>Visual Studio Code (VS Code):</strong> an application for writing and running code.</li>
 <li><strong>Jupyter Notebook:</strong> an interactive document where you can write and run Python code one cell at a time.</li>
 <li><strong>Python environment:</strong> a separate workspace containing a Python version and the packages needed for the workshop.</li></ul>
@@ -402,7 +403,12 @@ pre code {padding:0; background:transparent; white-space:pre;}
 <div class="note"><strong>Installation of Python with Miniforge3.</strong></div>
 <nav class="toc"><strong>Contents</strong><ul>
   <li><a href="#step1">Step 1: Install Visual Studio Code</a></li>
-  <li><a href="#step2">Step 2: Create pybis environment and install pyBIS package</a></li>
+  <li><a href="#step2">Step 2: Create pybis environment and install pyBIS package</a>
+    <ul>
+      <li><a href="#step2a">Option A: Installation with <strong>Miniforge3</strong></a></li>
+      <li><a href="#step2b">Option B: Installation with <strong>uv</strong></a></li>
+    </ul>
+  </li>
   <li><a href="#step3">Step 3: Open a Jupyter Notebook and select the pybis environment</a></li>
   <li><a href="#step4">Step 4: Test your pyBIS installation</a></li>
   <li><a href="#troubleshooting">Troubleshooting: Common issues</a></li>
@@ -475,20 +481,26 @@ pre code {padding:0; background:transparent; white-space:pre;}
   </p></div>
 
 
-<h3>2.1 Install Miniforge3</h3>
+<h3>Choose to install either Miniforge3 or uv</h3>
+
+<p> recommendations</p>
+<a class="back-to-top" href="#top">Back to top</a></section>
+
+<section class="step" id="step2a"><h2>Option A: Installation with Miniforge3</h2>
+  <h3>2.1a Install Miniforge3</h3>
 <ol><li>Open the Symantec Software Portal.</li>
   <li>Search for <strong>Miniforge</strong>.</li>
   <li>Install Miniforge3 and wait until installation is complete.</li></ol>
 <figure><img alt="Miniforge3 in the Software Portal" loading="lazy" src="images/step2-miniforge.png"/><figcaption>Miniforge3 in the Software Portal.</figcaption></figure>
 
-<h3>2.2 Open Miniforge Prompt</h3><ol><li>Click the Windows Start button.</li><li>Search for <strong>Miniforge Prompt</strong> and open it.</li></ol>
+<h3>2.2a Open Miniforge Prompt</h3><ol><li>Click the Windows Start button.</li><li>Search for <strong>Miniforge Prompt</strong> and open it.</li></ol>
 
  <figure><img alt="Miniforge Prompt app" loading="lazy" src="images/step2-miniforge-prompt-app.png"/><figcaption>Open Miniforge Prompt.</figcaption></figure> 
 
 <div class="note">
   <strong>How to use Miniforge Prompt?</strong>
   <p>
-    Miniforge Prompt is a s a window where you type commands to tell your computer what to do. You will use it to create a Python environment and install packages.
+    Miniforge Prompt is a window where you type commands to tell your computer what to do. You will use it to create a Python environment and install packages.
   </p>
   <p>
     For each command below, copy the text from the code box, paste
@@ -497,7 +509,7 @@ pre code {padding:0; background:transparent; white-space:pre;}
   </p>
 </div>
 
-<h3>2.3 Create the pybis environment</h3><ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter:</li>
+<h3>2.3a Create the pybis environment</h3><ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter.</li>
 <pre><code>conda create --name pybis --channel conda-forge python=3.14</code></pre></ol>
 This creates an environment named <code>pybis</code> with Python 3.14. <code>conda-forge</code> is the package repository to obtain the software.
 
@@ -505,17 +517,59 @@ This creates an environment named <code>pybis</code> with Python 3.14. <code>con
 
 <p>If the Miniforge Prompt asks <code>Proceed ([y]/n)?</code>, type <code>y</code> and press <strong>Enter</strong>.</p><figure><img alt="Confirm installation of the packages" loading="lazy" src="images/step2-miniforge-prompt-proceed.png"/><figcaption>Confirm installation of the packages.</figcaption></figure>
 
-<h3>2.4 Activate the environment</h3>
+<h3>2.4a Activate the environment</h3>
 <ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter:</li></ol>
 <pre><code>conda activate pybis</code></pre>
 <p>You should see <code>(pybis)</code> at the beginning of the command line, for example <code>(pybis) C:\Users\yourusername&gt;</code>.  This indicates that the environment is activate in Miniforge Prompt.</p>
 <figure><img alt="Activated pybis environment" loading="lazy" src="images/step2-miniforge-prompt-activated.png"/><figcaption>Activated pybis environment.</figcaption></figure>
 
-<h3>2.5 Install pyBIS and prepare the environment for Jupyter Notebooks</h3>
+<h3>2.5a Install pyBIS and prepare the environment for Jupyter Notebooks</h3>
 <ol><li>Copy the command below, paste it into the Miniforge Prompt, and press Enter.</li></ol>
 <pre><code>conda install --channel conda-forge pybis ipykernel</code></pre>
 <p>The <code>pyBIS</code> package lets Python communicate with openBIS. The <code>ipykernel</code> allows Jupyter Notebooks to run Python code using this environment.</p><figure><img alt="Installing pybis and ipykernel" loading="lazy" src="images/step2-miniforge-prompt-pybis-ipykernel.png"/><figcaption>Installing pyBIS and ipykernel.</figcaption></figure>
 <div class="note"><strong>Checkpoint:</strong> The <code>pybis</code> environment is ready. Close Miniforge Prompt and continue to <a href="#step3">Step 3</a>.</div>
+
+<a class="back-to-top" href="#top">Back to top</a></section>
+
+
+<section class="step" id="step2b"><h2>Option B: Installation with uv</h2>
+  <h3>2.1b Install uv</h3>
+<ol><li>Open the Symantec Software Portal.</li>
+  <li>Search for <strong>uv</strong>.</li>
+  <li>Install uv and wait until installation is complete.</li></ol>
+<figure><img alt="uv in the Software Portal" loading="lazy" src="images/step2-uv.png"/><figcaption>uv in the Software Portal.</figcaption></figure>
+
+<h3>2.2b Open Windows PowerShell</h3><ol><li>Click the Windows Start button.</li><li>Search for <strong>Windows PowerShell</strong> and open it.</li></ol>
+
+ <figure><img alt="Windows PowerShell" loading="lazy" src="images/step2-windows-powershell.png"/><figcaption>Open Windows PowerShell.</figcaption></figure>
+
+ <ol start ="3"><li> Verify the installation by checking the version. Copy and paste the command below into the PowerShell window and press Enter.</li></ol>
+ <pre><code>uv --version</code></pre>
+
+ <figure><img alt="uv version" loading="lazy" src="images/step2-uv-version.png"/><figcaption>Check the uv version.</figcaption></figure>
+
+ <ol start ="4"><li>Navigate to the directory where you want to work during the workshop or create a new one.</li></ol>
+ <pre><code>cd "C:\path\to\your\folder"</code></pre>
+<p>or</p>
+<pre><code>mkdir pybis-workshop
+cd pybis-workshop</code></pre>
+<figure><img alt="Create a new one and navigate to it" loading="lazy" src="images/step2-navigate-directory.png"/><figcaption>Create a new one and navigate to it.</figcaption></figure>
+
+<h3>2.3b Create the pybis environment</h3>
+<ol><li>Copy and paste the command below to create the pybis environment.</li>
+<pre><code>uv venv pybis --python 3.14</code></pre></ol>
+<p>By executing this command, a virtual environment named <code>pybis</code> with Python 3.14 will be created.</p>
+
+<figure><img alt="Creating pybis environment in the Windows PowerShell" loading="lazy" src="images/step2-uv-pybis-env.png"/><figcaption>Creating <code>pybis</code> environment in the Windows PowerShell.</figcaption></figure>
+<h3>2.4b Install pyBIS and prepare the environment for Jupyter Notebooks by installing ipykernel</h3>
+<ol><li>Copy and paste the command below, and install the packages in the <code>pybis</code> environment.</li></ol>
+<pre><code>uv pip install --python .\pybis\Scripts\python.exe pybis ipykernel</code></pre>
+
+<figure><img alt="Installing pybis and ipykernel" loading="lazy" src="images/step2-uv-install-pybis-ipykernel.png"/><figcaption>Installing pyBIS and ipykernel.</figcaption></figure>
+<div class="note"><strong>Checkpoint:</strong> The <code>pybis</code> environment is ready. Close Windows PowerShell and continue to <a href="#step3">Step 3</a>.</div>
+
+
+
 <a class="back-to-top" href="#top">Back to top</a></section>
 
 <section class="step" id="step3"><h2>Step 3: Open a Jupyter Notebook and select the pybis environment</h2>
@@ -535,7 +589,12 @@ This creates an environment named <code>pybis</code> with Python 3.14. <code>con
 <ol start="2"><li>Choose <strong>Python Environments</strong>.</li></ol>
 <figure><img alt="Python Environments" loading="lazy" src="images/step3-vs-code-jupyter-notebook-python-environments.png"/><figcaption> Choose Python Environments.</figcaption></figure>
 <ol start="3"><li>Select the <code>pybis</code> environment you created in Step 2.</li></ol>
-<figure><img alt="Select the <code>pybis</code> environment " loading="lazy" src="images/step3-vs-code-jupyter-notebook-pybis-env.png"/><figcaption>Select the <code>pybis</code> environment.</figcaption></figure>
+<figure><img alt="Select the <code>pybis</code> environment " loading="lazy" src="images/step3-vs-code-jupyter-notebook-pybis-env-miniforge.png"/><figcaption>Select the <code>pybis</code> environment.</figcaption></figure>
+
+<p>Depending on the installation method, the paths may differ slightly. For Miniforge3, the path is usually <code>C:\Miniforge3\envs\pybis\python.exe</code>. For uv, the path is usually <code>.\path\to\your\folder\pybis\Scripts\python.exe</code>.</p>
+
+<figure><img alt="pybis environment with uv" loading="lazy" src="images/step3-vs-code-jupyter-notebook-pybis-env-uv.png"/><figcaption>If pybis is installed with uv, the path to the environment will be different.</figcaption></figure>
+
 <div class="note"><strong>Checkpoint:</strong>  The notebook is configured to use the <code>pybis</code> environment. You should see pybis in the upper-right corner.</div>
 
 <figure><img alt="" loading="lazy" src="images/step3-vs-code-jupyter-notebook-pybis-env-selected.png"/><figcaption>The <code>pybis</code> environment is selected.</figcaption></figure>
@@ -559,10 +618,10 @@ print("pyBIS was imported successfully!")</code></pre>
 <p>You should see the following output:</p><pre><code>pyBIS was imported successfully!</code></pre>
 <div class="note"><strong> What does <code>import</code> mean?</strong>  In Python, <code>import</code> makes a package available for use in your code. If the cell runs without errors, pyBIS can be imported from the selected environment. You do not need to connect to an openBIS server for this test.</div>
 
-<h3>4.3 Save the notebook</h3>
-<ol><li>Press <code>Ctrl + Shift + S</code>.</ol></li>
-<ol start="2"><li> Choose a folder you can find again and save the notebook as <code>pybis_installation_test.ipynb</code>.</li></ol>
-<p>The .ipynb extension identifies a Jupyter Notebook file.</p>
+<h3>4.3 Save the Jupyter Notebook and Activate Auto Save</h3>
+<ol><li>Open <strong>File → Save As</strong>.</li></ol>
+<ol start="2"><li>Choose a folder and save the notebook as <code>pybis_installation_test.ipynb</code>.</li></ol>
+<ol start="3"><li> Select <strong>File → Auto Save</strong> to activate the auto-save for future edits.</li></ol>
 
 <div class="note"><strong>Checkpoint:</strong>  Your notebook runs Python code, pyBIS can be imported, and your notebook is saved. You are ready to start working with pyBIS.</div><a class="back-to-top" href="#top">Back to top</a></section>
 
